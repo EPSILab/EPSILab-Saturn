@@ -1,0 +1,30 @@
+﻿<Application x:Class="SolarSystem.Saturn.Win8.App"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:vm="using:SolarSystem.Saturn.ViewModel">
+
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <!-- ViewModelLocator -->
+            <vm:ViewModelLocator x:Key="Locator" />
+
+            <!-- Application name -->
+            <x:String x:Key="AppName">EPSILab, le laboratoire Microsoft de l'EPSI</x:String>
+
+            <ResourceDictionary.MergedDictionaries>
+
+                <!-- Styles -->
+                <ResourceDictionary Source="Styles/Layout.xaml" />
+                <ResourceDictionary Source="Styles/TextBlockStyles.xaml" />
+                <ResourceDictionary Source="Styles/ButtonStyles.xaml" />
+                <ResourceDictionary Source="Styles/RichTextBlockStyles.xaml" />
+                <ResourceDictionary Source="Styles/BackButtonStyles.xaml" />
+                <ResourceDictionary Source="Styles/ScrollViewerStyles.xaml" />
+                <ResourceDictionary Source="Styles/AppBarButtonStyles.xaml" />
+                <ResourceDictionary Source="Styles/ItemTemplates.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

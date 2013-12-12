@@ -1,0 +1,891 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ReadersService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://www.epsilab.net/webservices/ReadersService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://www.epsilab.net/webservices/ReadersService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://www.epsilab.net/webservices/ReadersService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SolarSystem.Earth.Common" />
+      <xsd:import schemaLocation="http://www.epsilab.net/webservices/ReadersService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data.SqlClient" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IClasseReader_GetClasse_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClasse" />
+  </wsdl:message>
+  <wsdl:message name="IClasseReader_GetClasse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClasseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IClasseReader_GetClasses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClasses" />
+  </wsdl:message>
+  <wsdl:message name="IClasseReader_GetClasses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClassesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConferenceReader_GetConference_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConference" />
+  </wsdl:message>
+  <wsdl:message name="IConferenceReader_GetConference_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConferenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConferenceReader_GetConferences_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConferences" />
+  </wsdl:message>
+  <wsdl:message name="IConferenceReader_GetConferences_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConferencesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConferenceReader_GetConferencesLimited_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConferencesLimited" />
+  </wsdl:message>
+  <wsdl:message name="IConferenceReader_GetConferencesLimited_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConferencesLimitedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConferenceReader_GetConferencesSorted_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConferencesSorted" />
+  </wsdl:message>
+  <wsdl:message name="IConferenceReader_GetConferencesSorted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConferencesSortedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConferenceReader_GetConferencesByVille_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConferencesByVille" />
+  </wsdl:message>
+  <wsdl:message name="IConferenceReader_GetConferencesByVille_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConferencesByVilleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConferenceReader_GetConferenceLastInsertedId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConferenceLastInsertedId" />
+  </wsdl:message>
+  <wsdl:message name="IConferenceReader_GetConferenceLastInsertedId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConferenceLastInsertedIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConferenceReader_SearchConferences_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchConferences" />
+  </wsdl:message>
+  <wsdl:message name="IConferenceReader_SearchConferences_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchConferencesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILienReader_GetLien_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLien" />
+  </wsdl:message>
+  <wsdl:message name="ILienReader_GetLien_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLienResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILienReader_GetLiens_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLiens" />
+  </wsdl:message>
+  <wsdl:message name="ILienReader_GetLiens_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLiensResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMembreReader_GetMembre_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMembre" />
+  </wsdl:message>
+  <wsdl:message name="IMembreReader_GetMembre_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMembreResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMembreReader_GetMembres_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMembres" />
+  </wsdl:message>
+  <wsdl:message name="IMembreReader_GetMembres_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMembresResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMembreReader_GetMembresLimited_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMembresLimited" />
+  </wsdl:message>
+  <wsdl:message name="IMembreReader_GetMembresLimited_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMembresLimitedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMembreReader_GetMembresSorted_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMembresSorted" />
+  </wsdl:message>
+  <wsdl:message name="IMembreReader_GetMembresSorted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMembresSortedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMembreReader_GetMembresByVilleAndRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMembresByVilleAndRole" />
+  </wsdl:message>
+  <wsdl:message name="IMembreReader_GetMembresByVilleAndRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMembresByVilleAndRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMembreReader_GetMembreLastInsertedId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMembreLastInsertedId" />
+  </wsdl:message>
+  <wsdl:message name="IMembreReader_GetMembreLastInsertedId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMembreLastInsertedIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMembreReader_SearchMembres_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchMembres" />
+  </wsdl:message>
+  <wsdl:message name="IMembreReader_SearchMembres_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchMembresResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewsReader_GetNews_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNews" />
+  </wsdl:message>
+  <wsdl:message name="INewsReader_GetNews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewsReader_GetListNews_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListNews" />
+  </wsdl:message>
+  <wsdl:message name="INewsReader_GetListNews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewsReader_GetListNewsLimited_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListNewsLimited" />
+  </wsdl:message>
+  <wsdl:message name="INewsReader_GetListNewsLimited_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListNewsLimitedResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewsReader_GetListNewsSorted_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListNewsSorted" />
+  </wsdl:message>
+  <wsdl:message name="INewsReader_GetListNewsSorted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListNewsSortedResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewsReader_GetNewsLastInsertedId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewsLastInsertedId" />
+  </wsdl:message>
+  <wsdl:message name="INewsReader_GetNewsLastInsertedId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewsLastInsertedIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="INewsReader_SearchNews_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchNews" />
+  </wsdl:message>
+  <wsdl:message name="INewsReader_SearchNews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjetReader_GetProjet_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjet" />
+  </wsdl:message>
+  <wsdl:message name="IProjetReader_GetProjet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjetReader_GetProjets_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjets" />
+  </wsdl:message>
+  <wsdl:message name="IProjetReader_GetProjets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjetReader_GetProjetsLimited_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjetsLimited" />
+  </wsdl:message>
+  <wsdl:message name="IProjetReader_GetProjetsLimited_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjetsLimitedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjetReader_GetProjetsSorted_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjetsSorted" />
+  </wsdl:message>
+  <wsdl:message name="IProjetReader_GetProjetsSorted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjetsSortedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjetReader_GetProjetsByVille_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjetsByVille" />
+  </wsdl:message>
+  <wsdl:message name="IProjetReader_GetProjetsByVille_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjetsByVilleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProjetReader_GetProjetLastInsertedId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjetLastInsertedId" />
+  </wsdl:message>
+  <wsdl:message name="IProjetReader_GetProjetLastInsertedId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjetLastInsertedIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPubliciteReader_GetPublicite_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPublicite" />
+  </wsdl:message>
+  <wsdl:message name="IPubliciteReader_GetPublicite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPubliciteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPubliciteReader_GetPublicites_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPublicites" />
+  </wsdl:message>
+  <wsdl:message name="IPubliciteReader_GetPublicites_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPublicitesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleReader_GetRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRole" />
+  </wsdl:message>
+  <wsdl:message name="IRoleReader_GetRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoleReader_GetRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoles" />
+  </wsdl:message>
+  <wsdl:message name="IRoleReader_GetRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalonReader_GetSalon_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalon" />
+  </wsdl:message>
+  <wsdl:message name="ISalonReader_GetSalon_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalonResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalonReader_GetSalons_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalons" />
+  </wsdl:message>
+  <wsdl:message name="ISalonReader_GetSalons_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalonReader_GetSalonsLimited_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalonsLimited" />
+  </wsdl:message>
+  <wsdl:message name="ISalonReader_GetSalonsLimited_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalonsLimitedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalonReader_GetSalonsSorted_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalonsSorted" />
+  </wsdl:message>
+  <wsdl:message name="ISalonReader_GetSalonsSorted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalonsSortedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalonReader_GetSalonLastInsertedId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalonLastInsertedId" />
+  </wsdl:message>
+  <wsdl:message name="ISalonReader_GetSalonLastInsertedId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSalonLastInsertedIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalonReader_SearchSalons_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchSalons" />
+  </wsdl:message>
+  <wsdl:message name="ISalonReader_SearchSalons_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchSalonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVilleReader_GetVille_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVille" />
+  </wsdl:message>
+  <wsdl:message name="IVilleReader_GetVille_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVilleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVilleReader_GetVilles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVilles" />
+  </wsdl:message>
+  <wsdl:message name="IVilleReader_GetVilles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVillesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IClasseReader">
+    <wsdl:operation name="GetClasse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClasseReader/GetClasse" message="tns:IClasseReader_GetClasse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClasseReader/GetClasseResponse" message="tns:IClasseReader_GetClasse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClasses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IClasseReader/GetClasses" message="tns:IClasseReader_GetClasses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IClasseReader/GetClassesResponse" message="tns:IClasseReader_GetClasses_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IConferenceReader">
+    <wsdl:operation name="GetConference">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConferenceReader/GetConference" message="tns:IConferenceReader_GetConference_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConferenceReader/GetConferenceResponse" message="tns:IConferenceReader_GetConference_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConferences">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConferenceReader/GetConferences" message="tns:IConferenceReader_GetConferences_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConferenceReader/GetConferencesResponse" message="tns:IConferenceReader_GetConferences_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConferencesLimited">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConferenceReader/GetConferencesLimited" message="tns:IConferenceReader_GetConferencesLimited_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConferenceReader/GetConferencesLimitedResponse" message="tns:IConferenceReader_GetConferencesLimited_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConferencesSorted">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConferenceReader/GetConferencesSorted" message="tns:IConferenceReader_GetConferencesSorted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConferenceReader/GetConferencesSortedResponse" message="tns:IConferenceReader_GetConferencesSorted_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConferencesByVille">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConferenceReader/GetConferencesByVille" message="tns:IConferenceReader_GetConferencesByVille_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConferenceReader/GetConferencesByVilleResponse" message="tns:IConferenceReader_GetConferencesByVille_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConferenceLastInsertedId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConferenceReader/GetConferenceLastInsertedId" message="tns:IConferenceReader_GetConferenceLastInsertedId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConferenceReader/GetConferenceLastInsertedIdResponse" message="tns:IConferenceReader_GetConferenceLastInsertedId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchConferences">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConferenceReader/SearchConferences" message="tns:IConferenceReader_SearchConferences_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConferenceReader/SearchConferencesResponse" message="tns:IConferenceReader_SearchConferences_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ILienReader">
+    <wsdl:operation name="GetLien">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILienReader/GetLien" message="tns:ILienReader_GetLien_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILienReader/GetLienResponse" message="tns:ILienReader_GetLien_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLiens">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILienReader/GetLiens" message="tns:ILienReader_GetLiens_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILienReader/GetLiensResponse" message="tns:ILienReader_GetLiens_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IMembreReader">
+    <wsdl:operation name="GetMembre">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMembreReader/GetMembre" message="tns:IMembreReader_GetMembre_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMembreReader/GetMembreResponse" message="tns:IMembreReader_GetMembre_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMembres">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMembreReader/GetMembres" message="tns:IMembreReader_GetMembres_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMembreReader/GetMembresResponse" message="tns:IMembreReader_GetMembres_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMembresLimited">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMembreReader/GetMembresLimited" message="tns:IMembreReader_GetMembresLimited_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMembreReader/GetMembresLimitedResponse" message="tns:IMembreReader_GetMembresLimited_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMembresSorted">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMembreReader/GetMembresSorted" message="tns:IMembreReader_GetMembresSorted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMembreReader/GetMembresSortedResponse" message="tns:IMembreReader_GetMembresSorted_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMembresByVilleAndRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMembreReader/GetMembresByVilleAndRole" message="tns:IMembreReader_GetMembresByVilleAndRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMembreReader/GetMembresByVilleAndRoleResponse" message="tns:IMembreReader_GetMembresByVilleAndRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMembreLastInsertedId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMembreReader/GetMembreLastInsertedId" message="tns:IMembreReader_GetMembreLastInsertedId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMembreReader/GetMembreLastInsertedIdResponse" message="tns:IMembreReader_GetMembreLastInsertedId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchMembres">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMembreReader/SearchMembres" message="tns:IMembreReader_SearchMembres_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMembreReader/SearchMembresResponse" message="tns:IMembreReader_SearchMembres_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="INewsReader">
+    <wsdl:operation name="GetNews">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewsReader/GetNews" message="tns:INewsReader_GetNews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewsReader/GetNewsResponse" message="tns:INewsReader_GetNews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListNews">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewsReader/GetListNews" message="tns:INewsReader_GetListNews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewsReader/GetListNewsResponse" message="tns:INewsReader_GetListNews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListNewsLimited">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewsReader/GetListNewsLimited" message="tns:INewsReader_GetListNewsLimited_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewsReader/GetListNewsLimitedResponse" message="tns:INewsReader_GetListNewsLimited_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListNewsSorted">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewsReader/GetListNewsSorted" message="tns:INewsReader_GetListNewsSorted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewsReader/GetListNewsSortedResponse" message="tns:INewsReader_GetListNewsSorted_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewsLastInsertedId">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewsReader/GetNewsLastInsertedId" message="tns:INewsReader_GetNewsLastInsertedId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewsReader/GetNewsLastInsertedIdResponse" message="tns:INewsReader_GetNewsLastInsertedId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchNews">
+      <wsdl:input wsaw:Action="http://tempuri.org/INewsReader/SearchNews" message="tns:INewsReader_SearchNews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/INewsReader/SearchNewsResponse" message="tns:INewsReader_SearchNews_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IProjetReader">
+    <wsdl:operation name="GetProjet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProjetReader/GetProjet" message="tns:IProjetReader_GetProjet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProjetReader/GetProjetResponse" message="tns:IProjetReader_GetProjet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjets">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProjetReader/GetProjets" message="tns:IProjetReader_GetProjets_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProjetReader/GetProjetsResponse" message="tns:IProjetReader_GetProjets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjetsLimited">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProjetReader/GetProjetsLimited" message="tns:IProjetReader_GetProjetsLimited_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProjetReader/GetProjetsLimitedResponse" message="tns:IProjetReader_GetProjetsLimited_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjetsSorted">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProjetReader/GetProjetsSorted" message="tns:IProjetReader_GetProjetsSorted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProjetReader/GetProjetsSortedResponse" message="tns:IProjetReader_GetProjetsSorted_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjetsByVille">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProjetReader/GetProjetsByVille" message="tns:IProjetReader_GetProjetsByVille_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProjetReader/GetProjetsByVilleResponse" message="tns:IProjetReader_GetProjetsByVille_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjetLastInsertedId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProjetReader/GetProjetLastInsertedId" message="tns:IProjetReader_GetProjetLastInsertedId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProjetReader/GetProjetLastInsertedIdResponse" message="tns:IProjetReader_GetProjetLastInsertedId_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IPubliciteReader">
+    <wsdl:operation name="GetPublicite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPubliciteReader/GetPublicite" message="tns:IPubliciteReader_GetPublicite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPubliciteReader/GetPubliciteResponse" message="tns:IPubliciteReader_GetPublicite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPublicites">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPubliciteReader/GetPublicites" message="tns:IPubliciteReader_GetPublicites_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPubliciteReader/GetPublicitesResponse" message="tns:IPubliciteReader_GetPublicites_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IRoleReader">
+    <wsdl:operation name="GetRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleReader/GetRole" message="tns:IRoleReader_GetRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleReader/GetRoleResponse" message="tns:IRoleReader_GetRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRoleReader/GetRoles" message="tns:IRoleReader_GetRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRoleReader/GetRolesResponse" message="tns:IRoleReader_GetRoles_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ISalonReader">
+    <wsdl:operation name="GetSalon">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonReader/GetSalon" message="tns:ISalonReader_GetSalon_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonReader/GetSalonResponse" message="tns:ISalonReader_GetSalon_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSalons">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonReader/GetSalons" message="tns:ISalonReader_GetSalons_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonReader/GetSalonsResponse" message="tns:ISalonReader_GetSalons_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSalonsLimited">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonReader/GetSalonsLimited" message="tns:ISalonReader_GetSalonsLimited_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonReader/GetSalonsLimitedResponse" message="tns:ISalonReader_GetSalonsLimited_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSalonsSorted">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonReader/GetSalonsSorted" message="tns:ISalonReader_GetSalonsSorted_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonReader/GetSalonsSortedResponse" message="tns:ISalonReader_GetSalonsSorted_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSalonLastInsertedId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonReader/GetSalonLastInsertedId" message="tns:ISalonReader_GetSalonLastInsertedId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonReader/GetSalonLastInsertedIdResponse" message="tns:ISalonReader_GetSalonLastInsertedId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchSalons">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISalonReader/SearchSalons" message="tns:ISalonReader_SearchSalons_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISalonReader/SearchSalonsResponse" message="tns:ISalonReader_SearchSalons_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IVilleReader">
+    <wsdl:operation name="GetVille">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVilleReader/GetVille" message="tns:IVilleReader_GetVille_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVilleReader/GetVilleResponse" message="tns:IVilleReader_GetVille_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVilles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVilleReader/GetVilles" message="tns:IVilleReader_GetVilles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVilleReader/GetVillesResponse" message="tns:IVilleReader_GetVilles_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IClasseReader" type="tns:IClasseReader">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetClasse">
+      <soap:operation soapAction="http://tempuri.org/IClasseReader/GetClasse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClasses">
+      <soap:operation soapAction="http://tempuri.org/IClasseReader/GetClasses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IConferenceReader" type="tns:IConferenceReader">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetConference">
+      <soap:operation soapAction="http://tempuri.org/IConferenceReader/GetConference" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConferences">
+      <soap:operation soapAction="http://tempuri.org/IConferenceReader/GetConferences" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConferencesLimited">
+      <soap:operation soapAction="http://tempuri.org/IConferenceReader/GetConferencesLimited" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConferencesSorted">
+      <soap:operation soapAction="http://tempuri.org/IConferenceReader/GetConferencesSorted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConferencesByVille">
+      <soap:operation soapAction="http://tempuri.org/IConferenceReader/GetConferencesByVille" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConferenceLastInsertedId">
+      <soap:operation soapAction="http://tempuri.org/IConferenceReader/GetConferenceLastInsertedId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchConferences">
+      <soap:operation soapAction="http://tempuri.org/IConferenceReader/SearchConferences" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ILienReader" type="tns:ILienReader">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetLien">
+      <soap:operation soapAction="http://tempuri.org/ILienReader/GetLien" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLiens">
+      <soap:operation soapAction="http://tempuri.org/ILienReader/GetLiens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IMembreReader" type="tns:IMembreReader">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMembre">
+      <soap:operation soapAction="http://tempuri.org/IMembreReader/GetMembre" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMembres">
+      <soap:operation soapAction="http://tempuri.org/IMembreReader/GetMembres" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMembresLimited">
+      <soap:operation soapAction="http://tempuri.org/IMembreReader/GetMembresLimited" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMembresSorted">
+      <soap:operation soapAction="http://tempuri.org/IMembreReader/GetMembresSorted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMembresByVilleAndRole">
+      <soap:operation soapAction="http://tempuri.org/IMembreReader/GetMembresByVilleAndRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMembreLastInsertedId">
+      <soap:operation soapAction="http://tempuri.org/IMembreReader/GetMembreLastInsertedId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchMembres">
+      <soap:operation soapAction="http://tempuri.org/IMembreReader/SearchMembres" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_INewsReader" type="tns:INewsReader">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetNews">
+      <soap:operation soapAction="http://tempuri.org/INewsReader/GetNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListNews">
+      <soap:operation soapAction="http://tempuri.org/INewsReader/GetListNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListNewsLimited">
+      <soap:operation soapAction="http://tempuri.org/INewsReader/GetListNewsLimited" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListNewsSorted">
+      <soap:operation soapAction="http://tempuri.org/INewsReader/GetListNewsSorted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewsLastInsertedId">
+      <soap:operation soapAction="http://tempuri.org/INewsReader/GetNewsLastInsertedId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchNews">
+      <soap:operation soapAction="http://tempuri.org/INewsReader/SearchNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IProjetReader" type="tns:IProjetReader">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetProjet">
+      <soap:operation soapAction="http://tempuri.org/IProjetReader/GetProjet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjets">
+      <soap:operation soapAction="http://tempuri.org/IProjetReader/GetProjets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjetsLimited">
+      <soap:operation soapAction="http://tempuri.org/IProjetReader/GetProjetsLimited" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjetsSorted">
+      <soap:operation soapAction="http://tempuri.org/IProjetReader/GetProjetsSorted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjetsByVille">
+      <soap:operation soapAction="http://tempuri.org/IProjetReader/GetProjetsByVille" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjetLastInsertedId">
+      <soap:operation soapAction="http://tempuri.org/IProjetReader/GetProjetLastInsertedId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IPubliciteReader" type="tns:IPubliciteReader">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPublicite">
+      <soap:operation soapAction="http://tempuri.org/IPubliciteReader/GetPublicite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPublicites">
+      <soap:operation soapAction="http://tempuri.org/IPubliciteReader/GetPublicites" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IRoleReader" type="tns:IRoleReader">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRole">
+      <soap:operation soapAction="http://tempuri.org/IRoleReader/GetRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoles">
+      <soap:operation soapAction="http://tempuri.org/IRoleReader/GetRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ISalonReader" type="tns:ISalonReader">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetSalon">
+      <soap:operation soapAction="http://tempuri.org/ISalonReader/GetSalon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalons">
+      <soap:operation soapAction="http://tempuri.org/ISalonReader/GetSalons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalonsLimited">
+      <soap:operation soapAction="http://tempuri.org/ISalonReader/GetSalonsLimited" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalonsSorted">
+      <soap:operation soapAction="http://tempuri.org/ISalonReader/GetSalonsSorted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSalonLastInsertedId">
+      <soap:operation soapAction="http://tempuri.org/ISalonReader/GetSalonLastInsertedId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchSalons">
+      <soap:operation soapAction="http://tempuri.org/ISalonReader/SearchSalons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IVilleReader" type="tns:IVilleReader">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetVille">
+      <soap:operation soapAction="http://tempuri.org/IVilleReader/GetVille" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVilles">
+      <soap:operation soapAction="http://tempuri.org/IVilleReader/GetVilles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ReadersService">
+    <wsdl:port name="BasicHttpBinding_IClasseReader" binding="tns:BasicHttpBinding_IClasseReader">
+      <soap:address location="http://www.epsilab.net/webservices/ReadersService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IConferenceReader" binding="tns:BasicHttpBinding_IConferenceReader">
+      <soap:address location="http://www.epsilab.net/webservices/ReadersService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ILienReader" binding="tns:BasicHttpBinding_ILienReader">
+      <soap:address location="http://www.epsilab.net/webservices/ReadersService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IMembreReader" binding="tns:BasicHttpBinding_IMembreReader">
+      <soap:address location="http://www.epsilab.net/webservices/ReadersService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_INewsReader" binding="tns:BasicHttpBinding_INewsReader">
+      <soap:address location="http://www.epsilab.net/webservices/ReadersService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IProjetReader" binding="tns:BasicHttpBinding_IProjetReader">
+      <soap:address location="http://www.epsilab.net/webservices/ReadersService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IPubliciteReader" binding="tns:BasicHttpBinding_IPubliciteReader">
+      <soap:address location="http://www.epsilab.net/webservices/ReadersService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IRoleReader" binding="tns:BasicHttpBinding_IRoleReader">
+      <soap:address location="http://www.epsilab.net/webservices/ReadersService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ISalonReader" binding="tns:BasicHttpBinding_ISalonReader">
+      <soap:address location="http://www.epsilab.net/webservices/ReadersService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IVilleReader" binding="tns:BasicHttpBinding_IVilleReader">
+      <soap:address location="http://www.epsilab.net/webservices/ReadersService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
