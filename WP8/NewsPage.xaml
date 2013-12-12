@@ -1,0 +1,126 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="SolarSystem.Saturn.WP8.NewsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:pshell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:common="clr-namespace:SolarSystem.Saturn.WP8.Common"
+    xmlns:appbar="clr-namespace:BindableApplicationBar;assembly=BindableApplicationBar"
+    xmlns:converter="clr-namespace:SolarSystem.Saturn.WP8.Converters"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
+    mc:Ignorable="d"
+    DataContext="{Binding NewsDetailsVM, Source={StaticResource Locator}}"
+    pshell:SystemTray.IsVisible="False"
+    Unloaded="PhoneApplicationPage_Unloaded">
+
+    <phone:PhoneApplicationPage.Resources>
+        <converter:AuthorInfoConverter x:Key="AuthorInfoConverter" />
+        
+        <converter:ToPinnableConverter x:Key="ToPinnableConverter" />
+        <converter:ToShareableConverter x:Key="ToShareableConverter" />
+        <converter:ToEmailableConverter x:Key="ToEmailableConverter" />
+        <converter:ToVisitableConverter x:Key="ToVisitableConverter" />
+    </phone:PhoneApplicationPage.Resources>
+
+    <!-- Main panel -->
+    <Grid Style="{StaticResource MainGridStyle}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Loading progress bar -->
+        <ProgressBar IsIndeterminate="{Binding IsLoading, Mode=OneWay}" />
+
+        <!-- Title and publication info -->
+        <StackPanel DataContext="{Binding Element}"
+                    Grid.Row="0"
+                    Margin="12,17,0,15">
+
+            <!-- Title of the news -->
+            <TextBlock Text="{Binding Titre}"
+                       Margin="9,-7,0,5"
+                       TextWrapping="Wrap"
+                       Style="{StaticResource PhoneTextTitle1BlackStyle}"
+                       FontSize="45" />
+
+            <!-- Author and date pulication -->
+            <StackPanel Style="{StaticResource StackPanelInformationsStyle}">
+
+                <TextBlock Margin="4,2"
+                           Text="{Binding Membre, Converter={StaticResource AuthorInfoConverter}}"
+                           Style="{StaticResource PhoneTextNormalStyle}" />
+
+                <TextBlock Margin="4,2"
+                           Style="{StaticResource PhoneTextNormalStyle}">
+                    <TextBlock.Text>
+                        <Binding Path="Date_Heure" StringFormat="{}{0:G}" />
+                    </TextBlock.Text>
+                </TextBlock>
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Content -->
+        <phone:WebBrowser Grid.Row="1"
+                          Margin="5,0"
+                          common:WebBrowserHelper.Html="{Binding Element.Texte_Long}"
+                          Navigating="WebBrowser_OnNavigating" />
+
+    </Grid>
+
+    <!-- Application bar -->
+    <appbar:Bindable.ApplicationBar>
+        <appbar:BindableApplicationBar>
+
+            <appbar:BindableApplicationBarButton IconUri="/Assets/ApplicationBar/pin.png"
+                                                 Text="{Binding AppResources.LBL_PIN, Source={StaticResource LocalizedStrings}}"
+                                                 Command="{Binding PinCommand}"
+                                                 CommandParameter="{Binding Element, Converter={StaticResource ToPinnableConverter}}" />
+
+            <appbar:BindableApplicationBarButton IconUri="/Assets/ApplicationBar/share.png"
+                                                 Text="{Binding AppResources.LBL_SHARE, Source={StaticResource LocalizedStrings}}"
+                                                 Command="{Binding ShareCommand}"
+                                                 CommandParameter="{Binding Element, Converter={StaticResource ToShareableConverter}}" />
+
+            <appbar:BindableApplicationBarButton IconUri="/Assets/ApplicationBar/mail.png"
+                                                 Text="{Binding AppResources.LBL_EMAIL, Source={StaticResource LocalizedStrings}}"
+                                                 Command="{Binding EmailCommand}"
+                                                 CommandParameter="{Binding Element, Converter={StaticResource ToEmailableConverter}}" />
+
+            <appbar:BindableApplicationBarButton IconUri="/Assets/ApplicationBar/website.png"
+                                                 Text="{Binding AppResources.LBL_WEBSITE, Source={StaticResource LocalizedStrings}}"
+                                                 Command="{Binding VisitWebsiteCommand}"
+                                                 CommandParameter="{Binding Element, Converter={StaticResource ToVisitableConverter}}" />
+
+        </appbar:BindableApplicationBar>
+    </appbar:Bindable.ApplicationBar>
+
+    <!-- Page transitions -->
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn" />
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn" />
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut" />
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut" />
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
+</phone:PhoneApplicationPage>

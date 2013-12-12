@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="eb319b16-2c07-47bb-842d-4f6fadf8e4d8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://www.epsilab.net/webservices/ReadersService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ReadersService.disco" MetadataType="Disco" ID="7f565a08-9884-42af-ac07-ef9e7b79ea0c" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc?disco" />
+    <MetadataFile FileName="ReadersService.wsdl" MetadataType="Wsdl" ID="6aec7b03-3bb8-4973-b0e5-49946156a9f3" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc?wsdl" />
+    <MetadataFile FileName="ReadersService.xsd" MetadataType="Schema" ID="0c2edabf-6cea-4422-918c-b389473779dc" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ReadersService1.xsd" MetadataType="Schema" ID="1f8cb8a5-9001-49de-8bd7-96e7c4b2b75f" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ReadersService2.xsd" MetadataType="Schema" ID="f39f59fc-5b1d-4638-a675-b37a323bddc5" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ReadersService3.xsd" MetadataType="Schema" ID="a0bd9e40-7651-4c9e-91ac-c4cba4cc772c" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

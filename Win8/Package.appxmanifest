@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
+  <Identity Name="22627EPSILab.EPSILab" Publisher="CN=E6C3449C-70C1-4DD2-B66E-73EFE389B4F2" Version="1.6.1.5" />
+  <Properties>
+    <DisplayName>EPSILab</DisplayName>
+    <PublisherDisplayName>EPSILab</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2.1</OSMinVersion>
+    <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="SolarSystem.Saturn.Win8.App">
+      <VisualElements DisplayName="EPSILab" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="EPSILab est le laboratoire Microsoft de l'école EPSI. Retrouvez au sein de cette application les dernières nouveautés sur Microsoft, les membres ainsi que les dernières activités du labo." ForegroundText="dark" BackgroundColor="#F1F1F1" ToastCapable="true">
+        <LockScreen Notification="badgeAndTileText" BadgeLogo="Assets/BadgeLogo.png" />
+        <DefaultTile ShowName="allLogos" WideLogo="Assets\WideLogo.png" />
+        <SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#F1F1F1" />
+        <InitialRotationPreference>
+          <Rotation Preference="portrait" />
+          <Rotation Preference="landscape" />
+          <Rotation Preference="portraitFlipped" />
+          <Rotation Preference="landscapeFlipped" />
+        </InitialRotationPreference>
+      </VisualElements>
+      <Extensions>
+        <Extension Category="windows.search" />
+        <Extension Category="windows.backgroundTasks" EntryPoint="SolarSystem.Saturn.Win8.BackgroundTasks.RefreshTileBackgroundTask">
+          <BackgroundTasks>
+            <Task Type="timer" />
+            <Task Type="pushNotification" />
+          </BackgroundTasks>
+        </Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+  </Capabilities>
+</Package>
