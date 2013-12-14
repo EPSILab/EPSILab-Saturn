@@ -30,5 +30,6 @@ This project has an **Apache2** license.
 - MVVM Light Toolkit for PCL
 - NotificationExtensions (for the Windows 8 app)
 - BindableApplicationBar (for the Windows Phone app)
+- Windows Phone Toolkit (for the Windows Phone app)
 
 This project use **NuGet Package Manager** to retrieve all necessary packages and their dependencies.
