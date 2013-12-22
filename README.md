@@ -1,4 +1,4 @@
-EPSILab-Saturn
+SolarSystem-Saturn
 ==============
 
 Contains all sources for the Windows 8 application and the Windows Phone 8 application for EPSILab.
