@@ -11,7 +11,7 @@ You can download the application on:
 Clone this repository and open the solution file named "**Saturn.sln**".
 
 #License
-This project has an **Apache2** license.
+This project has a **LGPL** license.
 
 #Required
 - Windows 8 or higher
