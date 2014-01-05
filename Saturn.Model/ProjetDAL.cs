@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using SolarSystem.Saturn.Model.Interfaces;
+using SolarSystem.Saturn.Model.ReadersService;
 
 namespace SolarSystem.Saturn.Model
 {
