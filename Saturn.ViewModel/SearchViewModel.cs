@@ -98,7 +98,7 @@ namespace SolarSystem.Saturn.ViewModel
 
             if (salons != null && salons.Count > 0)
             {
-                IList<VisualGenericItem> genericSalon = SalonToGenericItemMapper.Mapper(salons);
+                IList<VisualGenericItem> genericSalon = GenericSalonMapper.Mapper(salons);
 
                 Results.Groups.Insert(Results.Groups.Count, new VisualGenericGroup
                 {

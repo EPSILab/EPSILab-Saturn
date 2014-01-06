@@ -146,7 +146,7 @@ namespace SolarSystem.Saturn.ViewModel
 
             if (projets != null)
             {
-                IList<VisualGenericItem> genericProjets = ProjetToGenericItemMapper.Mapper(projets);
+                IList<VisualGenericItem> genericProjets = GenericProjetMapper.Mapper(projets);
 
                 Menu.Groups.RemoveAt(3);
 
@@ -169,7 +169,7 @@ namespace SolarSystem.Saturn.ViewModel
 
             if (salons != null)
             {
-                IList<VisualGenericItem> genericSalons = SalonToGenericItemMapper.Mapper(salons);
+                IList<VisualGenericItem> genericSalons = GenericSalonMapper.Mapper(salons);
 
                 Menu.Groups.RemoveAt(4);
 
@@ -201,7 +201,7 @@ namespace SolarSystem.Saturn.ViewModel
                     break;
                 case 2:
                     IEnumerable<Projet> projets = await _modelProjet.GetAsync(alreadyLoaded.Count, 8);
-                    newElements = ProjetToGenericItemMapper.Mapper(projets);
+                    newElements = GenericProjetMapper.Mapper(projets);
                     break;
                 case 3:
                     IEnumerable<Conference> conferences = await _modelConference.GetAsync(alreadyLoaded.Count, 8);
@@ -209,7 +209,7 @@ namespace SolarSystem.Saturn.ViewModel
                     break;
                 case 4:
                     IEnumerable<Salon> salons = await _modelSalon.GetAsync(alreadyLoaded.Count, 8);
-                    newElements = SalonToGenericItemMapper.Mapper(salons);
+                    newElements = GenericSalonMapper.Mapper(salons);
                     break;
             }
 

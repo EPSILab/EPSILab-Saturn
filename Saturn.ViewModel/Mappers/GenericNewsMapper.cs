@@ -1,15 +1,24 @@
 ﻿using SolarSystem.Saturn.Model.ReadersService;
 using SolarSystem.Saturn.ViewModel.Formatters;
 using SolarSystem.Saturn.ViewModel.Helpers;
+using SolarSystem.Saturn.ViewModel.Mappers.Interfaces;
 using SolarSystem.Saturn.ViewModel.Objects;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace SolarSystem.Saturn.ViewModel.Mappers
 {
-    static class GenericNewsMapper
+    /// <summary>
+    /// Map a (list of) member(s) to a (list of) generic item(s)
+    /// </summary>
+    class GenericNewsMapper : IMapper<News>
     {
-        private static VisualGenericItem Mapper(News element)
+        /// <summary>
+        /// Map a news to an generic item
+        /// </summary>
+        /// <param name="element">News to map</param>
+        /// <returns>Corresponding generic item</returns>
+        public VisualGenericItem Map(News element)
         {
             return new VisualGenericItem
             {
@@ -24,9 +33,14 @@ namespace SolarSystem.Saturn.ViewModel.Mappers
             };
         }
 
-        public static IList<VisualGenericItem> Mapper(IEnumerable<News> news)
+        /// <summary>
+        /// Map a list of news to a generic items list
+        /// </summary>
+        /// <param name="elements">List of news to map</param>
+        /// <returns>Corresponding generic items list</returns>
+        public IList<VisualGenericItem> Map(IEnumerable<News> elements)
         {
-            return news.Select(Mapper).ToList();
+            return elements.Select(Map).ToList();
         }
     }
 }

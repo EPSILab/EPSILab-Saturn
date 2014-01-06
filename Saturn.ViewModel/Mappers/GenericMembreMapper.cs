@@ -7,7 +7,7 @@ using System.Linq;
 namespace SolarSystem.Saturn.ViewModel.Mappers
 {
     /// <summary>
-    /// Map a (list of) members to a (list of) generic item
+    /// Map a (list of) member(s) to a (list of) generic item(s)
     /// </summary>
     class GenericMembreMapper : IMapper<Membre>
     {
