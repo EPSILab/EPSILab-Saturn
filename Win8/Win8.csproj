@@ -110,14 +110,6 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
-      <Project>{a1a90c66-7855-4d44-acb7-63a304b31f27}</Project>
-      <Name>DataAccess</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ViewModel\ViewModel.csproj">
-      <Project>{020193bf-02c0-422e-b6c0-964be5031500}</Project>
-      <Name>ViewModel</Name>
-    </ProjectReference>
     <ProjectReference Include="BackgroundTasks\Win8.BackgroundTasks.csproj">
       <Project>{507173f7-ba27-470f-a79d-867c046b4a39}</Project>
       <Name>Win8.BackgroundTasks</Name>

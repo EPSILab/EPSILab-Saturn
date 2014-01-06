@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{A1A90C66-7855-4D44-ACB7-63A304B31F27}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModel", "ViewModel\ViewModel.csproj", "{020193BF-02C0-422E-B6C0-964BE5031500}"
-EndProject
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{DCCA94A7-6376-4C82-ACCD-33B9C284B123}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
@@ -24,40 +22,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Win8", "Win8\Win8.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Win8.BackgroundTasks", "Win8\BackgroundTasks\Win8.BackgroundTasks.csproj", "{507173F7-BA27-470F-A79D-867C046B4A39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{2F2C3CC1-D2E9-45CB-8755-A6FDD7B0A35E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saturn.Model", "Saturn.Model\Saturn.Model.csproj", "{B287FA18-F9B3-453C-936B-A523716EEA2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saturn.ViewModel", "Saturn.ViewModel\Saturn.ViewModel.csproj", "{020193BF-02C0-422E-B6C0-964BE5031500}"
 EndProject
 Global
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 8
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://epsilab.visualstudio.com/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = DataAccess\\DataAccess.csproj
-		SccProjectName1 = DataAccess
-		SccLocalPath1 = DataAccess
-		SccProjectUniqueName2 = ViewModel\\ViewModel.csproj
-		SccProjectName2 = ViewModel
-		SccLocalPath2 = ViewModel
-		SccProjectUniqueName3 = WP8\\WP8.csproj
-		SccProjectTopLevelParentUniqueName3 = Saturn.sln
-		SccProjectName3 = WP8
-		SccLocalPath3 = WP8
-		SccProjectUniqueName4 = WP8\\SheduledTaskAgent\\WP8.SheduledTaskAgent.csproj
-		SccProjectTopLevelParentUniqueName4 = Saturn.sln
-		SccProjectName4 = WP8/SheduledTaskAgent
-		SccLocalPath4 = WP8\\SheduledTaskAgent
-		SccProjectUniqueName5 = Win8\\Win8.csproj
-		SccProjectTopLevelParentUniqueName5 = Saturn.sln
-		SccProjectName5 = Win8
-		SccLocalPath5 = Win8
-		SccProjectUniqueName6 = Win8\\BackgroundTasks\\Win8.BackgroundTasks.csproj
-		SccProjectTopLevelParentUniqueName6 = Saturn.sln
-		SccProjectName6 = Win8/BackgroundTasks
-		SccLocalPath6 = Win8\\BackgroundTasks
-		SccProjectUniqueName7 = Model\\Model.csproj
-		SccProjectName7 = Model
-		SccLocalPath7 = Model
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|ARM = Debug|ARM
@@ -69,26 +38,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A1A90C66-7855-4D44-ACB7-63A304B31F27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A1A90C66-7855-4D44-ACB7-63A304B31F27}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A1A90C66-7855-4D44-ACB7-63A304B31F27}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{A1A90C66-7855-4D44-ACB7-63A304B31F27}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{A1A90C66-7855-4D44-ACB7-63A304B31F27}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{A1A90C66-7855-4D44-ACB7-63A304B31F27}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A1A90C66-7855-4D44-ACB7-63A304B31F27}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A1A90C66-7855-4D44-ACB7-63A304B31F27}.Release|ARM.ActiveCfg = Release|Any CPU
-		{A1A90C66-7855-4D44-ACB7-63A304B31F27}.Release|x64.ActiveCfg = Release|Any CPU
-		{A1A90C66-7855-4D44-ACB7-63A304B31F27}.Release|x86.ActiveCfg = Release|Any CPU
-		{020193BF-02C0-422E-B6C0-964BE5031500}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{020193BF-02C0-422E-B6C0-964BE5031500}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{020193BF-02C0-422E-B6C0-964BE5031500}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{020193BF-02C0-422E-B6C0-964BE5031500}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{020193BF-02C0-422E-B6C0-964BE5031500}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{020193BF-02C0-422E-B6C0-964BE5031500}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{020193BF-02C0-422E-B6C0-964BE5031500}.Release|Any CPU.Build.0 = Release|Any CPU
-		{020193BF-02C0-422E-B6C0-964BE5031500}.Release|ARM.ActiveCfg = Release|Any CPU
-		{020193BF-02C0-422E-B6C0-964BE5031500}.Release|x64.ActiveCfg = Release|Any CPU
-		{020193BF-02C0-422E-B6C0-964BE5031500}.Release|x86.ActiveCfg = Release|Any CPU
 		{5736DFB2-8172-4220-8820-DA8BBF209E9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5736DFB2-8172-4220-8820-DA8BBF209E9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5736DFB2-8172-4220-8820-DA8BBF209E9F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
@@ -163,16 +112,26 @@ Global
 		{507173F7-BA27-470F-A79D-867C046B4A39}.Release|x64.Build.0 = Release|x64
 		{507173F7-BA27-470F-A79D-867C046B4A39}.Release|x86.ActiveCfg = Release|x86
 		{507173F7-BA27-470F-A79D-867C046B4A39}.Release|x86.Build.0 = Release|x86
-		{2F2C3CC1-D2E9-45CB-8755-A6FDD7B0A35E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2F2C3CC1-D2E9-45CB-8755-A6FDD7B0A35E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2F2C3CC1-D2E9-45CB-8755-A6FDD7B0A35E}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{2F2C3CC1-D2E9-45CB-8755-A6FDD7B0A35E}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{2F2C3CC1-D2E9-45CB-8755-A6FDD7B0A35E}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{2F2C3CC1-D2E9-45CB-8755-A6FDD7B0A35E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2F2C3CC1-D2E9-45CB-8755-A6FDD7B0A35E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2F2C3CC1-D2E9-45CB-8755-A6FDD7B0A35E}.Release|ARM.ActiveCfg = Release|Any CPU
-		{2F2C3CC1-D2E9-45CB-8755-A6FDD7B0A35E}.Release|x64.ActiveCfg = Release|Any CPU
-		{2F2C3CC1-D2E9-45CB-8755-A6FDD7B0A35E}.Release|x86.ActiveCfg = Release|Any CPU
+		{B287FA18-F9B3-453C-936B-A523716EEA2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B287FA18-F9B3-453C-936B-A523716EEA2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B287FA18-F9B3-453C-936B-A523716EEA2D}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{B287FA18-F9B3-453C-936B-A523716EEA2D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B287FA18-F9B3-453C-936B-A523716EEA2D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B287FA18-F9B3-453C-936B-A523716EEA2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B287FA18-F9B3-453C-936B-A523716EEA2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B287FA18-F9B3-453C-936B-A523716EEA2D}.Release|ARM.ActiveCfg = Release|Any CPU
+		{B287FA18-F9B3-453C-936B-A523716EEA2D}.Release|x64.ActiveCfg = Release|Any CPU
+		{B287FA18-F9B3-453C-936B-A523716EEA2D}.Release|x86.ActiveCfg = Release|Any CPU
+		{020193BF-02C0-422E-B6C0-964BE5031500}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{020193BF-02C0-422E-B6C0-964BE5031500}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{020193BF-02C0-422E-B6C0-964BE5031500}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{020193BF-02C0-422E-B6C0-964BE5031500}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{020193BF-02C0-422E-B6C0-964BE5031500}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{020193BF-02C0-422E-B6C0-964BE5031500}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{020193BF-02C0-422E-B6C0-964BE5031500}.Release|Any CPU.Build.0 = Release|Any CPU
+		{020193BF-02C0-422E-B6C0-964BE5031500}.Release|ARM.ActiveCfg = Release|Any CPU
+		{020193BF-02C0-422E-B6C0-964BE5031500}.Release|x64.ActiveCfg = Release|Any CPU
+		{020193BF-02C0-422E-B6C0-964BE5031500}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

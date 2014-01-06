@@ -240,14 +240,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
-      <Project>{A1A90C66-7855-4D44-ACB7-63A304B31F27}</Project>
-      <Name>DataAccess</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ViewModel\ViewModel.csproj">
-      <Project>{020193BF-02C0-422E-B6C0-964BE5031500}</Project>
-      <Name>ViewModel</Name>
-    </ProjectReference>
     <ProjectReference Include="SheduledTaskAgent\WP8.SheduledTaskAgent.csproj">
       <Project>{ACF38991-8BBC-451F-AA49-C06F8E29F61F}</Project>
       <Name>WP8.SheduledTaskAgent</Name>
