@@ -16,7 +16,7 @@
     mc:Ignorable="d"
     DataContext="{Binding MembreDetailsVM, Source={StaticResource Locator}}"
     shell:SystemTray.IsVisible="False"
-    Unloaded="MembrePage_OnUnloaded">
+    Unloaded="PhoneApplicationPage_OnUnloaded">
 
     <phone:PhoneApplicationPage.Resources>
         <converters:MembreNameConverter x:Key="MembreNameConverter" />

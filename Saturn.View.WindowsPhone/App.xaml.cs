@@ -1,17 +1,20 @@
-﻿using System.Diagnostics;
-using System.Windows;
-using System.Windows.Markup;
-using System.Windows.Navigation;
-using Microsoft.Phone.Controls;
+﻿using Microsoft.Phone.Controls;
 using Microsoft.Phone.Net.NetworkInformation;
 using Microsoft.Phone.Shell;
 using SolarSystem.Saturn.View.WindowsPhone.Resources;
+using System.Diagnostics;
+using System.Windows;
+using System.Windows.Markup;
+using System.Windows.Navigation;
 
 namespace SolarSystem.Saturn.View.WindowsPhone
 {
+    /// <summary>
+    /// App
+    /// </summary>
     public partial class App
     {
-       
+
         /// <summary>
         ///     Constructor for the Application object.
         /// </summary>
@@ -68,12 +71,11 @@ namespace SolarSystem.Saturn.View.WindowsPhone
         public static bool IsInternetAvailable { get; private set; }
 
         /// <summary>
-        ///     Déclenché lorsqu'un changement de la disponibilité du réseau intervient
+        /// Raised when the network status change
         /// </summary>
         /// <param name="sender"></param>
-        private void DeviceNetworkInformationOnNetworkAvailabilityChanged(object sender,
-                                                                          NetworkNotificationEventArgs
-                                                                              networkNotificationEventArgs)
+        /// <param name="networkNotificationEventArgs">Event args</param>
+        private void DeviceNetworkInformationOnNetworkAvailabilityChanged(object sender, NetworkNotificationEventArgs networkNotificationEventArgs)
         {
             CheckIsNetworkAvailable();
         }
@@ -92,6 +94,7 @@ namespace SolarSystem.Saturn.View.WindowsPhone
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
+
         }
 
         // Code to execute when the application is activated (brought to foreground)

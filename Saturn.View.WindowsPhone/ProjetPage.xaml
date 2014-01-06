@@ -14,7 +14,7 @@
     mc:Ignorable="d"
     DataContext="{Binding ProjetDetailsVM, Source={StaticResource Locator}}"
     shell:SystemTray.IsVisible="False"
-    Unloaded="ProjetPage_OnUnloaded">
+    Unloaded="PhoneApplicationPage_OnUnloaded">
 
     <!-- Main Content -->
     <Grid Style="{StaticResource MainGridStyle}">

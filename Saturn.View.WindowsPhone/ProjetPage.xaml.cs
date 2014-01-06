@@ -15,6 +15,9 @@ namespace SolarSystem.Saturn.View.WindowsPhone
     {
         #region Constructor
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public ProjetPage()
         {
             InitializeComponent();
@@ -24,6 +27,10 @@ namespace SolarSystem.Saturn.View.WindowsPhone
 
         #region Events
 
+        /// <summary>
+        /// Raised when the page is loaded
+        /// </summary>
+        /// <param name="e">Navigation event arguments</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
@@ -35,13 +42,23 @@ namespace SolarSystem.Saturn.View.WindowsPhone
             }
         }
 
+        /// <summary>
+        /// Rai
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void WebBrowser_OnNavigating(object sender, NavigatingEventArgs e)
         {
             e.Cancel = true;
             WebBrowserTaskHelper.OpenBrowser(e.Uri);
         }
 
-        private void ProjetPage_OnUnloaded(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Raised when the page is unloaded
+        /// </summary>
+        /// <param name="sender">Page</param>
+        /// <param name="e">Event args</param>
+        private void PhoneApplicationPage_OnUnloaded(object sender, RoutedEventArgs e)
         {
             ViewModelLocator.CleanDetailsVM<Projet>(true);
         }

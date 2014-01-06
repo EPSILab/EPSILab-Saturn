@@ -1,19 +1,36 @@
-﻿using System;
-using System.Windows;
-using System.Windows.Input;
-using Microsoft.Phone.Tasks;
+﻿using Microsoft.Phone.Tasks;
 using SolarSystem.Saturn.View.WindowsPhone.Helpers.Tasks;
 using SolarSystem.Saturn.View.WindowsPhone.Resources;
+using System;
+using System.Windows;
+using System.Windows.Input;
 
 namespace SolarSystem.Saturn.View.WindowsPhone
 {
-    public partial class AProposPage
+    /// <summary>
+    /// About page
+    /// </summary>
+    public partial class AboutPage
     {
-        public AProposPage()
+        #region Constructor
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public AboutPage()
         {
             InitializeComponent();
         }
 
+        #endregion
+
+        #region Controls's events
+
+        /// <summary>
+        /// Raised when the user clicks on a URL
+        /// </summary>
+        /// <param name="sender">Textbox containing the URL</param>
+        /// <param name="e">Event arguments</param>
         private void URL_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             FrameworkElement textBox = (FrameworkElement)sender;
@@ -25,15 +42,22 @@ namespace SolarSystem.Saturn.View.WindowsPhone
             }
         }
 
+        /// <summary>
+        /// Raised when the user clicks on an email address
+        /// </summary>
+        /// <param name="sender">Textbox containing the email adresse</param>
+        /// <param name="e">Event arguments</param>
         private void Email_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             EmailComposeTask task = new EmailComposeTask
                 {
                     To = AppResources.LBL_EMAIL_SUPPORT,
-                    Subject = "Demande de support pour l'application EPSILab pour Windows Phone"
+                    Subject = AppResources.MSG_SUPPORT
                 };
 
             task.Show();
         }
+
+        #endregion
     }
 }

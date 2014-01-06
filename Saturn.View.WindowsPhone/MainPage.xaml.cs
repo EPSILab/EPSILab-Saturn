@@ -12,6 +12,9 @@ using System.Windows.Navigation;
 
 namespace SolarSystem.Saturn.View.WindowsPhone
 {
+    /// <summary>
+    /// Default page
+    /// </summary>
     public partial class MainPage
     {
         #region Constructor
@@ -31,12 +34,19 @@ namespace SolarSystem.Saturn.View.WindowsPhone
 
         #region Attributes
 
+        /// <summary>
+        /// Selected panorama group to restore when the user goes back to this page
+        /// </summary>
         private VisualGenericGroup _selectedPanoramaGroup;
 
         #endregion
 
         #region Methods
 
+        /// <summary>
+        /// Show the details page according the type of the element (news, conference, member or show)
+        /// </summary>
+        /// <param name="item">Item to show. Can be a news, a conference, a member or a show</param>
         private void ShowDetailsPage(VisualGenericItem item)
         {
             if (item != null)
@@ -66,6 +76,10 @@ namespace SolarSystem.Saturn.View.WindowsPhone
 
         #region Events
 
+        /// <summary>
+        /// Raised when the page is loaded
+        /// </summary>
+        /// <param name="e">Navigation event arguments</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
@@ -89,6 +103,11 @@ namespace SolarSystem.Saturn.View.WindowsPhone
             }
         }
 
+        /// <summary>
+        /// Raised when the user change the default displayed panorama item
+        /// </summary>
+        /// <param name="sender">Panorama</param>
+        /// <param name="e">Event args which contains the new and the old selected item</param>
         private void LlsMenu_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (Panorama.SelectedItem is PanoramaItem)
