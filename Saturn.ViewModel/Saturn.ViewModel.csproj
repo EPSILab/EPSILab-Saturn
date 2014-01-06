@@ -41,7 +41,6 @@
   <ItemGroup>
     <Compile Include="Command\AsyncDelegateCommand.cs" />
     <Compile Include="DesignViewModel\ConferenceDesignViewModel.cs" />
-    <Compile Include="DesignViewModel\ConferencesDesignViewModel.cs" />
     <Compile Include="DesignViewModel\MainDesignViewModel.cs" />
     <Compile Include="DesignViewModel\MembreDesignViewModel.cs" />
     <Compile Include="DesignViewModel\ProjetDesignViewModel.cs" />
@@ -57,10 +56,11 @@
     <Compile Include="Formatters\DateFormatter.cs" />
     <Compile Include="Interfaces\IMainViewModel.cs" />
     <Compile Include="Interfaces\IMyViewModelBase.cs" />
-    <Compile Include="Mappers\MembreToGenericItemMapper.cs" />
-    <Compile Include="Mappers\ConferenceToGenericItemMapper.cs" />
-    <Compile Include="Mappers\SalonToGenericItemMapper.cs" />
-    <Compile Include="Mappers\ProjetToGenericItemMapper.cs" />
+    <Compile Include="Mappers\Interfaces\IMapper.cs" />
+    <Compile Include="Mappers\GenericMembreMapper.cs" />
+    <Compile Include="Mappers\GenericConferenceMapper.cs" />
+    <Compile Include="Mappers\GenericSalonMapper.cs" />
+    <Compile Include="Mappers\GenericProjetMapper.cs" />
     <Compile Include="Objects\ShareableWin8Object.cs" />
     <Compile Include="Objects\VisualMenu.cs" />
     <Compile Include="MasterViewModel.cs" />
@@ -69,7 +69,7 @@
     <Compile Include="Objects\PinnableObject.cs" />
     <Compile Include="Objects\ShareableObject.cs" />
     <Compile Include="Objects\VisualGenericItem.cs" />
-    <Compile Include="Mappers\NewsToGenericItemMapper.cs" />
+    <Compile Include="Mappers\GenericNewsMapper.cs" />
     <Compile Include="Objects\VisualGenericGroup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MyViewModelBase.cs" />
@@ -149,6 +149,7 @@
       <Name>Saturn.Model</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.8\tools\Microsoft.Bcl.Build.targets" />

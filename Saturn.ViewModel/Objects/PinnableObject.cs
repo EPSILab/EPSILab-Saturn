@@ -1,5 +1,8 @@
 ﻿namespace SolarSystem.Saturn.ViewModel.Objects
 {
+    /// <summary>
+    /// A generic object to pin on Windows 8 start screen
+    /// </summary>
     public class PinnableObject
     {
         public string Id { get; set; }

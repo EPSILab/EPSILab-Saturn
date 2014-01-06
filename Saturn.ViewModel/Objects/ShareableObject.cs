@@ -2,6 +2,9 @@
 
 namespace SolarSystem.Saturn.ViewModel.Objects
 {
+    /// <summary>
+    /// A generic object to share informations on Windows Phone
+    /// </summary>
     public class ShareableObject
     {
         public string Title { get; set; }
