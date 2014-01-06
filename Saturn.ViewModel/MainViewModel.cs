@@ -1,12 +1,13 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
-using SolarSystem.Saturn.DataAccess.Webservice;
-using SolarSystem.Saturn.Model.Factory;
-using SolarSystem.Saturn.Model.Interface;
+using SolarSystem.Saturn.Model;
+using SolarSystem.Saturn.Model.Interfaces;
+using SolarSystem.Saturn.Model.ReadersService;
 using SolarSystem.Saturn.ViewModel.Command;
 using SolarSystem.Saturn.ViewModel.Helpers;
 using SolarSystem.Saturn.ViewModel.Interfaces;
 using SolarSystem.Saturn.ViewModel.Mappers;
+using SolarSystem.Saturn.ViewModel.Mappers.Interfaces;
 using SolarSystem.Saturn.ViewModel.Objects;
 using System;
 using System.Collections.Generic;
@@ -17,9 +18,14 @@ using System.Windows.Input;
 
 namespace SolarSystem.Saturn.ViewModel
 {
+    /// <summary>
+    /// View-model of the main-page
+    /// </summary>
     class MainViewModel : MyViewModelBase, IMainViewModel
     {
-        public MainViewModel()
+        #region Constructor
+
+        protected MainViewModel()
         {
             Menu = new VisualMenu
                 {
@@ -43,6 +49,8 @@ namespace SolarSystem.Saturn.ViewModel
             GoToSocialPageCommand = new RelayCommand<Uri>(GoToSocialNetworkPage);
             PinCommand = new RelayCommand<PinnableObject>(Pin);
         }
+
+        #endregion
 
         #region Public commands
 
@@ -73,11 +81,12 @@ namespace SolarSystem.Saturn.ViewModel
         {
             IsLoading = true;
 
-            IEnumerable<Membre> membres = await _modelMembre.GetAsync(0, 8);
+            IEnumerable<Membre> membres = await _modelMembre.GetAsync();
 
             if (membres != null)
             {
-                IList<VisualGenericItem> genericMembres = GenericMembreMapper.Mapper(membres);
+                IMapper<Membre> mapper = new GenericMembreMapper();
+                IList<VisualGenericItem> genericMembres = mapper.Map(membres);
 
                 Menu.Groups.RemoveAt(1);
 
@@ -100,7 +109,8 @@ namespace SolarSystem.Saturn.ViewModel
 
             if (conferences != null)
             {
-                IList<VisualGenericItem> genericConferences = ConferenceMapper.Mapper(conferences);
+                IMapper<Conference> mapper = new GenericConferenceMapper();
+                IList<VisualGenericItem> genericConferences = mapper.Map(conferences);
 
                 Menu.Groups.RemoveAt(2);
 
@@ -123,7 +133,8 @@ namespace SolarSystem.Saturn.ViewModel
 
             if (news != null)
             {
-                IList<VisualGenericItem> genericNews = GenericNewsMapper.Mapper(news);
+                IMapper<News> mapper = new GenericNewsMapper();
+                IList<VisualGenericItem> genericNews = mapper.Map(news);
 
                 Menu.Groups.RemoveAt(0);
 
@@ -146,7 +157,8 @@ namespace SolarSystem.Saturn.ViewModel
 
             if (projets != null)
             {
-                IList<VisualGenericItem> genericProjets = GenericProjetMapper.Mapper(projets);
+                IMapper<Projet> mapper = new GenericProjetMapper();
+                IList<VisualGenericItem> genericProjets = mapper.Map(projets);
 
                 Menu.Groups.RemoveAt(3);
 
@@ -169,7 +181,8 @@ namespace SolarSystem.Saturn.ViewModel
 
             if (salons != null)
             {
-                IList<VisualGenericItem> genericSalons = GenericSalonMapper.Mapper(salons);
+                IMapper<Salon> mapper = new GenericSalonMapper();
+                IList<VisualGenericItem> genericSalons = mapper.Map(salons);
 
                 Menu.Groups.RemoveAt(4);
 
@@ -197,19 +210,23 @@ namespace SolarSystem.Saturn.ViewModel
             {
                 case 0:
                     IEnumerable<News> news = await _modelNews.GetAsync(alreadyLoaded.Count, 8);
-                    newElements = GenericNewsMapper.Mapper(news);
+                    IMapper<News> mapperNews = new GenericNewsMapper();
+                    newElements = mapperNews.Map(news);
                     break;
                 case 2:
                     IEnumerable<Projet> projets = await _modelProjet.GetAsync(alreadyLoaded.Count, 8);
-                    newElements = GenericProjetMapper.Mapper(projets);
+                    IMapper<Projet> mapperProjets = new GenericProjetMapper();
+                    newElements = mapperProjets.Map(projets);
                     break;
                 case 3:
                     IEnumerable<Conference> conferences = await _modelConference.GetAsync(alreadyLoaded.Count, 8);
-                    newElements = ConferenceMapper.Mapper(conferences);
+                    IMapper<Conference> mapperConferences = new GenericConferenceMapper();
+                    newElements = mapperConferences.Map(conferences);
                     break;
                 case 4:
                     IEnumerable<Salon> salons = await _modelSalon.GetAsync(alreadyLoaded.Count, 8);
-                    newElements = GenericSalonMapper.Mapper(salons);
+                    IMapper<Salon> mapperSalons = new GenericSalonMapper();
+                    newElements = mapperSalons.Map(salons);
                     break;
             }
 
@@ -276,17 +293,15 @@ namespace SolarSystem.Saturn.ViewModel
 
         #region Access to Model
 
-        private readonly IModel<Conference> _modelConference = ModelFactory<Conference>.CreateModel();
+        private readonly IReadableLimitable<Conference> _modelConference = new ConferenceDAL();
 
-        private readonly IModel<Membre> _modelMembre = ModelFactory<Membre>.CreateModel();
+        private readonly IReadableMembre _modelMembre = new MembreDAL();
 
-        private readonly IModel<News> _modelNews = ModelFactory<News>.CreateModel();
+        private readonly IReadableLimitable<News> _modelNews = new NewsDAL();
 
-        private readonly IModel<Projet> _modelProjet = ModelFactory<Projet>.CreateModel();
+        private readonly IReadableLimitable<Projet> _modelProjet = new ProjetDAL();
 
-        private readonly IModel<Role> _modelRole = ModelFactory<Role>.CreateModel();
-
-        private readonly IModel<Salon> _modelSalon = ModelFactory<Salon>.CreateModel();
+        private readonly IReadableLimitable<Salon> _modelSalon = new SalonDAL();
 
         #endregion
     }
