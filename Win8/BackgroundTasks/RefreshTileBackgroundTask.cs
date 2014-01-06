@@ -37,7 +37,7 @@ namespace SolarSystem.Saturn.Win8.BackgroundTasks
 
         private static async Task<TileNotification> CreateNewsTile()
         {
-            var newsModel = new NewsDAL();
+            IReadableLimitable<News> newsModel = new NewsDAL();
             IList<News> newsList = await newsModel.GetAsync(0, 3);
 
             if (newsList.Count >= 3)

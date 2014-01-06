@@ -1,0 +1,38 @@
+﻿<Application
+    x:Class="SolarSystem.Saturn.View.WindowsPhone.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:vm="clr-namespace:SolarSystem.Saturn.ViewModel;assembly=SolarSystem.Saturn.ViewModel"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:windowsPhone="clr-namespace:SolarSystem.Saturn.View.WindowsPhone"
+    mc:Ignorable="d">
+
+    <Application.Resources> 
+        <ResourceDictionary>
+            
+            <!-- Resources files -->
+            <windowsPhone:LocalizedStrings x:Key="LocalizedStrings" />
+
+            <!-- ViewModelLocator -->
+            <vm:ViewModelLocator x:Name="Locator" d:IsDataSource="true" />
+
+            <!-- Resources dictionaries -->
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/DefaultStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+    </Application.Resources>
+
+    <Application.ApplicationLifetimeObjects>
+
+        <!--Required object that handles lifetime events for the application-->
+        <shell:PhoneApplicationService
+            Launching="Application_Launching" Closing="Application_Closing"
+            Activated="Application_Activated" Deactivated="Application_Deactivated" />
+
+    </Application.ApplicationLifetimeObjects>
+
+</Application>
