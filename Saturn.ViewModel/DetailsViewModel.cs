@@ -1,6 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
-using SolarSystem.Saturn.Model.Factory;
-using SolarSystem.Saturn.Model.Interface;
+using SolarSystem.Saturn.Model.Interfaces;
 using SolarSystem.Saturn.ViewModel.Interfaces;
 using SolarSystem.Saturn.ViewModel.Objects;
 using System;
@@ -10,7 +9,7 @@ namespace SolarSystem.Saturn.ViewModel
 {
     class DetailsViewModel<T> : MyViewModelBase, IDetailsViewModel<T>
     {
-        public DetailsViewModel()
+        protected DetailsViewModel()
         {
             MessengerInstance.Register<int>(this, LoadElementAsync);
 
@@ -27,8 +26,11 @@ namespace SolarSystem.Saturn.ViewModel
         public ICommand LoadElementCommand { get; private set; }
 
         public ICommand PinCommand { get; private set; }
+
         public ICommand ShareCommand { get; private set; }
+
         public ICommand EmailCommand { get; private set; }
+
         public ICommand VisitWebsiteCommand { get; private set; }
 
         #endregion
@@ -88,7 +90,7 @@ namespace SolarSystem.Saturn.ViewModel
 
         #region Access to Model
 
-        private readonly IModel<T> _model = ModelFactory<T>.CreateModel();
+        private readonly IReadable<T> _model;
 
         #endregion
     }

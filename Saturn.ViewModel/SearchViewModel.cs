@@ -1,12 +1,13 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
-using SolarSystem.Saturn.DataAccess.Webservice;
-using SolarSystem.Saturn.Model.Factory;
-using SolarSystem.Saturn.Model.Interface;
+using SolarSystem.Saturn.Model;
+using SolarSystem.Saturn.Model.Interfaces;
+using SolarSystem.Saturn.Model.ReadersService;
 using SolarSystem.Saturn.ViewModel.Command;
 using SolarSystem.Saturn.ViewModel.Helpers;
 using SolarSystem.Saturn.ViewModel.Interfaces;
 using SolarSystem.Saturn.ViewModel.Mappers;
+using SolarSystem.Saturn.ViewModel.Mappers.Interfaces;
 using SolarSystem.Saturn.ViewModel.Objects;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,136 +16,75 @@ using System.Windows.Input;
 
 namespace SolarSystem.Saturn.ViewModel
 {
+    /// <summary>
+    /// View-model for search page
+    /// </summary>
     public class SearchViewModel : MyViewModelBase, ISearchViewModel
     {
+        #region Constructor
+
+        /// <summary>
+        /// Constructor. Instanciates all commands
+        /// </summary>
         public SearchViewModel()
         {
             SearchCommand = new AsyncDelegateCommand<string>(SearchAsync);
             PinCommand = new RelayCommand<PinnableObject>(Pin);
-            GoToDetailsPageCommand = new RelayCommand<VisualGenericItem>(GoToDetailsPage);;
-        }
-
-        #region Public commands
-
-        public ICommand SearchCommand { get; private set; }
-        public ICommand PinCommand { get; private set; }
-        public ICommand GoToDetailsPageCommand { get; private set; }
-
-        #endregion
-
-        #region Private methods
-
-        private async Task SearchAsync(string keyword)
-        {
-            Keyword = keyword;
-
-            Results = new VisualMenu
-            {
-                Groups = new ObservableCollection<VisualGenericGroup>()
-            };
-
-            await SearchNewsAsync();
-            await SearchConferencesAsync();
-            await SearchSalonsAsync();
-        }
-
-        private async Task SearchNewsAsync()
-        {
-            IsLoading = true;
-
-            IList<News> news = await _modelNews.SearchAsync(Keyword);
-
-            if (news != null && news.Count > 0)
-            {
-                IList<VisualGenericItem> genericNews = GenericNewsMapper.Mapper(news);
-
-                Results.Groups.Insert(Results.Groups.Count, new VisualGenericGroup
-                {
-                    Title = AppResourcesHelper.GetString("LBL_NEWS"),
-                    Items = new ObservableCollection<VisualGenericItem>(genericNews),
-                    IsFullyLoaded = true
-                });
-            }
-
-            IsLoading = false;
-        }
-
-        private async Task SearchConferencesAsync()
-        {
-            IsLoading = true;
-
-            IList<Conference> conferences = await _modelConferences.SearchAsync(Keyword);
-
-            if (conferences != null && conferences.Count > 0)
-            {
-                IList<VisualGenericItem> genericConferences = ConferenceMapper.Mapper(conferences);
-
-                Results.Groups.Insert(Results.Groups.Count, new VisualGenericGroup
-                {
-                    Title = AppResourcesHelper.GetString("LBL_CONFERENCES"),
-                    Items = new ObservableCollection<VisualGenericItem>(genericConferences),
-                    IsFullyLoaded = true
-                });
-            }
-
-            IsLoading = false;
-        }
-
-        private async Task SearchSalonsAsync()
-        {
-            IsLoading = true;
-
-            IList<Salon> salons = await _modelSalons.SearchAsync(Keyword);
-
-            if (salons != null && salons.Count > 0)
-            {
-                IList<VisualGenericItem> genericSalon = GenericSalonMapper.Mapper(salons);
-
-                Results.Groups.Insert(Results.Groups.Count, new VisualGenericGroup
-                {
-                    Title = AppResourcesHelper.GetString("LBL_SALONS"),
-                    Items = new ObservableCollection<VisualGenericItem>(genericSalon),
-                    IsFullyLoaded = true
-                });
-            }
-
-            IsLoading = false;
-        }
-
-        private void GoToDetailsPage(VisualGenericItem item)
-        {
-            Messenger.Default.Send(item);
-        }
-
-        private void Pin(PinnableObject element)
-        {
-            Messenger.Default.Send(element);
+            GoToDetailsPageCommand = new RelayCommand<VisualGenericItem>(GoToDetailsPage);
         }
 
         #endregion
 
-        #region Public properties
+        #region Attributes
 
-        public string Keyword
+        /// <summary>
+        /// Search keywords
+        /// </summary>
+        private string _keywords;
+
+        /// <summary>
+        /// Results list
+        /// </summary>
+        private VisualMenu _results;
+
+        /// <summary>
+        /// Selected item to pin
+        /// </summary>
+        private VisualGenericItem _selectedItem;
+
+        #endregion
+
+        #region Properties
+
+        /// <summary>
+        /// Get or set the search keywords
+        /// </summary>
+        public string Keywords
         {
-            get { return _keyword; }
-            set
+            get { return _keywords; }
+            private set
             {
-                _keyword = value;
+                _keywords = value;
                 RaisePropertyChanged();
             }
         }
 
+        /// <summary>
+        /// Get or set the results lists
+        /// </summary>
         public VisualMenu Results
         {
             get { return _results; }
-            set
+            private set
             {
                 _results = value;
                 RaisePropertyChanged();
             }
         }
 
+        /// <summary>
+        /// Get or set the selected item pinnable
+        /// </summary>
         public VisualGenericItem SelectedItem
         {
             get { return _selectedItem; }
@@ -157,19 +97,156 @@ namespace SolarSystem.Saturn.ViewModel
 
         #endregion
 
-        #region Private attributes
+        #region Commands
 
-        private string _keyword;
-        private VisualMenu _results;
-        private VisualGenericItem _selectedItem;
+        /// <summary>
+        /// Launch search command
+        /// </summary>
+        public ICommand SearchCommand { get; private set; }
+        
+        /// <summary>
+        /// Pin command
+        /// </summary>
+        public ICommand PinCommand { get; private set; }
+
+        /// <summary>
+        /// Show details of the clicked item command
+        /// </summary>
+        public ICommand GoToDetailsPageCommand { get; private set; }
+
+        #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// Launch the search
+        /// </summary>
+        /// <param name="keyword">Search keywords</param>
+        private async Task SearchAsync(string keyword)
+        {
+            Keywords = keyword;
+
+            Results = new VisualMenu
+            {
+                Groups = new ObservableCollection<VisualGenericGroup>()
+            };
+
+            await SearchNewsAsync();
+            await SearchConferencesAsync();
+            await SearchSalonsAsync();
+        }
+
+        /// <summary>
+        /// Search in news
+        /// </summary>
+        private async Task SearchNewsAsync()
+        {
+            IsLoading = true;
+
+            IList<News> news = await _modelNews.SearchAsync(Keywords);
+
+            if (news != null && news.Count > 0)
+            {
+                IMapper<News> mapper = new GenericNewsMapper();
+                IList<VisualGenericItem> genericNews = mapper.Map(news);
+
+                Results.Groups.Insert(Results.Groups.Count, new VisualGenericGroup
+                {
+                    Title = AppResourcesHelper.GetString("LBL_NEWS"),
+                    Items = new ObservableCollection<VisualGenericItem>(genericNews),
+                    IsFullyLoaded = true
+                });
+            }
+
+            IsLoading = false;
+        }
+
+        /// <summary>
+        /// Search in conferences
+        /// </summary>
+        private async Task SearchConferencesAsync()
+        {
+            IsLoading = true;
+
+            IList<Conference> conferences = await _modelConferences.SearchAsync(Keywords);
+
+            if (conferences != null && conferences.Count > 0)
+            {
+                IMapper<Conference> mapper = new GenericConferenceMapper();
+                IList<VisualGenericItem> genericConferences = mapper.Map(conferences);
+
+                Results.Groups.Insert(Results.Groups.Count, new VisualGenericGroup
+                {
+                    Title = AppResourcesHelper.GetString("LBL_CONFERENCES"),
+                    Items = new ObservableCollection<VisualGenericItem>(genericConferences),
+                    IsFullyLoaded = true
+                });
+            }
+
+            IsLoading = false;
+        }
+
+        /// <summary>
+        /// Search in shows
+        /// </summary>
+        private async Task SearchSalonsAsync()
+        {
+            IsLoading = true;
+
+            IList<Salon> salons = await _modelSalons.SearchAsync(Keywords);
+
+            if (salons != null && salons.Count > 0)
+            {
+                IMapper<Salon> mapper = new GenericSalonMapper();
+                IList<VisualGenericItem> genericSalon = mapper.Map(salons);
+
+                Results.Groups.Insert(Results.Groups.Count, new VisualGenericGroup
+                {
+                    Title = AppResourcesHelper.GetString("LBL_SALONS"),
+                    Items = new ObservableCollection<VisualGenericItem>(genericSalon),
+                    IsFullyLoaded = true
+                });
+            }
+
+            IsLoading = false;
+        }
+
+        /// <summary>
+        /// Informs the view the user wants to show selected item's details
+        /// </summary>
+        /// <param name="item"></param>
+        private void GoToDetailsPage(VisualGenericItem item)
+        {
+            Messenger.Default.Send(item);
+        }
+
+        /// <summary>
+        /// Informs the view the user wants to pin the selected item
+        /// </summary>
+        /// <param name="element">Selected item converted</param>
+        private void Pin(PinnableObject element)
+        {
+            Messenger.Default.Send(element);
+        }
 
         #endregion
 
         #region Access to Model
 
-        private readonly IModel<News> _modelNews = ModelFactory<News>.CreateModel();
-        private readonly IModel<Conference> _modelConferences = ModelFactory<Conference>.CreateModel();
-        private readonly IModel<Salon> _modelSalons = ModelFactory<Salon>.CreateModel();
+        /// <summary>
+        /// Access to the news model
+        /// </summary>
+        private readonly ISearchable<News> _modelNews = new NewsDAL();
+
+        /// <summary>
+        /// Access to the conferences model
+        /// </summary>
+        private readonly ISearchable<Conference> _modelConferences = new ConferenceDAL();
+
+        /// <summary>
+        /// Access to the shows model
+        /// </summary>
+        private readonly ISearchable<Salon> _modelSalons = new SalonDAL();
 
         #endregion
     }

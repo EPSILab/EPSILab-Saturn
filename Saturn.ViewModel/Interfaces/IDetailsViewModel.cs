@@ -7,8 +7,11 @@ namespace SolarSystem.Saturn.ViewModel.Interfaces
         ICommand LoadElementCommand { get; }
 
         ICommand PinCommand { get; }
+
         ICommand ShareCommand { get; }
+
         ICommand EmailCommand { get; }
+
         ICommand VisitWebsiteCommand { get; }
 
         T Element { get; }

@@ -1,7 +1,6 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
-using SolarSystem.Saturn.DataAccess.Webservice;
 using SolarSystem.Saturn.Model.ReadersService;
 using SolarSystem.Saturn.ViewModel.DesignViewModel;
 using SolarSystem.Saturn.ViewModel.Interfaces;
@@ -26,30 +25,6 @@ namespace SolarSystem.Saturn.ViewModel
                 SimpleIoc.Default.Register<IDetailsViewModel<Salon>, SalonDesignViewModel>();
             }
         }
-
-        #region Private Methods
-
-        private static IMasterViewModel<T> GiveMasterViewModel<T>()
-        {
-            if (!SimpleIoc.Default.IsRegistered<IMasterViewModel<T>>())
-            {
-                SimpleIoc.Default.Register<IMasterViewModel<T>, MasterViewModel<T>>();
-            }
-
-            return ServiceLocator.Current.GetInstance<IMasterViewModel<T>>();
-        }
-
-        private static IDetailsViewModel<T> GiveDetailViewModel<T>()
-        {
-            if (!SimpleIoc.Default.IsRegistered<IDetailsViewModel<T>>())
-            {
-                SimpleIoc.Default.Register<IDetailsViewModel<T>, DetailsViewModel<T>>();
-            }
-
-            return ServiceLocator.Current.GetInstance<IDetailsViewModel<T>>();
-        }
-
-        #endregion
 
         #region Properties
 
@@ -132,6 +107,30 @@ namespace SolarSystem.Saturn.ViewModel
 
                 return ServiceLocator.Current.GetInstance<ISearchViewModel>();
             }
+        }
+
+        #endregion
+
+        #region Methods
+
+        private static IMasterViewModel<T> GiveMasterViewModel<T>()
+        {
+            if (!SimpleIoc.Default.IsRegistered<IMasterViewModel<T>>())
+            {
+                SimpleIoc.Default.Register<IMasterViewModel<T>, MasterViewModel<T>>();
+            }
+
+            return ServiceLocator.Current.GetInstance<IMasterViewModel<T>>();
+        }
+
+        private static IDetailsViewModel<T> GiveDetailViewModel<T>()
+        {
+            if (!SimpleIoc.Default.IsRegistered<IDetailsViewModel<T>>())
+            {
+                SimpleIoc.Default.Register<IDetailsViewModel<T>, DetailsViewModel<T>>();
+            }
+
+            return ServiceLocator.Current.GetInstance<IDetailsViewModel<T>>();
         }
 
         #endregion

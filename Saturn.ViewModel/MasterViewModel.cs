@@ -1,6 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
-using SolarSystem.Saturn.Model.Factory;
-using SolarSystem.Saturn.Model.Interface;
+using SolarSystem.Saturn.Model.Interfaces;
 using SolarSystem.Saturn.ViewModel.Command;
 using SolarSystem.Saturn.ViewModel.Interfaces;
 using SolarSystem.Saturn.ViewModel.Objects;
@@ -92,7 +91,7 @@ namespace SolarSystem.Saturn.ViewModel
 
         #region Access to Model
 
-        private readonly IModel<T> _model = ModelFactory<T>.CreateModel();
+        private readonly IReadable<T> _model;
 
         #endregion
     }
