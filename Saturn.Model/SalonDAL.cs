@@ -8,10 +8,13 @@ namespace SolarSystem.Saturn.Model
     /// <summary>
     /// Access to shows
     /// </summary>
-    public class SalonDAL : IReadableLimitable<Salon>, ISearchable<Salon>
+    class SalonDAL : IReadableLimitable<Salon>, ISearchable<Salon>
     {
         #region Attributes
 
+        /// <summary>
+        /// Webservice proxy for shows
+        /// </summary>
         private readonly SalonReaderClient _proxy = new SalonReaderClient();
 
         #endregion

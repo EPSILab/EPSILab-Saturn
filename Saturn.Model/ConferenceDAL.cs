@@ -8,7 +8,7 @@ namespace SolarSystem.Saturn.Model
     /// <summary>
     /// Access to conferences
     /// </summary>
-    public class ConferenceDAL : IReadableWithFilter<Conference, Ville>, ISearchable<Conference>
+    class ConferenceDAL : IReadableWithFilter<Conference, Ville>, ISearchable<Conference>
     {
         #region Attributes
 

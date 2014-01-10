@@ -8,7 +8,7 @@ namespace SolarSystem.Saturn.Model
     /// <summary>
     /// Access to the projects
     /// </summary>
-    public class ProjetDAL : IReadableWithFilter<Projet, Ville>
+    class ProjetDAL : IReadableWithFilter<Projet, Ville>
     {
         #region Attributes
 

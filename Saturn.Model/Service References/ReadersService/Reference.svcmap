@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dfb2e7a6-fd99-4cc7-b4fa-af52f12ad300" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ceff2ae8-c605-4cf0-b06f-2012ed81eb1f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -18,14 +18,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://www.epsilab.net/webservices/ReadersService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://www.epsilab.net/webservices/ReadersService.svc/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ReadersService.xsd" MetadataType="Schema" ID="03e3246e-7282-4ae2-8703-4b676227d6bd" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc?xsd=xsd1" />
-    <MetadataFile FileName="ReadersService.wsdl" MetadataType="Wsdl" ID="1ed15f6d-0cf5-4d43-a819-909126e0424f" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc?wsdl" />
-    <MetadataFile FileName="ReadersService1.xsd" MetadataType="Schema" ID="3cf57915-6b9c-480c-bd76-7652cf24d007" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc?xsd=xsd2" />
-    <MetadataFile FileName="ReadersService2.xsd" MetadataType="Schema" ID="06306a9e-0e40-475f-8909-c8b948c12edb" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc?xsd=xsd0" />
-    <MetadataFile FileName="ReadersService.disco" MetadataType="Disco" ID="fb704057-9db8-4261-a935-7c14d2c612f1" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc?disco" />
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="13f81773-d8f3-4cde-8d8e-c641f452fa85" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc/mex" />
+    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="530fa690-2fad-4e18-88f2-8acd04ae9879" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc/mex" />
+    <MetadataFile FileName="service21.xsd" MetadataType="Schema" ID="dc95fe87-140b-4e88-ba88-0dbb365726c6" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc/mex" />
+    <MetadataFile FileName="SolarSystem.Earth.Common1.xsd" MetadataType="Schema" ID="79159329-70bc-4e48-b284-97cab641f238" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

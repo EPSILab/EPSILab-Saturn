@@ -8,7 +8,7 @@ namespace SolarSystem.Saturn.Model
     /// <summary>
     /// Access to members
     /// </summary>
-    public class MembreDAL : IReadableMembre, ISearchable<Membre>
+    class MembreDAL : IReadableMembre, ISearchable<Membre>
     {
         #region Attributes
 

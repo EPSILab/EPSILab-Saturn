@@ -8,7 +8,7 @@ namespace SolarSystem.Saturn.Model
     /// <summary>
     /// Access to the news
     /// </summary>
-    public class NewsDAL : IReadableLimitable<News>, ISearchable<News>
+    class NewsDAL : IReadableLimitable<News>, ISearchable<News>
     {
         #region Attributes
 
