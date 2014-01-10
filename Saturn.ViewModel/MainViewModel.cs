@@ -1,6 +1,6 @@
-﻿using GalaSoft.MvvmLight.Command;
+﻿using Autofac;
+using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
-using SolarSystem.Saturn.Model;
 using SolarSystem.Saturn.Model.Interfaces;
 using SolarSystem.Saturn.Model.ReadersService;
 using SolarSystem.Saturn.ViewModel.Command;
@@ -19,14 +19,29 @@ using System.Windows.Input;
 namespace SolarSystem.Saturn.ViewModel
 {
     /// <summary>
-    /// View-model of the main-page
+    /// Main page view-model
     /// </summary>
     class MainViewModel : MyViewModelBase, IMainViewModel
     {
         #region Constructor
 
-        protected MainViewModel()
+        /// <summary>
+        /// Constructor. Resolve IoC dependencies, create the menu and the commands
+        /// </summary>
+        public MainViewModel()
         {
+            // Resolve Ioc dependencies
+            using (ILifetimeScope scope = ViewModelLocator.Container.BeginLifetimeScope())
+            {
+                _modelConference = scope.Resolve<IReadableLimitable<Conference>>();
+                _modelMembre = scope.Resolve<IReadableMembre>();
+                _modelNews = scope.Resolve<IReadableLimitable<News>>();
+                _modelConference = scope.Resolve<IReadableLimitable<Conference>>();
+                _modelProjet = scope.Resolve<IReadableLimitable<Projet>>();
+                _modelSalon = scope.Resolve<IReadableLimitable<Salon>>();
+            }
+
+            // Create the menu
             Menu = new VisualMenu
                 {
                     Groups = new ObservableCollection<VisualGenericGroup>
@@ -39,6 +54,7 @@ namespace SolarSystem.Saturn.ViewModel
                         }
                 };
 
+            // Create commands
             LoadMenuCommand = new AsyncDelegateCommand(LoadMenuAsync);
             LoadMoreItemsCommand = new AsyncDelegateCommand<string>(LoadMoreItemsAsync);
 
@@ -52,22 +68,106 @@ namespace SolarSystem.Saturn.ViewModel
 
         #endregion
 
-        #region Public commands
+        #region Attributes
 
+        /// <summary>
+        /// Selected Item
+        /// </summary>
+        private VisualGenericItem _selectedItem;
+
+        /// <summary>
+        /// Access to conferences model
+        /// </summary>
+        private readonly IReadableLimitable<Conference> _modelConference;
+
+        /// <summary>
+        /// Access to members model
+        /// </summary>
+        private readonly IReadableMembre _modelMembre;
+
+        /// <summary>
+        /// Access to news model
+        /// </summary>
+        private readonly IReadableLimitable<News> _modelNews;
+
+        /// <summary>
+        /// Access to projects model
+        /// </summary>
+        private readonly IReadableLimitable<Projet> _modelProjet;
+
+        /// <summary>
+        /// Access to shows model
+        /// </summary>
+        private readonly IReadableLimitable<Salon> _modelSalon;
+
+        #endregion
+
+        #region Properties
+
+        /// <summary>
+        /// Get the menu
+        /// </summary>
+        public VisualMenu Menu { get; protected set; }
+
+        /// <summary>
+        /// Get the selected Item
+        /// </summary>
+        public VisualGenericItem SelectedItem
+        {
+            get { return _selectedItem; }
+            set
+            {
+                _selectedItem = value;
+                RaisePropertyChanged();
+            }
+        }
+
+        #endregion
+
+        #region Commands
+
+        /// <summary>
+        /// Get the "load the menu from model" command
+        /// </summary>
         public ICommand LoadMenuCommand { get; private set; }
+
+        /// <summary>
+        /// Get the "more items from model" command (for Windows Phone only)
+        /// </summary>
         public ICommand LoadMoreItemsCommand { get; private set; }
 
+        /// <summary>
+        /// Get the "go to a master page" command (list page)
+        /// </summary>
         public ICommand GoToMasterPageCommand { get; private set; }
+
+        /// <summary>
+        /// Get the "go to a details page" (one element page)
+        /// </summary>
         public ICommand GoToDetailsPageCommand { get; private set; }
+
+        /// <summary>
+        /// Get the "go to the about page" command
+        /// </summary>
         public ICommand GoToAboutPageCommand { get; private set; }
 
+        /// <summary>
+        /// Get the "pin command" (for Windows 8 only)
+        /// </summary>
         public ICommand PinCommand { get; private set; }
+
+        /// <summary>
+        /// Get the "go to social pages" command (for Windows 8 only)
+        /// </summary>
         public ICommand GoToSocialPageCommand { get; private set; }
 
         #endregion
 
-        #region Private methods
+        #region Methods
 
+        /// <summary>
+        /// Load the menu. Call others "Load..." methods
+        /// </summary>
         private async Task LoadMenuAsync()
         {
             await LoadNewsAsync();
@@ -77,6 +177,9 @@ namespace SolarSystem.Saturn.ViewModel
             await LoadSalonsAsync();
         }
 
+        /// <summary>
+        /// Load the bureau list from the model
+        /// </summary>
         private async Task LoadBureauAsync()
         {
             IsLoading = true;
@@ -101,6 +204,9 @@ namespace SolarSystem.Saturn.ViewModel
             IsLoading = false;
         }
 
+        /// <summary>
+        /// Load the conferences list from the model
+        /// </summary>
         private async Task LoadConferencesAsync()
         {
             IsLoading = true;
@@ -125,6 +231,9 @@ namespace SolarSystem.Saturn.ViewModel
             IsLoading = false;
         }
 
+        /// <summary>
+        /// Load the news list from the model
+        /// </summary>
         private async Task LoadNewsAsync()
         {
             IsLoading = true;
@@ -149,6 +258,9 @@ namespace SolarSystem.Saturn.ViewModel
             IsLoading = false;
         }
 
+        /// <summary>
+        /// Load the projects list from the model
+        /// </summary>
         private async Task LoadProjetsAsync()
         {
             IsLoading = true;
@@ -173,6 +285,9 @@ namespace SolarSystem.Saturn.ViewModel
             IsLoading = false;
         }
 
+        /// <summary>
+        /// Load the shows list from the model
+        /// </summary>
         private async Task LoadSalonsAsync()
         {
             IsLoading = true;
@@ -197,6 +312,10 @@ namespace SolarSystem.Saturn.ViewModel
             IsLoading = false;
         }
 
+        /// <summary>
+        /// Load and add more items for a category (News, Projects, Conferences or Shows)
+        /// </summary>
+        /// <param name="category">Category name</param>
         private async Task LoadMoreItemsAsync(string category)
         {
             IsLoading = true;
@@ -242,66 +361,49 @@ namespace SolarSystem.Saturn.ViewModel
             IsLoading = false;
         }
 
+        /// <summary>
+        /// Informs the UI to show the master page in terms of the passed group
+        /// </summary>
+        /// <param name="group">Group</param>
         private void GoToMasterPage(VisualGenericGroup group)
         {
             Messenger.Default.Send(group);
         }
 
+        /// <summary>
+        /// Informs the UI to show the details page in terms of the passed element
+        /// </summary>
+        /// <param name="item">Element</param>
         private void GoToDetailsPage(VisualGenericItem item)
         {
             Messenger.Default.Send(item);
         }
 
+        /// <summary>
+        /// Informs the UI to show the about page
+        /// </summary>
         private void GoToAboutPage(object element)
         {
             Messenger.Default.Send(element);
         }
 
+        /// <summary>
+        /// Informs the UI to pin a element
+        /// </summary>
+        /// <param name="element">Element to pin</param>
         private void Pin(PinnableObject element)
         {
             Messenger.Default.Send(element);
         }
 
+        /// <summary>
+        /// Informs the UI to show an URL on the browser
+        /// </summary>
+        /// <param name="uri">URL to open in the browser</param>
         private void GoToSocialNetworkPage(Uri uri)
         {
             Messenger.Default.Send(uri);
         }
-
-        #endregion
-
-        #region Public properties
-
-        public VisualMenu Menu { get; protected set; }
-
-        public VisualGenericItem SelectedItem
-        {
-            get { return _selectedItem; }
-            set
-            {
-                _selectedItem = value;
-                RaisePropertyChanged();
-            }
-        }
-
-        #endregion
-
-        #region Private properties
-
-        private VisualGenericItem _selectedItem;
-
-        #endregion
-
-        #region Access to Model
-
-        private readonly IReadableLimitable<Conference> _modelConference = new ConferenceDAL();
-
-        private readonly IReadableMembre _modelMembre = new MembreDAL();
-
-        private readonly IReadableLimitable<News> _modelNews = new NewsDAL();
-
-        private readonly IReadableLimitable<Projet> _modelProjet = new ProjetDAL();
-
-        private readonly IReadableLimitable<Salon> _modelSalon = new SalonDAL();
 
         #endregion
     }

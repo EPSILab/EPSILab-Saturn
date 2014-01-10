@@ -1,5 +1,5 @@
-﻿using SolarSystem.Saturn.ViewModel.Interfaces;
-using GalaSoft.MvvmLight;
+﻿using GalaSoft.MvvmLight;
+using SolarSystem.Saturn.ViewModel.Interfaces;
 
 namespace SolarSystem.Saturn.ViewModel
 {
@@ -9,10 +9,19 @@ namespace SolarSystem.Saturn.ViewModel
     /// </summary>
     public abstract class MyViewModelBase : ViewModelBase, IMyViewModelBase
     {
-        private bool _isLoading;
+        #region Attributes
 
         /// <summary>
-        /// Determines if the page is loading data
+        /// Determines if the page is loading data from the model
+        /// </summary>
+        private bool _isLoading;
+
+        #endregion
+
+        #region Properties
+
+        /// <summary>
+        /// Determines if the page is loading data from the model
         /// </summary>
         public bool IsLoading
         {
@@ -23,5 +32,7 @@ namespace SolarSystem.Saturn.ViewModel
                 RaisePropertyChanged();
             }
         }
+
+        #endregion
     }
 }

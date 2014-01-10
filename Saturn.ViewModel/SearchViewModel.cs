@@ -1,6 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
-using SolarSystem.Saturn.Model;
 using SolarSystem.Saturn.Model.Interfaces;
 using SolarSystem.Saturn.Model.ReadersService;
 using SolarSystem.Saturn.ViewModel.Command;
@@ -17,7 +16,7 @@ using System.Windows.Input;
 namespace SolarSystem.Saturn.ViewModel
 {
     /// <summary>
-    /// View-model for search page
+    /// Search page view-model
     /// </summary>
     public class SearchViewModel : MyViewModelBase, ISearchViewModel
     {
@@ -26,8 +25,15 @@ namespace SolarSystem.Saturn.ViewModel
         /// <summary>
         /// Constructor. Instanciates all commands
         /// </summary>
-        public SearchViewModel()
+        /// <param name="modelNews">Model for news. Resolved by NInject</param>
+        /// <param name="modelConferences">Model for conferences. Resolved by NInject</param>
+        /// <param name="modelSalons">Model for shows. Resolved by NInject</param>
+        public SearchViewModel(ISearchable<News> modelNews, ISearchable<Conference> modelConferences, ISearchable<Salon> modelSalons)
         {
+            _modelNews = modelNews;
+            _modelConferences = modelConferences;
+            _modelSalons = modelSalons;
+
             SearchCommand = new AsyncDelegateCommand<string>(SearchAsync);
             PinCommand = new RelayCommand<PinnableObject>(Pin);
             GoToDetailsPageCommand = new RelayCommand<VisualGenericItem>(GoToDetailsPage);
@@ -51,6 +57,21 @@ namespace SolarSystem.Saturn.ViewModel
         /// Selected item to pin
         /// </summary>
         private VisualGenericItem _selectedItem;
+
+        /// <summary>
+        /// Access to the news model
+        /// </summary>
+        private readonly ISearchable<News> _modelNews;
+
+        /// <summary>
+        /// Access to the conferences model
+        /// </summary>
+        private readonly ISearchable<Conference> _modelConferences;
+
+        /// <summary>
+        /// Access to the shows model
+        /// </summary>
+        private readonly ISearchable<Salon> _modelSalons;
 
         #endregion
 
@@ -228,25 +249,6 @@ namespace SolarSystem.Saturn.ViewModel
         {
             Messenger.Default.Send(element);
         }
-
-        #endregion
-
-        #region Access to Model
-
-        /// <summary>
-        /// Access to the news model
-        /// </summary>
-        private readonly ISearchable<News> _modelNews = new NewsDAL();
-
-        /// <summary>
-        /// Access to the conferences model
-        /// </summary>
-        private readonly ISearchable<Conference> _modelConferences = new ConferenceDAL();
-
-        /// <summary>
-        /// Access to the shows model
-        /// </summary>
-        private readonly ISearchable<Salon> _modelSalons = new SalonDAL();
 
         #endregion
     }
