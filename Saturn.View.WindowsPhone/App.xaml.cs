@@ -14,7 +14,6 @@ namespace SolarSystem.Saturn.View.WindowsPhone
     /// </summary>
     public partial class App
     {
-
         /// <summary>
         ///     Constructor for the Application object.
         /// </summary>
