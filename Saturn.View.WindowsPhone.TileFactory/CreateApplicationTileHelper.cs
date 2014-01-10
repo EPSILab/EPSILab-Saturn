@@ -1,11 +1,10 @@
-﻿using System;
+﻿using Microsoft.Phone.Shell;
+using SolarSystem.Saturn.Model.Interfaces;
+using SolarSystem.Saturn.Model.ReadersService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.Phone.Shell;
-using SolarSystem.Saturn.Model;
-using SolarSystem.Saturn.Model.Interfaces;
-using SolarSystem.Saturn.Model.ReadersService;
 
 namespace SolarSystem.Saturn.View.WindowsPhone.TileFactory
 {
@@ -19,7 +18,7 @@ namespace SolarSystem.Saturn.View.WindowsPhone.TileFactory
         /// </summary>
         /// <param name="news">The news with which to create the tile</param>
         /// <returns></returns>
-        public static async Task Create(News news)
+        public static void Create(News news)
         {
             // The application tile is the first active tile, even if it's not pinned
             ShellTile existingTile = ShellTile.ActiveTiles.First();
@@ -38,15 +37,13 @@ namespace SolarSystem.Saturn.View.WindowsPhone.TileFactory
         /// <summary>
         /// Create the application tile by calling the webservice
         /// </summary>
-        public static async Task Create()
+        /// <param name="model">Access to the model</param>
+        public static async Task Create(IReadableLimitable<News> model)
         {
-            // Load last news
-            IReadableLimitable<News> dal = new NewsDAL();
-
-            IList<News> listNews = await dal.GetAsync(0, 1);
+            IList<News> listNews = await model.GetAsync(0, 1);
             News lastNews = listNews.First();
 
-            await Create(lastNews);
+            Create(lastNews);
         }
     }
 }

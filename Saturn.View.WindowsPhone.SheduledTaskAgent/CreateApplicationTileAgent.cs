@@ -1,6 +1,8 @@
 ﻿using System.Diagnostics;
 using System.Windows;
 using Microsoft.Phone.Scheduler;
+using SolarSystem.Saturn.Model.Interfaces;
+using SolarSystem.Saturn.Model.ReadersService;
 using SolarSystem.Saturn.View.WindowsPhone.TileFactory;
 
 namespace SolarSystem.Saturn.View.WindowsPhone.SheduledTaskAgent
@@ -10,15 +12,30 @@ namespace SolarSystem.Saturn.View.WindowsPhone.SheduledTaskAgent
     /// </summary>
     public class CreateApplicationTileAgent : ScheduledTaskAgent
     {
-        #region Constructor
+        #region Constructors
 
         /// <summary>
-        /// Constructor
+        /// Static constructor. Handle errors
         /// </summary>
         static CreateApplicationTileAgent()
         {
             Deployment.Current.Dispatcher.BeginInvoke(() => Application.Current.UnhandledException += UnhandledException);
         }
+
+        /// <summary>
+        /// Normal constructor. Resolve NInject dependencies.
+        /// </summary>
+        /// <param name="model">Access to the news model</param>
+        public CreateApplicationTileAgent(IReadableLimitable<News> model)
+        {
+            _model = model;
+        }
+
+        #endregion
+
+        #region Attributes
+
+        private readonly IReadableLimitable<News> _model;
 
         #endregion
 
@@ -45,7 +62,7 @@ namespace SolarSystem.Saturn.View.WindowsPhone.SheduledTaskAgent
         {
             try
             {
-                await CreateApplicationTileHelper.Create();
+                await CreateApplicationTileHelper.Create(_model);
             }
             finally
             {
