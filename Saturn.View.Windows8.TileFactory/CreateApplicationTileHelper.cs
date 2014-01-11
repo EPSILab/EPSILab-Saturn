@@ -13,6 +13,9 @@ using Windows.UI.Notifications;
 
 namespace Saturn.View.Windows8.TileFactory
 {
+    /// <summary>
+    /// A class to create the application tile
+    /// </summary>
     public static class CreateApplicationTileHelper
     {
         #region Attributes

@@ -1,5 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
-using SolarSystem.Saturn.DataAccess.Webservice;
+using SolarSystem.Saturn.Model.ReadersService;
 using SolarSystem.Saturn.ViewModel;
 using SolarSystem.Saturn.ViewModel.Objects;
 using SolarSystem.Saturn.Win8.Resources;
@@ -77,7 +77,7 @@ namespace SolarSystem.Saturn.Win8
             }
             catch
             {
-                messageDialog = new MessageDialog(MessagesRsxAccessor.GetString("CANNOT_OPEN_WEBSITE"));
+                messageDialog = new MessageDialog(MessagesRsxAccessor.GetString("CannotOpenWebsite"));
             }
 
             if (messageDialog != null)

@@ -1,10 +1,15 @@
-﻿using SolarSystem.Saturn.DataAccess.Webservice;
+﻿using SolarSystem.Saturn.Model.ReadersService;
 using SolarSystem.Saturn.Win8.Resources;
 using System;
+using System.Collections.Generic;
 using Windows.UI.Xaml.Data;
 
 namespace SolarSystem.Saturn.Win8.Converters
 {
+    /// <summary>
+    /// Converter used for the Project details page.
+    /// Display show informations in terms of the parameter
+    /// </summary>
     public sealed class ProjetInformationsConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
@@ -13,15 +18,13 @@ namespace SolarSystem.Saturn.Win8.Converters
             {
                 Projet projet = value as Projet;
 
-                if (parameter.ToString() == "Progress")
+                IDictionary<string, string> informations = new Dictionary<string, string>
                 {
-                    return string.Format(FormatsRsxAccessor.GetString("PROJET_PROGRESS_FORMAT"), projet.Avancement);
-                }
+                    { "Progress", string.Format(FormatsRsxAccessor.GetString("Project_Progress"), projet.Avancement) },
+                    { "Location", string.Format(FormatsRsxAccessor.GetString("Project_Location"), projet.Ville.Libelle) }
+                };
 
-                if (parameter.ToString() == "Location")
-                {
-                    return string.Format(FormatsRsxAccessor.GetString("PROJET_LOCATION_FORMAT"), projet.Ville.Libelle);
-                }
+                return informations[parameter.ToString()];
             }
 
             return null;

@@ -4,6 +4,9 @@ using Windows.UI.Xaml.Data;
 
 namespace SolarSystem.Saturn.Win8.Converters
 {
+    /// <summary>
+    /// A converter which determines if an object is null
+    /// </summary>
     public sealed class NullToBooleanConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)

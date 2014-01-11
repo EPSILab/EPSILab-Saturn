@@ -4,11 +4,30 @@ using Windows.ApplicationModel.Background;
 
 namespace SolarSystem.Saturn.Win8.Helpers
 {
+    /// <summary>
+    /// Register 
+    /// </summary>
     static class BackgroundTaskRegistrationHelper
     {
-        private const string BackgroundTaskName = "Refresh Tile BackgroundTask";
-        private const string BackgroundTaskEntryPoint = "SolarSystem.Saturn.Win8.BackgroundTasks.RefreshTileBackgroundTask";
+        #region Attributes
 
+        /// <summary>
+        /// Background task name
+        /// </summary>
+        private const string BackgroundTaskName = "Refresh Tile BackgroundTask";
+
+        /// <summary>
+        /// Background task entry point (Assembly and task)
+        /// </summary>
+        private const string BackgroundTaskEntryPoint = "SolarSystem.Saturn.View.Windows8.BackgroundTasks.RefreshTileBackgroundTask";
+
+        #endregion
+
+        #region Methods
+
+        /// <summary>
+        /// Register the background task
+        /// </summary>
         public async static Task RegisterAsync()
         {
             BackgroundAccessStatus status = BackgroundExecutionManager.GetAccessStatus();
@@ -50,5 +69,7 @@ namespace SolarSystem.Saturn.Win8.Helpers
                 }
             }
         }
+
+        #endregion
     }
 }

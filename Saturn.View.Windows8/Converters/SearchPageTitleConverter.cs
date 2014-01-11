@@ -4,16 +4,19 @@ using Windows.UI.Xaml.Data;
 
 namespace SolarSystem.Saturn.Win8.Converters
 {
+    /// <summary>
+    /// A converter for the Search page title
+    /// </summary>
     public sealed class SearchPageTitleConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
             if (value is string)
             {
-                return string.Format(FormatsRsxAccessor.GetString("SEARCH_PAGETITLE_FORMAT"), value);
+                return string.Format(FormatsRsxAccessor.GetString("Search_PageTitle"), value);
             }
 
-            return null;
+            return value;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)

@@ -4,6 +4,9 @@ using Windows.UI.Xaml.Controls;
 
 namespace SolarSystem.Saturn.Win8.Helpers
 {
+    /// <summary>
+    /// A helper to show HTML content in WinRT WebView
+    /// </summary>
     internal class WebViewHelper
     {
         public static readonly DependencyProperty HtmlProperty = DependencyProperty.RegisterAttached(

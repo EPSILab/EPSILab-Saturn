@@ -56,8 +56,8 @@ namespace SolarSystem.Saturn.Win8
                 {
                     // Network not available
                     IToastText02 templateContent = ToastContentFactory.CreateToastText02();
-                    templateContent.TextHeading.Text = MessagesRsxAccessor.GetString("NO_CONNECTION_HEADER");
-                    templateContent.TextBodyWrap.Text = MessagesRsxAccessor.GetString("NO_CONNECTION_BODY");
+                    templateContent.TextHeading.Text = MessagesRsxAccessor.GetString("NoConnectionTextHeader");
+                    templateContent.TextBodyWrap.Text = MessagesRsxAccessor.GetString("NoConnectionTextBody");
 
                     ToastNotification toast = templateContent.CreateNotification();
                     ToastNotificationManager.CreateToastNotifier().Show(toast);
@@ -131,7 +131,7 @@ namespace SolarSystem.Saturn.Win8
                 SettingsPane.GetForCurrentView().CommandsRequested += OnSettingPane_Opening;
 
                 SearchPane.GetForCurrentView().ShowOnKeyboardInput = true;
-                SearchPane.GetForCurrentView().PlaceholderText = MessagesRsxAccessor.GetString("SEARCH");
+                SearchPane.GetForCurrentView().PlaceholderText = MessagesRsxAccessor.GetString("Search");
 
                 if (!rootFrame.Navigate(page, id))
                 {
@@ -144,13 +144,13 @@ namespace SolarSystem.Saturn.Win8
 
         private void OnSettingPane_Opening(SettingsPane sender, SettingsPaneCommandsRequestedEventArgs args)
         {
-            SettingsCommand command = new SettingsCommand("privacy", MessagesRsxAccessor.GetString("PRIVACY_STATEMENT"), OnSettingsCommand_Click);
+            SettingsCommand command = new SettingsCommand("privacy", MessagesRsxAccessor.GetString("PrivacyStatement"), OnSettingsCommand_Click);
             args.Request.ApplicationCommands.Add(command);
         }
 
         private async void OnSettingsCommand_Click(IUICommand command)
         {
-            await Launcher.LaunchUriAsync(new Uri(ResourcesRsxAccessor.GetString("PRIVACY_STATEMENT_URL")));
+            await Launcher.LaunchUriAsync(new Uri(ResourcesRsxAccessor.GetString("PrivacyStatement_URL")));
         }
 
         /// <summary>
@@ -209,7 +209,7 @@ namespace SolarSystem.Saturn.Win8
         /// <param name="e"></param>
         private async void App_OnUnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
-            MessageDialog messageDialog = new MessageDialog(MessagesRsxAccessor.GetString("ERROR"));
+            MessageDialog messageDialog = new MessageDialog(MessagesRsxAccessor.GetString("Error"));
             await messageDialog.ShowAsync();
 
             e.Handled = false;

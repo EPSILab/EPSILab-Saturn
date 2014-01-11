@@ -1,10 +1,15 @@
-﻿using SolarSystem.Saturn.DataAccess.Webservice;
+﻿using SolarSystem.Saturn.Model.ReadersService;
 using SolarSystem.Saturn.Win8.Resources;
 using System;
+using System.Collections.Generic;
 using Windows.UI.Xaml.Data;
 
 namespace SolarSystem.Saturn.Win8.Converters
 {
+    /// <summary>
+    /// A converter used by the Member details page.
+    /// Display informations below the passed parameter
+    /// </summary>
     public sealed class MembreInformationsConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
@@ -13,23 +18,17 @@ namespace SolarSystem.Saturn.Win8.Converters
             {
                 Membre membre = value as Membre;
 
-                if (parameter.ToString() == "From")
+                IDictionary<string, string> informations = new Dictionary<string, string>
                 {
-                    return string.Format(FormatsRsxAccessor.GetString("MEMBRE_FROM_FORMAT"), membre.Ville_origine);
-                }
+                    { "From", string.Format(FormatsRsxAccessor.GetString("Member_From"), membre.Ville_origine) },
+                    { "CampusInfo", string.Format(FormatsRsxAccessor.GetString("Member_CampusInfo"), membre.Classe.Annee_Promo_Sortante, membre.Ville.Libelle) },
+                    { "Name", string.Format(FormatsRsxAccessor.GetString("Member_Name"), membre.Prenom, membre.Nom) }
+                };
 
-                if (parameter.ToString() == "CampusInfo")
-                {
-                    return string.Format(FormatsRsxAccessor.GetString("MEMBRE_CAMPUSINFO_FORMAT"), membre.Classe.Annee_Promo_Sortante, membre.Ville.Libelle);
-                }
-
-                if (parameter.ToString() == "Name")
-                {
-                    return string.Format(FormatsRsxAccessor.GetString("MEMBRE_NAME_FORMAT"), membre.Prenom, membre.Nom);
-                }
+                return informations[parameter.ToString()];
             }
 
-            return null;
+            return value;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)

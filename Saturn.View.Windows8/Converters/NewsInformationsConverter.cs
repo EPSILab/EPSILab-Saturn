@@ -1,10 +1,14 @@
-﻿using SolarSystem.Saturn.DataAccess.Webservice;
+﻿using SolarSystem.Saturn.Model.ReadersService;
 using SolarSystem.Saturn.Win8.Resources;
 using System;
 using Windows.UI.Xaml.Data;
 
 namespace SolarSystem.Saturn.Win8.Converters
 {
+    /// <summary>
+    /// Converter used for the News details page.
+    /// Display show informations in terms of the parameter
+    /// </summary>
     public sealed class NewsInformationsConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
@@ -13,13 +17,13 @@ namespace SolarSystem.Saturn.Win8.Converters
             {
                 News news = value as News;
 
-                if (parameter.ToString() == "WrittenBy")
+                if (parameter.ToString() == "Author")
                 {
-                    return string.Format(FormatsRsxAccessor.GetString("NEWS_AUTHOR_FORMAT"), news.Membre.Prenom, news.Membre.Nom);
+                    return string.Format(FormatsRsxAccessor.GetString("News_Author"), news.Membre.Prenom, news.Membre.Nom);
                 }
             }
 
-            return null;
+            return value;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)

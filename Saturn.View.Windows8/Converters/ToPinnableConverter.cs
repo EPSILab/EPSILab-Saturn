@@ -1,17 +1,19 @@
-﻿using SolarSystem.Saturn.DataAccess.Webservice;
+﻿using SolarSystem.Saturn.Model.ReadersService;
 using SolarSystem.Saturn.ViewModel.Objects;
+using SolarSystem.Saturn.Win8.Resources;
 using System;
-using Windows.ApplicationModel.Resources;
 using Windows.UI.Xaml.Data;
 
 namespace SolarSystem.Saturn.Win8.Converters
 {
+    /// <summary>
+    /// A converter which transforms a Model entity to a generic pinnable object
+    /// </summary>
     public sealed class ToPinnableConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
-            ResourceLoader resourceLoader = new ResourceLoader();
-            string applicationName = resourceLoader.GetString("APPLICATION_NAME");
+            string applicationName = ResourcesRsxAccessor.GetString("AppName");
 
             PinnableObject pinnableObject = null;
 

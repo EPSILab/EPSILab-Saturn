@@ -4,6 +4,9 @@ using Windows.UI.Xaml.Data;
 
 namespace SolarSystem.Saturn.Win8.Converters
 {
+    /// <summary>
+    /// A converter which show/hidden an graphic control depending on whether an element is null 
+    /// </summary>
     public sealed class NullToVisibilityConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)

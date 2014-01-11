@@ -150,7 +150,7 @@
   <data name="TxtNoConnection.Text" xml:space="preserve">
     <value>La connexion Internet n'est pas disponible pour l'instant. Merci de réessayer plus tard.</value>
   </data>
-  <data name="APPLICATION_NAME" xml:space="preserve">
+  <data name="AppName" xml:space="preserve">
     <value>EPSILab</value>
   </data>
   <data name="PinButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
@@ -171,7 +171,7 @@
   <data name="WebsiteButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
     <value>Site web</value>
   </data>
-  <data name="PRIVACY_STATEMENT_URL" xml:space="preserve">
+  <data name="PrivacyStatement_URL" xml:space="preserve">
     <value>http://ma.ms.giz.fr/?name=EPSILab</value>
   </data>
   <data name="FacebookButton.Tag" xml:space="preserve">
@@ -189,7 +189,7 @@
   <data name="AboutText.DataContext" xml:space="preserve">
     <value>EPSILab est une association étudiante de l'école EPSI dont l'objectif est d'étudier et de promouvoir les produits et technologies Microsoft.{0}{0}Depuis sa création, EPSILab s'est également étendu aux campus de Paris, Lyon ainsi que de Nantes. Nos activités se concentrent principalement sur la formation des étudiants aux technologies Microsoft ainsi que sur l'organisation d'évènements comme des conférences au sein des campus avec des intervenants de Microsoft sur des sujets de veille. Nous sommes également présents lors des grands rendez-vous comme les TechDays à Paris ou les Microsoft Days en province.{0}{0}Chaque labo est dirigé par des Microsoft Student Partners. Leur mission est d'assurer une continuité dans les activités de l'association ainsi que de renforcer les liens entre l'EPSI et Microsoft France.{0}{0}Nous sommes également en partenariat avec le PôleCom de l'EPSI Arras. Vous pouvez retrouver certains de nos articles sur les sites de presse du Nord-Pas-de-Calais. {0}{0}A ce jour, EPSILab reste actif et concentré particulièrement sur les technologies actuelles telles que Windows 8 et Windows Phone, sans oublier également WPF, Kinect, Azure, Silverlight, etc...</value>
   </data>
-  <data name="AUTHOR_NAME" xml:space="preserve">
+  <data name="AuthorName" xml:space="preserve">
     <value>Jean-Baptiste Vigneron</value>
   </data>
   <data name="AboutPageTitle.Text" xml:space="preserve">

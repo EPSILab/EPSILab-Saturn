@@ -2,24 +2,41 @@
 using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Input;
+using SolarSystem.Saturn.Win8.Resources;
 
 namespace SolarSystem.Saturn.Win8
 {
+    /// <summary>
+    /// About page
+    /// </summary>
     public sealed partial class AboutPage
     {
+        #region Constructor
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public AboutPage()
         {
             InitializeComponent();
         }
 
-        #region Controls's events handlers
+        #endregion
 
+        #region Controls events
+
+        /// <summary>
+        /// Raised when the user clicks on a hyperlink
+        /// </summary>
+        /// <param name="sender">Textbox pointed</param>
+        /// <param name="e">Event arguments</param>
         private async void URL_OnPointerReleased(object sender, PointerRoutedEventArgs e)
         {
-            var textBox = (FrameworkElement) sender;
+            var textBox = (FrameworkElement)sender;
 
             string url = textBox.Tag.ToString();
 
+            // Check if URL is valid
             if (Uri.IsWellFormedUriString(url, UriKind.Absolute))
             {
                 var uri = new Uri(url);
@@ -27,30 +44,21 @@ namespace SolarSystem.Saturn.Win8
             }
         }
 
+        /// <summary>
+        /// Raised when the user clicks on a email address
+        /// </summary>
+        /// <param name="sender">Textbox pointed</param>
+        /// <param name="e">Event arguments</param>
         private async void Email_OnPointerReleased(object sender, PointerRoutedEventArgs e)
         {
-            var textBox = (FrameworkElement) sender;
+            var textBox = (FrameworkElement)sender;
 
-            string url = "mailto:" + textBox.Tag +
-                         "?subject=Demande de support pour l'application EPSILab pour Windows 8";
+            string url = string.Format("mailto:{0}?subject={1}", textBox.Tag, MessagesRsxAccessor.GetString("EmailSubject"));
 
+            // Check if URL is valid
             if (Uri.IsWellFormedUriString(url, UriKind.Absolute))
             {
                 var uri = new Uri(url);
-                await Launcher.LaunchUriAsync(uri);
-            }
-        }
-
-        private async void SocialButton_Click(object sender, RoutedEventArgs e)
-        {
-            var button = (FrameworkElement) sender;
-
-            string tag = button.Tag.ToString();
-
-            if (!string.IsNullOrWhiteSpace(tag) && Uri.IsWellFormedUriString(tag, UriKind.Absolute))
-            {
-                string url = button.Tag.ToString();
-                var uri = new Uri(url, UriKind.Absolute);
                 await Launcher.LaunchUriAsync(uri);
             }
         }

@@ -117,22 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CANNOT_OPEN_WEBSITE" xml:space="preserve">
+  <data name="CannotOpenWebsite" xml:space="preserve">
     <value>L'application ne peut pas ouvrir ce lien dans votre navigateur.</value>
   </data>
-  <data name="ERROR" xml:space="preserve">
+  <data name="EmailSubject" xml:space="preserve">
+    <value>Demande de support pour l'application EPSILab pour Windows 8</value>
+  </data>
+  <data name="Error" xml:space="preserve">
     <value>Une erreur est survenue. Veuillez patienter quelques instants et réessayer. Si le problème persiste, vous pouvez contacter le support.</value>
   </data>
-  <data name="NO_CONNECTION_BODY" xml:space="preserve">
+  <data name="NoConnectionTextBody" xml:space="preserve">
     <value>La connexion Internet n'est pas disponible pour l'instant.</value>
   </data>
-  <data name="NO_CONNECTION_HEADER" xml:space="preserve">
+  <data name="NoConnectionTextHeader" xml:space="preserve">
     <value>Problème de connexion Internet</value>
   </data>
-  <data name="PRIVACY_STATEMENT" xml:space="preserve">
+  <data name="PrivacyStatement" xml:space="preserve">
     <value>Déclaration de confidentialité</value>
   </data>
-  <data name="SEARCH" xml:space="preserve">
+  <data name="Search" xml:space="preserve">
     <value>Rechercher dans l'application EPSILab</value>
   </data>
 </root>

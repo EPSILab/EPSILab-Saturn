@@ -1,5 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
-using SolarSystem.Saturn.DataAccess.Webservice;
+using SolarSystem.Saturn.Model.ReadersService;
 using SolarSystem.Saturn.ViewModel;
 using SolarSystem.Saturn.ViewModel.Interfaces;
 using Windows.UI.Xaml;

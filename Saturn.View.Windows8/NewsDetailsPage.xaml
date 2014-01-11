@@ -109,7 +109,7 @@
                            Style="{StaticResource BodyTextStyle}" />
 
                 <TextBlock x:Name="AuthorText"
-                               Text="{Binding Converter={StaticResource NewsInformationsConverter}, ConverterParameter='WrittenBy'}"
+                               Text="{Binding Converter={StaticResource NewsInformationsConverter}, ConverterParameter='Author'}"
                                Margin="0,10,5,0"
                                HorizontalAlignment="Left"
                                Style="{StaticResource BodyTextStyle}" />

@@ -1,5 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
-using SolarSystem.Saturn.DataAccess.Webservice;
+using SolarSystem.Saturn.Model.ReadersService;
 using SolarSystem.Saturn.ViewModel;
 using SolarSystem.Saturn.ViewModel.Interfaces;
 using SolarSystem.Saturn.ViewModel.Objects;
@@ -84,7 +84,7 @@ namespace SolarSystem.Saturn.Win8
 
             if (_shareContractFactory != null)
             {
-                _shareContractFactory.Create(args);
+                _shareContractFactory.DisplayShareUI(args);
             }
         }
 
@@ -107,7 +107,7 @@ namespace SolarSystem.Saturn.Win8
             }
             catch
             {
-                messageDialog = new MessageDialog(MessagesRsxAccessor.GetString("CANNOT_OPEN_WEBSITE"));
+                messageDialog = new MessageDialog(MessagesRsxAccessor.GetString("CannotOpenWebsite"));
             }
 
             if (messageDialog != null)
@@ -120,12 +120,12 @@ namespace SolarSystem.Saturn.Win8
 
         #region Messenger methods
 
-        private async void Pin(PinnableObject conference)
+        private void Pin(PinnableObject element)
         {
-            await PinTaskHelper.CreateTile(conference);
+            PinHelper.Pin(element);
         }
 
-        private void Share(ShareableObject conference)
+        private void Share(ShareableObject element)
         {
             DataTransferManager.ShowShareUI();
         }

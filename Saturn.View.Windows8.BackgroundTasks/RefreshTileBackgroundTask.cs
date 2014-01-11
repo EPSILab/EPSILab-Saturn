@@ -1,4 +1,5 @@
-﻿using Saturn.View.Windows8.TileFactory;
+﻿using System.Threading.Tasks;
+using Saturn.View.Windows8.TileFactory;
 using Windows.ApplicationModel.Background;
 
 namespace SolarSystem.Saturn.Win8.BackgroundTasks
@@ -12,7 +13,7 @@ namespace SolarSystem.Saturn.Win8.BackgroundTasks
         /// Run the background task
         /// </summary>
         /// <param name="taskInstance">Returns task informations</param>
-        public void Run(IBackgroundTaskInstance taskInstance)
+        public async void Run(IBackgroundTaskInstance taskInstance)
         {
             BackgroundTaskDeferral deferral = taskInstance.GetDeferral();
 

@@ -1,5 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
-using SolarSystem.Saturn.DataAccess.Webservice;
+using SolarSystem.Saturn.Model.ReadersService;
 using SolarSystem.Saturn.ViewModel;
 using SolarSystem.Saturn.ViewModel.Interfaces;
 using SolarSystem.Saturn.ViewModel.Objects;
@@ -66,7 +66,7 @@ namespace SolarSystem.Saturn.Win8
 
         private void NewsPage_DataRequested(DataTransferManager sender, DataRequestedEventArgs args)
         {
-            _shareContractFactory.Create(args);
+            _shareContractFactory.DisplayShareUI(args);
         }
 
         #endregion
@@ -78,9 +78,9 @@ namespace SolarSystem.Saturn.Win8
             Frame.Navigate(typeof(NewsDetailsPage), news);
         }
 
-        private async void Pin(PinnableObject element)
+        private void Pin(PinnableObject element)
         {
-            await PinTaskHelper.CreateTile(element);
+            PinHelper.Pin(element);
         }
 
         private void Share(ShareableObject conference)

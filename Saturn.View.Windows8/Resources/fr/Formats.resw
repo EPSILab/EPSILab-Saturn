@@ -117,79 +117,79 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CONFERENCE_ENDDATE_FORMAT" xml:space="preserve">
+  <data name="Conference_EndDate" xml:space="preserve">
     <value>à {0:t}</value>
   </data>
-  <data name="CONFERENCE_FORMAT" xml:space="preserve">
+  <data name="Conference" xml:space="preserve">
     <value>{0}, le {1:d} de {1:t} à {2:t}, {3}</value>
   </data>
-  <data name="CONFERENCE_FORMAT_HTML" xml:space="preserve">
+  <data name="Conference_HTML" xml:space="preserve">
     <value>&lt;p&gt;du &lt;strong&gt;{0}&lt;/strong&gt; au &lt;strong&gt;{1}&lt;/strong&gt;, à &lt;strong&gt;{2}, EPSI {3}&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;img src='{4}' /&gt;&lt;/p&gt;&lt;p&gt;{5}&lt;/p&gt;&lt;p&gt;&lt;a href='{6}'&gt;{6}&lt;/a&gt;&lt;/p&gt;</value>
   </data>
-  <data name="CONFERENCE_LOCATION_FORMAT" xml:space="preserve">
+  <data name="Conference_Location" xml:space="preserve">
     <value>à {0}, EPSI {1}</value>
   </data>
-  <data name="CONFERENCE_STARTDATE_FORMAT" xml:space="preserve">
+  <data name="Conference_StartDate" xml:space="preserve">
     <value>du {0:g}</value>
   </data>
-  <data name="DEVELOPMENT_FORMAT" xml:space="preserve">
+  <data name="CopryightFormat" xml:space="preserve">
     <value>Développement: {0}</value>
   </data>
-  <data name="MEMBRE_CAMPUSINFO_FORMAT" xml:space="preserve">
+  <data name="Member_CampusInfo" xml:space="preserve">
     <value>Promo {0}, EPSI {1}</value>
   </data>
-  <data name="MEMBRE_FROM_FORMAT" xml:space="preserve">
+  <data name="Member_From" xml:space="preserve">
     <value>Provenance: {0}</value>
   </data>
-  <data name="MEMBRE_NAME_FORMAT" xml:space="preserve">
+  <data name="Member_Name" xml:space="preserve">
     <value>Profil de {0} {1}</value>
   </data>
-  <data name="NEWS_AUTHOR_FORMAT" xml:space="preserve">
+  <data name="News_Author" xml:space="preserve">
     <value>écrit par {0} {1}</value>
   </data>
-  <data name="NEWS_FORMAT" xml:space="preserve">
+  <data name="News" xml:space="preserve">
     <value>{0}, le {1:g} par {2} {3}</value>
   </data>
-  <data name="NEWS_FORMAT_HTML" xml:space="preserve">
+  <data name="News_HTML" xml:space="preserve">
     <value>&lt;p&gt;par &lt;strong&gt;{0} {1}&lt;/strong&gt;, le &lt;strong&gt;{2:g}&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;img src='{3}' /&gt;&lt;/p&gt;&lt;p&gt;{4}&lt;/p&gt;&lt;p&gt;&lt;a href='{5}'&gt;{5}&lt;/a&gt;&lt;/p&gt;</value>
   </data>
-  <data name="PAGE_CONFERENCES" xml:space="preserve">
+  <data name="Page_Conferences" xml:space="preserve">
     <value>Conferences</value>
   </data>
   <data name="PAGE_MEMBRE" xml:space="preserve">
     <value>Membres</value>
   </data>
-  <data name="PAGE_NEWS" xml:space="preserve">
+  <data name="Page_News" xml:space="preserve">
     <value>Actualites</value>
   </data>
-  <data name="PAGE_SALONS" xml:space="preserve">
+  <data name="Page_Shows" xml:space="preserve">
     <value>Salons</value>
   </data>
-  <data name="PROJET_LOCATION_FORMAT" xml:space="preserve">
+  <data name="Project_Location" xml:space="preserve">
     <value>EPSI {0}</value>
   </data>
-  <data name="PROJET_PROGRESS_FORMAT" xml:space="preserve">
+  <data name="Project_Progress" xml:space="preserve">
     <value>Avancement: {0}%</value>
   </data>
-  <data name="SALON_ENDDATE_FORMAT" xml:space="preserve">
+  <data name="Show_EndDate" xml:space="preserve">
     <value>au {0:g}</value>
   </data>
-  <data name="SALON_FORMAT" xml:space="preserve">
+  <data name="Show" xml:space="preserve">
     <value>{0}, du {1:g} au {2:g} à {3}</value>
   </data>
-  <data name="SALON_FORMAT_HTML" xml:space="preserve">
+  <data name="Show_HTML" xml:space="preserve">
     <value>&lt;p&gt;du &lt;strong&gt;{0}&lt;/strong&gt; au &lt;strong&gt;{1}&lt;/strong&gt;, à &lt;strong&gt;{2}, EPSI {3}&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;img src='{4}' /&gt;&lt;/p&gt;&lt;p&gt;{5}&lt;/p&gt;&lt;p&gt;&lt;a href='{6}'&gt;{6}&lt;/a&gt;&lt;/p&gt;</value>
   </data>
-  <data name="SALON_LOCATION_FORMAT" xml:space="preserve">
+  <data name="Show_Location" xml:space="preserve">
     <value>à {0}</value>
   </data>
-  <data name="SALON_STARTDATE_FORMAT" xml:space="preserve">
+  <data name="Show_StartDate" xml:space="preserve">
     <value>du {0:g}</value>
   </data>
-  <data name="SEARCH_PAGETITLE_FORMAT" xml:space="preserve">
+  <data name="Search_PageTitle" xml:space="preserve">
     <value>Résultats de la recherche: "{0}"</value>
   </data>
-  <data name="WEBSITE_FORMAT" xml:space="preserve">
+  <data name="Website" xml:space="preserve">
     <value>http://www.epsilab.net/{0}-{1}-{2}.aspx</value>
   </data>
 </root>

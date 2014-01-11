@@ -81,9 +81,9 @@ namespace SolarSystem.Saturn.Win8
             Frame.Navigate(type, item);
         }
 
-        private async void Pin(PinnableObject element)
+        private void Pin(PinnableObject element)
         {
-            await PinTaskHelper.CreateTile(element);
+            PinHelper.Pin(element);
         }
 
         #endregion

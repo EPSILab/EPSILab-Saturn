@@ -1,10 +1,15 @@
-﻿using SolarSystem.Saturn.DataAccess.Webservice;
+﻿using SolarSystem.Saturn.Model.ReadersService;
 using SolarSystem.Saturn.Win8.Resources;
 using System;
+using System.Collections.Generic;
 using Windows.UI.Xaml.Data;
 
 namespace SolarSystem.Saturn.Win8.Converters
 {
+    /// <summary>
+    /// A converter used by the Conference details page.
+    /// Display informations below the passed parameter
+    /// </summary>
     public sealed class ConferenceInformationsConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
@@ -13,23 +18,17 @@ namespace SolarSystem.Saturn.Win8.Converters
             {
                 Conference conference = value as Conference;
 
-                if (parameter.ToString() == "StartDate")
+                IDictionary<string, string> informations = new Dictionary<string, string>
                 {
-                    return string.Format(FormatsRsxAccessor.GetString("CONFERENCE_STARTDATE_FORMAT"), conference.Date_Heure_Debut);
-                }
-                
-                if (parameter.ToString() == "EndDate")
-                {
-                    return string.Format(FormatsRsxAccessor.GetString("CONFERENCE_ENDDATE_FORMAT"), conference.Date_Heure_Fin);
-                }
+                    { "StartDate", string.Format(FormatsRsxAccessor.GetString("Conference_StartDate"), conference.Date_Heure_Debut) },
+                    { "EndDate", string.Format(FormatsRsxAccessor.GetString("Conference_EndDate"), conference.Date_Heure_Fin) },
+                    { "Location", string.Format(FormatsRsxAccessor.GetString("Conference_Location"), conference.Lieu, conference.Ville.Libelle) }
+                };
 
-                if (parameter.ToString() == "Location")
-                {
-                    return string.Format(FormatsRsxAccessor.GetString("CONFERENCE_LOCATION_FORMAT"), conference.Lieu, conference.Ville.Libelle);
-                }
+                return informations[parameter.ToString()];
             }
 
-            return null;
+            return value;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)

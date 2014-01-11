@@ -4,6 +4,9 @@ using Windows.UI.Xaml.Data;
 
 namespace SolarSystem.Saturn.Win8.Converters
 {
+    /// <summary>
+    /// A converter which transforms a boolean to a Visibility object and vice-versa.
+    /// </summary>
     public sealed class BooleanToVisibilityConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
