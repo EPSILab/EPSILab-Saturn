@@ -110,9 +110,17 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <ProjectReference Include="BackgroundTasks\Win8.BackgroundTasks.csproj">
+    <ProjectReference Include="..\Saturn.Model\Saturn.Model.csproj">
+      <Project>{b287fa18-f9b3-453c-936b-a523716eea2d}</Project>
+      <Name>Saturn.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Saturn.View.Windows8.BackgroundTasks\Saturn.View.Windows8.BackgroundTasks.csproj">
       <Project>{507173f7-ba27-470f-a79d-867c046b4a39}</Project>
-      <Name>Win8.BackgroundTasks</Name>
+      <Name>Saturn.View.Windows8.BackgroundTasks</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Saturn.ViewModel\Saturn.ViewModel.csproj">
+      <Project>{020193bf-02c0-422e-b6c0-964be5031500}</Project>
+      <Name>Saturn.ViewModel</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -199,7 +207,6 @@
     <None Include="packages.config" />
     <PRIResource Include="Resources\fr\Messages.resw" />
     <PRIResource Include="Resources\fr\Formats.resw" />
-    <None Include="Saturn.Win8_StoreKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Background.jpg" />
@@ -325,27 +332,29 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="GalaSoft.MvvmLight, Version=4.1.27.6, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Portable.MvvmLightLibs.4.1.27.6\lib\netcore45\GalaSoft.MvvmLight.dll</HintPath>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.3.0\lib\portable-win+net40+sl50+wp8\Autofac.dll</HintPath>
     </Reference>
-    <Reference Include="GalaSoft.MvvmLight.Extras, Version=4.1.27.6, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Portable.MvvmLightLibs.4.1.27.6\lib\netcore45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    <Reference Include="GalaSoft.MvvmLight">
+      <HintPath>..\packages\Portable.MvvmLightLibs.4.2.30.1\lib\win8\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras">
+      <HintPath>..\packages\Portable.MvvmLightLibs.4.2.30.1\lib\win8\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform">
+      <HintPath>..\packages\Portable.MvvmLightLibs.4.2.30.1\lib\win8\GalaSoft.MvvmLight.Platform.dll</HintPath>
     </Reference>
     <Reference Include="GalaSoft.MvvmLight.Platform.NetCore45, Version=4.1.27.6, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Portable.MvvmLightLibs.4.1.27.6\lib\netcore45\GalaSoft.MvvmLight.Platform.NetCore45.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\packages\Portable.CommonServiceLocator.1.2.2\lib\portable-net4+sl4+wp7+win8\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
     <Reference Include="NotificationsExtensions.WinRT">
       <HintPath>..\packages\NotificationsExtensions.WinRT.1.0.1\lib\netcore45\NotificationsExtensions.WinRT.dll</HintPath>
     </Reference>
-    <Reference Include="Windows.UI.Interactivity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=2f4cf195f2e6765d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="Windows.UI.Interactivity">
       <HintPath>..\packages\Windows.UI.Interactivity.1.3.0.0\lib\win8\Windows.UI.Interactivity.dll</HintPath>
     </Reference>
   </ItemGroup>
@@ -357,7 +366,11 @@
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.8\tools\Microsoft.Bcl.Build.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.13\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

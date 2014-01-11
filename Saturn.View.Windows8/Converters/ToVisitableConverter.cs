@@ -1,4 +1,4 @@
-﻿using SolarSystem.Saturn.DataAccess.Webservice;
+﻿using SolarSystem.Saturn.Model.ReadersService;
 using SolarSystem.Saturn.Win8.Resources;
 using System;
 using Windows.UI.Xaml.Data;
