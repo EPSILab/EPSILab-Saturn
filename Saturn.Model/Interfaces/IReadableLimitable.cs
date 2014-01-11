@@ -6,8 +6,8 @@ namespace SolarSystem.Saturn.Model.Interfaces
     /// <summary>
     /// An interface which allows to get limited results from the webservice
     /// </summary>
-    /// <typeparam name="T">A olarSystem Earth entity</typeparam>
-    public interface IReadableLimitable<T> : IReadable<T>
+    /// <typeparam name="TResult">A olarSystem Earth entity</typeparam>
+    public interface IReadableLimitable<TResult> : IReadable<TResult>
     {
         /// <summary>
         /// 
@@ -15,6 +15,6 @@ namespace SolarSystem.Saturn.Model.Interfaces
         /// <param name="indexFirstElement"></param>
         /// <param name="numberOfElements"></param>
         /// <returns></returns>
-        Task<IList<T>> GetAsync(int indexFirstElement, int numberOfElements);
+        Task<IList<TResult>> GetAsync(int indexFirstElement, int numberOfElements);
     }
 }

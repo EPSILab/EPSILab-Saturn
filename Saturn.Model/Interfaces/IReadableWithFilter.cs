@@ -6,16 +6,16 @@ namespace SolarSystem.Saturn.Model.Interfaces
     /// <summary>
     /// An interface which allows to get elements with a filter from the webservice
     /// </summary>
-    /// <typeparam name="T">The SolarSystem Earth entity return type</typeparam>
-    /// <typeparam name="TClass">The SolarSystem Earth entity filter type</typeparam>
-    public interface IReadableWithFilter<T, in TClass> : IReadableLimitable<T>
+    /// <typeparam name="TResult">The SolarSystem Earth entity return type</typeparam>
+    /// <typeparam name="TFilter">The SolarSystem Earth entity filter type</typeparam>
+    public interface IReadableWithFilter<TResult, in TFilter> : IReadableLimitable<TResult>
     {
         /// <summary>
         /// Get the elements corresponding to the filter
         /// </summary>
         /// <param name="filter">The filter</param>
         /// <returns>Matching results</returns>
-        Task<IList<T>> GetAsync(TClass filter);
+        Task<IList<TResult>> GetAsync(TFilter filter);
 
         /// <summary>
         /// Get a list of elements corresponding to the filter which can be limited
@@ -24,6 +24,6 @@ namespace SolarSystem.Saturn.Model.Interfaces
         /// <param name="indexFirstElement">Index of the first result desired</param>
         /// <param name="numberOfResults">Number of results desired</param>
         /// <returns>List limited of matching results</returns>
-        Task<IList<T>> GetAsync(TClass filter, int indexFirstElement, int numberOfResults);
+        Task<IList<TResult>> GetAsync(TFilter filter, int indexFirstElement, int numberOfResults);
     }
 }
