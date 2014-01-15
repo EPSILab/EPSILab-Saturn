@@ -1,9 +1,10 @@
 ﻿using Autofac;
+using Microsoft.Phone.Shell;
 using SolarSystem.Saturn.Model.Interfaces;
 using SolarSystem.Saturn.Model.ReadersService;
-using SolarSystem.Saturn.View.WindowsPhone.TileFactory.Helpers;
 using SolarSystem.Saturn.View.WindowsPhone.TileFactory.Resources;
 using SolarSystem.Saturn.ViewModel;
+using System;
 using System.IO.IsolatedStorage;
 using System.Threading.Tasks;
 
@@ -29,16 +30,23 @@ namespace SolarSystem.Saturn.View.WindowsPhone.TileFactory.Toasts
             int idLastNews = await model.GetLastInsertedId();
 
             // Get last news saved Id
-            IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
-            int idLastNewsSaved = settings.Contains(LibResources.NewsStorageKey) ? (int)settings[LibResources.NewsStorageKey] : 0;
+            int idLastNewsSaved = IsolatedStorageSettings.ApplicationSettings.Contains(LibResources.NewsStorageKey) ? (int)IsolatedStorageSettings.ApplicationSettings[LibResources.NewsStorageKey] : 0;
 
             // If Ids are differents, update the saved Id and show a toast notification
             if (idLastNews != idLastNewsSaved)
             {
                 News lastNews = await model.GetAsync(idLastNews);
-                DisplayToastHelper.Display(lastNews.Titre);
 
-                settings[LibResources.NewsStorageKey] = idLastNews;
+                ShellToast toast = new ShellToast
+                {
+                    Title = LibResources.NewNews,
+                    Content = lastNews.Titre,
+                    NavigationUri = new Uri(string.Format("/NewsPage.xaml?Id={0}", lastNews.Code_News), UriKind.Relative)
+                };
+
+                toast.Show();
+
+                IsolatedStorageSettings.ApplicationSettings[LibResources.NewsStorageKey] = idLastNews;
             }
         }
     }

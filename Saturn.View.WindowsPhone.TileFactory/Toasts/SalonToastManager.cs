@@ -1,9 +1,10 @@
 ﻿using Autofac;
+using Microsoft.Phone.Shell;
 using SolarSystem.Saturn.Model.Interfaces;
 using SolarSystem.Saturn.Model.ReadersService;
-using SolarSystem.Saturn.View.WindowsPhone.TileFactory.Helpers;
 using SolarSystem.Saturn.View.WindowsPhone.TileFactory.Resources;
 using SolarSystem.Saturn.ViewModel;
+using System;
 using System.IO.IsolatedStorage;
 using System.Threading.Tasks;
 
@@ -29,18 +30,23 @@ namespace SolarSystem.Saturn.View.WindowsPhone.TileFactory.Toasts
             int idLastSalon = await model.GetLastInsertedId();
 
             // Get last conference saved Id
-            IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
-            int idLastSalonSaved = settings.Contains(LibResources.SalonStorageKey) ? (int)settings[LibResources.SalonStorageKey] : 0;
+            int idLastSalonSaved = IsolatedStorageSettings.ApplicationSettings.Contains(LibResources.SalonStorageKey) ? (int)IsolatedStorageSettings.ApplicationSettings[LibResources.SalonStorageKey] : 0;
 
             // If Ids are differents, update the saved Id and show a toast notification
             if (idLastSalon != idLastSalonSaved)
             {
                 Salon lastSalon = await model.GetAsync(idLastSalon);
 
-                string message = string.Format("{0} - {1} @ {2}", lastSalon.Nom, lastSalon.Date_Heure_Debut, lastSalon.Lieu);
-                DisplayToastHelper.Display(message);
+                ShellToast toast = new ShellToast
+                {
+                    Title = LibResources.NewSalon,
+                    Content =  lastSalon.Nom,
+                    NavigationUri = new Uri(string.Format("/SalonPage.xaml?Id={0}", lastSalon.Code_Salon), UriKind.Relative)
+                };
 
-                settings[LibResources.SalonStorageKey] = idLastSalon;
+                toast.Show();
+
+                IsolatedStorageSettings.ApplicationSettings[LibResources.SalonStorageKey] = idLastSalon;
             }
         }
     }

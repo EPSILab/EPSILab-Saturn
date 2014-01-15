@@ -85,11 +85,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Resources\LibResources.en.Designer.cs">
+      <DependentUpon>LibResources.en.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Toasts\SalonToastManager.cs" />
     <Compile Include="Toasts\ConferenceToastManager.cs" />
     <Compile Include="Tiles\ApplicationTileManager.cs" />
     <Compile Include="Toasts\NewsToastManager.cs" />
-    <Compile Include="Helpers\DisplayToastHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\LibResources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -108,6 +112,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Resources\LibResources.en.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>LibResources.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\LibResources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>LibResources.Designer.cs</LastGenOutput>

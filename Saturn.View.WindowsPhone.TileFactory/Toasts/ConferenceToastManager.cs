@@ -1,9 +1,10 @@
 ﻿using Autofac;
+using Microsoft.Phone.Shell;
 using SolarSystem.Saturn.Model.Interfaces;
 using SolarSystem.Saturn.Model.ReadersService;
-using SolarSystem.Saturn.View.WindowsPhone.TileFactory.Helpers;
 using SolarSystem.Saturn.View.WindowsPhone.TileFactory.Resources;
 using SolarSystem.Saturn.ViewModel;
+using System;
 using System.IO.IsolatedStorage;
 using System.Threading.Tasks;
 
@@ -29,18 +30,23 @@ namespace SolarSystem.Saturn.View.WindowsPhone.TileFactory.Toasts
             int idLastConference = await model.GetLastInsertedId();
 
             // Get last conference saved Id
-            IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
-            int idLastConferenceSaved = settings.Contains(LibResources.ConferenceStorageKey) ? (int)settings[LibResources.ConferenceStorageKey] : 0;
+            int idLastConferenceSaved = IsolatedStorageSettings.ApplicationSettings.Contains(LibResources.ConferenceStorageKey) ? (int)IsolatedStorageSettings.ApplicationSettings[LibResources.ConferenceStorageKey] : 0;
 
             // If Ids are differents, update the saved Id and show a toast notification
             if (idLastConference != idLastConferenceSaved)
             {
                 Conference lastConference = await model.GetAsync(idLastConference);
 
-                string message = string.Format("{0} - {1} @ {2}", lastConference.Nom, lastConference.Date_Heure_Debut, lastConference.Lieu);
-                DisplayToastHelper.Display(message);
+                ShellToast toast = new ShellToast
+                {
+                    Title = LibResources.NewConference,
+                    Content = lastConference.Nom,
+                    NavigationUri = new Uri(string.Format("/ConferencePage.xaml?Id={0}", lastConference.Code_Conference), UriKind.Relative)
+                };
 
-                settings[LibResources.ConferenceStorageKey] = idLastConference;
+                toast.Show();
+
+                IsolatedStorageSettings.ApplicationSettings[LibResources.ConferenceStorageKey] = idLastConference;
             }
         }
     }

@@ -30,8 +30,7 @@ namespace SolarSystem.Saturn.View.WindowsPhone.TileFactory.Tiles
             int idLastNews = await model.GetLastInsertedId();
 
             // Get last news Id saved in local storage
-            IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
-            int idLastNewsSaved = settings.Contains(LibResources.NewsStorageKey) ? (int)settings[LibResources.NewsStorageKey] : 0;
+            int idLastNewsSaved = IsolatedStorageSettings.ApplicationSettings.Contains(LibResources.NewsStorageKey) ? (int)IsolatedStorageSettings.ApplicationSettings[LibResources.NewsStorageKey] : 0;
 
             // Compare the 2 codes. If they are differents, update the tile
             if (idLastNews != idLastNewsSaved)
@@ -51,7 +50,7 @@ namespace SolarSystem.Saturn.View.WindowsPhone.TileFactory.Tiles
                 // Update the tile
                 existingTile.Update(newTile);
 
-                settings[LibResources.NewsStorageKey] = idLastNews;
+                IsolatedStorageSettings.ApplicationSettings[LibResources.NewsStorageKey] = idLastNews;
             }
         }
     }

@@ -277,7 +277,7 @@ namespace SolarSystem.Saturn.View.WindowsPhone.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cette tâche met à jour la tuile de l&apos;application EPSILab, en récupérant la dernière actualité du site web..
+        ///   Looks up a localized string similar to Cette tâche met à jour la tuile de l&apos;application EPSILab, en récupérant la dernière actualité du site web. Elle affiche une notification lorsqu&apos;une news, conférence ou salon vient d&apos;être publié sur le site..
         /// </summary>
         public static string TASK_DESCRIPTION {
             get {

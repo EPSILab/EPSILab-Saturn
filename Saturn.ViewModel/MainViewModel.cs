@@ -184,7 +184,7 @@ namespace SolarSystem.Saturn.ViewModel
         {
             IsLoading = true;
 
-            IEnumerable<Membre> membres = await _modelMembre.GetAsync();
+            IEnumerable<Membre> membres = await _modelMembre.GetBureauAsync();
 
             if (membres != null)
             {

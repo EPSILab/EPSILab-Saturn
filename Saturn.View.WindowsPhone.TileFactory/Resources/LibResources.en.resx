@@ -117,61 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="FORMAT_AUTHOR" xml:space="preserve">
-    <value>by {0} {1}, on</value>
+  <data name="NewConference" xml:space="preserve">
+    <value>Next conf.</value>
   </data>
-  <data name="FORMAT_CONFERENCE" xml:space="preserve">
-    <value>{0:d} from {0:t} to {1:t}, {2}</value>
+  <data name="NewNews" xml:space="preserve">
+    <value>Last news</value>
   </data>
-  <data name="FORMAT_EMAIL_NEWS" xml:space="preserve">
-    <value>I invite you to read this article:{4}{0}{4}{4}written by: {1} {2}{4}{4}{3}</value>
-  </data>
-  <data name="FORMAT_SALON" xml:space="preserve">
-    <value>from {0:g} to {1:g}, {2}</value>
-  </data>
-  <data name="LBL_ABOUT" xml:space="preserve">
-    <value>about</value>
-  </data>
-  <data name="LBL_ASSOCIATION_INFORMATIONS" xml:space="preserve">
-    <value>EPSILab is a student association that promotes Microsoft products and technologies inside EPSI's campus. Its activities focus on training for students on Microsoft technologies, realization of many projects, organization of lectures and participation to the Imagine Cup competition and major events from Microsoft.</value>
-  </data>
-  <data name="LBL_DEVELOPMENT_INFORMATIONS" xml:space="preserve">
-    <value>Development by Jean-Baptiste Vigneron</value>
-  </data>
-  <data name="LBL_EMAIL" xml:space="preserve">
-    <value>email</value>
-  </data>
-  <data name="LBL_LOAD_MORE_ITEMS" xml:space="preserve">
-    <value>load more items...</value>
-  </data>
-  <data name="LBL_PIN" xml:space="preserve">
-    <value>pin</value>
-  </data>
-  <data name="LBL_REFRESH" xml:space="preserve">
-    <value>refresh</value>
-  </data>
-  <data name="LBL_SHARE" xml:space="preserve">
-    <value>share</value>
-  </data>
-  <data name="LBL_WEBSITE" xml:space="preserve">
-    <value>website</value>
-  </data>
-  <data name="MSG_ALREADY_PINNED" xml:space="preserve">
-    <value>You have already pinned this element.</value>
-  </data>
-  <data name="MSG_CHECK_NETWORK" xml:space="preserve">
-    <value>Please check your network connection.</value>
-  </data>
-  <data name="MSG_ERROR" xml:space="preserve">
-    <value>An error occured. Please try again later.</value>
-  </data>
-  <data name="MSG_NO_NETWORK" xml:space="preserve">
-    <value>We are unable to obtain the list of items for now. Please check your Internet connection.</value>
-  </data>
-  <data name="TASK_DESCRIPTION" xml:space="preserve">
-    <value>This task updates the EPSILab application's tile by retrieving the latest news on the website. It displays also a toast notification when a news, a conference or a show has been published on the website.</value>
-  </data>
-  <data name="TXT_SUPPORT" xml:space="preserve">
-    <value>Support ticket for the EPSILab application for Windows Phone</value>
+  <data name="NewSalon" xml:space="preserve">
+    <value>Next show</value>
   </data>
 </root>

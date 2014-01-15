@@ -61,20 +61,38 @@ namespace SolarSystem.Saturn.View.WindowsPhone.TileFactory.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to EPSILab.
-        /// </summary>
-        internal static string AppName {
-            get {
-                return ResourceManager.GetString("AppName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to IdLastConferenceSaved.
         /// </summary>
         internal static string ConferenceStorageKey {
             get {
                 return ResourceManager.GetString("ConferenceStorageKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prochaine conf..
+        /// </summary>
+        internal static string NewConference {
+            get {
+                return ResourceManager.GetString("NewConference", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dernière news.
+        /// </summary>
+        internal static string NewNews {
+            get {
+                return ResourceManager.GetString("NewNews", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Prochain salon.
+        /// </summary>
+        internal static string NewSalon {
+            get {
+                return ResourceManager.GetString("NewSalon", resourceCulture);
             }
         }
         

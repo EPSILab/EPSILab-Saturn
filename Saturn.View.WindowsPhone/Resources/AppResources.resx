@@ -190,7 +190,7 @@
     <value>Salons</value>
   </data>
   <data name="TASK_DESCRIPTION" xml:space="preserve">
-    <value>Cette tâche met à jour la tuile de l'application EPSILab, en récupérant la dernière actualité du site web.</value>
+    <value>Cette tâche met à jour la tuile de l'application EPSILab, en récupérant la dernière actualité du site web. Elle affiche une notification lorsqu'une news, conférence ou salon vient d'être publié sur le site.</value>
   </data>
   <data name="TXT_SUPPORT" xml:space="preserve">
     <value>Demande de support pour l'application EPSILab pour Windows Phone</value>
