@@ -1,9 +1,8 @@
-﻿using System.Diagnostics;
+﻿using Microsoft.Phone.Scheduler;
+using System.Diagnostics;
+using SolarSystem.Saturn.View.WindowsPhone.TileFactory.Tiles;
+using SolarSystem.Saturn.View.WindowsPhone.TileFactory.Toasts;
 using System.Windows;
-using Microsoft.Phone.Scheduler;
-using SolarSystem.Saturn.Model.Interfaces;
-using SolarSystem.Saturn.Model.ReadersService;
-using SolarSystem.Saturn.View.WindowsPhone.TileFactory;
 
 namespace SolarSystem.Saturn.View.WindowsPhone.SheduledTaskAgent
 {
@@ -21,21 +20,6 @@ namespace SolarSystem.Saturn.View.WindowsPhone.SheduledTaskAgent
         {
             Deployment.Current.Dispatcher.BeginInvoke(() => Application.Current.UnhandledException += UnhandledException);
         }
-
-        /// <summary>
-        /// Normal constructor. Resolve NInject dependencies.
-        /// </summary>
-        /// <param name="model">Access to the news model</param>
-        public CreateApplicationTileAgent(IReadableLimitable<News> model)
-        {
-            _model = model;
-        }
-
-        #endregion
-
-        #region Attributes
-
-        private readonly IReadableLimitable<News> _model;
 
         #endregion
 
@@ -62,7 +46,13 @@ namespace SolarSystem.Saturn.View.WindowsPhone.SheduledTaskAgent
         {
             try
             {
-                await CreateApplicationTileHelper.Create(_model);
+                // Update application tile
+                await ApplicationTileManager.Update();
+
+                // Display toast notification if a new element has been published
+                await DisplayLastNewsToast.CheckAndDisplay();
+                await ConferenceToastManager.CheckAndDisplay();
+                await DisplayLastShowToast.CheckAndDisplay();
             }
             finally
             {
