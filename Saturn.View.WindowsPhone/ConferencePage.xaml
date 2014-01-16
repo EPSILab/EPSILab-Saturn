@@ -16,7 +16,7 @@
     mc:Ignorable="d"
     DataContext="{Binding ConferenceDetailsVM, Source={StaticResource Locator}}"
     pshell:SystemTray.IsVisible="False"
-    Unloaded="PhoneApplicationPage_Unloaded">
+    Unloaded="PhoneApplicationPage_OnUnloaded">
     
     <phone:PhoneApplicationPage.Resources>
         <converters:ConferenceInfoConverter x:Key="ConferenceInfoConverter" />

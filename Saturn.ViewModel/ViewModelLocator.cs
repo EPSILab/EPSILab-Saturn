@@ -58,7 +58,7 @@ namespace SolarSystem.Saturn.ViewModel
                     SimpleIoc.Default.Register<IMainViewModel, MainViewModel>();
                 }
 
-                return ServiceLocator.Current.GetInstance<IMainViewModel>();
+                return SimpleIoc.Default.GetInstance<IMainViewModel>();
             }
         }
 
@@ -67,7 +67,7 @@ namespace SolarSystem.Saturn.ViewModel
         /// </summary>
         public static IDetailsViewModel<Conference> ConferenceDetailsVM
         {
-            get { return GiveDetailViewModel<Conference>(); }
+            get { return GetDetailViewModel<Conference>(); }
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace SolarSystem.Saturn.ViewModel
         /// </summary>
         public static IMasterViewModel<Conference> ConferencesVM
         {
-            get { return GiveMasterViewModel<Conference>(); }
+            get { return GetMasterViewModel<Conference>(); }
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace SolarSystem.Saturn.ViewModel
         /// </summary>
         public static IDetailsViewModel<News> NewsDetailsVM
         {
-            get { return GiveDetailViewModel<News>(); }
+            get { return GetDetailViewModel<News>(); }
         }
 
         /// <summary>
@@ -91,7 +91,7 @@ namespace SolarSystem.Saturn.ViewModel
         /// </summary>
         public static IMasterViewModel<News> NewsVM
         {
-            get { return GiveMasterViewModel<News>(); }
+            get { return GetMasterViewModel<News>(); }
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace SolarSystem.Saturn.ViewModel
         /// </summary>
         public static IDetailsViewModel<Membre> MembreDetailsVM
         {
-            get { return GiveDetailViewModel<Membre>(); }
+            get { return GetDetailViewModel<Membre>(); }
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace SolarSystem.Saturn.ViewModel
         /// </summary>
         public static IMasterViewModel<Membre> MembresVM
         {
-            get { return GiveMasterViewModel<Membre>(); }
+            get { return GetMasterViewModel<Membre>(); }
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace SolarSystem.Saturn.ViewModel
         /// </summary>
         public static IDetailsViewModel<Projet> ProjetDetailsVM
         {
-            get { return GiveDetailViewModel<Projet>(); }
+            get { return GetDetailViewModel<Projet>(); }
         }
 
         /// <summary>
@@ -123,7 +123,7 @@ namespace SolarSystem.Saturn.ViewModel
         /// </summary>
         public static IMasterViewModel<Projet> ProjetsVM
         {
-            get { return GiveMasterViewModel<Projet>(); }
+            get { return GetMasterViewModel<Projet>(); }
         }
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace SolarSystem.Saturn.ViewModel
         /// </summary>
         public static IDetailsViewModel<Salon> SalonDetailsVM
         {
-            get { return GiveDetailViewModel<Salon>(); }
+            get { return GetDetailViewModel<Salon>(); }
         }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace SolarSystem.Saturn.ViewModel
         /// </summary>
         public static IMasterViewModel<Salon> SalonsVM
         {
-            get { return GiveMasterViewModel<Salon>(); }
+            get { return GetMasterViewModel<Salon>(); }
         }
 
         /// <summary>
@@ -154,7 +154,7 @@ namespace SolarSystem.Saturn.ViewModel
                     SimpleIoc.Default.Register<ISearchViewModel, SearchViewModel>();
                 }
 
-                return ServiceLocator.Current.GetInstance<ISearchViewModel>();
+                return SimpleIoc.Default.GetInstance<ISearchViewModel>();
             }
         }
 
@@ -167,14 +167,14 @@ namespace SolarSystem.Saturn.ViewModel
         /// </summary>
         /// <typeparam name="T">Entity from the model</typeparam>
         /// <returns>The associate view-model</returns>
-        private static IMasterViewModel<T> GiveMasterViewModel<T>()
+        private static IMasterViewModel<T> GetMasterViewModel<T>()
         {
             if (!SimpleIoc.Default.IsRegistered<IMasterViewModel<T>>())
             {
                 SimpleIoc.Default.Register<IMasterViewModel<T>, MasterViewModel<T>>();
             }
 
-            return ServiceLocator.Current.GetInstance<IMasterViewModel<T>>();
+            return SimpleIoc.Default.GetInstance<IMasterViewModel<T>>();
         }
 
         /// <summary>
@@ -182,20 +182,55 @@ namespace SolarSystem.Saturn.ViewModel
         /// </summary>
         /// <typeparam name="T">Entity from the model</typeparam>
         /// <returns>The associate view-model</returns>
-        private static IDetailsViewModel<T> GiveDetailViewModel<T>()
+        private static IDetailsViewModel<T> GetDetailViewModel<T>()
         {
             if (!SimpleIoc.Default.IsRegistered<IDetailsViewModel<T>>())
             {
                 SimpleIoc.Default.Register<IDetailsViewModel<T>, DetailsViewModel<T>>();
             }
 
-            return ServiceLocator.Current.GetInstance<IDetailsViewModel<T>>();
+            return SimpleIoc.Default.GetInstance<IDetailsViewModel<T>>();
+        }
+
+        /// <summary>
+        /// Clean a master view-model from MVVM Light Messenger
+        /// </summary>
+        /// <typeparam name="T">Model entity</typeparam>
+        public static void CleanMasterVM<T>()
+        {
+            if (SimpleIoc.Default.IsRegistered<IMasterViewModel<T>>())
+            {
+                SimpleIoc.Default.GetInstance<IMasterViewModel<T>>().Cleanup();
+            }
+        }
+
+        /// <summary>
+        /// Clean a details view-model from MVVM Light Messenger
+        /// </summary>
+        /// <typeparam name="T">Model entity</typeparam>
+        public static void CleanDetailsVM<T>()
+        {
+            if (SimpleIoc.Default.IsRegistered<IDetailsViewModel<T>>())
+            {
+                SimpleIoc.Default.GetInstance<IDetailsViewModel<T>>().Cleanup();
+            }
+        }
+
+        /// <summary>
+        /// Clean the Search view-model from MVVM Light Messenger
+        /// </summary>
+        public static void CleanSearchVM()
+        {
+            if (SimpleIoc.Default.IsRegistered<ISearchViewModel>())
+            {
+                SimpleIoc.Default.GetInstance<ISearchViewModel>().Cleanup();
+            }
         }
 
         /// <summary>
         /// Clean the main view-model
         /// </summary>
-        public static void CleanMainVM()
+        public static void DisposeMainVM()
         {
             if (SimpleIoc.Default.IsRegistered<IMainViewModel>())
             {
@@ -205,49 +240,39 @@ namespace SolarSystem.Saturn.ViewModel
         }
 
         /// <summary>
-        /// Clean a master view-model from MVVM Light Toolkit Messenger and/or from memory
+        /// Dispose a master view-model
         /// </summary>
-        /// <typeparam name="T">Entity from the model</typeparam>
-        /// <param name="unregister">Clean the viewmodel from the memory</param>
-        public static void CleanMasterVM<T>(bool unregister)
+        /// <typeparam name="T">Model entity</typeparam>
+        public static void DisposeMasterVM<T>()
         {
             if (SimpleIoc.Default.IsRegistered<IMasterViewModel<T>>())
             {
-                SimpleIoc.Default.GetInstance<IMasterViewModel<T>>().Cleanup();
-
-                if (unregister)
-                    SimpleIoc.Default.Unregister<IMasterViewModel<T>>();
+                CleanMasterVM<T>();
+                SimpleIoc.Default.Unregister<IMasterViewModel<T>>();
             }
         }
 
         /// <summary>
-        /// Clean a details view-model from MVVM Light Toolkit Messenger and/or from memory
+        /// Dispose a details view-model
         /// </summary>
         /// <typeparam name="T">Entity from the model</typeparam>
-        /// <param name="unregister">Clean the viewmodel from the memory</param>
-        public static void CleanDetailsVM<T>(bool unregister)
+        public static void DisposeDetailsVM<T>()
         {
             if (SimpleIoc.Default.IsRegistered<IDetailsViewModel<T>>())
             {
-                SimpleIoc.Default.GetInstance<IDetailsViewModel<T>>().Cleanup();
-
-                if (unregister)
-                    SimpleIoc.Default.Unregister<IDetailsViewModel<T>>();
+                CleanDetailsVM<T>();
+                SimpleIoc.Default.Unregister<IDetailsViewModel<T>>();
             }
         }
 
         /// <summary>
-        /// Clean the Search view-model from MVVM Light Toolkit Messenger and/or from memory
+        /// Dispose the search view-model
         /// </summary>
-        /// <param name="unregister">Clean the viewmodel from the memory</param>
-        public static void CleanSearchVM(bool unregister)
+        public static void DisposeSearchVM()
         {
             if (SimpleIoc.Default.IsRegistered<ISearchViewModel>())
             {
-                SimpleIoc.Default.GetInstance<ISearchViewModel>().Cleanup();
-
-                if (unregister)
-                    SimpleIoc.Default.Unregister<ISearchViewModel>();
+                SimpleIoc.Default.Unregister<ISearchViewModel>();
             }
         }
 

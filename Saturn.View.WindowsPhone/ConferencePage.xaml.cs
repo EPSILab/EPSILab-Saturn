@@ -62,9 +62,9 @@ namespace SolarSystem.Saturn.View.WindowsPhone
         /// </summary>
         /// <param name="sender">Page</param>
         /// <param name="e">Event args</param>
-        private void PhoneApplicationPage_Unloaded(object sender, RoutedEventArgs e)
+        private void PhoneApplicationPage_OnUnloaded(object sender, RoutedEventArgs e)
         {
-            ViewModelLocator.CleanDetailsVM<Conference>(true);
+            ViewModelLocator.DisposeDetailsVM<Conference>();
         }
 
         #endregion

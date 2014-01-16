@@ -1,18 +1,15 @@
-﻿namespace SolarSystem.Saturn.ViewModel.Interfaces
+﻿using GalaSoft.MvvmLight;
+
+namespace SolarSystem.Saturn.ViewModel.Interfaces
 {
     /// <summary>
     /// Represents the base of all application's view-models.
     /// </summary>
-    public interface IMyViewModelBase
+    public interface IMyViewModelBase : ICleanup
     {
         /// <summary>
         /// Determines if the page is loading data from the model
         /// </summary>
         bool IsLoading { get; }
-
-        /// <summary>
-        /// Clean up method from MVVM Light Toolkit Messenger. Allow to use it with interfaces
-        /// </summary>
-        void Cleanup();
     }
 }

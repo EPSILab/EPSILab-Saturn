@@ -37,6 +37,7 @@ namespace SolarSystem.Saturn.ViewModel
 
             // Register to the Messenger
             MessengerInstance.Register<int>(this, LoadElementAsync);
+            MessengerInstance.Register<T>(this, SetElement);
         }
 
         #endregion
@@ -102,7 +103,7 @@ namespace SolarSystem.Saturn.ViewModel
         #endregion
 
         #region Methods
-        
+
         /// <summary>
         /// Load the element from the model with its code
         /// </summary>
@@ -114,6 +115,15 @@ namespace SolarSystem.Saturn.ViewModel
             Element = await _model.GetAsync(code);
 
             IsLoading = false;
+        }
+
+        /// <summary>
+        /// Set directly the element
+        /// </summary>
+        /// <param name="element">Element</param>
+        private void SetElement(T element)
+        {
+            Element = element;
         }
 
         /// <summary>
