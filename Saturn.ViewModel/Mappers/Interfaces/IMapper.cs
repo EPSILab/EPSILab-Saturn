@@ -1,7 +1,7 @@
-﻿using SolarSystem.Saturn.ViewModel.Objects;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using EPSILab.SolarSystem.Saturn.ViewModel.Objects;
 
-namespace SolarSystem.Saturn.ViewModel.Mappers.Interfaces
+namespace EPSILab.SolarSystem.Saturn.ViewModel.Mappers.Interfaces
 {
     public interface IMapper<in T>
     {

@@ -1,7 +1,7 @@
-﻿using GalaSoft.MvvmLight;
-using SolarSystem.Saturn.ViewModel.Interfaces;
+﻿using EPSILab.SolarSystem.Saturn.ViewModel.Interfaces;
+using GalaSoft.MvvmLight;
 
-namespace SolarSystem.Saturn.ViewModel
+namespace EPSILab.SolarSystem.Saturn.ViewModel
 {
     /// <summary>
     /// Base of all application's view-models.

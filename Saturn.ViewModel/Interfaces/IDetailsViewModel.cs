@@ -1,6 +1,6 @@
 ﻿using System.Windows.Input;
 
-namespace SolarSystem.Saturn.ViewModel.Interfaces
+namespace EPSILab.SolarSystem.Saturn.ViewModel.Interfaces
 {
     /// <summary>
     /// The interface for details view-model which shows one element

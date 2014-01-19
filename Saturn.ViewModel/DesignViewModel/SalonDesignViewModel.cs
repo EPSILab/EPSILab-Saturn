@@ -1,13 +1,16 @@
-﻿using SolarSystem.Saturn.Model.ReadersService;
+﻿using EPSILab.SolarSystem.Saturn.Model.ReadersService;
 using System;
 
-namespace SolarSystem.Saturn.ViewModel.DesignViewModel
+namespace EPSILab.SolarSystem.Saturn.ViewModel.DesignViewModel
 {
     /// <summary>
     /// Design view-model for show
     /// </summary>
     class SalonDesignViewModel : DetailsViewModel<Salon>
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public SalonDesignViewModel()
         {
             Element = new Salon

@@ -1,4 +1,4 @@
-﻿namespace SolarSystem.Saturn.ViewModel.Objects
+﻿namespace EPSILab.SolarSystem.Saturn.ViewModel.Objects
 {
     /// <summary>
     /// A generic object to pin on Windows 8 start screen

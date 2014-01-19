@@ -1,13 +1,13 @@
 ﻿using Autofac;
+using EPSILab.SolarSystem.Saturn.Model.Infrastructure;
+using EPSILab.SolarSystem.Saturn.Model.ReadersService;
+using EPSILab.SolarSystem.Saturn.ViewModel.DesignViewModel;
+using EPSILab.SolarSystem.Saturn.ViewModel.Interfaces;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
-using SolarSystem.Saturn.Model.Infrastructure;
-using SolarSystem.Saturn.Model.ReadersService;
-using SolarSystem.Saturn.ViewModel.DesignViewModel;
-using SolarSystem.Saturn.ViewModel.Interfaces;
 
-namespace SolarSystem.Saturn.ViewModel
+namespace EPSILab.SolarSystem.Saturn.ViewModel
 {
     public class ViewModelLocator
     {

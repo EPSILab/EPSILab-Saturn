@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SolarSystem.Saturn.Model.ReadersService {
+namespace EPSILab.SolarSystem.Saturn.Model.ReadersService {
     using System.Runtime.Serialization;
     
     
@@ -35,7 +35,7 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         
         private string URLField;
         
-        private SolarSystem.Saturn.Model.ReadersService.Ville VilleField;
+        private EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville VilleField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Code_Conference {
@@ -155,7 +155,7 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SolarSystem.Saturn.Model.ReadersService.Ville Ville {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville Ville {
             get {
                 return this.VilleField;
             }
@@ -349,7 +349,7 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         
         private bool ActifField;
         
-        private SolarSystem.Saturn.Model.ReadersService.Classe ClasseField;
+        private EPSILab.SolarSystem.Saturn.Model.ReadersService.Classe ClasseField;
         
         private int Code_MembreField;
         
@@ -371,7 +371,7 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         
         private string PseudoField;
         
-        private SolarSystem.Saturn.Model.ReadersService.Role RoleField;
+        private EPSILab.SolarSystem.Saturn.Model.ReadersService.Role RoleField;
         
         private string Site_webField;
         
@@ -389,7 +389,7 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         
         private string URL_ViadeoField;
         
-        private SolarSystem.Saturn.Model.ReadersService.Ville VilleField;
+        private EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville VilleField;
         
         private string Ville_origineField;
         
@@ -407,7 +407,7 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SolarSystem.Saturn.Model.ReadersService.Classe Classe {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Classe Classe {
             get {
                 return this.ClasseField;
             }
@@ -550,7 +550,7 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SolarSystem.Saturn.Model.ReadersService.Role Role {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Role Role {
             get {
                 return this.RoleField;
             }
@@ -667,7 +667,7 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SolarSystem.Saturn.Model.ReadersService.Ville Ville {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville Ville {
             get {
                 return this.VilleField;
             }
@@ -833,7 +833,7 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         
         private string ImageField;
         
-        private SolarSystem.Saturn.Model.ReadersService.Membre MembreField;
+        private EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre MembreField;
         
         private string Mots_ClesField;
         
@@ -887,7 +887,7 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SolarSystem.Saturn.Model.ReadersService.Membre Membre {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre Membre {
             get {
                 return this.MembreField;
             }
@@ -1002,7 +1002,7 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         
         private string NomField;
         
-        private SolarSystem.Saturn.Model.ReadersService.Ville VilleField;
+        private EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville VilleField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Avancement {
@@ -1070,7 +1070,7 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public SolarSystem.Saturn.Model.ReadersService.Ville Ville {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville Ville {
             get {
                 return this.VilleField;
             }
@@ -1354,27 +1354,27 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IConferenceReader/GetConference", ReplyAction="http://tempuri.org/IConferenceReader/GetConferenceResponse")]
         System.IAsyncResult BeginGetConference(int code, System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.Conference EndGetConference(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference EndGetConference(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IConferenceReader/GetConferences", ReplyAction="http://tempuri.org/IConferenceReader/GetConferencesResponse")]
         System.IAsyncResult BeginGetConferences(System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.Conference[] EndGetConferences(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] EndGetConferences(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IConferenceReader/GetConferencesLimited", ReplyAction="http://tempuri.org/IConferenceReader/GetConferencesLimitedResponse")]
         System.IAsyncResult BeginGetConferencesLimited(int indexFirstResult, int numberOfResults, System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.Conference[] EndGetConferencesLimited(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] EndGetConferencesLimited(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IConferenceReader/GetConferencesByVille", ReplyAction="http://tempuri.org/IConferenceReader/GetConferencesByVilleResponse")]
-        System.IAsyncResult BeginGetConferencesByVille(SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginGetConferencesByVille(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.Conference[] EndGetConferencesByVille(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] EndGetConferencesByVille(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IConferenceReader/GetConferencesByVilleLimited", ReplyAction="http://tempuri.org/IConferenceReader/GetConferencesByVilleLimitedResponse")]
-        System.IAsyncResult BeginGetConferencesByVilleLimited(SolarSystem.Saturn.Model.ReadersService.Ville ville, int indexFirstResult, int numberOfResults, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginGetConferencesByVilleLimited(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, int indexFirstResult, int numberOfResults, System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.Conference[] EndGetConferencesByVilleLimited(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] EndGetConferencesByVilleLimited(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IConferenceReader/GetConferenceLastInsertedId", ReplyAction="http://tempuri.org/IConferenceReader/GetConferenceLastInsertedIdResponse")]
         System.IAsyncResult BeginGetConferenceLastInsertedId(System.AsyncCallback callback, object asyncState);
@@ -1384,11 +1384,11 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IConferenceReader/SearchConferences", ReplyAction="http://tempuri.org/IConferenceReader/SearchConferencesResponse")]
         System.IAsyncResult BeginSearchConferences(string keywords, System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.Conference[] EndSearchConferences(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] EndSearchConferences(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IConferenceReaderChannel : SolarSystem.Saturn.Model.ReadersService.IConferenceReader, System.ServiceModel.IClientChannel {
+    public interface IConferenceReaderChannel : EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1402,10 +1402,10 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.Conference Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.Conference)(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference)(this.results[0]));
             }
         }
     }
@@ -1421,10 +1421,10 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.Conference[] Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.Conference[])(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[])(this.results[0]));
             }
         }
     }
@@ -1440,10 +1440,10 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.Conference[] Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.Conference[])(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[])(this.results[0]));
             }
         }
     }
@@ -1459,10 +1459,10 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.Conference[] Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.Conference[])(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[])(this.results[0]));
             }
         }
     }
@@ -1478,10 +1478,10 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.Conference[] Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.Conference[])(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[])(this.results[0]));
             }
         }
     }
@@ -1516,17 +1516,17 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.Conference[] Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.Conference[])(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[])(this.results[0]));
             }
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ConferenceReaderClient : System.ServiceModel.ClientBase<SolarSystem.Saturn.Model.ReadersService.IConferenceReader>, SolarSystem.Saturn.Model.ReadersService.IConferenceReader {
+    public partial class ConferenceReaderClient : System.ServiceModel.ClientBase<EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader>, EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader {
         
         private BeginOperationDelegate onBeginGetConferenceDelegate;
         
@@ -1643,22 +1643,22 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.IConferenceReader.BeginGetConference(int code, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader.BeginGetConference(int code, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetConference(code, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.Conference SolarSystem.Saturn.Model.ReadersService.IConferenceReader.EndGetConference(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader.EndGetConference(System.IAsyncResult result) {
             return base.Channel.EndGetConference(result);
         }
         
         private System.IAsyncResult OnBeginGetConference(object[] inValues, System.AsyncCallback callback, object asyncState) {
             int code = ((int)(inValues[0]));
-            return ((SolarSystem.Saturn.Model.ReadersService.IConferenceReader)(this)).BeginGetConference(code, callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader)(this)).BeginGetConference(code, callback, asyncState);
         }
         
         private object[] OnEndGetConference(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.Conference retVal = ((SolarSystem.Saturn.Model.ReadersService.IConferenceReader)(this)).EndGetConference(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader)(this)).EndGetConference(result);
             return new object[] {
                     retVal};
         }
@@ -1689,21 +1689,21 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.IConferenceReader.BeginGetConferences(System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader.BeginGetConferences(System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetConferences(callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.Conference[] SolarSystem.Saturn.Model.ReadersService.IConferenceReader.EndGetConferences(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader.EndGetConferences(System.IAsyncResult result) {
             return base.Channel.EndGetConferences(result);
         }
         
         private System.IAsyncResult OnBeginGetConferences(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return ((SolarSystem.Saturn.Model.ReadersService.IConferenceReader)(this)).BeginGetConferences(callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader)(this)).BeginGetConferences(callback, asyncState);
         }
         
         private object[] OnEndGetConferences(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.Conference[] retVal = ((SolarSystem.Saturn.Model.ReadersService.IConferenceReader)(this)).EndGetConferences(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader)(this)).EndGetConferences(result);
             return new object[] {
                     retVal};
         }
@@ -1733,23 +1733,23 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.IConferenceReader.BeginGetConferencesLimited(int indexFirstResult, int numberOfResults, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader.BeginGetConferencesLimited(int indexFirstResult, int numberOfResults, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetConferencesLimited(indexFirstResult, numberOfResults, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.Conference[] SolarSystem.Saturn.Model.ReadersService.IConferenceReader.EndGetConferencesLimited(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader.EndGetConferencesLimited(System.IAsyncResult result) {
             return base.Channel.EndGetConferencesLimited(result);
         }
         
         private System.IAsyncResult OnBeginGetConferencesLimited(object[] inValues, System.AsyncCallback callback, object asyncState) {
             int indexFirstResult = ((int)(inValues[0]));
             int numberOfResults = ((int)(inValues[1]));
-            return ((SolarSystem.Saturn.Model.ReadersService.IConferenceReader)(this)).BeginGetConferencesLimited(indexFirstResult, numberOfResults, callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader)(this)).BeginGetConferencesLimited(indexFirstResult, numberOfResults, callback, asyncState);
         }
         
         private object[] OnEndGetConferencesLimited(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.Conference[] retVal = ((SolarSystem.Saturn.Model.ReadersService.IConferenceReader)(this)).EndGetConferencesLimited(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader)(this)).EndGetConferencesLimited(result);
             return new object[] {
                     retVal};
         }
@@ -1781,22 +1781,22 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.IConferenceReader.BeginGetConferencesByVille(SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader.BeginGetConferencesByVille(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetConferencesByVille(ville, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.Conference[] SolarSystem.Saturn.Model.ReadersService.IConferenceReader.EndGetConferencesByVille(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader.EndGetConferencesByVille(System.IAsyncResult result) {
             return base.Channel.EndGetConferencesByVille(result);
         }
         
         private System.IAsyncResult OnBeginGetConferencesByVille(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            SolarSystem.Saturn.Model.ReadersService.Ville ville = ((SolarSystem.Saturn.Model.ReadersService.Ville)(inValues[0]));
-            return ((SolarSystem.Saturn.Model.ReadersService.IConferenceReader)(this)).BeginGetConferencesByVille(ville, callback, asyncState);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville)(inValues[0]));
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader)(this)).BeginGetConferencesByVille(ville, callback, asyncState);
         }
         
         private object[] OnEndGetConferencesByVille(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.Conference[] retVal = ((SolarSystem.Saturn.Model.ReadersService.IConferenceReader)(this)).EndGetConferencesByVille(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader)(this)).EndGetConferencesByVille(result);
             return new object[] {
                     retVal};
         }
@@ -1808,11 +1808,11 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             }
         }
         
-        public void GetConferencesByVilleAsync(SolarSystem.Saturn.Model.ReadersService.Ville ville) {
+        public void GetConferencesByVilleAsync(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville) {
             this.GetConferencesByVilleAsync(ville, null);
         }
         
-        public void GetConferencesByVilleAsync(SolarSystem.Saturn.Model.ReadersService.Ville ville, object userState) {
+        public void GetConferencesByVilleAsync(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, object userState) {
             if ((this.onBeginGetConferencesByVilleDelegate == null)) {
                 this.onBeginGetConferencesByVilleDelegate = new BeginOperationDelegate(this.OnBeginGetConferencesByVille);
             }
@@ -1827,24 +1827,24 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.IConferenceReader.BeginGetConferencesByVilleLimited(SolarSystem.Saturn.Model.ReadersService.Ville ville, int indexFirstResult, int numberOfResults, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader.BeginGetConferencesByVilleLimited(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, int indexFirstResult, int numberOfResults, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetConferencesByVilleLimited(ville, indexFirstResult, numberOfResults, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.Conference[] SolarSystem.Saturn.Model.ReadersService.IConferenceReader.EndGetConferencesByVilleLimited(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader.EndGetConferencesByVilleLimited(System.IAsyncResult result) {
             return base.Channel.EndGetConferencesByVilleLimited(result);
         }
         
         private System.IAsyncResult OnBeginGetConferencesByVilleLimited(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            SolarSystem.Saturn.Model.ReadersService.Ville ville = ((SolarSystem.Saturn.Model.ReadersService.Ville)(inValues[0]));
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville)(inValues[0]));
             int indexFirstResult = ((int)(inValues[1]));
             int numberOfResults = ((int)(inValues[2]));
-            return ((SolarSystem.Saturn.Model.ReadersService.IConferenceReader)(this)).BeginGetConferencesByVilleLimited(ville, indexFirstResult, numberOfResults, callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader)(this)).BeginGetConferencesByVilleLimited(ville, indexFirstResult, numberOfResults, callback, asyncState);
         }
         
         private object[] OnEndGetConferencesByVilleLimited(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.Conference[] retVal = ((SolarSystem.Saturn.Model.ReadersService.IConferenceReader)(this)).EndGetConferencesByVilleLimited(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader)(this)).EndGetConferencesByVilleLimited(result);
             return new object[] {
                     retVal};
         }
@@ -1856,11 +1856,11 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             }
         }
         
-        public void GetConferencesByVilleLimitedAsync(SolarSystem.Saturn.Model.ReadersService.Ville ville, int indexFirstResult, int numberOfResults) {
+        public void GetConferencesByVilleLimitedAsync(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, int indexFirstResult, int numberOfResults) {
             this.GetConferencesByVilleLimitedAsync(ville, indexFirstResult, numberOfResults, null);
         }
         
-        public void GetConferencesByVilleLimitedAsync(SolarSystem.Saturn.Model.ReadersService.Ville ville, int indexFirstResult, int numberOfResults, object userState) {
+        public void GetConferencesByVilleLimitedAsync(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, int indexFirstResult, int numberOfResults, object userState) {
             if ((this.onBeginGetConferencesByVilleLimitedDelegate == null)) {
                 this.onBeginGetConferencesByVilleLimitedDelegate = new BeginOperationDelegate(this.OnBeginGetConferencesByVilleLimited);
             }
@@ -1877,21 +1877,21 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.IConferenceReader.BeginGetConferenceLastInsertedId(System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader.BeginGetConferenceLastInsertedId(System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetConferenceLastInsertedId(callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        int SolarSystem.Saturn.Model.ReadersService.IConferenceReader.EndGetConferenceLastInsertedId(System.IAsyncResult result) {
+        int EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader.EndGetConferenceLastInsertedId(System.IAsyncResult result) {
             return base.Channel.EndGetConferenceLastInsertedId(result);
         }
         
         private System.IAsyncResult OnBeginGetConferenceLastInsertedId(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return ((SolarSystem.Saturn.Model.ReadersService.IConferenceReader)(this)).BeginGetConferenceLastInsertedId(callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader)(this)).BeginGetConferenceLastInsertedId(callback, asyncState);
         }
         
         private object[] OnEndGetConferenceLastInsertedId(System.IAsyncResult result) {
-            int retVal = ((SolarSystem.Saturn.Model.ReadersService.IConferenceReader)(this)).EndGetConferenceLastInsertedId(result);
+            int retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader)(this)).EndGetConferenceLastInsertedId(result);
             return new object[] {
                     retVal};
         }
@@ -1921,22 +1921,22 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.IConferenceReader.BeginSearchConferences(string keywords, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader.BeginSearchConferences(string keywords, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginSearchConferences(keywords, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.Conference[] SolarSystem.Saturn.Model.ReadersService.IConferenceReader.EndSearchConferences(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader.EndSearchConferences(System.IAsyncResult result) {
             return base.Channel.EndSearchConferences(result);
         }
         
         private System.IAsyncResult OnBeginSearchConferences(object[] inValues, System.AsyncCallback callback, object asyncState) {
             string keywords = ((string)(inValues[0]));
-            return ((SolarSystem.Saturn.Model.ReadersService.IConferenceReader)(this)).BeginSearchConferences(keywords, callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader)(this)).BeginSearchConferences(keywords, callback, asyncState);
         }
         
         private object[] OnEndSearchConferences(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.Conference[] retVal = ((SolarSystem.Saturn.Model.ReadersService.IConferenceReader)(this)).EndSearchConferences(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader)(this)).EndSearchConferences(result);
             return new object[] {
                     retVal};
         }
@@ -2032,7 +2032,7 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             base.InvokeAsync(this.onBeginCloseDelegate, null, this.onEndCloseDelegate, this.onCloseCompletedDelegate, userState);
         }
         
-        protected override SolarSystem.Saturn.Model.ReadersService.IConferenceReader CreateChannel() {
+        protected override EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader CreateChannel() {
             return new ConferenceReaderClientChannel(this);
         }
         
@@ -2061,9 +2061,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             return ConferenceReaderClient.GetEndpointAddress(EndpointConfiguration.BasicHttpBinding_IConferenceReader);
         }
         
-        private class ConferenceReaderClientChannel : ChannelBase<SolarSystem.Saturn.Model.ReadersService.IConferenceReader>, SolarSystem.Saturn.Model.ReadersService.IConferenceReader {
+        private class ConferenceReaderClientChannel : ChannelBase<EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader>, EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader {
             
-            public ConferenceReaderClientChannel(System.ServiceModel.ClientBase<SolarSystem.Saturn.Model.ReadersService.IConferenceReader> client) : 
+            public ConferenceReaderClientChannel(System.ServiceModel.ClientBase<EPSILab.SolarSystem.Saturn.Model.ReadersService.IConferenceReader> client) : 
                     base(client) {
             }
             
@@ -2074,9 +2074,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.Conference EndGetConference(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference EndGetConference(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.Conference _result = ((SolarSystem.Saturn.Model.ReadersService.Conference)(base.EndInvoke("GetConference", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference)(base.EndInvoke("GetConference", _args, result)));
                 return _result;
             }
             
@@ -2086,9 +2086,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.Conference[] EndGetConferences(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] EndGetConferences(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.Conference[] _result = ((SolarSystem.Saturn.Model.ReadersService.Conference[])(base.EndInvoke("GetConferences", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[])(base.EndInvoke("GetConferences", _args, result)));
                 return _result;
             }
             
@@ -2100,26 +2100,26 @@ namespace SolarSystem.Saturn.Model.ReadersService {
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.Conference[] EndGetConferencesLimited(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] EndGetConferencesLimited(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.Conference[] _result = ((SolarSystem.Saturn.Model.ReadersService.Conference[])(base.EndInvoke("GetConferencesLimited", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[])(base.EndInvoke("GetConferencesLimited", _args, result)));
                 return _result;
             }
             
-            public System.IAsyncResult BeginGetConferencesByVille(SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState) {
+            public System.IAsyncResult BeginGetConferencesByVille(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[1];
                 _args[0] = ville;
                 System.IAsyncResult _result = base.BeginInvoke("GetConferencesByVille", _args, callback, asyncState);
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.Conference[] EndGetConferencesByVille(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] EndGetConferencesByVille(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.Conference[] _result = ((SolarSystem.Saturn.Model.ReadersService.Conference[])(base.EndInvoke("GetConferencesByVille", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[])(base.EndInvoke("GetConferencesByVille", _args, result)));
                 return _result;
             }
             
-            public System.IAsyncResult BeginGetConferencesByVilleLimited(SolarSystem.Saturn.Model.ReadersService.Ville ville, int indexFirstResult, int numberOfResults, System.AsyncCallback callback, object asyncState) {
+            public System.IAsyncResult BeginGetConferencesByVilleLimited(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, int indexFirstResult, int numberOfResults, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[3];
                 _args[0] = ville;
                 _args[1] = indexFirstResult;
@@ -2128,9 +2128,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.Conference[] EndGetConferencesByVilleLimited(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] EndGetConferencesByVilleLimited(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.Conference[] _result = ((SolarSystem.Saturn.Model.ReadersService.Conference[])(base.EndInvoke("GetConferencesByVilleLimited", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[])(base.EndInvoke("GetConferencesByVilleLimited", _args, result)));
                 return _result;
             }
             
@@ -2153,9 +2153,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.Conference[] EndSearchConferences(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] EndSearchConferences(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.Conference[] _result = ((SolarSystem.Saturn.Model.ReadersService.Conference[])(base.EndInvoke("SearchConferences", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[] _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference[])(base.EndInvoke("SearchConferences", _args, result)));
                 return _result;
             }
         }
@@ -2173,16 +2173,16 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ILienReader/GetLien", ReplyAction="http://tempuri.org/ILienReader/GetLienResponse")]
         System.IAsyncResult BeginGetLien(int code, System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.Lien EndGetLien(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Lien EndGetLien(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ILienReader/GetLiens", ReplyAction="http://tempuri.org/ILienReader/GetLiensResponse")]
         System.IAsyncResult BeginGetLiens(System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.Lien[] EndGetLiens(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Lien[] EndGetLiens(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ILienReaderChannel : SolarSystem.Saturn.Model.ReadersService.ILienReader, System.ServiceModel.IClientChannel {
+    public interface ILienReaderChannel : EPSILab.SolarSystem.Saturn.Model.ReadersService.ILienReader, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2196,10 +2196,10 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.Lien Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Lien Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.Lien)(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Lien)(this.results[0]));
             }
         }
     }
@@ -2215,17 +2215,17 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.Lien[] Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Lien[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.Lien[])(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Lien[])(this.results[0]));
             }
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class LienReaderClient : System.ServiceModel.ClientBase<SolarSystem.Saturn.Model.ReadersService.ILienReader>, SolarSystem.Saturn.Model.ReadersService.ILienReader {
+    public partial class LienReaderClient : System.ServiceModel.ClientBase<EPSILab.SolarSystem.Saturn.Model.ReadersService.ILienReader>, EPSILab.SolarSystem.Saturn.Model.ReadersService.ILienReader {
         
         private BeginOperationDelegate onBeginGetLienDelegate;
         
@@ -2302,22 +2302,22 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.ILienReader.BeginGetLien(int code, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.ILienReader.BeginGetLien(int code, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetLien(code, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.Lien SolarSystem.Saturn.Model.ReadersService.ILienReader.EndGetLien(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Lien EPSILab.SolarSystem.Saturn.Model.ReadersService.ILienReader.EndGetLien(System.IAsyncResult result) {
             return base.Channel.EndGetLien(result);
         }
         
         private System.IAsyncResult OnBeginGetLien(object[] inValues, System.AsyncCallback callback, object asyncState) {
             int code = ((int)(inValues[0]));
-            return ((SolarSystem.Saturn.Model.ReadersService.ILienReader)(this)).BeginGetLien(code, callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.ILienReader)(this)).BeginGetLien(code, callback, asyncState);
         }
         
         private object[] OnEndGetLien(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.Lien retVal = ((SolarSystem.Saturn.Model.ReadersService.ILienReader)(this)).EndGetLien(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Lien retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.ILienReader)(this)).EndGetLien(result);
             return new object[] {
                     retVal};
         }
@@ -2348,21 +2348,21 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.ILienReader.BeginGetLiens(System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.ILienReader.BeginGetLiens(System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetLiens(callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.Lien[] SolarSystem.Saturn.Model.ReadersService.ILienReader.EndGetLiens(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Lien[] EPSILab.SolarSystem.Saturn.Model.ReadersService.ILienReader.EndGetLiens(System.IAsyncResult result) {
             return base.Channel.EndGetLiens(result);
         }
         
         private System.IAsyncResult OnBeginGetLiens(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return ((SolarSystem.Saturn.Model.ReadersService.ILienReader)(this)).BeginGetLiens(callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.ILienReader)(this)).BeginGetLiens(callback, asyncState);
         }
         
         private object[] OnEndGetLiens(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.Lien[] retVal = ((SolarSystem.Saturn.Model.ReadersService.ILienReader)(this)).EndGetLiens(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Lien[] retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.ILienReader)(this)).EndGetLiens(result);
             return new object[] {
                     retVal};
         }
@@ -2457,7 +2457,7 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             base.InvokeAsync(this.onBeginCloseDelegate, null, this.onEndCloseDelegate, this.onCloseCompletedDelegate, userState);
         }
         
-        protected override SolarSystem.Saturn.Model.ReadersService.ILienReader CreateChannel() {
+        protected override EPSILab.SolarSystem.Saturn.Model.ReadersService.ILienReader CreateChannel() {
             return new LienReaderClientChannel(this);
         }
         
@@ -2486,9 +2486,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             return LienReaderClient.GetEndpointAddress(EndpointConfiguration.BasicHttpBinding_ILienReader);
         }
         
-        private class LienReaderClientChannel : ChannelBase<SolarSystem.Saturn.Model.ReadersService.ILienReader>, SolarSystem.Saturn.Model.ReadersService.ILienReader {
+        private class LienReaderClientChannel : ChannelBase<EPSILab.SolarSystem.Saturn.Model.ReadersService.ILienReader>, EPSILab.SolarSystem.Saturn.Model.ReadersService.ILienReader {
             
-            public LienReaderClientChannel(System.ServiceModel.ClientBase<SolarSystem.Saturn.Model.ReadersService.ILienReader> client) : 
+            public LienReaderClientChannel(System.ServiceModel.ClientBase<EPSILab.SolarSystem.Saturn.Model.ReadersService.ILienReader> client) : 
                     base(client) {
             }
             
@@ -2499,9 +2499,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.Lien EndGetLien(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.Lien EndGetLien(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.Lien _result = ((SolarSystem.Saturn.Model.ReadersService.Lien)(base.EndInvoke("GetLien", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.Lien _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Lien)(base.EndInvoke("GetLien", _args, result)));
                 return _result;
             }
             
@@ -2511,9 +2511,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.Lien[] EndGetLiens(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.Lien[] EndGetLiens(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.Lien[] _result = ((SolarSystem.Saturn.Model.ReadersService.Lien[])(base.EndInvoke("GetLiens", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.Lien[] _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Lien[])(base.EndInvoke("GetLiens", _args, result)));
                 return _result;
             }
         }
@@ -2531,32 +2531,32 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IMembreReader/GetMembre", ReplyAction="http://tempuri.org/IMembreReader/GetMembreResponse")]
         System.IAsyncResult BeginGetMembre(int code, System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.Membre EndGetMembre(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre EndGetMembre(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IMembreReader/GetMembres", ReplyAction="http://tempuri.org/IMembreReader/GetMembresResponse")]
         System.IAsyncResult BeginGetMembres(System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.Membre[] EndGetMembres(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] EndGetMembres(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IMembreReader/GetMembresByVille", ReplyAction="http://tempuri.org/IMembreReader/GetMembresByVilleResponse")]
-        System.IAsyncResult BeginGetMembresByVille(SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginGetMembresByVille(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.Membre[] EndGetMembresByVille(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] EndGetMembresByVille(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IMembreReader/GetMembresBureau", ReplyAction="http://tempuri.org/IMembreReader/GetMembresBureauResponse")]
         System.IAsyncResult BeginGetMembresBureau(System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.Membre[] EndGetMembresBureau(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] EndGetMembresBureau(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IMembreReader/GetMembresBureauByVille", ReplyAction="http://tempuri.org/IMembreReader/GetMembresBureauByVilleResponse")]
-        System.IAsyncResult BeginGetMembresBureauByVille(SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginGetMembresBureauByVille(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.Membre[] EndGetMembresBureauByVille(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] EndGetMembresBureauByVille(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IMembreReader/GetMembresAlumnis", ReplyAction="http://tempuri.org/IMembreReader/GetMembresAlumnisResponse")]
-        System.IAsyncResult BeginGetMembresAlumnis(SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginGetMembresAlumnis(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.Membre[] EndGetMembresAlumnis(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] EndGetMembresAlumnis(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IMembreReader/GetMembreLastInsertedId", ReplyAction="http://tempuri.org/IMembreReader/GetMembreLastInsertedIdResponse")]
         System.IAsyncResult BeginGetMembreLastInsertedId(System.AsyncCallback callback, object asyncState);
@@ -2566,11 +2566,11 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IMembreReader/SearchMembres", ReplyAction="http://tempuri.org/IMembreReader/SearchMembresResponse")]
         System.IAsyncResult BeginSearchMembres(string keywords, System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.Membre[] EndSearchMembres(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] EndSearchMembres(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IMembreReaderChannel : SolarSystem.Saturn.Model.ReadersService.IMembreReader, System.ServiceModel.IClientChannel {
+    public interface IMembreReaderChannel : EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2584,10 +2584,10 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.Membre Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.Membre)(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre)(this.results[0]));
             }
         }
     }
@@ -2603,10 +2603,10 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.Membre[] Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.Membre[])(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[])(this.results[0]));
             }
         }
     }
@@ -2622,10 +2622,10 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.Membre[] Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.Membre[])(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[])(this.results[0]));
             }
         }
     }
@@ -2641,10 +2641,10 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.Membre[] Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.Membre[])(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[])(this.results[0]));
             }
         }
     }
@@ -2660,10 +2660,10 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.Membre[] Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.Membre[])(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[])(this.results[0]));
             }
         }
     }
@@ -2679,10 +2679,10 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.Membre[] Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.Membre[])(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[])(this.results[0]));
             }
         }
     }
@@ -2717,17 +2717,17 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.Membre[] Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.Membre[])(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[])(this.results[0]));
             }
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class MembreReaderClient : System.ServiceModel.ClientBase<SolarSystem.Saturn.Model.ReadersService.IMembreReader>, SolarSystem.Saturn.Model.ReadersService.IMembreReader {
+    public partial class MembreReaderClient : System.ServiceModel.ClientBase<EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader>, EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader {
         
         private BeginOperationDelegate onBeginGetMembreDelegate;
         
@@ -2852,22 +2852,22 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.IMembreReader.BeginGetMembre(int code, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader.BeginGetMembre(int code, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetMembre(code, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.Membre SolarSystem.Saturn.Model.ReadersService.IMembreReader.EndGetMembre(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader.EndGetMembre(System.IAsyncResult result) {
             return base.Channel.EndGetMembre(result);
         }
         
         private System.IAsyncResult OnBeginGetMembre(object[] inValues, System.AsyncCallback callback, object asyncState) {
             int code = ((int)(inValues[0]));
-            return ((SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).BeginGetMembre(code, callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).BeginGetMembre(code, callback, asyncState);
         }
         
         private object[] OnEndGetMembre(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.Membre retVal = ((SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).EndGetMembre(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).EndGetMembre(result);
             return new object[] {
                     retVal};
         }
@@ -2898,21 +2898,21 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.IMembreReader.BeginGetMembres(System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader.BeginGetMembres(System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetMembres(callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.Membre[] SolarSystem.Saturn.Model.ReadersService.IMembreReader.EndGetMembres(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader.EndGetMembres(System.IAsyncResult result) {
             return base.Channel.EndGetMembres(result);
         }
         
         private System.IAsyncResult OnBeginGetMembres(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return ((SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).BeginGetMembres(callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).BeginGetMembres(callback, asyncState);
         }
         
         private object[] OnEndGetMembres(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.Membre[] retVal = ((SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).EndGetMembres(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).EndGetMembres(result);
             return new object[] {
                     retVal};
         }
@@ -2942,22 +2942,22 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.IMembreReader.BeginGetMembresByVille(SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader.BeginGetMembresByVille(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetMembresByVille(ville, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.Membre[] SolarSystem.Saturn.Model.ReadersService.IMembreReader.EndGetMembresByVille(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader.EndGetMembresByVille(System.IAsyncResult result) {
             return base.Channel.EndGetMembresByVille(result);
         }
         
         private System.IAsyncResult OnBeginGetMembresByVille(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            SolarSystem.Saturn.Model.ReadersService.Ville ville = ((SolarSystem.Saturn.Model.ReadersService.Ville)(inValues[0]));
-            return ((SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).BeginGetMembresByVille(ville, callback, asyncState);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville)(inValues[0]));
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).BeginGetMembresByVille(ville, callback, asyncState);
         }
         
         private object[] OnEndGetMembresByVille(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.Membre[] retVal = ((SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).EndGetMembresByVille(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).EndGetMembresByVille(result);
             return new object[] {
                     retVal};
         }
@@ -2969,11 +2969,11 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             }
         }
         
-        public void GetMembresByVilleAsync(SolarSystem.Saturn.Model.ReadersService.Ville ville) {
+        public void GetMembresByVilleAsync(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville) {
             this.GetMembresByVilleAsync(ville, null);
         }
         
-        public void GetMembresByVilleAsync(SolarSystem.Saturn.Model.ReadersService.Ville ville, object userState) {
+        public void GetMembresByVilleAsync(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, object userState) {
             if ((this.onBeginGetMembresByVilleDelegate == null)) {
                 this.onBeginGetMembresByVilleDelegate = new BeginOperationDelegate(this.OnBeginGetMembresByVille);
             }
@@ -2988,21 +2988,21 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.IMembreReader.BeginGetMembresBureau(System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader.BeginGetMembresBureau(System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetMembresBureau(callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.Membre[] SolarSystem.Saturn.Model.ReadersService.IMembreReader.EndGetMembresBureau(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader.EndGetMembresBureau(System.IAsyncResult result) {
             return base.Channel.EndGetMembresBureau(result);
         }
         
         private System.IAsyncResult OnBeginGetMembresBureau(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return ((SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).BeginGetMembresBureau(callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).BeginGetMembresBureau(callback, asyncState);
         }
         
         private object[] OnEndGetMembresBureau(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.Membre[] retVal = ((SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).EndGetMembresBureau(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).EndGetMembresBureau(result);
             return new object[] {
                     retVal};
         }
@@ -3032,22 +3032,22 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.IMembreReader.BeginGetMembresBureauByVille(SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader.BeginGetMembresBureauByVille(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetMembresBureauByVille(ville, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.Membre[] SolarSystem.Saturn.Model.ReadersService.IMembreReader.EndGetMembresBureauByVille(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader.EndGetMembresBureauByVille(System.IAsyncResult result) {
             return base.Channel.EndGetMembresBureauByVille(result);
         }
         
         private System.IAsyncResult OnBeginGetMembresBureauByVille(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            SolarSystem.Saturn.Model.ReadersService.Ville ville = ((SolarSystem.Saturn.Model.ReadersService.Ville)(inValues[0]));
-            return ((SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).BeginGetMembresBureauByVille(ville, callback, asyncState);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville)(inValues[0]));
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).BeginGetMembresBureauByVille(ville, callback, asyncState);
         }
         
         private object[] OnEndGetMembresBureauByVille(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.Membre[] retVal = ((SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).EndGetMembresBureauByVille(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).EndGetMembresBureauByVille(result);
             return new object[] {
                     retVal};
         }
@@ -3059,11 +3059,11 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             }
         }
         
-        public void GetMembresBureauByVilleAsync(SolarSystem.Saturn.Model.ReadersService.Ville ville) {
+        public void GetMembresBureauByVilleAsync(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville) {
             this.GetMembresBureauByVilleAsync(ville, null);
         }
         
-        public void GetMembresBureauByVilleAsync(SolarSystem.Saturn.Model.ReadersService.Ville ville, object userState) {
+        public void GetMembresBureauByVilleAsync(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, object userState) {
             if ((this.onBeginGetMembresBureauByVilleDelegate == null)) {
                 this.onBeginGetMembresBureauByVilleDelegate = new BeginOperationDelegate(this.OnBeginGetMembresBureauByVille);
             }
@@ -3078,22 +3078,22 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.IMembreReader.BeginGetMembresAlumnis(SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader.BeginGetMembresAlumnis(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetMembresAlumnis(ville, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.Membre[] SolarSystem.Saturn.Model.ReadersService.IMembreReader.EndGetMembresAlumnis(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader.EndGetMembresAlumnis(System.IAsyncResult result) {
             return base.Channel.EndGetMembresAlumnis(result);
         }
         
         private System.IAsyncResult OnBeginGetMembresAlumnis(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            SolarSystem.Saturn.Model.ReadersService.Ville ville = ((SolarSystem.Saturn.Model.ReadersService.Ville)(inValues[0]));
-            return ((SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).BeginGetMembresAlumnis(ville, callback, asyncState);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville)(inValues[0]));
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).BeginGetMembresAlumnis(ville, callback, asyncState);
         }
         
         private object[] OnEndGetMembresAlumnis(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.Membre[] retVal = ((SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).EndGetMembresAlumnis(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).EndGetMembresAlumnis(result);
             return new object[] {
                     retVal};
         }
@@ -3105,11 +3105,11 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             }
         }
         
-        public void GetMembresAlumnisAsync(SolarSystem.Saturn.Model.ReadersService.Ville ville) {
+        public void GetMembresAlumnisAsync(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville) {
             this.GetMembresAlumnisAsync(ville, null);
         }
         
-        public void GetMembresAlumnisAsync(SolarSystem.Saturn.Model.ReadersService.Ville ville, object userState) {
+        public void GetMembresAlumnisAsync(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, object userState) {
             if ((this.onBeginGetMembresAlumnisDelegate == null)) {
                 this.onBeginGetMembresAlumnisDelegate = new BeginOperationDelegate(this.OnBeginGetMembresAlumnis);
             }
@@ -3124,21 +3124,21 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.IMembreReader.BeginGetMembreLastInsertedId(System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader.BeginGetMembreLastInsertedId(System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetMembreLastInsertedId(callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        int SolarSystem.Saturn.Model.ReadersService.IMembreReader.EndGetMembreLastInsertedId(System.IAsyncResult result) {
+        int EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader.EndGetMembreLastInsertedId(System.IAsyncResult result) {
             return base.Channel.EndGetMembreLastInsertedId(result);
         }
         
         private System.IAsyncResult OnBeginGetMembreLastInsertedId(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return ((SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).BeginGetMembreLastInsertedId(callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).BeginGetMembreLastInsertedId(callback, asyncState);
         }
         
         private object[] OnEndGetMembreLastInsertedId(System.IAsyncResult result) {
-            int retVal = ((SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).EndGetMembreLastInsertedId(result);
+            int retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).EndGetMembreLastInsertedId(result);
             return new object[] {
                     retVal};
         }
@@ -3168,22 +3168,22 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.IMembreReader.BeginSearchMembres(string keywords, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader.BeginSearchMembres(string keywords, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginSearchMembres(keywords, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.Membre[] SolarSystem.Saturn.Model.ReadersService.IMembreReader.EndSearchMembres(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader.EndSearchMembres(System.IAsyncResult result) {
             return base.Channel.EndSearchMembres(result);
         }
         
         private System.IAsyncResult OnBeginSearchMembres(object[] inValues, System.AsyncCallback callback, object asyncState) {
             string keywords = ((string)(inValues[0]));
-            return ((SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).BeginSearchMembres(keywords, callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).BeginSearchMembres(keywords, callback, asyncState);
         }
         
         private object[] OnEndSearchMembres(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.Membre[] retVal = ((SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).EndSearchMembres(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader)(this)).EndSearchMembres(result);
             return new object[] {
                     retVal};
         }
@@ -3279,7 +3279,7 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             base.InvokeAsync(this.onBeginCloseDelegate, null, this.onEndCloseDelegate, this.onCloseCompletedDelegate, userState);
         }
         
-        protected override SolarSystem.Saturn.Model.ReadersService.IMembreReader CreateChannel() {
+        protected override EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader CreateChannel() {
             return new MembreReaderClientChannel(this);
         }
         
@@ -3308,9 +3308,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             return MembreReaderClient.GetEndpointAddress(EndpointConfiguration.BasicHttpBinding_IMembreReader);
         }
         
-        private class MembreReaderClientChannel : ChannelBase<SolarSystem.Saturn.Model.ReadersService.IMembreReader>, SolarSystem.Saturn.Model.ReadersService.IMembreReader {
+        private class MembreReaderClientChannel : ChannelBase<EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader>, EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader {
             
-            public MembreReaderClientChannel(System.ServiceModel.ClientBase<SolarSystem.Saturn.Model.ReadersService.IMembreReader> client) : 
+            public MembreReaderClientChannel(System.ServiceModel.ClientBase<EPSILab.SolarSystem.Saturn.Model.ReadersService.IMembreReader> client) : 
                     base(client) {
             }
             
@@ -3321,9 +3321,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.Membre EndGetMembre(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre EndGetMembre(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.Membre _result = ((SolarSystem.Saturn.Model.ReadersService.Membre)(base.EndInvoke("GetMembre", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre)(base.EndInvoke("GetMembre", _args, result)));
                 return _result;
             }
             
@@ -3333,22 +3333,22 @@ namespace SolarSystem.Saturn.Model.ReadersService {
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.Membre[] EndGetMembres(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] EndGetMembres(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.Membre[] _result = ((SolarSystem.Saturn.Model.ReadersService.Membre[])(base.EndInvoke("GetMembres", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[])(base.EndInvoke("GetMembres", _args, result)));
                 return _result;
             }
             
-            public System.IAsyncResult BeginGetMembresByVille(SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState) {
+            public System.IAsyncResult BeginGetMembresByVille(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[1];
                 _args[0] = ville;
                 System.IAsyncResult _result = base.BeginInvoke("GetMembresByVille", _args, callback, asyncState);
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.Membre[] EndGetMembresByVille(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] EndGetMembresByVille(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.Membre[] _result = ((SolarSystem.Saturn.Model.ReadersService.Membre[])(base.EndInvoke("GetMembresByVille", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[])(base.EndInvoke("GetMembresByVille", _args, result)));
                 return _result;
             }
             
@@ -3358,35 +3358,35 @@ namespace SolarSystem.Saturn.Model.ReadersService {
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.Membre[] EndGetMembresBureau(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] EndGetMembresBureau(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.Membre[] _result = ((SolarSystem.Saturn.Model.ReadersService.Membre[])(base.EndInvoke("GetMembresBureau", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[])(base.EndInvoke("GetMembresBureau", _args, result)));
                 return _result;
             }
             
-            public System.IAsyncResult BeginGetMembresBureauByVille(SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState) {
+            public System.IAsyncResult BeginGetMembresBureauByVille(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[1];
                 _args[0] = ville;
                 System.IAsyncResult _result = base.BeginInvoke("GetMembresBureauByVille", _args, callback, asyncState);
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.Membre[] EndGetMembresBureauByVille(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] EndGetMembresBureauByVille(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.Membre[] _result = ((SolarSystem.Saturn.Model.ReadersService.Membre[])(base.EndInvoke("GetMembresBureauByVille", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[])(base.EndInvoke("GetMembresBureauByVille", _args, result)));
                 return _result;
             }
             
-            public System.IAsyncResult BeginGetMembresAlumnis(SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState) {
+            public System.IAsyncResult BeginGetMembresAlumnis(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[1];
                 _args[0] = ville;
                 System.IAsyncResult _result = base.BeginInvoke("GetMembresAlumnis", _args, callback, asyncState);
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.Membre[] EndGetMembresAlumnis(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] EndGetMembresAlumnis(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.Membre[] _result = ((SolarSystem.Saturn.Model.ReadersService.Membre[])(base.EndInvoke("GetMembresAlumnis", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[])(base.EndInvoke("GetMembresAlumnis", _args, result)));
                 return _result;
             }
             
@@ -3409,9 +3409,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.Membre[] EndSearchMembres(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] EndSearchMembres(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.Membre[] _result = ((SolarSystem.Saturn.Model.ReadersService.Membre[])(base.EndInvoke("SearchMembres", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[] _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Membre[])(base.EndInvoke("SearchMembres", _args, result)));
                 return _result;
             }
         }
@@ -3429,17 +3429,17 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/INewsReader/GetNews", ReplyAction="http://tempuri.org/INewsReader/GetNewsResponse")]
         System.IAsyncResult BeginGetNews(int code, System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.News EndGetNews(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.News EndGetNews(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/INewsReader/GetListNews", ReplyAction="http://tempuri.org/INewsReader/GetListNewsResponse")]
         System.IAsyncResult BeginGetListNews(System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.News[] EndGetListNews(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.News[] EndGetListNews(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/INewsReader/GetListNewsLimited", ReplyAction="http://tempuri.org/INewsReader/GetListNewsLimitedResponse")]
         System.IAsyncResult BeginGetListNewsLimited(int indexFirstElement, int numberOfResults, System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.News[] EndGetListNewsLimited(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.News[] EndGetListNewsLimited(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/INewsReader/GetNewsLastInsertedId", ReplyAction="http://tempuri.org/INewsReader/GetNewsLastInsertedIdResponse")]
         System.IAsyncResult BeginGetNewsLastInsertedId(System.AsyncCallback callback, object asyncState);
@@ -3449,11 +3449,11 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/INewsReader/SearchNews", ReplyAction="http://tempuri.org/INewsReader/SearchNewsResponse")]
         System.IAsyncResult BeginSearchNews(string keywords, System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.News[] EndSearchNews(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.News[] EndSearchNews(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface INewsReaderChannel : SolarSystem.Saturn.Model.ReadersService.INewsReader, System.ServiceModel.IClientChannel {
+    public interface INewsReaderChannel : EPSILab.SolarSystem.Saturn.Model.ReadersService.INewsReader, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3467,10 +3467,10 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.News Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.News Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.News)(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.News)(this.results[0]));
             }
         }
     }
@@ -3486,10 +3486,10 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.News[] Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.News[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.News[])(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.News[])(this.results[0]));
             }
         }
     }
@@ -3505,10 +3505,10 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.News[] Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.News[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.News[])(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.News[])(this.results[0]));
             }
         }
     }
@@ -3543,17 +3543,17 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.News[] Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.News[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.News[])(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.News[])(this.results[0]));
             }
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class NewsReaderClient : System.ServiceModel.ClientBase<SolarSystem.Saturn.Model.ReadersService.INewsReader>, SolarSystem.Saturn.Model.ReadersService.INewsReader {
+    public partial class NewsReaderClient : System.ServiceModel.ClientBase<EPSILab.SolarSystem.Saturn.Model.ReadersService.INewsReader>, EPSILab.SolarSystem.Saturn.Model.ReadersService.INewsReader {
         
         private BeginOperationDelegate onBeginGetNewsDelegate;
         
@@ -3654,22 +3654,22 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.INewsReader.BeginGetNews(int code, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.INewsReader.BeginGetNews(int code, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetNews(code, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.News SolarSystem.Saturn.Model.ReadersService.INewsReader.EndGetNews(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.News EPSILab.SolarSystem.Saturn.Model.ReadersService.INewsReader.EndGetNews(System.IAsyncResult result) {
             return base.Channel.EndGetNews(result);
         }
         
         private System.IAsyncResult OnBeginGetNews(object[] inValues, System.AsyncCallback callback, object asyncState) {
             int code = ((int)(inValues[0]));
-            return ((SolarSystem.Saturn.Model.ReadersService.INewsReader)(this)).BeginGetNews(code, callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.INewsReader)(this)).BeginGetNews(code, callback, asyncState);
         }
         
         private object[] OnEndGetNews(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.News retVal = ((SolarSystem.Saturn.Model.ReadersService.INewsReader)(this)).EndGetNews(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.News retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.INewsReader)(this)).EndGetNews(result);
             return new object[] {
                     retVal};
         }
@@ -3700,21 +3700,21 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.INewsReader.BeginGetListNews(System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.INewsReader.BeginGetListNews(System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetListNews(callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.News[] SolarSystem.Saturn.Model.ReadersService.INewsReader.EndGetListNews(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.News[] EPSILab.SolarSystem.Saturn.Model.ReadersService.INewsReader.EndGetListNews(System.IAsyncResult result) {
             return base.Channel.EndGetListNews(result);
         }
         
         private System.IAsyncResult OnBeginGetListNews(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return ((SolarSystem.Saturn.Model.ReadersService.INewsReader)(this)).BeginGetListNews(callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.INewsReader)(this)).BeginGetListNews(callback, asyncState);
         }
         
         private object[] OnEndGetListNews(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.News[] retVal = ((SolarSystem.Saturn.Model.ReadersService.INewsReader)(this)).EndGetListNews(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.News[] retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.INewsReader)(this)).EndGetListNews(result);
             return new object[] {
                     retVal};
         }
@@ -3744,23 +3744,23 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.INewsReader.BeginGetListNewsLimited(int indexFirstElement, int numberOfResults, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.INewsReader.BeginGetListNewsLimited(int indexFirstElement, int numberOfResults, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetListNewsLimited(indexFirstElement, numberOfResults, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.News[] SolarSystem.Saturn.Model.ReadersService.INewsReader.EndGetListNewsLimited(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.News[] EPSILab.SolarSystem.Saturn.Model.ReadersService.INewsReader.EndGetListNewsLimited(System.IAsyncResult result) {
             return base.Channel.EndGetListNewsLimited(result);
         }
         
         private System.IAsyncResult OnBeginGetListNewsLimited(object[] inValues, System.AsyncCallback callback, object asyncState) {
             int indexFirstElement = ((int)(inValues[0]));
             int numberOfResults = ((int)(inValues[1]));
-            return ((SolarSystem.Saturn.Model.ReadersService.INewsReader)(this)).BeginGetListNewsLimited(indexFirstElement, numberOfResults, callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.INewsReader)(this)).BeginGetListNewsLimited(indexFirstElement, numberOfResults, callback, asyncState);
         }
         
         private object[] OnEndGetListNewsLimited(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.News[] retVal = ((SolarSystem.Saturn.Model.ReadersService.INewsReader)(this)).EndGetListNewsLimited(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.News[] retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.INewsReader)(this)).EndGetListNewsLimited(result);
             return new object[] {
                     retVal};
         }
@@ -3792,21 +3792,21 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.INewsReader.BeginGetNewsLastInsertedId(System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.INewsReader.BeginGetNewsLastInsertedId(System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetNewsLastInsertedId(callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        int SolarSystem.Saturn.Model.ReadersService.INewsReader.EndGetNewsLastInsertedId(System.IAsyncResult result) {
+        int EPSILab.SolarSystem.Saturn.Model.ReadersService.INewsReader.EndGetNewsLastInsertedId(System.IAsyncResult result) {
             return base.Channel.EndGetNewsLastInsertedId(result);
         }
         
         private System.IAsyncResult OnBeginGetNewsLastInsertedId(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return ((SolarSystem.Saturn.Model.ReadersService.INewsReader)(this)).BeginGetNewsLastInsertedId(callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.INewsReader)(this)).BeginGetNewsLastInsertedId(callback, asyncState);
         }
         
         private object[] OnEndGetNewsLastInsertedId(System.IAsyncResult result) {
-            int retVal = ((SolarSystem.Saturn.Model.ReadersService.INewsReader)(this)).EndGetNewsLastInsertedId(result);
+            int retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.INewsReader)(this)).EndGetNewsLastInsertedId(result);
             return new object[] {
                     retVal};
         }
@@ -3836,22 +3836,22 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.INewsReader.BeginSearchNews(string keywords, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.INewsReader.BeginSearchNews(string keywords, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginSearchNews(keywords, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.News[] SolarSystem.Saturn.Model.ReadersService.INewsReader.EndSearchNews(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.News[] EPSILab.SolarSystem.Saturn.Model.ReadersService.INewsReader.EndSearchNews(System.IAsyncResult result) {
             return base.Channel.EndSearchNews(result);
         }
         
         private System.IAsyncResult OnBeginSearchNews(object[] inValues, System.AsyncCallback callback, object asyncState) {
             string keywords = ((string)(inValues[0]));
-            return ((SolarSystem.Saturn.Model.ReadersService.INewsReader)(this)).BeginSearchNews(keywords, callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.INewsReader)(this)).BeginSearchNews(keywords, callback, asyncState);
         }
         
         private object[] OnEndSearchNews(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.News[] retVal = ((SolarSystem.Saturn.Model.ReadersService.INewsReader)(this)).EndSearchNews(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.News[] retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.INewsReader)(this)).EndSearchNews(result);
             return new object[] {
                     retVal};
         }
@@ -3947,7 +3947,7 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             base.InvokeAsync(this.onBeginCloseDelegate, null, this.onEndCloseDelegate, this.onCloseCompletedDelegate, userState);
         }
         
-        protected override SolarSystem.Saturn.Model.ReadersService.INewsReader CreateChannel() {
+        protected override EPSILab.SolarSystem.Saturn.Model.ReadersService.INewsReader CreateChannel() {
             return new NewsReaderClientChannel(this);
         }
         
@@ -3976,9 +3976,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             return NewsReaderClient.GetEndpointAddress(EndpointConfiguration.BasicHttpBinding_INewsReader);
         }
         
-        private class NewsReaderClientChannel : ChannelBase<SolarSystem.Saturn.Model.ReadersService.INewsReader>, SolarSystem.Saturn.Model.ReadersService.INewsReader {
+        private class NewsReaderClientChannel : ChannelBase<EPSILab.SolarSystem.Saturn.Model.ReadersService.INewsReader>, EPSILab.SolarSystem.Saturn.Model.ReadersService.INewsReader {
             
-            public NewsReaderClientChannel(System.ServiceModel.ClientBase<SolarSystem.Saturn.Model.ReadersService.INewsReader> client) : 
+            public NewsReaderClientChannel(System.ServiceModel.ClientBase<EPSILab.SolarSystem.Saturn.Model.ReadersService.INewsReader> client) : 
                     base(client) {
             }
             
@@ -3989,9 +3989,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.News EndGetNews(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.News EndGetNews(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.News _result = ((SolarSystem.Saturn.Model.ReadersService.News)(base.EndInvoke("GetNews", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.News _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.News)(base.EndInvoke("GetNews", _args, result)));
                 return _result;
             }
             
@@ -4001,9 +4001,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.News[] EndGetListNews(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.News[] EndGetListNews(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.News[] _result = ((SolarSystem.Saturn.Model.ReadersService.News[])(base.EndInvoke("GetListNews", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.News[] _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.News[])(base.EndInvoke("GetListNews", _args, result)));
                 return _result;
             }
             
@@ -4015,9 +4015,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.News[] EndGetListNewsLimited(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.News[] EndGetListNewsLimited(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.News[] _result = ((SolarSystem.Saturn.Model.ReadersService.News[])(base.EndInvoke("GetListNewsLimited", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.News[] _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.News[])(base.EndInvoke("GetListNewsLimited", _args, result)));
                 return _result;
             }
             
@@ -4040,9 +4040,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.News[] EndSearchNews(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.News[] EndSearchNews(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.News[] _result = ((SolarSystem.Saturn.Model.ReadersService.News[])(base.EndInvoke("SearchNews", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.News[] _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.News[])(base.EndInvoke("SearchNews", _args, result)));
                 return _result;
             }
         }
@@ -4060,27 +4060,27 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IProjetReader/GetProjet", ReplyAction="http://tempuri.org/IProjetReader/GetProjetResponse")]
         System.IAsyncResult BeginGetProjet(int code, System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.Projet EndGetProjet(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet EndGetProjet(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IProjetReader/GetProjets", ReplyAction="http://tempuri.org/IProjetReader/GetProjetsResponse")]
         System.IAsyncResult BeginGetProjets(System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.Projet[] EndGetProjets(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[] EndGetProjets(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IProjetReader/GetProjetsLimited", ReplyAction="http://tempuri.org/IProjetReader/GetProjetsLimitedResponse")]
         System.IAsyncResult BeginGetProjetsLimited(int indexFirstElement, int numberOfResults, System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.Projet[] EndGetProjetsLimited(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[] EndGetProjetsLimited(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IProjetReader/GetProjetsByVille", ReplyAction="http://tempuri.org/IProjetReader/GetProjetsByVilleResponse")]
-        System.IAsyncResult BeginGetProjetsByVille(SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginGetProjetsByVille(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.Projet[] EndGetProjetsByVille(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[] EndGetProjetsByVille(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IProjetReader/GetProjetsByVilleLimited", ReplyAction="http://tempuri.org/IProjetReader/GetProjetsByVilleLimitedResponse")]
-        System.IAsyncResult BeginGetProjetsByVilleLimited(SolarSystem.Saturn.Model.ReadersService.Ville ville, int indexFirstElement, int numberOfResults, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginGetProjetsByVilleLimited(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, int indexFirstElement, int numberOfResults, System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.Projet[] EndGetProjetsByVilleLimited(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[] EndGetProjetsByVilleLimited(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IProjetReader/GetProjetLastInsertedId", ReplyAction="http://tempuri.org/IProjetReader/GetProjetLastInsertedIdResponse")]
         System.IAsyncResult BeginGetProjetLastInsertedId(System.AsyncCallback callback, object asyncState);
@@ -4089,7 +4089,7 @@ namespace SolarSystem.Saturn.Model.ReadersService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IProjetReaderChannel : SolarSystem.Saturn.Model.ReadersService.IProjetReader, System.ServiceModel.IClientChannel {
+    public interface IProjetReaderChannel : EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4103,10 +4103,10 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.Projet Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.Projet)(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet)(this.results[0]));
             }
         }
     }
@@ -4122,10 +4122,10 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.Projet[] Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.Projet[])(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[])(this.results[0]));
             }
         }
     }
@@ -4141,10 +4141,10 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.Projet[] Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.Projet[])(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[])(this.results[0]));
             }
         }
     }
@@ -4160,10 +4160,10 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.Projet[] Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.Projet[])(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[])(this.results[0]));
             }
         }
     }
@@ -4179,10 +4179,10 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.Projet[] Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.Projet[])(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[])(this.results[0]));
             }
         }
     }
@@ -4208,7 +4208,7 @@ namespace SolarSystem.Saturn.Model.ReadersService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ProjetReaderClient : System.ServiceModel.ClientBase<SolarSystem.Saturn.Model.ReadersService.IProjetReader>, SolarSystem.Saturn.Model.ReadersService.IProjetReader {
+    public partial class ProjetReaderClient : System.ServiceModel.ClientBase<EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader>, EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader {
         
         private BeginOperationDelegate onBeginGetProjetDelegate;
         
@@ -4317,22 +4317,22 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.IProjetReader.BeginGetProjet(int code, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader.BeginGetProjet(int code, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetProjet(code, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.Projet SolarSystem.Saturn.Model.ReadersService.IProjetReader.EndGetProjet(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader.EndGetProjet(System.IAsyncResult result) {
             return base.Channel.EndGetProjet(result);
         }
         
         private System.IAsyncResult OnBeginGetProjet(object[] inValues, System.AsyncCallback callback, object asyncState) {
             int code = ((int)(inValues[0]));
-            return ((SolarSystem.Saturn.Model.ReadersService.IProjetReader)(this)).BeginGetProjet(code, callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader)(this)).BeginGetProjet(code, callback, asyncState);
         }
         
         private object[] OnEndGetProjet(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.Projet retVal = ((SolarSystem.Saturn.Model.ReadersService.IProjetReader)(this)).EndGetProjet(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader)(this)).EndGetProjet(result);
             return new object[] {
                     retVal};
         }
@@ -4363,21 +4363,21 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.IProjetReader.BeginGetProjets(System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader.BeginGetProjets(System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetProjets(callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.Projet[] SolarSystem.Saturn.Model.ReadersService.IProjetReader.EndGetProjets(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[] EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader.EndGetProjets(System.IAsyncResult result) {
             return base.Channel.EndGetProjets(result);
         }
         
         private System.IAsyncResult OnBeginGetProjets(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return ((SolarSystem.Saturn.Model.ReadersService.IProjetReader)(this)).BeginGetProjets(callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader)(this)).BeginGetProjets(callback, asyncState);
         }
         
         private object[] OnEndGetProjets(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.Projet[] retVal = ((SolarSystem.Saturn.Model.ReadersService.IProjetReader)(this)).EndGetProjets(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[] retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader)(this)).EndGetProjets(result);
             return new object[] {
                     retVal};
         }
@@ -4407,23 +4407,23 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.IProjetReader.BeginGetProjetsLimited(int indexFirstElement, int numberOfResults, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader.BeginGetProjetsLimited(int indexFirstElement, int numberOfResults, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetProjetsLimited(indexFirstElement, numberOfResults, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.Projet[] SolarSystem.Saturn.Model.ReadersService.IProjetReader.EndGetProjetsLimited(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[] EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader.EndGetProjetsLimited(System.IAsyncResult result) {
             return base.Channel.EndGetProjetsLimited(result);
         }
         
         private System.IAsyncResult OnBeginGetProjetsLimited(object[] inValues, System.AsyncCallback callback, object asyncState) {
             int indexFirstElement = ((int)(inValues[0]));
             int numberOfResults = ((int)(inValues[1]));
-            return ((SolarSystem.Saturn.Model.ReadersService.IProjetReader)(this)).BeginGetProjetsLimited(indexFirstElement, numberOfResults, callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader)(this)).BeginGetProjetsLimited(indexFirstElement, numberOfResults, callback, asyncState);
         }
         
         private object[] OnEndGetProjetsLimited(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.Projet[] retVal = ((SolarSystem.Saturn.Model.ReadersService.IProjetReader)(this)).EndGetProjetsLimited(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[] retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader)(this)).EndGetProjetsLimited(result);
             return new object[] {
                     retVal};
         }
@@ -4455,22 +4455,22 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.IProjetReader.BeginGetProjetsByVille(SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader.BeginGetProjetsByVille(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetProjetsByVille(ville, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.Projet[] SolarSystem.Saturn.Model.ReadersService.IProjetReader.EndGetProjetsByVille(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[] EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader.EndGetProjetsByVille(System.IAsyncResult result) {
             return base.Channel.EndGetProjetsByVille(result);
         }
         
         private System.IAsyncResult OnBeginGetProjetsByVille(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            SolarSystem.Saturn.Model.ReadersService.Ville ville = ((SolarSystem.Saturn.Model.ReadersService.Ville)(inValues[0]));
-            return ((SolarSystem.Saturn.Model.ReadersService.IProjetReader)(this)).BeginGetProjetsByVille(ville, callback, asyncState);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville)(inValues[0]));
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader)(this)).BeginGetProjetsByVille(ville, callback, asyncState);
         }
         
         private object[] OnEndGetProjetsByVille(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.Projet[] retVal = ((SolarSystem.Saturn.Model.ReadersService.IProjetReader)(this)).EndGetProjetsByVille(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[] retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader)(this)).EndGetProjetsByVille(result);
             return new object[] {
                     retVal};
         }
@@ -4482,11 +4482,11 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             }
         }
         
-        public void GetProjetsByVilleAsync(SolarSystem.Saturn.Model.ReadersService.Ville ville) {
+        public void GetProjetsByVilleAsync(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville) {
             this.GetProjetsByVilleAsync(ville, null);
         }
         
-        public void GetProjetsByVilleAsync(SolarSystem.Saturn.Model.ReadersService.Ville ville, object userState) {
+        public void GetProjetsByVilleAsync(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, object userState) {
             if ((this.onBeginGetProjetsByVilleDelegate == null)) {
                 this.onBeginGetProjetsByVilleDelegate = new BeginOperationDelegate(this.OnBeginGetProjetsByVille);
             }
@@ -4501,24 +4501,24 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.IProjetReader.BeginGetProjetsByVilleLimited(SolarSystem.Saturn.Model.ReadersService.Ville ville, int indexFirstElement, int numberOfResults, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader.BeginGetProjetsByVilleLimited(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, int indexFirstElement, int numberOfResults, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetProjetsByVilleLimited(ville, indexFirstElement, numberOfResults, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.Projet[] SolarSystem.Saturn.Model.ReadersService.IProjetReader.EndGetProjetsByVilleLimited(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[] EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader.EndGetProjetsByVilleLimited(System.IAsyncResult result) {
             return base.Channel.EndGetProjetsByVilleLimited(result);
         }
         
         private System.IAsyncResult OnBeginGetProjetsByVilleLimited(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            SolarSystem.Saturn.Model.ReadersService.Ville ville = ((SolarSystem.Saturn.Model.ReadersService.Ville)(inValues[0]));
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville)(inValues[0]));
             int indexFirstElement = ((int)(inValues[1]));
             int numberOfResults = ((int)(inValues[2]));
-            return ((SolarSystem.Saturn.Model.ReadersService.IProjetReader)(this)).BeginGetProjetsByVilleLimited(ville, indexFirstElement, numberOfResults, callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader)(this)).BeginGetProjetsByVilleLimited(ville, indexFirstElement, numberOfResults, callback, asyncState);
         }
         
         private object[] OnEndGetProjetsByVilleLimited(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.Projet[] retVal = ((SolarSystem.Saturn.Model.ReadersService.IProjetReader)(this)).EndGetProjetsByVilleLimited(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[] retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader)(this)).EndGetProjetsByVilleLimited(result);
             return new object[] {
                     retVal};
         }
@@ -4530,11 +4530,11 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             }
         }
         
-        public void GetProjetsByVilleLimitedAsync(SolarSystem.Saturn.Model.ReadersService.Ville ville, int indexFirstElement, int numberOfResults) {
+        public void GetProjetsByVilleLimitedAsync(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, int indexFirstElement, int numberOfResults) {
             this.GetProjetsByVilleLimitedAsync(ville, indexFirstElement, numberOfResults, null);
         }
         
-        public void GetProjetsByVilleLimitedAsync(SolarSystem.Saturn.Model.ReadersService.Ville ville, int indexFirstElement, int numberOfResults, object userState) {
+        public void GetProjetsByVilleLimitedAsync(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, int indexFirstElement, int numberOfResults, object userState) {
             if ((this.onBeginGetProjetsByVilleLimitedDelegate == null)) {
                 this.onBeginGetProjetsByVilleLimitedDelegate = new BeginOperationDelegate(this.OnBeginGetProjetsByVilleLimited);
             }
@@ -4551,21 +4551,21 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.IProjetReader.BeginGetProjetLastInsertedId(System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader.BeginGetProjetLastInsertedId(System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetProjetLastInsertedId(callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        int SolarSystem.Saturn.Model.ReadersService.IProjetReader.EndGetProjetLastInsertedId(System.IAsyncResult result) {
+        int EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader.EndGetProjetLastInsertedId(System.IAsyncResult result) {
             return base.Channel.EndGetProjetLastInsertedId(result);
         }
         
         private System.IAsyncResult OnBeginGetProjetLastInsertedId(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return ((SolarSystem.Saturn.Model.ReadersService.IProjetReader)(this)).BeginGetProjetLastInsertedId(callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader)(this)).BeginGetProjetLastInsertedId(callback, asyncState);
         }
         
         private object[] OnEndGetProjetLastInsertedId(System.IAsyncResult result) {
-            int retVal = ((SolarSystem.Saturn.Model.ReadersService.IProjetReader)(this)).EndGetProjetLastInsertedId(result);
+            int retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader)(this)).EndGetProjetLastInsertedId(result);
             return new object[] {
                     retVal};
         }
@@ -4660,7 +4660,7 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             base.InvokeAsync(this.onBeginCloseDelegate, null, this.onEndCloseDelegate, this.onCloseCompletedDelegate, userState);
         }
         
-        protected override SolarSystem.Saturn.Model.ReadersService.IProjetReader CreateChannel() {
+        protected override EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader CreateChannel() {
             return new ProjetReaderClientChannel(this);
         }
         
@@ -4689,9 +4689,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             return ProjetReaderClient.GetEndpointAddress(EndpointConfiguration.BasicHttpBinding_IProjetReader);
         }
         
-        private class ProjetReaderClientChannel : ChannelBase<SolarSystem.Saturn.Model.ReadersService.IProjetReader>, SolarSystem.Saturn.Model.ReadersService.IProjetReader {
+        private class ProjetReaderClientChannel : ChannelBase<EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader>, EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader {
             
-            public ProjetReaderClientChannel(System.ServiceModel.ClientBase<SolarSystem.Saturn.Model.ReadersService.IProjetReader> client) : 
+            public ProjetReaderClientChannel(System.ServiceModel.ClientBase<EPSILab.SolarSystem.Saturn.Model.ReadersService.IProjetReader> client) : 
                     base(client) {
             }
             
@@ -4702,9 +4702,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.Projet EndGetProjet(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet EndGetProjet(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.Projet _result = ((SolarSystem.Saturn.Model.ReadersService.Projet)(base.EndInvoke("GetProjet", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet)(base.EndInvoke("GetProjet", _args, result)));
                 return _result;
             }
             
@@ -4714,9 +4714,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.Projet[] EndGetProjets(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[] EndGetProjets(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.Projet[] _result = ((SolarSystem.Saturn.Model.ReadersService.Projet[])(base.EndInvoke("GetProjets", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[] _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[])(base.EndInvoke("GetProjets", _args, result)));
                 return _result;
             }
             
@@ -4728,26 +4728,26 @@ namespace SolarSystem.Saturn.Model.ReadersService {
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.Projet[] EndGetProjetsLimited(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[] EndGetProjetsLimited(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.Projet[] _result = ((SolarSystem.Saturn.Model.ReadersService.Projet[])(base.EndInvoke("GetProjetsLimited", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[] _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[])(base.EndInvoke("GetProjetsLimited", _args, result)));
                 return _result;
             }
             
-            public System.IAsyncResult BeginGetProjetsByVille(SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState) {
+            public System.IAsyncResult BeginGetProjetsByVille(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[1];
                 _args[0] = ville;
                 System.IAsyncResult _result = base.BeginInvoke("GetProjetsByVille", _args, callback, asyncState);
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.Projet[] EndGetProjetsByVille(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[] EndGetProjetsByVille(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.Projet[] _result = ((SolarSystem.Saturn.Model.ReadersService.Projet[])(base.EndInvoke("GetProjetsByVille", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[] _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[])(base.EndInvoke("GetProjetsByVille", _args, result)));
                 return _result;
             }
             
-            public System.IAsyncResult BeginGetProjetsByVilleLimited(SolarSystem.Saturn.Model.ReadersService.Ville ville, int indexFirstElement, int numberOfResults, System.AsyncCallback callback, object asyncState) {
+            public System.IAsyncResult BeginGetProjetsByVilleLimited(EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville ville, int indexFirstElement, int numberOfResults, System.AsyncCallback callback, object asyncState) {
                 object[] _args = new object[3];
                 _args[0] = ville;
                 _args[1] = indexFirstElement;
@@ -4756,9 +4756,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.Projet[] EndGetProjetsByVilleLimited(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[] EndGetProjetsByVilleLimited(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.Projet[] _result = ((SolarSystem.Saturn.Model.ReadersService.Projet[])(base.EndInvoke("GetProjetsByVilleLimited", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[] _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Projet[])(base.EndInvoke("GetProjetsByVilleLimited", _args, result)));
                 return _result;
             }
             
@@ -4788,16 +4788,16 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IPubliciteReader/GetPublicite", ReplyAction="http://tempuri.org/IPubliciteReader/GetPubliciteResponse")]
         System.IAsyncResult BeginGetPublicite(int code, System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.Publicite EndGetPublicite(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Publicite EndGetPublicite(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IPubliciteReader/GetPublicites", ReplyAction="http://tempuri.org/IPubliciteReader/GetPublicitesResponse")]
         System.IAsyncResult BeginGetPublicites(System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.Publicite[] EndGetPublicites(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Publicite[] EndGetPublicites(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IPubliciteReaderChannel : SolarSystem.Saturn.Model.ReadersService.IPubliciteReader, System.ServiceModel.IClientChannel {
+    public interface IPubliciteReaderChannel : EPSILab.SolarSystem.Saturn.Model.ReadersService.IPubliciteReader, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -4811,10 +4811,10 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.Publicite Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Publicite Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.Publicite)(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Publicite)(this.results[0]));
             }
         }
     }
@@ -4830,17 +4830,17 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.Publicite[] Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Publicite[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.Publicite[])(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Publicite[])(this.results[0]));
             }
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class PubliciteReaderClient : System.ServiceModel.ClientBase<SolarSystem.Saturn.Model.ReadersService.IPubliciteReader>, SolarSystem.Saturn.Model.ReadersService.IPubliciteReader {
+    public partial class PubliciteReaderClient : System.ServiceModel.ClientBase<EPSILab.SolarSystem.Saturn.Model.ReadersService.IPubliciteReader>, EPSILab.SolarSystem.Saturn.Model.ReadersService.IPubliciteReader {
         
         private BeginOperationDelegate onBeginGetPubliciteDelegate;
         
@@ -4917,22 +4917,22 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.IPubliciteReader.BeginGetPublicite(int code, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.IPubliciteReader.BeginGetPublicite(int code, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetPublicite(code, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.Publicite SolarSystem.Saturn.Model.ReadersService.IPubliciteReader.EndGetPublicite(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Publicite EPSILab.SolarSystem.Saturn.Model.ReadersService.IPubliciteReader.EndGetPublicite(System.IAsyncResult result) {
             return base.Channel.EndGetPublicite(result);
         }
         
         private System.IAsyncResult OnBeginGetPublicite(object[] inValues, System.AsyncCallback callback, object asyncState) {
             int code = ((int)(inValues[0]));
-            return ((SolarSystem.Saturn.Model.ReadersService.IPubliciteReader)(this)).BeginGetPublicite(code, callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IPubliciteReader)(this)).BeginGetPublicite(code, callback, asyncState);
         }
         
         private object[] OnEndGetPublicite(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.Publicite retVal = ((SolarSystem.Saturn.Model.ReadersService.IPubliciteReader)(this)).EndGetPublicite(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Publicite retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IPubliciteReader)(this)).EndGetPublicite(result);
             return new object[] {
                     retVal};
         }
@@ -4963,21 +4963,21 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.IPubliciteReader.BeginGetPublicites(System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.IPubliciteReader.BeginGetPublicites(System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetPublicites(callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.Publicite[] SolarSystem.Saturn.Model.ReadersService.IPubliciteReader.EndGetPublicites(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Publicite[] EPSILab.SolarSystem.Saturn.Model.ReadersService.IPubliciteReader.EndGetPublicites(System.IAsyncResult result) {
             return base.Channel.EndGetPublicites(result);
         }
         
         private System.IAsyncResult OnBeginGetPublicites(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return ((SolarSystem.Saturn.Model.ReadersService.IPubliciteReader)(this)).BeginGetPublicites(callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IPubliciteReader)(this)).BeginGetPublicites(callback, asyncState);
         }
         
         private object[] OnEndGetPublicites(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.Publicite[] retVal = ((SolarSystem.Saturn.Model.ReadersService.IPubliciteReader)(this)).EndGetPublicites(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Publicite[] retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IPubliciteReader)(this)).EndGetPublicites(result);
             return new object[] {
                     retVal};
         }
@@ -5072,7 +5072,7 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             base.InvokeAsync(this.onBeginCloseDelegate, null, this.onEndCloseDelegate, this.onCloseCompletedDelegate, userState);
         }
         
-        protected override SolarSystem.Saturn.Model.ReadersService.IPubliciteReader CreateChannel() {
+        protected override EPSILab.SolarSystem.Saturn.Model.ReadersService.IPubliciteReader CreateChannel() {
             return new PubliciteReaderClientChannel(this);
         }
         
@@ -5101,9 +5101,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             return PubliciteReaderClient.GetEndpointAddress(EndpointConfiguration.BasicHttpBinding_IPubliciteReader);
         }
         
-        private class PubliciteReaderClientChannel : ChannelBase<SolarSystem.Saturn.Model.ReadersService.IPubliciteReader>, SolarSystem.Saturn.Model.ReadersService.IPubliciteReader {
+        private class PubliciteReaderClientChannel : ChannelBase<EPSILab.SolarSystem.Saturn.Model.ReadersService.IPubliciteReader>, EPSILab.SolarSystem.Saturn.Model.ReadersService.IPubliciteReader {
             
-            public PubliciteReaderClientChannel(System.ServiceModel.ClientBase<SolarSystem.Saturn.Model.ReadersService.IPubliciteReader> client) : 
+            public PubliciteReaderClientChannel(System.ServiceModel.ClientBase<EPSILab.SolarSystem.Saturn.Model.ReadersService.IPubliciteReader> client) : 
                     base(client) {
             }
             
@@ -5114,9 +5114,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.Publicite EndGetPublicite(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.Publicite EndGetPublicite(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.Publicite _result = ((SolarSystem.Saturn.Model.ReadersService.Publicite)(base.EndInvoke("GetPublicite", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.Publicite _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Publicite)(base.EndInvoke("GetPublicite", _args, result)));
                 return _result;
             }
             
@@ -5126,9 +5126,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.Publicite[] EndGetPublicites(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.Publicite[] EndGetPublicites(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.Publicite[] _result = ((SolarSystem.Saturn.Model.ReadersService.Publicite[])(base.EndInvoke("GetPublicites", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.Publicite[] _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Publicite[])(base.EndInvoke("GetPublicites", _args, result)));
                 return _result;
             }
         }
@@ -5146,17 +5146,17 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ISalonReader/GetSalon", ReplyAction="http://tempuri.org/ISalonReader/GetSalonResponse")]
         System.IAsyncResult BeginGetSalon(int code, System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.Salon EndGetSalon(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon EndGetSalon(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ISalonReader/GetSalons", ReplyAction="http://tempuri.org/ISalonReader/GetSalonsResponse")]
         System.IAsyncResult BeginGetSalons(System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.Salon[] EndGetSalons(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon[] EndGetSalons(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ISalonReader/GetSalonsLimited", ReplyAction="http://tempuri.org/ISalonReader/GetSalonsLimitedResponse")]
         System.IAsyncResult BeginGetSalonsLimited(int indexFirstElement, int numberOfResults, System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.Salon[] EndGetSalonsLimited(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon[] EndGetSalonsLimited(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ISalonReader/GetSalonLastInsertedId", ReplyAction="http://tempuri.org/ISalonReader/GetSalonLastInsertedIdResponse")]
         System.IAsyncResult BeginGetSalonLastInsertedId(System.AsyncCallback callback, object asyncState);
@@ -5166,11 +5166,11 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/ISalonReader/SearchSalons", ReplyAction="http://tempuri.org/ISalonReader/SearchSalonsResponse")]
         System.IAsyncResult BeginSearchSalons(string keywords, System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.Salon[] EndSearchSalons(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon[] EndSearchSalons(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ISalonReaderChannel : SolarSystem.Saturn.Model.ReadersService.ISalonReader, System.ServiceModel.IClientChannel {
+    public interface ISalonReaderChannel : EPSILab.SolarSystem.Saturn.Model.ReadersService.ISalonReader, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5184,10 +5184,10 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.Salon Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.Salon)(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon)(this.results[0]));
             }
         }
     }
@@ -5203,10 +5203,10 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.Salon[] Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.Salon[])(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon[])(this.results[0]));
             }
         }
     }
@@ -5222,10 +5222,10 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.Salon[] Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.Salon[])(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon[])(this.results[0]));
             }
         }
     }
@@ -5260,17 +5260,17 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.Salon[] Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.Salon[])(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon[])(this.results[0]));
             }
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class SalonReaderClient : System.ServiceModel.ClientBase<SolarSystem.Saturn.Model.ReadersService.ISalonReader>, SolarSystem.Saturn.Model.ReadersService.ISalonReader {
+    public partial class SalonReaderClient : System.ServiceModel.ClientBase<EPSILab.SolarSystem.Saturn.Model.ReadersService.ISalonReader>, EPSILab.SolarSystem.Saturn.Model.ReadersService.ISalonReader {
         
         private BeginOperationDelegate onBeginGetSalonDelegate;
         
@@ -5371,22 +5371,22 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.ISalonReader.BeginGetSalon(int code, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.ISalonReader.BeginGetSalon(int code, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetSalon(code, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.Salon SolarSystem.Saturn.Model.ReadersService.ISalonReader.EndGetSalon(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon EPSILab.SolarSystem.Saturn.Model.ReadersService.ISalonReader.EndGetSalon(System.IAsyncResult result) {
             return base.Channel.EndGetSalon(result);
         }
         
         private System.IAsyncResult OnBeginGetSalon(object[] inValues, System.AsyncCallback callback, object asyncState) {
             int code = ((int)(inValues[0]));
-            return ((SolarSystem.Saturn.Model.ReadersService.ISalonReader)(this)).BeginGetSalon(code, callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.ISalonReader)(this)).BeginGetSalon(code, callback, asyncState);
         }
         
         private object[] OnEndGetSalon(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.Salon retVal = ((SolarSystem.Saturn.Model.ReadersService.ISalonReader)(this)).EndGetSalon(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.ISalonReader)(this)).EndGetSalon(result);
             return new object[] {
                     retVal};
         }
@@ -5417,21 +5417,21 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.ISalonReader.BeginGetSalons(System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.ISalonReader.BeginGetSalons(System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetSalons(callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.Salon[] SolarSystem.Saturn.Model.ReadersService.ISalonReader.EndGetSalons(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon[] EPSILab.SolarSystem.Saturn.Model.ReadersService.ISalonReader.EndGetSalons(System.IAsyncResult result) {
             return base.Channel.EndGetSalons(result);
         }
         
         private System.IAsyncResult OnBeginGetSalons(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return ((SolarSystem.Saturn.Model.ReadersService.ISalonReader)(this)).BeginGetSalons(callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.ISalonReader)(this)).BeginGetSalons(callback, asyncState);
         }
         
         private object[] OnEndGetSalons(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.Salon[] retVal = ((SolarSystem.Saturn.Model.ReadersService.ISalonReader)(this)).EndGetSalons(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon[] retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.ISalonReader)(this)).EndGetSalons(result);
             return new object[] {
                     retVal};
         }
@@ -5461,23 +5461,23 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.ISalonReader.BeginGetSalonsLimited(int indexFirstElement, int numberOfResults, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.ISalonReader.BeginGetSalonsLimited(int indexFirstElement, int numberOfResults, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetSalonsLimited(indexFirstElement, numberOfResults, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.Salon[] SolarSystem.Saturn.Model.ReadersService.ISalonReader.EndGetSalonsLimited(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon[] EPSILab.SolarSystem.Saturn.Model.ReadersService.ISalonReader.EndGetSalonsLimited(System.IAsyncResult result) {
             return base.Channel.EndGetSalonsLimited(result);
         }
         
         private System.IAsyncResult OnBeginGetSalonsLimited(object[] inValues, System.AsyncCallback callback, object asyncState) {
             int indexFirstElement = ((int)(inValues[0]));
             int numberOfResults = ((int)(inValues[1]));
-            return ((SolarSystem.Saturn.Model.ReadersService.ISalonReader)(this)).BeginGetSalonsLimited(indexFirstElement, numberOfResults, callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.ISalonReader)(this)).BeginGetSalonsLimited(indexFirstElement, numberOfResults, callback, asyncState);
         }
         
         private object[] OnEndGetSalonsLimited(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.Salon[] retVal = ((SolarSystem.Saturn.Model.ReadersService.ISalonReader)(this)).EndGetSalonsLimited(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon[] retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.ISalonReader)(this)).EndGetSalonsLimited(result);
             return new object[] {
                     retVal};
         }
@@ -5509,21 +5509,21 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.ISalonReader.BeginGetSalonLastInsertedId(System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.ISalonReader.BeginGetSalonLastInsertedId(System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetSalonLastInsertedId(callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        int SolarSystem.Saturn.Model.ReadersService.ISalonReader.EndGetSalonLastInsertedId(System.IAsyncResult result) {
+        int EPSILab.SolarSystem.Saturn.Model.ReadersService.ISalonReader.EndGetSalonLastInsertedId(System.IAsyncResult result) {
             return base.Channel.EndGetSalonLastInsertedId(result);
         }
         
         private System.IAsyncResult OnBeginGetSalonLastInsertedId(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return ((SolarSystem.Saturn.Model.ReadersService.ISalonReader)(this)).BeginGetSalonLastInsertedId(callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.ISalonReader)(this)).BeginGetSalonLastInsertedId(callback, asyncState);
         }
         
         private object[] OnEndGetSalonLastInsertedId(System.IAsyncResult result) {
-            int retVal = ((SolarSystem.Saturn.Model.ReadersService.ISalonReader)(this)).EndGetSalonLastInsertedId(result);
+            int retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.ISalonReader)(this)).EndGetSalonLastInsertedId(result);
             return new object[] {
                     retVal};
         }
@@ -5553,22 +5553,22 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.ISalonReader.BeginSearchSalons(string keywords, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.ISalonReader.BeginSearchSalons(string keywords, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginSearchSalons(keywords, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.Salon[] SolarSystem.Saturn.Model.ReadersService.ISalonReader.EndSearchSalons(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon[] EPSILab.SolarSystem.Saturn.Model.ReadersService.ISalonReader.EndSearchSalons(System.IAsyncResult result) {
             return base.Channel.EndSearchSalons(result);
         }
         
         private System.IAsyncResult OnBeginSearchSalons(object[] inValues, System.AsyncCallback callback, object asyncState) {
             string keywords = ((string)(inValues[0]));
-            return ((SolarSystem.Saturn.Model.ReadersService.ISalonReader)(this)).BeginSearchSalons(keywords, callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.ISalonReader)(this)).BeginSearchSalons(keywords, callback, asyncState);
         }
         
         private object[] OnEndSearchSalons(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.Salon[] retVal = ((SolarSystem.Saturn.Model.ReadersService.ISalonReader)(this)).EndSearchSalons(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon[] retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.ISalonReader)(this)).EndSearchSalons(result);
             return new object[] {
                     retVal};
         }
@@ -5664,7 +5664,7 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             base.InvokeAsync(this.onBeginCloseDelegate, null, this.onEndCloseDelegate, this.onCloseCompletedDelegate, userState);
         }
         
-        protected override SolarSystem.Saturn.Model.ReadersService.ISalonReader CreateChannel() {
+        protected override EPSILab.SolarSystem.Saturn.Model.ReadersService.ISalonReader CreateChannel() {
             return new SalonReaderClientChannel(this);
         }
         
@@ -5693,9 +5693,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             return SalonReaderClient.GetEndpointAddress(EndpointConfiguration.BasicHttpBinding_ISalonReader);
         }
         
-        private class SalonReaderClientChannel : ChannelBase<SolarSystem.Saturn.Model.ReadersService.ISalonReader>, SolarSystem.Saturn.Model.ReadersService.ISalonReader {
+        private class SalonReaderClientChannel : ChannelBase<EPSILab.SolarSystem.Saturn.Model.ReadersService.ISalonReader>, EPSILab.SolarSystem.Saturn.Model.ReadersService.ISalonReader {
             
-            public SalonReaderClientChannel(System.ServiceModel.ClientBase<SolarSystem.Saturn.Model.ReadersService.ISalonReader> client) : 
+            public SalonReaderClientChannel(System.ServiceModel.ClientBase<EPSILab.SolarSystem.Saturn.Model.ReadersService.ISalonReader> client) : 
                     base(client) {
             }
             
@@ -5706,9 +5706,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.Salon EndGetSalon(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon EndGetSalon(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.Salon _result = ((SolarSystem.Saturn.Model.ReadersService.Salon)(base.EndInvoke("GetSalon", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon)(base.EndInvoke("GetSalon", _args, result)));
                 return _result;
             }
             
@@ -5718,9 +5718,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.Salon[] EndGetSalons(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon[] EndGetSalons(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.Salon[] _result = ((SolarSystem.Saturn.Model.ReadersService.Salon[])(base.EndInvoke("GetSalons", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon[] _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon[])(base.EndInvoke("GetSalons", _args, result)));
                 return _result;
             }
             
@@ -5732,9 +5732,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.Salon[] EndGetSalonsLimited(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon[] EndGetSalonsLimited(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.Salon[] _result = ((SolarSystem.Saturn.Model.ReadersService.Salon[])(base.EndInvoke("GetSalonsLimited", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon[] _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon[])(base.EndInvoke("GetSalonsLimited", _args, result)));
                 return _result;
             }
             
@@ -5757,9 +5757,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.Salon[] EndSearchSalons(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon[] EndSearchSalons(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.Salon[] _result = ((SolarSystem.Saturn.Model.ReadersService.Salon[])(base.EndInvoke("SearchSalons", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon[] _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Salon[])(base.EndInvoke("SearchSalons", _args, result)));
                 return _result;
             }
         }
@@ -5777,16 +5777,16 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IVilleReader/GetVille", ReplyAction="http://tempuri.org/IVilleReader/GetVilleResponse")]
         System.IAsyncResult BeginGetVille(int code, System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.Ville EndGetVille(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville EndGetVille(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IVilleReader/GetVilles", ReplyAction="http://tempuri.org/IVilleReader/GetVillesResponse")]
         System.IAsyncResult BeginGetVilles(System.AsyncCallback callback, object asyncState);
         
-        SolarSystem.Saturn.Model.ReadersService.Ville[] EndGetVilles(System.IAsyncResult result);
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville[] EndGetVilles(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IVilleReaderChannel : SolarSystem.Saturn.Model.ReadersService.IVilleReader, System.ServiceModel.IClientChannel {
+    public interface IVilleReaderChannel : EPSILab.SolarSystem.Saturn.Model.ReadersService.IVilleReader, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -5800,10 +5800,10 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.Ville Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.Ville)(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville)(this.results[0]));
             }
         }
     }
@@ -5819,17 +5819,17 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             this.results = results;
         }
         
-        public SolarSystem.Saturn.Model.ReadersService.Ville[] Result {
+        public EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((SolarSystem.Saturn.Model.ReadersService.Ville[])(this.results[0]));
+                return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville[])(this.results[0]));
             }
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class VilleReaderClient : System.ServiceModel.ClientBase<SolarSystem.Saturn.Model.ReadersService.IVilleReader>, SolarSystem.Saturn.Model.ReadersService.IVilleReader {
+    public partial class VilleReaderClient : System.ServiceModel.ClientBase<EPSILab.SolarSystem.Saturn.Model.ReadersService.IVilleReader>, EPSILab.SolarSystem.Saturn.Model.ReadersService.IVilleReader {
         
         private BeginOperationDelegate onBeginGetVilleDelegate;
         
@@ -5906,22 +5906,22 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> CloseCompleted;
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.IVilleReader.BeginGetVille(int code, System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.IVilleReader.BeginGetVille(int code, System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetVille(code, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.Ville SolarSystem.Saturn.Model.ReadersService.IVilleReader.EndGetVille(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville EPSILab.SolarSystem.Saturn.Model.ReadersService.IVilleReader.EndGetVille(System.IAsyncResult result) {
             return base.Channel.EndGetVille(result);
         }
         
         private System.IAsyncResult OnBeginGetVille(object[] inValues, System.AsyncCallback callback, object asyncState) {
             int code = ((int)(inValues[0]));
-            return ((SolarSystem.Saturn.Model.ReadersService.IVilleReader)(this)).BeginGetVille(code, callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IVilleReader)(this)).BeginGetVille(code, callback, asyncState);
         }
         
         private object[] OnEndGetVille(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.Ville retVal = ((SolarSystem.Saturn.Model.ReadersService.IVilleReader)(this)).EndGetVille(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IVilleReader)(this)).EndGetVille(result);
             return new object[] {
                     retVal};
         }
@@ -5952,21 +5952,21 @@ namespace SolarSystem.Saturn.Model.ReadersService {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.IAsyncResult SolarSystem.Saturn.Model.ReadersService.IVilleReader.BeginGetVilles(System.AsyncCallback callback, object asyncState) {
+        System.IAsyncResult EPSILab.SolarSystem.Saturn.Model.ReadersService.IVilleReader.BeginGetVilles(System.AsyncCallback callback, object asyncState) {
             return base.Channel.BeginGetVilles(callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SolarSystem.Saturn.Model.ReadersService.Ville[] SolarSystem.Saturn.Model.ReadersService.IVilleReader.EndGetVilles(System.IAsyncResult result) {
+        EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville[] EPSILab.SolarSystem.Saturn.Model.ReadersService.IVilleReader.EndGetVilles(System.IAsyncResult result) {
             return base.Channel.EndGetVilles(result);
         }
         
         private System.IAsyncResult OnBeginGetVilles(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return ((SolarSystem.Saturn.Model.ReadersService.IVilleReader)(this)).BeginGetVilles(callback, asyncState);
+            return ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IVilleReader)(this)).BeginGetVilles(callback, asyncState);
         }
         
         private object[] OnEndGetVilles(System.IAsyncResult result) {
-            SolarSystem.Saturn.Model.ReadersService.Ville[] retVal = ((SolarSystem.Saturn.Model.ReadersService.IVilleReader)(this)).EndGetVilles(result);
+            EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville[] retVal = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.IVilleReader)(this)).EndGetVilles(result);
             return new object[] {
                     retVal};
         }
@@ -6061,7 +6061,7 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             base.InvokeAsync(this.onBeginCloseDelegate, null, this.onEndCloseDelegate, this.onCloseCompletedDelegate, userState);
         }
         
-        protected override SolarSystem.Saturn.Model.ReadersService.IVilleReader CreateChannel() {
+        protected override EPSILab.SolarSystem.Saturn.Model.ReadersService.IVilleReader CreateChannel() {
             return new VilleReaderClientChannel(this);
         }
         
@@ -6090,9 +6090,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
             return VilleReaderClient.GetEndpointAddress(EndpointConfiguration.BasicHttpBinding_IVilleReader);
         }
         
-        private class VilleReaderClientChannel : ChannelBase<SolarSystem.Saturn.Model.ReadersService.IVilleReader>, SolarSystem.Saturn.Model.ReadersService.IVilleReader {
+        private class VilleReaderClientChannel : ChannelBase<EPSILab.SolarSystem.Saturn.Model.ReadersService.IVilleReader>, EPSILab.SolarSystem.Saturn.Model.ReadersService.IVilleReader {
             
-            public VilleReaderClientChannel(System.ServiceModel.ClientBase<SolarSystem.Saturn.Model.ReadersService.IVilleReader> client) : 
+            public VilleReaderClientChannel(System.ServiceModel.ClientBase<EPSILab.SolarSystem.Saturn.Model.ReadersService.IVilleReader> client) : 
                     base(client) {
             }
             
@@ -6103,9 +6103,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.Ville EndGetVille(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville EndGetVille(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.Ville _result = ((SolarSystem.Saturn.Model.ReadersService.Ville)(base.EndInvoke("GetVille", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville)(base.EndInvoke("GetVille", _args, result)));
                 return _result;
             }
             
@@ -6115,9 +6115,9 @@ namespace SolarSystem.Saturn.Model.ReadersService {
                 return _result;
             }
             
-            public SolarSystem.Saturn.Model.ReadersService.Ville[] EndGetVilles(System.IAsyncResult result) {
+            public EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville[] EndGetVilles(System.IAsyncResult result) {
                 object[] _args = new object[0];
-                SolarSystem.Saturn.Model.ReadersService.Ville[] _result = ((SolarSystem.Saturn.Model.ReadersService.Ville[])(base.EndInvoke("GetVilles", _args, result)));
+                EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville[] _result = ((EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville[])(base.EndInvoke("GetVilles", _args, result)));
                 return _result;
             }
         }

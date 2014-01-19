@@ -1,8 +1,8 @@
-﻿using SolarSystem.Saturn.ViewModel.Helpers;
-using SolarSystem.Saturn.ViewModel.Objects;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
+using EPSILab.SolarSystem.Saturn.ViewModel.Helpers;
+using EPSILab.SolarSystem.Saturn.ViewModel.Objects;
 
-namespace SolarSystem.Saturn.ViewModel.DesignViewModel
+namespace EPSILab.SolarSystem.Saturn.ViewModel.DesignViewModel
 {
     /// <summary>
     /// Design view-model for the main page

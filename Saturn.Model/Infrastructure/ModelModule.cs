@@ -1,8 +1,8 @@
 ﻿using Autofac;
-using SolarSystem.Saturn.Model.Interfaces;
-using SolarSystem.Saturn.Model.ReadersService;
+using EPSILab.SolarSystem.Saturn.Model.Interfaces;
+using EPSILab.SolarSystem.Saturn.Model.ReadersService;
 
-namespace SolarSystem.Saturn.Model.Infrastructure
+namespace EPSILab.SolarSystem.Saturn.Model.Infrastructure
 {
     /// <summary>
     /// Build links between model interfaces and model classes with Autofac

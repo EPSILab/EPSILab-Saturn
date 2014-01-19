@@ -1,4 +1,4 @@
-﻿namespace SolarSystem.Saturn.ViewModel.Objects
+﻿namespace EPSILab.SolarSystem.Saturn.ViewModel.Objects
 {
     /// <summary>
     /// A cross generic item used to show informations on the main page

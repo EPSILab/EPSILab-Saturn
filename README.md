@@ -8,7 +8,7 @@ You can download the application on:
 - Windows Phone App: http://www.windowsphone.com/fr-fr/store/app/epsilab/d5f38513-160d-49cb-99be-8d15bf9bb217
 
 #HowTo
-Clone this repository and open the solution file named "**SolarSystem.Saturn.sln**".
+Clone this repository and open the solution file named "**Saturn.sln**".
 
 #License
 This project has a **LGPL** license.
@@ -19,13 +19,32 @@ This project has a **LGPL** license.
 - Visual Studio 2012 or higher
 - Windows Phone 8.0 SDK
 
-#Layers:
-- **DataAccess:** Get all the informations from the EPSILab web-service. (PCL project)
-- **Model:** The Model layer from the MVVM pattern. (PCL project)
-- **ViewModel:** The common View-Model layer from the MVVM pattern for both applications. (PCL project)
-- **Win8:** Windows 8/RT project for Windows Store. Represents the View from the MVVM pattern.
-- **WP8:** Windows Phone 8 project for Windows Phone. Represents the View from the MVVM pattern.
-
+#Projects:
+- **Saturn.Model**
+ - Get all the informations from EPSILab web-service
+ - Portable Class Library project
+- **Saturn.ViewModel**
+ - Contains all view-models for the Windows 8 and Windows Phone apps
+ - Portable Class Library project
+- **Saturn.Windows8**
+ - The application dedicated to the Windows Store
+ - Windows 8.0 project
+- **Saturn.Windows8.BackgroundTasks**
+ - Contains background tasks which update the Windows 8 application tile and display toast notifications if a new element has been published.
+ - Windows 8.0 Class Library project
+- **Saturn.Windows8.NotificationsFactory**
+ - Contains all classes to update the Windows 8 application tile and to display toasts notifications when a new element is published
+ - Windows 8.0 Class Library project
+- **Saturn.WindowsPhone8**
+ - The application dedicated to the Windows Phone Store for Windows Phone 8
+ - Windows Phone 8.0 project
+- **Saturn.WindowsPhone8.BackgroundTasks**
+ - Contains background tasks which update the WP8 application tile and display toast notifications if a new element has been published.
+ - Windows Phone 8.0 Scheduled Task Agent project
+- **Saturn.WindowsPhone8.NotificationsFactory**
+ - Contains all classes to update the WP8 application tile and display toast notifications if a new element has been published.
+ - Windows Phone 8.0 Class Library project
+ 
 #Toolkits
 - MVVM Light Toolkit for PCL
 - NotificationExtensions (for the Windows 8 app)

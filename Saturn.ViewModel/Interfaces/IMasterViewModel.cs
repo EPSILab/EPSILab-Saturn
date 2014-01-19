@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
 
-namespace SolarSystem.Saturn.ViewModel.Interfaces
+namespace EPSILab.SolarSystem.Saturn.ViewModel.Interfaces
 {
     /// <summary>
     /// The interface for master view-model which shows the elements lists. For Windows 8 only

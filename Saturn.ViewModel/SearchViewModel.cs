@@ -1,19 +1,19 @@
-﻿using GalaSoft.MvvmLight.Command;
+﻿using EPSILab.SolarSystem.Saturn.Model.Interfaces;
+using EPSILab.SolarSystem.Saturn.Model.ReadersService;
+using EPSILab.SolarSystem.Saturn.ViewModel.Command;
+using EPSILab.SolarSystem.Saturn.ViewModel.Helpers;
+using EPSILab.SolarSystem.Saturn.ViewModel.Interfaces;
+using EPSILab.SolarSystem.Saturn.ViewModel.Mappers;
+using EPSILab.SolarSystem.Saturn.ViewModel.Mappers.Interfaces;
+using EPSILab.SolarSystem.Saturn.ViewModel.Objects;
+using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
-using SolarSystem.Saturn.Model.Interfaces;
-using SolarSystem.Saturn.Model.ReadersService;
-using SolarSystem.Saturn.ViewModel.Command;
-using SolarSystem.Saturn.ViewModel.Helpers;
-using SolarSystem.Saturn.ViewModel.Interfaces;
-using SolarSystem.Saturn.ViewModel.Mappers;
-using SolarSystem.Saturn.ViewModel.Mappers.Interfaces;
-using SolarSystem.Saturn.ViewModel.Objects;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SolarSystem.Saturn.ViewModel
+namespace EPSILab.SolarSystem.Saturn.ViewModel
 {
     /// <summary>
     /// Search page view-model

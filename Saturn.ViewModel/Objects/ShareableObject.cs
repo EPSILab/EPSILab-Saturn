@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SolarSystem.Saturn.ViewModel.Objects
+namespace EPSILab.SolarSystem.Saturn.ViewModel.Objects
 {
     /// <summary>
     /// A generic object to share informations on Windows Phone

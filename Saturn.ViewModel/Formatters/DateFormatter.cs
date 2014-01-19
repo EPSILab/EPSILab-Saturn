@@ -1,7 +1,7 @@
-﻿using SolarSystem.Saturn.ViewModel.Helpers;
-using System;
+﻿using System;
+using EPSILab.SolarSystem.Saturn.ViewModel.Helpers;
 
-namespace SolarSystem.Saturn.ViewModel.Formatters
+namespace EPSILab.SolarSystem.Saturn.ViewModel.Formatters
 {
     /// <summary>
     /// A formatter for date. Display "xxx ago" according to actual date time

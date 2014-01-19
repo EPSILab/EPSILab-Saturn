@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using EPSILab.SolarSystem.Saturn.Model.Interfaces;
+using EPSILab.SolarSystem.Saturn.Model.ReadersService;
+using System.Collections.Generic;
 using System.Threading.Tasks;
-using SolarSystem.Saturn.Model.Interfaces;
-using SolarSystem.Saturn.Model.ReadersService;
 
-namespace SolarSystem.Saturn.Model
+namespace EPSILab.SolarSystem.Saturn.Model
 {
     /// <summary>
     /// Access to shows

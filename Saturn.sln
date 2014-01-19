@@ -18,17 +18,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saturn.Model", "Saturn.Mode
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saturn.ViewModel", "Saturn.ViewModel\Saturn.ViewModel.csproj", "{020193BF-02C0-422E-B6C0-964BE5031500}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saturn.View.WindowsPhone", "Saturn.View.WindowsPhone\Saturn.View.WindowsPhone.csproj", "{5736DFB2-8172-4220-8820-DA8BBF209E9F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saturn.WindowsPhone8", "Saturn.WindowsPhone8\Saturn.WindowsPhone8.csproj", "{5736DFB2-8172-4220-8820-DA8BBF209E9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saturn.View.WindowsPhone.SheduledTaskAgent", "Saturn.View.WindowsPhone.SheduledTaskAgent\Saturn.View.WindowsPhone.SheduledTaskAgent.csproj", "{ACF38991-8BBC-451F-AA49-C06F8E29F61F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saturn.WindowsPhone8.SheduledTaskAgent", "Saturn.WindowsPhone8.BackgroundTasks\Saturn.WindowsPhone8.BackgroundTasks.csproj", "{ACF38991-8BBC-451F-AA49-C06F8E29F61F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saturn.View.WindowsPhone.NotificationsFactory", "Saturn.View.WindowsPhone.TileFactory\Saturn.View.WindowsPhone.NotificationsFactory.csproj", "{191F6344-C4DB-40F7-993C-ECBFD473C113}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saturn.WindowsPhone8.NotificationsFactory", "Saturn.WindowsPhone8.NotificationsFactory\Saturn.WindowsPhone8.NotificationsFactory.csproj", "{191F6344-C4DB-40F7-993C-ECBFD473C113}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saturn.View.Windows8", "Saturn.View.Windows8\Saturn.View.Windows8.csproj", "{0F76A0A0-07E6-45D0-951F-DE27D5480AE2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saturn.Windows8", "Saturn.Windows8\Saturn.Windows8.csproj", "{0F76A0A0-07E6-45D0-951F-DE27D5480AE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saturn.View.Windows8.BackgroundTasks", "Saturn.View.Windows8.BackgroundTasks\Saturn.View.Windows8.BackgroundTasks.csproj", "{507173F7-BA27-470F-A79D-867C046B4A39}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saturn.Windows8.BackgroundTasks", "Saturn.Windows8.BackgroundTasks\Saturn.Windows8.BackgroundTasks.csproj", "{507173F7-BA27-470F-A79D-867C046B4A39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saturn.View.Windows8.TileFactory", "Saturn.View.Windows8.TileFactory\Saturn.View.Windows8.TileFactory.csproj", "{3222C267-3FCE-401E-9728-CC821AE489AF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saturn.Windows8.NotificationsFactory", "Saturn.Windows8.NotificationsFactory\Saturn.Windows8.NotificationsFactory.csproj", "{3222C267-3FCE-401E-9728-CC821AE489AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

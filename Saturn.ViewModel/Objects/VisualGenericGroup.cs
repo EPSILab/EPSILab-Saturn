@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using GalaSoft.MvvmLight;
 
-namespace SolarSystem.Saturn.ViewModel.Objects
+namespace EPSILab.SolarSystem.Saturn.ViewModel.Objects
 {
     /// <summary>
     /// A generic object to show differents groups on the main page

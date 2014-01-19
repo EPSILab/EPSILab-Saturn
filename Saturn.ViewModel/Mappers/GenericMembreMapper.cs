@@ -1,10 +1,10 @@
-﻿using SolarSystem.Saturn.Model.ReadersService;
-using SolarSystem.Saturn.ViewModel.Mappers.Interfaces;
-using SolarSystem.Saturn.ViewModel.Objects;
+﻿using EPSILab.SolarSystem.Saturn.Model.ReadersService;
+using EPSILab.SolarSystem.Saturn.ViewModel.Mappers.Interfaces;
+using EPSILab.SolarSystem.Saturn.ViewModel.Objects;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SolarSystem.Saturn.ViewModel.Mappers
+namespace EPSILab.SolarSystem.Saturn.ViewModel.Mappers
 {
     /// <summary>
     /// Map a (list of) member(s) to a (list of) generic item(s)

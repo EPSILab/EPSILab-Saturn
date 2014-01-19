@@ -1,7 +1,7 @@
-﻿using SolarSystem.Saturn.ViewModel.Objects;
-using System.Windows.Input;
+﻿using System.Windows.Input;
+using EPSILab.SolarSystem.Saturn.ViewModel.Objects;
 
-namespace SolarSystem.Saturn.ViewModel.Interfaces
+namespace EPSILab.SolarSystem.Saturn.ViewModel.Interfaces
 {
     /// <summary>
     /// Mainpage  view-model

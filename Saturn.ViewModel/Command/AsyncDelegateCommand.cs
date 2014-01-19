@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace SolarSystem.Saturn.ViewModel.Command
+namespace EPSILab.SolarSystem.Saturn.ViewModel.Command
 {
     /// <summary>
     /// Allow to execute asynchronous commands

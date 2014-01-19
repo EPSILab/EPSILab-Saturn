@@ -1,15 +1,15 @@
-﻿using Autofac;
-using GalaSoft.MvvmLight.Command;
-using SolarSystem.Saturn.Model.Interfaces;
-using SolarSystem.Saturn.ViewModel.Command;
-using SolarSystem.Saturn.ViewModel.Interfaces;
-using SolarSystem.Saturn.ViewModel.Objects;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Autofac;
+using EPSILab.SolarSystem.Saturn.Model.Interfaces;
+using EPSILab.SolarSystem.Saturn.ViewModel.Command;
+using EPSILab.SolarSystem.Saturn.ViewModel.Interfaces;
+using EPSILab.SolarSystem.Saturn.ViewModel.Objects;
+using GalaSoft.MvvmLight.Command;
 
-namespace SolarSystem.Saturn.ViewModel
+namespace EPSILab.SolarSystem.Saturn.ViewModel
 {
     /// <summary>
     /// The class for master view-model which shows the elements lists
