@@ -2,6 +2,8 @@
 using EPSILab.SolarSystem.Saturn.ViewModel.Interfaces;
 using EPSILab.SolarSystem.Saturn.ViewModel.Objects;
 using EPSILab.SolarSystem.Saturn.Windows8.Helpers;
+using EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory.Tiles;
+using EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory.Toasts;
 using GalaSoft.MvvmLight.Messaging;
 using System;
 using System.Collections.Generic;
@@ -27,6 +29,14 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
             InitializeComponent();
 
             NavigationCacheMode = NavigationCacheMode.Required;
+
+            //// Update the application tile
+            //ApplicationTileManager.Create();
+
+            //// Check is new elements have been published and displays a toast notification
+            //ConferenceToastManager.CheckAndDisplay();
+            //NewsToastManager.CheckAndDisplay();
+            //ShowToastManager.CheckAndDisplay();
         }
 
         #endregion

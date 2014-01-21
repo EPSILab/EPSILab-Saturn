@@ -1,6 +1,5 @@
 ﻿using EPSILab.SolarSystem.Saturn.ViewModel.Objects;
-using EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory;
-using Saturn.View.Windows8.TileFactory;
+using EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory.Tiles;
 
 namespace EPSILab.SolarSystem.Saturn.Windows8.Helpers
 {

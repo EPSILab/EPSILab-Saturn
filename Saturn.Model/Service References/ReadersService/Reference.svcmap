@@ -18,13 +18,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://www.epsilab.net/webservices/ReadersService.svc/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="http://www.epsilab.net/webservices/ReadersService.svc/mex/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="13f81773-d8f3-4cde-8d8e-c641f452fa85" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc/mex" />
-    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="530fa690-2fad-4e18-88f2-8acd04ae9879" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc/mex" />
-    <MetadataFile FileName="service21.xsd" MetadataType="Schema" ID="dc95fe87-140b-4e88-ba88-0dbb365726c6" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc/mex" />
-    <MetadataFile FileName="SolarSystem.Earth.Common1.xsd" MetadataType="Schema" ID="79159329-70bc-4e48-b284-97cab641f238" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="04b8c4cc-d3c2-499a-9f09-29777c15b244" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc/mex/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="0fe8ddc4-d8ea-4305-9598-eff634cef15f" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc/mex/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="77639561-5763-4355-a3e1-616c4e8ce175" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc/mex/mex" />
+    <MetadataFile FileName="SolarSystem.Earth.Common.xsd" MetadataType="Schema" ID="b26d4ee1-e8a1-43a1-a2c0-ac289bc84214" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc/mex/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

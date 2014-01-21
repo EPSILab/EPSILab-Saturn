@@ -1,5 +1,7 @@
-﻿using EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory;
+﻿using System;
 using Windows.ApplicationModel.Background;
+using EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory.Tiles;
+using EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory.Toasts;
 
 namespace EPSILab.SolarSystem.Saturn.Windows8.BackgroundTasks
 {
@@ -18,7 +20,13 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.BackgroundTasks
 
             try
             {
+                // Update the application tile
                 ApplicationTileManager.Create();
+
+                //// Check is new elements have been published and displays a toast notification
+                //ConferenceToastManager.CheckAndDisplay();
+                //NewsToastManager.CheckAndDisplay();
+                //ShowToastManager.CheckAndDisplay();
             }
             finally
             {

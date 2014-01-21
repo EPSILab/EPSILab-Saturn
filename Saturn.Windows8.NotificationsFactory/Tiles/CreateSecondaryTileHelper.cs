@@ -1,9 +1,9 @@
-﻿using NotificationsExtensions.TileContent;
-using System;
+﻿using System;
 using Windows.UI.Notifications;
 using Windows.UI.StartScreen;
+using NotificationsExtensions.TileContent;
 
-namespace EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory
+namespace EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory.Tiles
 {
     /// <summary>
     /// Create a secondary tile

@@ -117,22 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Conferences_Long" xml:space="preserve">
+  <data name="Conferences_Large" xml:space="preserve">
     <value>Conferences</value>
   </data>
-  <data name="Conferences_Short" xml:space="preserve">
+  <data name="Conferences_Small" xml:space="preserve">
     <value>Confs</value>
   </data>
-  <data name="News_Long" xml:space="preserve">
+  <data name="Conferences_New" xml:space="preserve">
+    <value>Next conference</value>
+  </data>
+  <data name="News_Large" xml:space="preserve">
     <value>Last news</value>
   </data>
-  <data name="News_Short" xml:space="preserve">
+  <data name="News_New" xml:space="preserve">
+    <value>New article</value>
+  </data>
+  <data name="News_Small" xml:space="preserve">
     <value>News</value>
   </data>
-  <data name="Shows_Long" xml:space="preserve">
+  <data name="Shows_Large" xml:space="preserve">
     <value>Last shows</value>
   </data>
-  <data name="Show_Short" xml:space="preserve">
+  <data name="Shows_New" xml:space="preserve">
+    <value>Next event</value>
+  </data>
+  <data name="Shows_Small" xml:space="preserve">
     <value>Shows</value>
+  </data>
+  <data name="Conferences_DateFormat" xml:space="preserve">
+    <value>{0:d} from {0:t} to {1:t}</value>
+  </data>
+  <data name="Shows_DateFormat" xml:space="preserve">
+    <value>from {0:g} to {1:g}</value>
   </data>
 </root>

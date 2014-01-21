@@ -28,7 +28,7 @@
       </VisualElements>
       <Extensions>
         <Extension Category="windows.search" />
-        <Extension Category="windows.backgroundTasks" EntryPoint="EPSILab.SolarSystem.Saturn.Windows8.BackgroundTasks.BackgroundTask">
+        <Extension Category="windows.backgroundTasks" EntryPoint="EPSILab.SolarSystem.Saturn.Windows8.BackgroundTasks.NotificationsTask">
           <BackgroundTasks>
             <Task Type="systemEvent" />
             <Task Type="timer" />

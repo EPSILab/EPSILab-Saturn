@@ -1,17 +1,20 @@
-﻿using Autofac;
+﻿using System.IO;
+using System.Net.Http;
+using Windows.ApplicationModel.Resources;
+using Windows.Foundation;
+using Autofac;
 using EPSILab.SolarSystem.Saturn.Model.Interfaces;
 using EPSILab.SolarSystem.Saturn.Model.ReadersService;
 using EPSILab.SolarSystem.Saturn.ViewModel;
 using EPSILab.SolarSystem.Saturn.ViewModel.Formatters;
 using NotificationsExtensions.TileContent;
-using Saturn.View.Windows8.TileFactory.Resources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Windows.UI.Notifications;
 
-namespace EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory
+namespace EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory.Tiles
 {
     /// <summary>
     /// A class to create the application tile
@@ -25,6 +28,11 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory
         /// </summary>
         private const int ItemsNumber = 5;
 
+        /// <summary>
+        /// Access to resource file
+        /// </summary>
+        private static readonly ResourceLoader ResourceLoader = new ResourceLoader("Resources");
+
         #endregion
 
         #region Methods
@@ -32,7 +40,12 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory
         /// <summary>
         /// Create the application tile
         /// </summary>
-        public static async void Create()
+        public static IAsyncAction Create()
+        {
+            return CreateAsync().AsAsyncAction();
+        }
+
+        private static async Task CreateAsync()
         {
             TileUpdater updater = TileUpdateManager.CreateTileUpdaterForApplication();
             updater.EnableNotificationQueue(true);
@@ -42,9 +55,9 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory
 
             // Add new notifications
             updater.Update(await AddConferencesToTileAsync());
-            updater.Update(await AddNewsToTileAsync());
-            updater.Update(await AddShowsToTileAsync());
-            updater.Update(await AddNewsToTileAsync());
+            //updater.Update(await AddNewsToTileAsync());
+            //updater.Update(await AddShowsToTileAsync());
+            //updater.Update(await AddNewsToTileAsync());
         }
 
         /// <summary>
@@ -116,7 +129,7 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory
                 if (conferences.Any())
                 {
                     ITileSquarePeekImageAndText02 squareContent = TileContentFactory.CreateTileSquarePeekImageAndText02();
-                    squareContent.TextHeading.Text = ResourcesRsxAccessor.GetString("Conferences_Short");
+                    squareContent.TextHeading.Text = ResourceLoader.GetString("Conferences_Short");
                     squareContent.TextBodyWrap.Text = conferences[0].Nom;
                     squareContent.Image.Src = conferences[0].Image;
                     squareContent.Image.Alt = conferences[0].Nom;
@@ -130,7 +143,7 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory
                         wideContent.SquareContent = squareContent;
 
                         // Texts
-                        wideContent.TextHeading.Text = ResourcesRsxAccessor.GetString("Conferences_Large");
+                        wideContent.TextHeading.Text = ResourceLoader.GetString("Conferences_Large");
                         wideContent.TextBody1.Text = conferences[0].Nom;
                         wideContent.TextBody2.Text = conferences[1].Nom;
                         wideContent.TextBody3.Text = conferences[2].Nom;
@@ -177,7 +190,7 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory
                 if (shows.Any())
                 {
                     ITileSquarePeekImageAndText02 squareContent = TileContentFactory.CreateTileSquarePeekImageAndText02();
-                    squareContent.TextHeading.Text = ResourcesRsxAccessor.GetString("Shows_Short");
+                    squareContent.TextHeading.Text = ResourceLoader.GetString("Shows_Short");
                     squareContent.TextBodyWrap.Text = shows[0].Nom;
                     squareContent.Image.Src = shows[0].Image;
                     squareContent.Image.Alt = shows[0].Nom;
@@ -191,7 +204,7 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory
                         wideContent.SquareContent = squareContent;
 
                         // Text
-                        wideContent.TextHeading.Text = ResourcesRsxAccessor.GetString("Shows_Long");
+                        wideContent.TextHeading.Text = ResourceLoader.GetString("Shows_Long");
                         wideContent.TextBodyWrap.Text = string.Format("{0} ({1})", shows[0].Nom, DateFormatter.Format(shows[0].Date_Heure_Debut));
 
                         // Images
@@ -219,6 +232,26 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory
             }
 
             return null;
+        }
+
+        static async Task<long> InternalGetMicrosoftHomePageSize()
+        {
+            long length = 0;
+
+            HttpClient client = new HttpClient();
+
+            HttpResponseMessage message = await client.GetAsync(
+              new Uri("http://www.microsoft.com"));
+
+            using (Stream stream = await message.Content.ReadAsStreamAsync())
+            {
+                length = stream.Length;
+            }
+            return (length);
+        }
+        public static IAsyncOperation<long> GetMicrosoftHomePageSize()
+        {
+            return InternalGetMicrosoftHomePageSize().AsAsyncOperation();
         }
 
         #endregion
