@@ -7,7 +7,7 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.Helpers
     /// <summary>
     /// A helper to show HTML content in WinRT WebView
     /// </summary>
-    internal class WebViewHelper
+    class WebViewHelper
     {
         public static readonly DependencyProperty HtmlProperty = DependencyProperty.RegisterAttached(
             "Html", typeof (string), typeof (WebViewHelper), new PropertyMetadata(string.Empty, OnHtmlChanged));

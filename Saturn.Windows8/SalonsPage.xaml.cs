@@ -1,15 +1,15 @@
-﻿using Windows.ApplicationModel.DataTransfer;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Navigation;
-using EPSILab.SolarSystem.Saturn.Model.ReadersService;
+﻿using EPSILab.SolarSystem.Saturn.Model.ReadersService;
 using EPSILab.SolarSystem.Saturn.ViewModel;
 using EPSILab.SolarSystem.Saturn.ViewModel.Interfaces;
 using EPSILab.SolarSystem.Saturn.ViewModel.Objects;
 using EPSILab.SolarSystem.Saturn.Windows8.Factories;
 using EPSILab.SolarSystem.Saturn.Windows8.Helpers;
 using GalaSoft.MvvmLight.Messaging;
+using Windows.ApplicationModel.DataTransfer;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Navigation;
 
 namespace EPSILab.SolarSystem.Saturn.Windows8
 {
@@ -51,19 +51,20 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
         /// <summary>
         /// Open the show in the details page
         /// </summary>
-        /// <param name="element">Show to display</param>
-        private void GoToDetailsPage(Salon element)
+        /// <param name="show">Show to display</param>
+        private void GoToDetailsPage(Salon show)
         {
-            Frame.Navigate(typeof(SalonDetailsPage), element);
+            Frame.Navigate(typeof(SalonDetailsPage), show);
         }
 
         /// <summary>
         /// Pin the selected show
         /// </summary>
-        /// <param name="element">Element to pin</param>
-        private void Pin(PinnableObject element)
+        /// <param name="show">Element to pin</param>
+        private async void Pin(PinnableObject show)
         {
-            PinHelper.Pin(element);
+            CreateSecondaryTileHelper helper = new CreateSecondaryTileHelper();
+            await helper.PinAsync(show);
         }
 
         /// <summary>

@@ -59,9 +59,10 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
         /// Show the UI to pin the selected item
         /// </summary>
         /// <param name="news">Selected news</param>
-        private void Pin(PinnableObject news)
+        private async void Pin(PinnableObject news)
         {
-            PinHelper.Pin(news);
+            CreateSecondaryTileHelper helper = new CreateSecondaryTileHelper();
+            await helper.PinAsync(news);
         }
 
         /// <summary>

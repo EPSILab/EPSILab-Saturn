@@ -1,32 +1,29 @@
-﻿using System;
+﻿using EPSILab.SolarSystem.Saturn.ViewModel.Objects;
+using NotificationsExtensions.TileContent;
+using System;
+using System.Threading.Tasks;
 using Windows.UI.Notifications;
 using Windows.UI.StartScreen;
-using NotificationsExtensions.TileContent;
 
-namespace EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory.Tiles
+namespace EPSILab.SolarSystem.Saturn.Windows8.Helpers
 {
     /// <summary>
     /// Create a secondary tile
     /// </summary>
-    public static class CreateSecondaryTileHelper
+    public class CreateSecondaryTileHelper
     {
         /// <summary>
         /// Create the secondary tile
         /// </summary>
-        /// <param name="id">Tile id</param>
-        /// <param name="title">Tile title</param>
-        /// <param name="content">Tile content</param>
-        /// <param name="image">Tile image source</param>
-        public static async void CreateAsync(string id, string title, string content, string image)
+        /// <param name="element">Element to pin</param>
+        public async Task PinAsync(PinnableObject element)
         {
-
-
             SecondaryTile tile = new SecondaryTile
             {
-                TileId = id,
-                ShortName = title,
-                DisplayName = title,
-                Arguments = id,
+                TileId = element.Id,
+                ShortName = element.Title,
+                DisplayName = element.Title,
+                Arguments = element.Id,
                 TileOptions = TileOptions.ShowNameOnLogo,
                 Logo = new Uri("ms-appx:///Assets/Logo.png")
             };
@@ -35,15 +32,15 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory.Tiles
             {
                 // Tile template definition
                 ITileSquarePeekImageAndText04 squareContent = TileContentFactory.CreateTileSquarePeekImageAndText04();
-                squareContent.TextBodyWrap.Text = content;
-                squareContent.Image.Src = image;
-                squareContent.Image.Alt = content;
+                squareContent.TextBodyWrap.Text = element.Content;
+                squareContent.Image.Src = element.Image;
+                squareContent.Image.Alt = element.Content;
 
                 // Tile creation
                 TileNotification tileNotification = squareContent.CreateNotification();
 
                 // Send the notification
-                TileUpdater tileUpdater = TileUpdateManager.CreateTileUpdaterForSecondaryTile(id);
+                TileUpdater tileUpdater = TileUpdateManager.CreateTileUpdaterForSecondaryTile(element.Id);
                 tileUpdater.Update(tileNotification);
 
             }

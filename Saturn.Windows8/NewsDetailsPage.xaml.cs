@@ -162,9 +162,10 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
         /// Pin the displayed news on the Start Screen
         /// </summary>
         /// <param name="news">The news converted in a generic object</param>
-        private void Pin(PinnableObject news)
+        private async void Pin(PinnableObject news)
         {
-            PinHelper.Pin(news);
+            CreateSecondaryTileHelper helper = new CreateSecondaryTileHelper();
+            await helper.PinAsync(news);
         }
 
         /// <summary>

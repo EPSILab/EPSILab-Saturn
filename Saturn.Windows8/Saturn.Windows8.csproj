@@ -142,9 +142,9 @@
     <Compile Include="Converters\SalonInformationsConverter.cs" />
     <Compile Include="Converters\NewsInformationsConverter.cs" />
     <Compile Include="Converters\SearchPageTitleConverter.cs" />
-    <Compile Include="Helpers\BackgroundTaskRegistrationHelper.cs" />
+    <Compile Include="Helpers\CreateSecondaryTileHelper.cs" />
+    <Compile Include="Helpers\RegisterBackgroundTasksHelper.cs" />
     <Compile Include="Command\ListViewBaseItemClickCommand.cs" />
-    <Compile Include="Helpers\PinHelper.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -349,6 +349,12 @@
     </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation">
       <HintPath>..\packages\Portable.CommonServiceLocator.1.2.2\lib\portable-net4+sl4+wp7+win8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.165\lib\win8\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.165\lib\win8\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="NotificationsExtensions.WinRT">
       <HintPath>..\packages\NotificationsExtensions.WinRT.1.0.1\lib\netcore45\NotificationsExtensions.WinRT.dll</HintPath>

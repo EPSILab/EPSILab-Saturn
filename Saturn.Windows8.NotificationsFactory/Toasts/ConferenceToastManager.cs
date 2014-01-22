@@ -2,8 +2,9 @@
 using EPSILab.SolarSystem.Saturn.Model.Interfaces;
 using EPSILab.SolarSystem.Saturn.Model.ReadersService;
 using EPSILab.SolarSystem.Saturn.ViewModel;
+using EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory.Resources;
 using NotificationsExtensions.ToastContent;
-using Windows.ApplicationModel.Resources;
+using System.Threading.Tasks;
 using Windows.Storage;
 using Windows.UI.Notifications;
 
@@ -12,17 +13,20 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory.Toasts
     /// <summary>
     /// A class which checks from the model if there is a new conference and display a toast notification
     /// </summary>
-    public static class ConferenceToastManager
+    public class ConferenceToastManager : ToastManager
     {
         /// <summary>
-        /// Storage key
+        /// Constructor
         /// </summary>
-        private const string StorageKey = "LastConferenceSavedId";
+        public ConferenceToastManager()
+            : base("LastConferenceSavedId")
+        {
+        }
 
         /// <summary>
         /// CHeck if a new conference is a available and display the toast notification
         /// </summary>
-        public static async void CheckAndDisplay()
+        public override async Task CheckAndDisplayAsync()
         {
             // Resolve model
             IReadableLimitable<Conference> model;
@@ -36,15 +40,14 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory.Toasts
             // Get last conference saved Id
             int idLastConferenceSaved = 0;
 
-            if (ApplicationData.Current.LocalSettings.Values[StorageKey] != null)
+            if (ApplicationData.Current.LocalSettings.Values[_storageKey] != null)
             {
-                idLastConferenceSaved = (int)ApplicationData.Current.LocalSettings.Values[StorageKey];
+                idLastConferenceSaved = (int)ApplicationData.Current.LocalSettings.Values[_storageKey];
             }
 
             // If Ids are differents, update the saved Id and show a toast notification
             if (idLastConference != idLastConferenceSaved)
             {
-                ResourceLoader resourceLoader = new ResourceLoader();
                 Conference conference = await model.GetAsync(idLastConference);
 
                 IToastImageAndText04 toastContent = ToastContentFactory.CreateToastImageAndText04();
@@ -52,14 +55,14 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory.Toasts
                 toastContent.Image.Src = conference.Image;
                 toastContent.Image.Alt = conference.Nom;
 
-                toastContent.TextHeading.Text = resourceLoader.GetString("Conferences_New");
+                toastContent.TextHeading.Text = ResourcesAccessor.GetString("Conferences_New");
                 toastContent.TextBody1.Text = conference.Nom;
-                toastContent.TextBody2.Text = string.Format(resourceLoader.GetString("Conferences_DateFormat"), conference.Date_Heure_Debut, conference.Date_Heure_Fin);
+                toastContent.TextBody2.Text = string.Format(ResourcesAccessor.GetString("Conferences_DateFormat"), conference.Date_Heure_Debut, conference.Date_Heure_Fin);
 
                 ToastNotification toast = toastContent.CreateNotification();
                 ToastNotificationManager.CreateToastNotifier().Show(toast);
 
-                ApplicationData.Current.LocalSettings.Values[StorageKey] = idLastConference;
+                ApplicationData.Current.LocalSettings.Values[_storageKey] = idLastConference;
             }
         }
     }

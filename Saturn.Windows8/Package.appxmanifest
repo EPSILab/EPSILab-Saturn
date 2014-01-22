@@ -28,7 +28,25 @@
       </VisualElements>
       <Extensions>
         <Extension Category="windows.search" />
-        <Extension Category="windows.backgroundTasks" EntryPoint="EPSILab.SolarSystem.Saturn.Windows8.BackgroundTasks.NotificationsTask">
+        <Extension Category="windows.backgroundTasks" EntryPoint="EPSILab.SolarSystem.Saturn.Windows8.BackgroundTasks.ApplicationTileUpdateTask">
+          <BackgroundTasks>
+            <Task Type="systemEvent" />
+            <Task Type="timer" />
+          </BackgroundTasks>
+        </Extension>
+        <Extension Category="windows.backgroundTasks" EntryPoint="EPSILab.SolarSystem.Saturn.Windows8.BackgroundTasks.ToastLastConferenceTask">
+          <BackgroundTasks>
+            <Task Type="systemEvent" />
+            <Task Type="timer" />
+          </BackgroundTasks>
+        </Extension>
+        <Extension Category="windows.backgroundTasks" EntryPoint="EPSILab.SolarSystem.Saturn.Windows8.BackgroundTasks.ToastLastNewsTask">
+          <BackgroundTasks>
+            <Task Type="systemEvent" />
+            <Task Type="timer" />
+          </BackgroundTasks>
+        </Extension>
+        <Extension Category="windows.backgroundTasks" EntryPoint="EPSILab.SolarSystem.Saturn.Windows8.BackgroundTasks.ToastLastSalonTask">
           <BackgroundTasks>
             <Task Type="systemEvent" />
             <Task Type="timer" />

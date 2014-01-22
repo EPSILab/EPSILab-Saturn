@@ -159,9 +159,10 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
         /// Pin the displayed conference on the Start Screen
         /// </summary>
         /// <param name="conference">The conference converted in a generic object</param>
-        private void Pin(PinnableObject conference)
+        private async void Pin(PinnableObject conference)
         {
-            PinHelper.Pin(conference);
+            CreateSecondaryTileHelper helper = new CreateSecondaryTileHelper();
+            await helper.PinAsync(conference);
         }
 
         /// <summary>

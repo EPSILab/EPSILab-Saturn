@@ -158,9 +158,10 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
         /// Pin the displayed show on the Start Screen
         /// </summary>
         /// <param name="show">The show converted in a generic object</param>
-        private void Pin(PinnableObject show)
+        private async void Pin(PinnableObject show)
         {
-            PinHelper.Pin(show);
+            CreateSecondaryTileHelper helper = new CreateSecondaryTileHelper();
+            await helper.PinAsync(show);
         }
 
         /// <summary>

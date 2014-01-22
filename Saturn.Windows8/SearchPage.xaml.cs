@@ -117,9 +117,10 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
         /// Pin the selected item
         /// </summary>
         /// <param name="element">Element to pin converted in a generic object</param>
-        private void Pin(PinnableObject element)
+        private async void Pin(PinnableObject element)
         {
-            PinHelper.Pin(element);
+            CreateSecondaryTileHelper helper = new CreateSecondaryTileHelper();
+            await helper.PinAsync(element);
         }
 
         #endregion

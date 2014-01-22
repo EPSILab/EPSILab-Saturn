@@ -160,9 +160,10 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
         /// Pin the selected conference
         /// </summary>
         /// <param name="element">Conference converted in a generic object to pin</param>
-        private void Pin(PinnableObject element)
+        private async void Pin(PinnableObject element)
         {
-            PinHelper.Pin(element);
+            CreateSecondaryTileHelper helper = new CreateSecondaryTileHelper();
+            await helper.PinAsync(element);
         }
 
         /// <summary>
