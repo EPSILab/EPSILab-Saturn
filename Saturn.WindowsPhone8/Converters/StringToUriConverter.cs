@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows.Data;
 
-namespace SolarSystem.Saturn.View.WindowsPhone.Converters
+namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.Converters
 {
     public class StringToUriConverter : IValueConverter
     {
@@ -17,10 +17,10 @@ namespace SolarSystem.Saturn.View.WindowsPhone.Converters
                     return new Uri(url, UriKind.Absolute);
                 }
 
-                return null;
+                return value;
             }
 
-            return null;
+            return value;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

@@ -1,7 +1,7 @@
 using System;
 using Microsoft.Phone.Tasks;
 
-namespace SolarSystem.Saturn.View.WindowsPhone.Helpers.Tasks
+namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.Helpers.Tasks
 {
     /// <summary>
     /// A helper to open a link in Internet Explorer mobile

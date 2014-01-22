@@ -1,10 +1,10 @@
-﻿using System;
+﻿using EPSILab.SolarSystem.Saturn.ViewModel;
+using System;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
-using EPSILab.SolarSystem.Saturn.ViewModel;
 
-namespace SolarSystem.Saturn.View.WindowsPhone.Converters
+namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.Converters
 {
     public class NetworkNotAvailableConverter : IValueConverter
     {

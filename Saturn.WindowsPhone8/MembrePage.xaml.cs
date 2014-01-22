@@ -1,13 +1,13 @@
-﻿using EPSILab.SolarSystem.Saturn.ViewModel;
+﻿using EPSILab.SolarSystem.Saturn.Model.ReadersService;
+using EPSILab.SolarSystem.Saturn.ViewModel;
+using EPSILab.SolarSystem.Saturn.WindowsPhone8.Helpers.Tasks;
 using GalaSoft.MvvmLight.Messaging;
 using Microsoft.Phone.Controls;
-using SolarSystem.Saturn.Model.ReadersService;
-using SolarSystem.Saturn.View.WindowsPhone.Helpers.Tasks;
 using System;
 using System.Windows;
 using System.Windows.Navigation;
 
-namespace SolarSystem.Saturn.View.WindowsPhone
+namespace EPSILab.SolarSystem.Saturn.WindowsPhone8
 {
     /// <summary>
     /// Member page

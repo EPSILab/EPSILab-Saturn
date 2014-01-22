@@ -1,24 +1,24 @@
 ﻿using Autofac;
 using EPSILab.SolarSystem.Saturn.Model.Interfaces;
+using EPSILab.SolarSystem.Saturn.Model.ReadersService;
 using EPSILab.SolarSystem.Saturn.ViewModel;
+using EPSILab.SolarSystem.Saturn.WindowsPhone8.TileFactory.Resources;
 using Microsoft.Phone.Shell;
-using SolarSystem.Saturn.Model.ReadersService;
-using SolarSystem.Saturn.View.WindowsPhone.TileFactory.Resources;
 using System;
 using System.IO.IsolatedStorage;
 using System.Threading.Tasks;
 
-namespace SolarSystem.Saturn.View.WindowsPhone.TileFactory.Toasts
+namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.TileFactory.Toasts
 {
     /// <summary>
     /// Display a toast notification which warn the user a new event will occur
     /// </summary>
-    public static class SalonToastManager
+    public class SalonToastManager : ToastManager
     {
         /// <summary>
         /// Display the toast notification
         /// </summary>
-        public static async Task CheckAndToast()
+        public override async Task CheckAndToastAsync()
         {
             // Resolve model
             IReadableLimitable<Salon> model;

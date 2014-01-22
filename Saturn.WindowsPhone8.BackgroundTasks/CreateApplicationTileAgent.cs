@@ -1,17 +1,17 @@
-﻿using Microsoft.Phone.Scheduler;
+﻿using EPSILab.SolarSystem.Saturn.WindowsPhone8.TileFactory.Tiles;
+using EPSILab.SolarSystem.Saturn.WindowsPhone8.TileFactory.Toasts;
+using Microsoft.Phone.Scheduler;
 using System.Diagnostics;
-using SolarSystem.Saturn.View.WindowsPhone.TileFactory.Tiles;
-using SolarSystem.Saturn.View.WindowsPhone.TileFactory.Toasts;
 using System.Windows;
 
-namespace SolarSystem.Saturn.View.WindowsPhone.SheduledTaskAgent
+namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.BackgroundTasks
 {
     /// <summary>
     /// An agent which create the application tile every 30 minutes
     /// </summary>
     public class CreateApplicationTileAgent : ScheduledTaskAgent
     {
-        #region Constructors
+        #region Constructor
 
         /// <summary>
         /// Static constructor. Handle errors
@@ -47,12 +47,18 @@ namespace SolarSystem.Saturn.View.WindowsPhone.SheduledTaskAgent
             try
             {
                 // Update application tile
-                await ApplicationTileManager.Update();
+                ApplicationTileManager appTileManager = new ApplicationTileManager();
+                await appTileManager.UpdateAsync();
 
                 // Display toast notification if a new element has been published
-                await NewsToastManager.CheckAndToast();
-                await ConferenceToastManager.CheckAndToast();
-                await SalonToastManager.CheckAndToast();
+                ToastManager manager = new NewsToastManager();
+                await manager.CheckAndToastAsync();
+
+                manager = new ConferenceToastManager();
+                await manager.CheckAndToastAsync();
+
+                manager = new SalonToastManager();
+                await manager.CheckAndToastAsync();
             }
             finally
             {

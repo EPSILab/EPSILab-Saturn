@@ -16,12 +16,12 @@
     <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
     <SilverlightApplication>true</SilverlightApplication>
     <SupportedCultures>fr</SupportedCultures>
-    <SupportedCultures>fr%3ben</SupportedCultures>
+    <SupportedCultures>en</SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
     <XapFilename>EPSILab.xap</XapFilename>
     <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
-    <SilverlightAppEntry>SolarSystem.Saturn.WindowsPhone8.App</SilverlightAppEntry>
+    <SilverlightAppEntry>EPSILab.SolarSystem.Saturn.WindowsPhone8.App</SilverlightAppEntry>
     <ValidateXaml>true</ValidateXaml>
     <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
@@ -244,13 +244,17 @@
       <Project>{B287FA18-F9B3-453C-936B-A523716EEA2D}</Project>
       <Name>Saturn.Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Saturn.WindowsPhone8.SheduledTaskAgent\Saturn.WindowsPhone8.SheduledTaskAgent.csproj">
-      <Project>{ACF38991-8BBC-451F-AA49-C06F8E29F61F}</Project>
-      <Name>Saturn.WindowsPhone8.SheduledTaskAgent</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Saturn.ViewModel\Saturn.ViewModel.csproj">
       <Project>{020193BF-02C0-422E-B6C0-964BE5031500}</Project>
       <Name>Saturn.ViewModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Saturn.WindowsPhone8.BackgroundTasks\Saturn.WindowsPhone8.BackgroundTasks.csproj">
+      <Project>{ACF38991-8BBC-451F-AA49-C06F8E29F61F}</Project>
+      <Name>Saturn.WindowsPhone8.BackgroundTasks</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Saturn.WindowsPhone8.NotificationsFactory\Saturn.WindowsPhone8.NotificationsFactory.csproj">
+      <Project>{191F6344-C4DB-40F7-993C-ECBFD473C113}</Project>
+      <Name>Saturn.WindowsPhone8.NotificationsFactory</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -274,7 +278,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\AppResources.fr.resx" />
     <EmbeddedResource Include="Resources\AppResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>AppResources.Designer.cs</LastGenOutput>

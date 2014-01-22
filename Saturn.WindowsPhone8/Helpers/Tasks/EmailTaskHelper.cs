@@ -1,7 +1,7 @@
 using EPSILab.SolarSystem.Saturn.ViewModel.Objects;
 using Microsoft.Phone.Tasks;
 
-namespace SolarSystem.Saturn.View.WindowsPhone.Helpers.Tasks
+namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.Helpers.Tasks
 {
     /// <summary>
     /// A helper to send a pre-made email

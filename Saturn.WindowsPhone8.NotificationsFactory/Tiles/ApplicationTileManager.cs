@@ -1,25 +1,25 @@
 ﻿using Autofac;
 using EPSILab.SolarSystem.Saturn.Model.Interfaces;
+using EPSILab.SolarSystem.Saturn.Model.ReadersService;
 using EPSILab.SolarSystem.Saturn.ViewModel;
+using EPSILab.SolarSystem.Saturn.WindowsPhone8.TileFactory.Resources;
 using Microsoft.Phone.Shell;
-using SolarSystem.Saturn.Model.ReadersService;
-using SolarSystem.Saturn.View.WindowsPhone.TileFactory.Resources;
 using System;
 using System.IO.IsolatedStorage;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SolarSystem.Saturn.View.WindowsPhone.TileFactory.Tiles
+namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.TileFactory.Tiles
 {
     /// <summary>
     /// A helper to create the application tile
     /// </summary>
-    public static class ApplicationTileManager
+    public class ApplicationTileManager
     {
         /// <summary>
         /// Create the application tile by calling the webservice
         /// </summary>
-        public static async Task Update()
+        public async Task UpdateAsync()
         {
             IReadableLimitable<News> model;
 

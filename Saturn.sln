@@ -20,7 +20,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saturn.ViewModel", "Saturn.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saturn.WindowsPhone8", "Saturn.WindowsPhone8\Saturn.WindowsPhone8.csproj", "{5736DFB2-8172-4220-8820-DA8BBF209E9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saturn.WindowsPhone8.SheduledTaskAgent", "Saturn.WindowsPhone8.BackgroundTasks\Saturn.WindowsPhone8.BackgroundTasks.csproj", "{ACF38991-8BBC-451F-AA49-C06F8E29F61F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saturn.WindowsPhone8.BackgroundTasks", "Saturn.WindowsPhone8.BackgroundTasks\Saturn.WindowsPhone8.BackgroundTasks.csproj", "{ACF38991-8BBC-451F-AA49-C06F8E29F61F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saturn.WindowsPhone8.NotificationsFactory", "Saturn.WindowsPhone8.NotificationsFactory\Saturn.WindowsPhone8.NotificationsFactory.csproj", "{191F6344-C4DB-40F7-993C-ECBFD473C113}"
 EndProject

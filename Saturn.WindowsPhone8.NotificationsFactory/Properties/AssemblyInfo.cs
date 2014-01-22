@@ -6,11 +6,11 @@ using System.Resources;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("EPSILab Windows Phone application's tile factory")]
-[assembly: AssemblyDescription("This project contains all necessary classes to send tile and toast notifications.")]
+[assembly: AssemblyTitle("EPSILab Windows Phone notifications factory")]
+[assembly: AssemblyDescription("Classes to update app tile, create secondary tiles and toasts notifications.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("EPSILab")]
-[assembly: AssemblyProduct("SolarSystem.Saturn.WP8.TileFactory")]
+[assembly: AssemblyProduct("Solar System")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -34,4 +34,4 @@ using System.Resources;
 // by using the '*' as shown below:
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: NeutralResourcesLanguageAttribute("fr-FR")]
+[assembly: NeutralResourcesLanguageAttribute("fr")]

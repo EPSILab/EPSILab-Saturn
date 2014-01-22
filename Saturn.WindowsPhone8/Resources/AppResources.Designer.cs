@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EPSILab.SolarSystem.Saturn.WindowsPhone.Resources {
+namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EPSILab.SolarSystem.Saturn.WindowsPhone.Resources.AppResources", typeof(AppResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EPSILab.SolarSystem.Saturn.WindowsPhone8.Resources.AppResources", typeof(AppResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -93,6 +93,15 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone.Resources {
         public static string FORMAT_EMAIL_NEWS {
             get {
                 return ResourceManager.GetString("FORMAT_EMAIL_NEWS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}, EPSI {1}.
+        /// </summary>
+        public static string FORMAT_MEMBRE {
+            get {
+                return ResourceManager.GetString("FORMAT_MEMBRE", resourceCulture);
             }
         }
         

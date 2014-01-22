@@ -1,11 +1,11 @@
 using EPSILab.SolarSystem.Saturn.ViewModel.Objects;
+using EPSILab.SolarSystem.Saturn.WindowsPhone8.Resources;
 using Microsoft.Phone.Shell;
-using SolarSystem.Saturn.View.WindowsPhone.Resources;
 using System;
 using System.Linq;
 using System.Windows;
 
-namespace SolarSystem.Saturn.View.WindowsPhone.Helpers.Tasks
+namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.Helpers.Tasks
 {
     /// <summary>
     /// A helper to pin an pinnable generic object

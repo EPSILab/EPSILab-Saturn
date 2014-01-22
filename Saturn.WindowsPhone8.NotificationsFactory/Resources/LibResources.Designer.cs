@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SolarSystem.Saturn.View.WindowsPhone.TileFactory.Resources {
+namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.TileFactory.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace SolarSystem.Saturn.View.WindowsPhone.TileFactory.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SolarSystem.Saturn.View.WindowsPhone.TileFactory.Resources.LibResources", typeof(LibResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EPSILab.SolarSystem.Saturn.WindowsPhone8.TileFactory.Resources.LibResources", typeof(LibResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

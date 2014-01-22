@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using Microsoft.Phone.Controls;
 
-namespace SolarSystem.Saturn.View.WindowsPhone.Common
+namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.Common
 {
     public class WebBrowserHelper : DependencyObject
     {

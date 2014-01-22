@@ -1,13 +1,13 @@
 ﻿using Microsoft.Phone.Controls;
 using Microsoft.Phone.Net.NetworkInformation;
 using Microsoft.Phone.Shell;
-using SolarSystem.Saturn.View.WindowsPhone.Resources;
+using EPSILab.SolarSystem.Saturn.WindowsPhone8.Resources;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Navigation;
 
-namespace SolarSystem.Saturn.View.WindowsPhone
+namespace EPSILab.SolarSystem.Saturn.WindowsPhone8
 {
     /// <summary>
     /// App

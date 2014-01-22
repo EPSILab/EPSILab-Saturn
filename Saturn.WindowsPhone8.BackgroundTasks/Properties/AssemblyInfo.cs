@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 
-[assembly: AssemblyTitle("Saturn.WP8.SheduledTaskAgent")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("EPSILab for Windows Phone 8's background tasks")]
+[assembly: AssemblyDescription("Launch background tasks for the EPSILab for Windows Phone 8 app")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Saturn.WP8.SheduledTaskAgent")]
-[assembly: AssemblyCopyright("Copyright ©  2013")]
+[assembly: AssemblyCompany("EPSILab")]
+[assembly: AssemblyProduct("Solar System")]
+[assembly: AssemblyCopyright("Copyright ©  2013 - 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

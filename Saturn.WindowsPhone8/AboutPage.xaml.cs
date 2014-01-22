@@ -1,11 +1,11 @@
 ﻿using Microsoft.Phone.Tasks;
-using SolarSystem.Saturn.View.WindowsPhone.Helpers.Tasks;
-using SolarSystem.Saturn.View.WindowsPhone.Resources;
+using EPSILab.SolarSystem.Saturn.WindowsPhone8.Helpers.Tasks;
+using EPSILab.SolarSystem.Saturn.WindowsPhone8.Resources;
 using System;
 using System.Windows;
 using System.Windows.Input;
 
-namespace SolarSystem.Saturn.View.WindowsPhone
+namespace EPSILab.SolarSystem.Saturn.WindowsPhone8
 {
     /// <summary>
     /// About page

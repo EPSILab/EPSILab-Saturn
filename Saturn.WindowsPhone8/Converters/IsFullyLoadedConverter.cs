@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 
-namespace SolarSystem.Saturn.View.WindowsPhone.Converters
+namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.Converters
 {
     public class IsFullyLoadedConverter : IValueConverter
     {

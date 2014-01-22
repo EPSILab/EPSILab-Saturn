@@ -1,10 +1,10 @@
-﻿using SolarSystem.Saturn.Model.ReadersService;
-using SolarSystem.Saturn.View.WindowsPhone.Resources;
+﻿using EPSILab.SolarSystem.Saturn.Model.ReadersService;
+using EPSILab.SolarSystem.Saturn.WindowsPhone8.Resources;
 using System;
 using System.Globalization;
 using System.Windows.Data;
 
-namespace SolarSystem.Saturn.View.WindowsPhone.Converters
+namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.Converters
 {
     public class ToVisitableConverter : IValueConverter
     {

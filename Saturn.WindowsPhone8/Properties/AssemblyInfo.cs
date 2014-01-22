@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("EPSILab application for Windows Phone")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("EPSILab")]
-[assembly: AssemblyProduct("SolarSystem.Saturn.WindowsPhone")]
+[assembly: AssemblyProduct("Solar System")]
 [assembly: AssemblyCopyright("Copyright © 2012-2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -37,4 +37,4 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyVersion("1.7.0")]
 [assembly: AssemblyFileVersion("1.7.0")]
-[assembly: NeutralResourcesLanguage("en-US")]
+[assembly: NeutralResourcesLanguage("fr")]

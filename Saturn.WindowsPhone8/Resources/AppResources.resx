@@ -129,6 +129,9 @@
   <data name="FORMAT_EMAIL_NEWS" xml:space="preserve">
     <value>Je vous invite à lire cet article:{4}{0}{4}{4}écrit par: {1} {2}{4}{4}{3}</value>
   </data>
+  <data name="FORMAT_MEMBRE" xml:space="preserve">
+    <value>{0}, EPSI {1}</value>
+  </data>
   <data name="FORMAT_SALON" xml:space="preserve">
     <value>le {0:g} au {1:g}, à {2}</value>
   </data>

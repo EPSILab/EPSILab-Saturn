@@ -1,16 +1,16 @@
 ﻿using EPSILab.SolarSystem.Saturn.ViewModel.Interfaces;
 using EPSILab.SolarSystem.Saturn.ViewModel.Objects;
+using EPSILab.SolarSystem.Saturn.WindowsPhone8.Helpers.BackgroundTask;
+using EPSILab.SolarSystem.Saturn.WindowsPhone8.Resources;
 using GalaSoft.MvvmLight.Messaging;
 using Microsoft.Phone.Controls;
-using SolarSystem.Saturn.View.WindowsPhone.Helpers.BackgroundTask;
-using SolarSystem.Saturn.View.WindowsPhone.Resources;
 using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
 
-namespace SolarSystem.Saturn.View.WindowsPhone
+namespace EPSILab.SolarSystem.Saturn.WindowsPhone8
 {
     /// <summary>
     /// Default page
@@ -92,7 +92,8 @@ namespace SolarSystem.Saturn.View.WindowsPhone
 
             if (e.NavigationMode == NavigationMode.New)
             {
-                BackgroundTaskRegistrationHelper.Register();
+                BackgroundTaskRegistrationHelper taskRegistration = new BackgroundTaskRegistrationHelper();
+                taskRegistration.Register();
 
                 IMainViewModel viewModel = (IMainViewModel)DataContext;
 
