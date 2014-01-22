@@ -2,6 +2,7 @@
 using EPSILab.SolarSystem.Saturn.ViewModel.Objects;
 using EPSILab.SolarSystem.Saturn.WindowsPhone8.Helpers.BackgroundTask;
 using EPSILab.SolarSystem.Saturn.WindowsPhone8.Resources;
+using EPSILab.SolarSystem.Saturn.WindowsPhone8.TileFactory.Tiles;
 using GalaSoft.MvvmLight.Messaging;
 using Microsoft.Phone.Controls;
 using System;
@@ -80,7 +81,7 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8
         /// Raised when the page is loaded
         /// </summary>
         /// <param name="e">Navigation event arguments</param>
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
 
@@ -92,15 +93,18 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8
 
             if (e.NavigationMode == NavigationMode.New)
             {
-                BackgroundTaskRegistrationHelper taskRegistration = new BackgroundTaskRegistrationHelper();
-                taskRegistration.Register();
-
                 IMainViewModel viewModel = (IMainViewModel)DataContext;
 
                 if (viewModel.LoadMenuCommand.CanExecute(this))
                 {
                     viewModel.LoadMenuCommand.Execute(this);
                 }
+
+                BackgroundTaskRegistrationHelper taskRegistration = new BackgroundTaskRegistrationHelper();
+                taskRegistration.Register();
+
+                ApplicationTileManager tileManager = new ApplicationTileManager();
+                await tileManager.UpdateAsync();
             }
         }
 
