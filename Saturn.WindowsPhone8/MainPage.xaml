@@ -1,0 +1,160 @@
+﻿<phone:PhoneApplicationPage
+    x:Name="Page"
+    x:Class="EPSILab.SolarSystem.Saturn.WindowsPhone8.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:pshell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:appbar="clr-namespace:BindableApplicationBar;assembly=BindableApplicationBar"
+    xmlns:command="clr-namespace:GalaSoft.MvvmLight.Command;assembly=GalaSoft.MvvmLight.Platform"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:converters="clr-namespace:EPSILab.SolarSystem.Saturn.WindowsPhone8.Converters"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    DataContext="{Binding MainVM, Source={StaticResource Locator}}"
+    pshell:SystemTray.IsVisible="False">
+
+    <!-- Converters -->
+    <phone:PhoneApplicationPage.Resources>
+        <converters:NetworkAvailableConverter x:Key="NetworkAvailableConverter" />
+        <converters:NetworkNotAvailableConverter x:Key="NetworkNotAvailableConverter" />
+        <converters:IsFullyLoadedConverter x:Key="IsFullyLoadedConverter" />
+    </phone:PhoneApplicationPage.Resources>
+
+    <!-- Main Container -->
+    <Grid Style="{StaticResource MainGridStyle}">
+
+        <!-- Panorama with menu -->
+        <phone:Panorama x:Name="Panorama"
+                        ItemsSource="{Binding Menu.Groups, Mode=OneWay}">
+            
+            <phone:Panorama.TitleTemplate>
+                <DataTemplate>
+                    <Image Source="Assets/PanoramaLogo.png"
+                           Margin="5,40,0,5" />
+                </DataTemplate>
+            </phone:Panorama.TitleTemplate>
+
+            <phone:Panorama.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Title}"
+                               Style="{StaticResource PanoramaItemHeaderTextBlackStyle}"
+                               Margin="0,5,0,10" />
+                </DataTemplate>
+            </phone:Panorama.HeaderTemplate>
+
+            <phone:Panorama.ItemTemplate>
+                <DataTemplate>
+                    <ScrollViewer Margin="0,-38,-22,2">
+                        <StackPanel Orientation="Vertical">
+
+                            <!-- Replacing text if network is not available -->
+                            <TextBlock Text="{Binding AppResources.MSG_NO_NETWORK, Source={StaticResource LocalizedStrings}}"
+                                       Margin="15,20,0,0"
+                                       TextWrapping="Wrap"
+                                       Visibility="{Binding Converter={StaticResource NetworkNotAvailableConverter}}"
+                                       Style="{StaticResource PhoneTextSmallBlackStyle}"
+                                       FontSize="21.333" />
+
+                            <!-- Menu -->
+                            <phone:LongListSelector x:Name="llsMenu"
+                                                    ItemsSource="{Binding Items}"
+                                                    Visibility="{Binding Converter={StaticResource NetworkAvailableConverter}}"
+                                                    SelectionChanged="LlsMenu_OnSelectionChanged">
+
+                                <phone:LongListSelector.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal"
+                                                    Margin="12,2,0,4"
+                                                    Width="432">
+
+                                            <Image Source="{Binding Image}"
+                                                   Margin="0,3"
+                                                   Width="90" Height="90" />
+
+                                            <StackPanel Width="311"
+                                                        Margin="8,10,0,0">
+                                                <TextBlock Text="{Binding Title}"
+                                                           Margin="10,0"
+                                                           Style="{StaticResource PhoneTextLargeBlackStyle}" />
+                                                <TextBlock Text="{Binding Subtitle}"
+                                                           Margin="10,-2,10,0"
+                                                           Style="{StaticResource PhoneTextSmallBlackStyle}" />
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </phone:LongListSelector.ItemTemplate>
+
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Tap">
+                                        <command:EventToCommand Command="{Binding ElementName=Page, Path=DataContext.GoToDetailsPageCommand, Mode=OneWay}"
+                                                                CommandParameter="{Binding ElementName=llsMenu, Path=SelectedItem}" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </phone:LongListSelector>
+
+                            <!-- Label Load more items -->
+                            <TextBlock Text="{Binding AppResources.LBL_LOAD_MORE_ITEMS, Source={StaticResource LocalizedStrings}}"
+                                       Margin="10,20,0,10"
+                                       Style="{StaticResource PhoneTextLargeBlackStyle}"
+                                       Visibility="{Binding IsFullyLoaded, Converter={StaticResource IsFullyLoadedConverter}}">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="MouseLeftButtonUp">
+                                      <i:InvokeCommandAction Command="{Binding ElementName=Page, Path=DataContext.LoadMoreItemsCommand}"
+                                                             CommandParameter="{Binding Title}" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </TextBlock>
+                        </StackPanel>
+                    </ScrollViewer>
+                </DataTemplate>
+            </phone:Panorama.ItemTemplate>
+        </phone:Panorama>
+
+        <!-- Loading indicator -->
+        <ProgressBar IsIndeterminate="{Binding IsLoading, Mode=OneWay}" />
+    </Grid>
+
+    <!-- Application bar -->
+    <appbar:Bindable.ApplicationBar>
+        <appbar:BindableApplicationBar>
+
+            <appbar:BindableApplicationBarButton IconUri="Assets/ApplicationBar/refresh.png"
+                                                 Text="{Binding AppResources.LBL_REFRESH, Source={StaticResource LocalizedStrings}}"
+                                                 Command="{Binding LoadMenuCommand}" />
+
+            <appbar:BindableApplicationBarButton IconUri="Assets/ApplicationBar/i.png"
+                                                 Text="{Binding AppResources.LBL_ABOUT, Source={StaticResource LocalizedStrings}}"
+                                                 Command="{Binding GoToAboutPageCommand}" />
+
+        </appbar:BindableApplicationBar>
+    </appbar:Bindable.ApplicationBar>
+
+    <!-- Page transitions -->
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardIn" />
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardIn" />
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:TurnstileTransition Mode="BackwardOut" />
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:TurnstileTransition Mode="ForwardOut" />
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+</phone:PhoneApplicationPage>

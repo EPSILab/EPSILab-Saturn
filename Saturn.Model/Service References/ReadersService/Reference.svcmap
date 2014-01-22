@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ceff2ae8-c605-4cf0-b06f-2012ed81eb1f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://www.epsilab.net/webservices/ReadersService.svc/mex/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="04b8c4cc-d3c2-499a-9f09-29777c15b244" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc/mex/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="0fe8ddc4-d8ea-4305-9598-eff634cef15f" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc/mex/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="77639561-5763-4355-a3e1-616c4e8ce175" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc/mex/mex" />
+    <MetadataFile FileName="SolarSystem.Earth.Common.xsd" MetadataType="Schema" ID="b26d4ee1-e8a1-43a1-a2c0-ac289bc84214" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc/mex/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
