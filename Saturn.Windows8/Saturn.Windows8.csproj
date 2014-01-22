@@ -12,12 +12,12 @@
     <DefaultLanguage>fr</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <PackageCertificateKeyFile>Saturn.Win8_StoreKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>Saturn.Windows8_StoreKey.pfx</PackageCertificateKeyFile>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
-    <PackageCertificateThumbprint>4BCF90C6C732C223A424E99B1C4745DD42EB115C</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>112899B125789883F8E5B61D67F7AEAA701EEFAD</PackageCertificateThumbprint>
     <ExpressionBlendVersion>5.2.30810.0</ExpressionBlendVersion>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
@@ -206,6 +206,8 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="Saturn.Windows8_StoreKey.pfx" />
+    <None Include="Saturn.Windows8_TemporaryKey.pfx" />
     <PRIResource Include="Resources\fr\Resources.resw" />
     <None Include="packages.config" />
     <PRIResource Include="Resources\fr\Messages.resw" />
