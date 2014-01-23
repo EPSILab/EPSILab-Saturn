@@ -14,7 +14,7 @@ namespace EPSILab.SolarSystem.Saturn.Model.ReadersService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Conference", Namespace="http://schemas.datacontract.org/2004/07/SolarSystem.Earth.Common")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Conference", Namespace="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common")]
     public partial class Conference : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int Code_ConferenceField;
@@ -179,7 +179,7 @@ namespace EPSILab.SolarSystem.Saturn.Model.ReadersService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Ville", Namespace="http://schemas.datacontract.org/2004/07/SolarSystem.Earth.Common")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Ville", Namespace="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common")]
     public partial class Ville : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int Code_VilleField;
@@ -239,7 +239,7 @@ namespace EPSILab.SolarSystem.Saturn.Model.ReadersService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Lien", Namespace="http://schemas.datacontract.org/2004/07/SolarSystem.Earth.Common")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Lien", Namespace="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common")]
     public partial class Lien : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int Code_LienField;
@@ -344,7 +344,7 @@ namespace EPSILab.SolarSystem.Saturn.Model.ReadersService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Membre", Namespace="http://schemas.datacontract.org/2004/07/SolarSystem.Earth.Common")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Membre", Namespace="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common")]
     public partial class Membre : object, System.ComponentModel.INotifyPropertyChanged {
         
         private bool ActifField;
@@ -704,7 +704,7 @@ namespace EPSILab.SolarSystem.Saturn.Model.ReadersService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Classe", Namespace="http://schemas.datacontract.org/2004/07/SolarSystem.Earth.Common")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Classe", Namespace="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common")]
     public partial class Classe : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int Annee_Promo_SortanteField;
@@ -779,7 +779,7 @@ namespace EPSILab.SolarSystem.Saturn.Model.ReadersService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Role", Namespace="http://schemas.datacontract.org/2004/07/SolarSystem.Earth.Common")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Role", Namespace="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common")]
     public partial class Role : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int Code_RoleField;
@@ -824,7 +824,7 @@ namespace EPSILab.SolarSystem.Saturn.Model.ReadersService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="News", Namespace="http://schemas.datacontract.org/2004/07/SolarSystem.Earth.Common")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="News", Namespace="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common")]
     public partial class News : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int Code_NewsField;
@@ -989,7 +989,7 @@ namespace EPSILab.SolarSystem.Saturn.Model.ReadersService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Projet", Namespace="http://schemas.datacontract.org/2004/07/SolarSystem.Earth.Common")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Projet", Namespace="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common")]
     public partial class Projet : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int AvancementField;
@@ -1094,7 +1094,7 @@ namespace EPSILab.SolarSystem.Saturn.Model.ReadersService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Publicite", Namespace="http://schemas.datacontract.org/2004/07/SolarSystem.Earth.Common")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Publicite", Namespace="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common")]
     public partial class Publicite : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int Code_PubliciteField;
@@ -1199,7 +1199,7 @@ namespace EPSILab.SolarSystem.Saturn.Model.ReadersService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Salon", Namespace="http://schemas.datacontract.org/2004/07/SolarSystem.Earth.Common")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Salon", Namespace="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common")]
     public partial class Salon : object, System.ComponentModel.INotifyPropertyChanged {
         
         private int Code_SalonField;

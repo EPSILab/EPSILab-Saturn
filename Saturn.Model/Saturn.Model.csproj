@@ -64,6 +64,9 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\ServiceReferences.Designer.ClientConfig" />
+    <None Include="Service References\ReadersService\EPSILab.SolarSystem.Earth.Common.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\ReadersService\EPSILab.SolarSystem.Saturn.Model.ReadersService.Conference.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -88,14 +91,11 @@
     <None Include="Service References\ReadersService\EPSILab.SolarSystem.Saturn.Model.ReadersService.Ville.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ReadersService\service.wsdl" />
-    <None Include="Service References\ReadersService\service.xsd">
+    <None Include="Service References\ReadersService\service1.wsdl" />
+    <None Include="Service References\ReadersService\service2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ReadersService\service1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\ReadersService\SolarSystem.Earth.Common.xsd">
+    <None Include="Service References\ReadersService\service21.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
