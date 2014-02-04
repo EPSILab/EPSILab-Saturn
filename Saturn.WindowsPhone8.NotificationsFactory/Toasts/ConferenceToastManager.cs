@@ -29,8 +29,10 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.TileFactory.Toasts
             // Get last conference Id from model
             int idLastConference = await model.GetLastInsertedId();
 
+            IsolatedStorageSettings localSettings = IsolatedStorageSettings.ApplicationSettings;
+
             // Get last conference saved Id
-            int idLastConferenceSaved = IsolatedStorageSettings.ApplicationSettings.Contains(LibResources.ConferenceStorageKey) ? (int)IsolatedStorageSettings.ApplicationSettings[LibResources.ConferenceStorageKey] : 0;
+            int idLastConferenceSaved = localSettings.Contains(LibResources.ConferenceStorageKey) ? (int)localSettings[LibResources.ConferenceStorageKey] : 0;
 
             // If Ids are differents, update the saved Id and show a toast notification
             if (idLastConference != idLastConferenceSaved)
@@ -46,7 +48,8 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.TileFactory.Toasts
 
                 toast.Show();
 
-                IsolatedStorageSettings.ApplicationSettings[LibResources.ConferenceStorageKey] = idLastConference;
+                localSettings[LibResources.ConferenceStorageKey] = idLastConference;
+                localSettings.Save();
             }
         }
     }

@@ -29,8 +29,10 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.TileFactory.Toasts
             // Get last news Id from model
             int idLastNews = await model.GetLastInsertedId();
 
+            IsolatedStorageSettings localSettings = IsolatedStorageSettings.ApplicationSettings;
+
             // Get last news saved Id
-            int idLastNewsSaved = IsolatedStorageSettings.ApplicationSettings.Contains(LibResources.NewsStorageKey) ? (int)IsolatedStorageSettings.ApplicationSettings[LibResources.NewsStorageKey] : 0;
+            int idLastNewsSaved = localSettings.Contains(LibResources.NewsStorageKey) ? (int)localSettings[LibResources.NewsStorageKey] : 0;
 
             // If Ids are differents, update the saved Id and show a toast notification
             if (idLastNews != idLastNewsSaved)
@@ -46,7 +48,8 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.TileFactory.Toasts
 
                 toast.Show();
 
-                IsolatedStorageSettings.ApplicationSettings[LibResources.NewsStorageKey] = idLastNews;
+                localSettings[LibResources.NewsStorageKey] = idLastNews;
+                localSettings.Save();
             }
         }
     }
