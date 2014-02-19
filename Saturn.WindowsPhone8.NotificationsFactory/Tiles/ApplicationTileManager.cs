@@ -29,8 +29,10 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.TileFactory.Tiles
             // Get last news Id
             int idLastNews = await model.GetLastInsertedId();
 
+            IsolatedStorageSettings settings = IsolatedStorageSettings.ApplicationSettings;
+
             // Get last news Id saved in local storage
-            int idLastNewsSaved = IsolatedStorageSettings.ApplicationSettings.Contains(LibResources.NewsStorageKey) ? (int)IsolatedStorageSettings.ApplicationSettings[LibResources.NewsStorageKey] : 0;
+            int idLastNewsSaved = settings.Contains(LibResources.NewsStorageKey) ? (int)settings[LibResources.NewsStorageKey] : 0;
 
             // Compare the 2 codes. If they are differents, update the tile
             if (idLastNews != idLastNewsSaved)
@@ -50,7 +52,8 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.TileFactory.Tiles
                 // Update the tile
                 existingTile.Update(newTile);
 
-                IsolatedStorageSettings.ApplicationSettings[LibResources.NewsStorageKey] = idLastNews;
+                settings[LibResources.NewsStorageKey] = idLastNews;
+                settings.Save();
             }
         }
     }
