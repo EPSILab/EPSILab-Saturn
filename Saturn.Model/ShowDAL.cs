@@ -8,14 +8,14 @@ namespace EPSILab.SolarSystem.Saturn.Model
     /// <summary>
     /// Access to shows
     /// </summary>
-    class SalonDAL : IReadableLimitable<Salon>, ISearchable<Salon>
+    class ShowDAL : IReadableLimitable<Show>, ISearchable<Show>
     {
         #region Attributes
 
         /// <summary>
         /// Webservice proxy for shows
         /// </summary>
-        private readonly SalonReaderClient _proxy = new SalonReaderClient();
+        private readonly ShowReaderClient _proxy = new ShowReaderClient();
 
         #endregion
 
@@ -26,12 +26,12 @@ namespace EPSILab.SolarSystem.Saturn.Model
         /// </summary>
         /// <param name="code">Code of the show desired</param>
         /// <returns>The matching show</returns>
-        public Task<Salon> GetAsync(int code)
+        public Task<Show> GetAsync(int code)
         {
-            var taskCompletionSource = new TaskCompletionSource<Salon>();
+            var taskCompletionSource = new TaskCompletionSource<Show>();
 
-            _proxy.GetSalonCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
-            _proxy.GetSalonAsync(code);
+            _proxy.GetShowCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
+            _proxy.GetShowAsync(code);
 
             return taskCompletionSource.Task;
         }
@@ -40,12 +40,12 @@ namespace EPSILab.SolarSystem.Saturn.Model
         /// Returns all shows
         /// </summary>
         /// <returns>All shows</returns>
-        public Task<IList<Salon>> GetAsync()
+        public Task<IList<Show>> GetAsync()
         {
-            var taskCompletionSource = new TaskCompletionSource<IList<Salon>>();
+            var taskCompletionSource = new TaskCompletionSource<IList<Show>>();
 
-            _proxy.GetSalonsCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
-            _proxy.GetSalonsAsync();
+            _proxy.GetShowsCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
+            _proxy.GetShowsAsync();
 
             return taskCompletionSource.Task;
         }
@@ -56,12 +56,12 @@ namespace EPSILab.SolarSystem.Saturn.Model
         /// <param name="indexFirstElement">Index of the first element desired</param>
         /// <param name="numberOfElements">Number of results desired</param>
         /// <returns>List limited of shows</returns>
-        public Task<IList<Salon>> GetAsync(int indexFirstElement, int numberOfElements)
+        public Task<IList<Show>> GetAsync(int indexFirstElement, int numberOfElements)
         {
-            var taskCompletionSource = new TaskCompletionSource<IList<Salon>>();
+            var taskCompletionSource = new TaskCompletionSource<IList<Show>>();
 
-            _proxy.GetSalonsLimitedCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
-            _proxy.GetSalonsLimitedAsync(indexFirstElement, numberOfElements);
+            _proxy.GetShowsLimitedCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
+            _proxy.GetShowsLimitedAsync(indexFirstElement, numberOfElements);
 
             return taskCompletionSource.Task;
         }
@@ -74,8 +74,8 @@ namespace EPSILab.SolarSystem.Saturn.Model
         {
             var taskCompletionSource = new TaskCompletionSource<int>();
 
-            _proxy.GetSalonLastInsertedIdCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
-            _proxy.GetSalonLastInsertedIdAsync();
+            _proxy.GetShowLastInsertedIdCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
+            _proxy.GetShowLastInsertedIdAsync();
 
             return taskCompletionSource.Task;
         }
@@ -85,12 +85,12 @@ namespace EPSILab.SolarSystem.Saturn.Model
         /// </summary>
         /// <param name="keywords">Search keywords separated with a space</param>
         /// <returns>Matching shows</returns>
-        public Task<IList<Salon>> SearchAsync(string keywords)
+        public Task<IList<Show>> SearchAsync(string keywords)
         {
-            var taskCompletionSource = new TaskCompletionSource<IList<Salon>>();
+            var taskCompletionSource = new TaskCompletionSource<IList<Show>>();
 
-            _proxy.SearchSalonsCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
-            _proxy.SearchSalonsAsync(keywords);
+            _proxy.SearchShowsCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
+            _proxy.SearchShowsAsync(keywords);
 
             return taskCompletionSource.Task;
         }

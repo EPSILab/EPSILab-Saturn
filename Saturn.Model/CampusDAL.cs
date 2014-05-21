@@ -8,11 +8,11 @@ namespace EPSILab.SolarSystem.Saturn.Model
     /// <summary>
     /// Access cities
     /// </summary>
-    class VilleDAL : IReadable<Ville>
+    class CampusDAL : IReadable<Campus>
     {
         #region Attributes
 
-        private readonly VilleReaderClient _client = new VilleReaderClient();
+        private readonly CampusReaderClient _client = new CampusReaderClient();
 
         #endregion
 
@@ -23,12 +23,12 @@ namespace EPSILab.SolarSystem.Saturn.Model
         /// </summary>
         /// <param name="code">Code of the city desired</param>
         /// <returns>The matching city</returns>
-        public Task<Ville> GetAsync(int code)
+        public Task<Campus> GetAsync(int code)
         {
-            var taskCompletionSource = new TaskCompletionSource<Ville>();
+            var taskCompletionSource = new TaskCompletionSource<Campus>();
 
-            _client.GetVilleCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
-            _client.GetVilleAsync(code);
+            _client.GetCampusCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
+            _client.GetCampusAsync(code);
 
             return taskCompletionSource.Task;
         }
@@ -37,12 +37,12 @@ namespace EPSILab.SolarSystem.Saturn.Model
         /// Returns all cities
         /// </summary>
         /// <returns>All shows</returns>
-        public Task<IList<Ville>> GetAsync()
+        public Task<IList<Campus>> GetAsync()
         {
-            var taskCompletionSource = new TaskCompletionSource<IList<Ville>>();
+            var taskCompletionSource = new TaskCompletionSource<IList<Campus>>();
 
-            _client.GetVillesCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
-            _client.GetVillesAsync();
+            _client.GetCampusesCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
+            _client.GetCampusesAsync();
 
             return taskCompletionSource.Task;
         }

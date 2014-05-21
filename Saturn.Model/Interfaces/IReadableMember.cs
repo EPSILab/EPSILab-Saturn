@@ -7,8 +7,8 @@ namespace EPSILab.SolarSystem.Saturn.Model.Interfaces
     /// <summary>
     /// A specific interface for members
     /// </summary>
-    public interface IReadableMembre : IReadable<Membre>
+    public interface IReadableMember : IReadable<Member>
     {
-        Task<IList<Membre>> GetBureauAsync();
+        Task<IList<Member>> GetBureauAsync();
     }
 }

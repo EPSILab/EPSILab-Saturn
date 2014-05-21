@@ -8,7 +8,7 @@ namespace EPSILab.SolarSystem.Saturn.Model
     /// <summary>
     /// Access to conferences
     /// </summary>
-    class ConferenceDAL : IReadableWithFilter<Conference, Ville>, ISearchable<Conference>
+    class ConferenceDAL : IReadableWithFilter<Conference, Campus>, ISearchable<Conference>
     {
         #region Attributes
 
@@ -71,12 +71,12 @@ namespace EPSILab.SolarSystem.Saturn.Model
         /// </summary>
         /// <param name="ville">The campus</param>
         /// <returns>All campus's conferences</returns>
-        public Task<IList<Conference>> GetAsync(Ville ville)
+        public Task<IList<Conference>> GetAsync(Campus ville)
         {
             var taskCompletionSource = new TaskCompletionSource<IList<Conference>>();
 
-            _proxy.GetConferencesByVilleCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
-            _proxy.GetConferencesByVilleAsync(ville);
+            _proxy.GetConferencesByCampusCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
+            _proxy.GetConferencesByCampusAsync(ville);
 
             return taskCompletionSource.Task;
         }
@@ -88,12 +88,12 @@ namespace EPSILab.SolarSystem.Saturn.Model
         /// /// <param name="indexFirstElement">Index of the first element desired</param>
         /// <param name="numberOfResults">Number of results desired</param>
         /// <returns>All campus's conferences</returns>
-        public Task<IList<Conference>> GetAsync(Ville ville, int indexFirstElement, int numberOfResults)
+        public Task<IList<Conference>> GetAsync(Campus ville, int indexFirstElement, int numberOfResults)
         {
             var taskCompletionSource = new TaskCompletionSource<IList<Conference>>();
 
-            _proxy.GetConferencesByVilleLimitedCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
-            _proxy.GetConferencesByVilleLimitedAsync(ville, indexFirstElement, numberOfResults);
+            _proxy.GetConferencesByCampusLimitedCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
+            _proxy.GetConferencesByCampusLimitedAsync(ville, indexFirstElement, numberOfResults);
 
             return taskCompletionSource.Task;
         }

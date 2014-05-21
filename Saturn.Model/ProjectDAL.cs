@@ -8,14 +8,14 @@ namespace EPSILab.SolarSystem.Saturn.Model
     /// <summary>
     /// Access to the projects
     /// </summary>
-    class ProjetDAL : IReadableWithFilter<Projet, Ville>
+    class ProjectDAL : IReadableWithFilter<Project, Campus>
     {
         #region Attributes
 
         /// <summary>
         /// Webservice proxy for projects
         /// </summary>
-        private readonly ProjetReaderClient _proxy = new ProjetReaderClient();
+        private readonly ProjectReaderClient _proxy = new ProjectReaderClient();
 
         #endregion
 
@@ -26,12 +26,12 @@ namespace EPSILab.SolarSystem.Saturn.Model
         /// </summary>
         /// <param name="code">Code of the project desired</param>
         /// <returns>The matching project</returns>
-        public Task<Projet> GetAsync(int code)
+        public Task<Project> GetAsync(int code)
         {
-            var taskCompletionSource = new TaskCompletionSource<Projet>();
+            var taskCompletionSource = new TaskCompletionSource<Project>();
 
-            _proxy.GetProjetCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
-            _proxy.GetProjetAsync(code);
+            _proxy.GetProjectCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
+            _proxy.GetProjectAsync(code);
 
             return taskCompletionSource.Task;
         }
@@ -40,12 +40,12 @@ namespace EPSILab.SolarSystem.Saturn.Model
         /// Returns all projects
         /// </summary>
         /// <returns>All projects</returns>
-        public Task<IList<Projet>> GetAsync()
+        public Task<IList<Project>> GetAsync()
         {
-            var taskCompletionSource = new TaskCompletionSource<IList<Projet>>();
+            var taskCompletionSource = new TaskCompletionSource<IList<Project>>();
 
-            _proxy.GetProjetsCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
-            _proxy.GetProjetsAsync();
+            _proxy.GetProjectsCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
+            _proxy.GetProjectsAsync();
 
             return taskCompletionSource.Task;
         }
@@ -56,12 +56,12 @@ namespace EPSILab.SolarSystem.Saturn.Model
         /// <param name="indexFirstElement">Index of the first element desired</param>
         /// <param name="numberOfResults">Number of results desired</param>
         /// <returns>List limited of projects</returns>
-        public Task<IList<Projet>> GetAsync(int indexFirstElement, int numberOfResults)
+        public Task<IList<Project>> GetAsync(int indexFirstElement, int numberOfResults)
         {
-            var taskCompletionSource = new TaskCompletionSource<IList<Projet>>();
+            var taskCompletionSource = new TaskCompletionSource<IList<Project>>();
 
-            _proxy.GetProjetsLimitedCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
-            _proxy.GetProjetsLimitedAsync(indexFirstElement, numberOfResults);
+            _proxy.GetProjectsLimitedCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
+            _proxy.GetProjectsLimitedAsync(indexFirstElement, numberOfResults);
 
             return taskCompletionSource.Task;
         }
@@ -71,12 +71,12 @@ namespace EPSILab.SolarSystem.Saturn.Model
         /// </summary>
         /// <param name="ville">The campus</param>
         /// <returns>All campus's projects</returns>
-        public Task<IList<Projet>> GetAsync(Ville ville)
+        public Task<IList<Project>> GetAsync(Campus ville)
         {
-            var taskCompletionSource = new TaskCompletionSource<IList<Projet>>();
+            var taskCompletionSource = new TaskCompletionSource<IList<Project>>();
 
-            _proxy.GetProjetsByVilleCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
-            _proxy.GetProjetsByVilleAsync(ville);
+            _proxy.GetProjectsByCampusCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
+            _proxy.GetProjectsByCampusAsync(ville);
 
             return taskCompletionSource.Task;
         }
@@ -88,12 +88,12 @@ namespace EPSILab.SolarSystem.Saturn.Model
         /// /// <param name="indexFirstElement">Index of the first element desired</param>
         /// <param name="numberOfElements">Number of results desired</param>
         /// <returns>All campus's projects</returns>
-        public Task<IList<Projet>> GetAsync(Ville ville, int indexFirstElement, int numberOfElements)
+        public Task<IList<Project>> GetAsync(Campus ville, int indexFirstElement, int numberOfElements)
         {
-            var taskCompletionSource = new TaskCompletionSource<IList<Projet>>();
+            var taskCompletionSource = new TaskCompletionSource<IList<Project>>();
 
-            _proxy.GetProjetsByVilleLimitedCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
-            _proxy.GetProjetsByVilleLimitedAsync(ville, indexFirstElement, numberOfElements);
+            _proxy.GetProjectsByCampusLimitedCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
+            _proxy.GetProjectsByCampusLimitedAsync(ville, indexFirstElement, numberOfElements);
 
             return taskCompletionSource.Task;
         }
@@ -106,8 +106,8 @@ namespace EPSILab.SolarSystem.Saturn.Model
         {
             var taskCompletionSource = new TaskCompletionSource<int>();
 
-            _proxy.GetProjetLastInsertedIdCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
-            _proxy.GetProjetLastInsertedIdAsync();
+            _proxy.GetProjectLastInsertedIdCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
+            _proxy.GetProjectLastInsertedIdAsync();
 
             return taskCompletionSource.Task;
         }

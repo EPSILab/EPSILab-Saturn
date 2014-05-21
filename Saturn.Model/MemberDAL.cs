@@ -8,14 +8,14 @@ namespace EPSILab.SolarSystem.Saturn.Model
     /// <summary>
     /// Access to members
     /// </summary>
-    class MembreDAL : IReadableMembre, ISearchable<Membre>
+    class MemberDAL : IReadableMember, ISearchable<Member>
     {
         #region Attributes
 
         /// <summary>
         /// Webservice proxy for members
         /// </summary>
-        private readonly MembreReaderClient _proxy = new MembreReaderClient();
+        private readonly MemberReaderClient _proxy = new MemberReaderClient();
 
         #endregion
 
@@ -26,12 +26,12 @@ namespace EPSILab.SolarSystem.Saturn.Model
         /// </summary>
         /// <param name="code">Code of the member desired</param>
         /// <returns>The matching member</returns>
-        public Task<Membre> GetAsync(int code)
+        public Task<Member> GetAsync(int code)
         {
-            var taskCompletionSource = new TaskCompletionSource<Membre>();
+            var taskCompletionSource = new TaskCompletionSource<Member>();
 
-            _proxy.GetMembreCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
-            _proxy.GetMembreAsync(code);
+            _proxy.GetMemberCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
+            _proxy.GetMemberAsync(code);
 
             return taskCompletionSource.Task;
         }
@@ -40,22 +40,22 @@ namespace EPSILab.SolarSystem.Saturn.Model
         /// Return all members
         /// </summary>
         /// <returns>All members</returns>
-        public Task<IList<Membre>> GetAsync()
+        public Task<IList<Member>> GetAsync()
         {
-            var taskCompletionSource = new TaskCompletionSource<IList<Membre>>();
+            var taskCompletionSource = new TaskCompletionSource<IList<Member>>();
 
-            _proxy.GetMembresCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
-            _proxy.GetMembresAsync();
+            _proxy.GetMembersCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
+            _proxy.GetMembersAsync();
 
             return taskCompletionSource.Task;
         }
 
-        public Task<IList<Membre>> GetBureauAsync()
+        public Task<IList<Member>> GetBureauAsync()
         {
-            var taskCompletionSource = new TaskCompletionSource<IList<Membre>>();
+            var taskCompletionSource = new TaskCompletionSource<IList<Member>>();
 
-            _proxy.GetMembresBureauCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
-            _proxy.GetMembresBureauAsync();
+            _proxy.GetMembersBureauCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
+            _proxy.GetMembersBureauAsync();
 
             return taskCompletionSource.Task;
         }
@@ -68,8 +68,8 @@ namespace EPSILab.SolarSystem.Saturn.Model
         {
             var taskCompletionSource = new TaskCompletionSource<int>();
 
-            _proxy.GetMembreLastInsertedIdCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
-            _proxy.GetMembreLastInsertedIdAsync();
+            _proxy.GetMemberLastInsertedIdCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
+            _proxy.GetMemberLastInsertedIdAsync();
 
             return taskCompletionSource.Task;
         }
@@ -79,12 +79,12 @@ namespace EPSILab.SolarSystem.Saturn.Model
         /// </summary>
         /// <param name="keywords">Keywords separated with a space</param>
         /// <returns>Members matching</returns>
-        public Task<IList<Membre>> SearchAsync(string keywords)
+        public Task<IList<Member>> SearchAsync(string keywords)
         {
-            var taskCompletionSource = new TaskCompletionSource<IList<Membre>>();
+            var taskCompletionSource = new TaskCompletionSource<IList<Member>>();
 
-            _proxy.SearchMembresCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
-            _proxy.SearchMembresAsync(keywords);
+            _proxy.SearchMembersCompleted += (sender, e) => taskCompletionSource.TrySetResult(e.Result);
+            _proxy.SearchMembersAsync(keywords);
 
             return taskCompletionSource.Task;
         }
