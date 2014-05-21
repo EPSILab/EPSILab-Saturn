@@ -21,10 +21,10 @@ namespace EPSILab.SolarSystem.Saturn.ViewModel.Mappers
         {
             return new VisualGenericItem
             {
-                Id = element.Code_Conference,
-                Title = element.Nom,
-                Subtitle = string.Format("{0}, {1}", element.Ville.Libelle, DateFormatter.Format(element.Date_Heure_Debut)),
-                Image = element.Image,
+                Id = element.Id,
+                Title = element.Name,
+                Subtitle = string.Format("{0}, {1}", element.Campus.Place, DateFormatter.Format(element.Start_DateTime)),
+                ImageUrl = element.ImageUrl,
                 Type = element.GetType().Name
             };
         }

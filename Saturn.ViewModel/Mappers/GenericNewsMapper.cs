@@ -22,13 +22,13 @@ namespace EPSILab.SolarSystem.Saturn.ViewModel.Mappers
         {
             return new VisualGenericItem
             {
-                Id = element.Code_News,
-                Title = element.Titre,
-                Subtitle = string.Format("{0}, {1} {2} {3}", DateFormatter.Format(element.Date_Heure),
+                Id = element.Id,
+                Title = element.Title,
+                Subtitle = string.Format("{0}, {1} {2} {3}", DateFormatter.Format(element.DateTime),
                                                             AppResourcesHelper.GetString("BY"),
-                                                            element.Membre.Prenom,
-                                                            element.Membre.Nom),
-                Image = element.Image,
+                                                            element.Member.FirstName,
+                                                            element.Member.LastName),
+                ImageUrl = element.ImageUrl,
                 Type = element.GetType().Name
             };
         }

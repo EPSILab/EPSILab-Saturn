@@ -27,12 +27,12 @@ namespace EPSILab.SolarSystem.Saturn.ViewModel
         /// </summary>
         /// <param name="modelNews">Model for news. Resolved by NInject</param>
         /// <param name="modelConferences">Model for conferences. Resolved by NInject</param>
-        /// <param name="modelSalons">Model for shows. Resolved by NInject</param>
-        public SearchViewModel(ISearchable<News> modelNews, ISearchable<Conference> modelConferences, ISearchable<Salon> modelSalons)
+        /// <param name="modelShows">Model for shows. Resolved by NInject</param>
+        public SearchViewModel(ISearchable<News> modelNews, ISearchable<Conference> modelConferences, ISearchable<Show> modelShows)
         {
             _modelNews = modelNews;
             _modelConferences = modelConferences;
-            _modelSalons = modelSalons;
+            _modelShows = modelShows;
 
             SearchCommand = new AsyncDelegateCommand<string>(SearchAsync);
             PinCommand = new RelayCommand<PinnableObject>(Pin);
@@ -71,7 +71,7 @@ namespace EPSILab.SolarSystem.Saturn.ViewModel
         /// <summary>
         /// Access to the shows model
         /// </summary>
-        private readonly ISearchable<Salon> _modelSalons;
+        private readonly ISearchable<Show> _modelShows;
 
         #endregion
 
@@ -154,7 +154,7 @@ namespace EPSILab.SolarSystem.Saturn.ViewModel
 
             await SearchNewsAsync();
             await SearchConferencesAsync();
-            await SearchSalonsAsync();
+            await SearchShowsAsync();
         }
 
         /// <summary>
@@ -210,21 +210,21 @@ namespace EPSILab.SolarSystem.Saturn.ViewModel
         /// <summary>
         /// Search in shows
         /// </summary>
-        private async Task SearchSalonsAsync()
+        private async Task SearchShowsAsync()
         {
             IsLoading = true;
 
-            IList<Salon> salons = await _modelSalons.SearchAsync(Keywords);
+            IList<Show> salons = await _modelShows.SearchAsync(Keywords);
 
             if (salons != null && salons.Count > 0)
             {
-                IMapper<Salon> mapper = new GenericSalonMapper();
-                IList<VisualGenericItem> genericSalon = mapper.Map(salons);
+                IMapper<Show> mapper = new GenericShowMapper();
+                IList<VisualGenericItem> genericShow = mapper.Map(salons);
 
                 Results.Groups.Insert(Results.Groups.Count, new VisualGenericGroup
                 {
                     Title = AppResourcesHelper.GetString("LBL_SALONS"),
-                    Items = new ObservableCollection<VisualGenericItem>(genericSalon),
+                    Items = new ObservableCollection<VisualGenericItem>(genericShow),
                     IsFullyLoaded = true
                 });
             }

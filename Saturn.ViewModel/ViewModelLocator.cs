@@ -26,10 +26,10 @@ namespace EPSILab.SolarSystem.Saturn.ViewModel
                 SimpleIoc.Default.Register<IMainViewModel, MainDesignViewModel>();
 
                 SimpleIoc.Default.Register<IDetailsViewModel<Conference>, ConferenceDesignViewModel>();
-                SimpleIoc.Default.Register<IDetailsViewModel<Membre>, MembreDesignViewModel>();
+                SimpleIoc.Default.Register<IDetailsViewModel<Member>, MemberDesignViewModel>();
                 SimpleIoc.Default.Register<IDetailsViewModel<News>, NewsDesignViewModel>();
-                SimpleIoc.Default.Register<IDetailsViewModel<Projet>, ProjetDesignViewModel>();
-                SimpleIoc.Default.Register<IDetailsViewModel<Salon>, SalonDesignViewModel>();
+                SimpleIoc.Default.Register<IDetailsViewModel<Project>, ProjectDesignViewModel>();
+                SimpleIoc.Default.Register<IDetailsViewModel<Show>, ShowDesignViewModel>();
             }
 
             // Register models
@@ -97,49 +97,49 @@ namespace EPSILab.SolarSystem.Saturn.ViewModel
         /// <summary>
         /// Returns the one member view-model
         /// </summary>
-        public static IDetailsViewModel<Membre> MembreDetailsVM
+        public static IDetailsViewModel<Member> MemberDetailsVM
         {
-            get { return GetDetailViewModel<Membre>(); }
+            get { return GetDetailViewModel<Member>(); }
         }
 
         /// <summary>
         /// Returns the members list view-model
         /// </summary>
-        public static IMasterViewModel<Membre> MembresVM
+        public static IMasterViewModel<Member> MembersVM
         {
-            get { return GetMasterViewModel<Membre>(); }
+            get { return GetMasterViewModel<Member>(); }
         }
 
         /// <summary>
         /// Returns the one project view-model
         /// </summary>
-        public static IDetailsViewModel<Projet> ProjetDetailsVM
+        public static IDetailsViewModel<Project> ProjectDetailsVM
         {
-            get { return GetDetailViewModel<Projet>(); }
+            get { return GetDetailViewModel<Project>(); }
         }
 
         /// <summary>
         /// Returns the projects list view-model
         /// </summary>
-        public static IMasterViewModel<Projet> ProjetsVM
+        public static IMasterViewModel<Project> ProjectsVM
         {
-            get { return GetMasterViewModel<Projet>(); }
+            get { return GetMasterViewModel<Project>(); }
         }
 
         /// <summary>
         /// Returns the one show view-model
         /// </summary>
-        public static IDetailsViewModel<Salon> SalonDetailsVM
+        public static IDetailsViewModel<Show> ShowDetailsVM
         {
-            get { return GetDetailViewModel<Salon>(); }
+            get { return GetDetailViewModel<Show>(); }
         }
 
         /// <summary>
         /// Returns the shows list view-model
         /// </summary>
-        public static IMasterViewModel<Salon> SalonsVM
+        public static IMasterViewModel<Show> ShowsVM
         {
-            get { return GetMasterViewModel<Salon>(); }
+            get { return GetMasterViewModel<Show>(); }
         }
 
         /// <summary>
