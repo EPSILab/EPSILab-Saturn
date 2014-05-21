@@ -1,5 +1,5 @@
 ﻿<common:LayoutAwarePage x:Name="PageRoot"
-                        x:Class="EPSILab.SolarSystem.Saturn.Windows8.SalonDetailsPage"
+                        x:Class="EPSILab.SolarSystem.Saturn.Windows8.ProjectDetailsPage"
                         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,61 +7,26 @@
                         xmlns:converters="using:EPSILab.SolarSystem.Saturn.Windows8.Converters"
                         xmlns:common="using:EPSILab.SolarSystem.Saturn.Windows8.Common"
                         xmlns:helpers="using:EPSILab.SolarSystem.Saturn.Windows8.Helpers"
-                        DataContext="{Binding SalonDetailsVM, Source={StaticResource Locator}}"
-                        mc:Ignorable="d">
+                        mc:Ignorable="d"
+                        DataContext="{Binding ProjectDetailsVM, Source={StaticResource Locator}}">
 
     <Page.Resources>
         <!-- Converters -->
         <converters:NullToBooleanConverter x:Name="NullToBooleanConverter" />
-
-        <converters:ToPinnableConverter x:Key="ToPinnableConverter" />
-        <converters:ToShareableConverter x:Key="ToShareableConverter" />
-        <converters:ToVisitableConverter x:Key="ToVisitableConverter" />
-
-        <converters:SalonInformationsConverter x:Key="SalonInformationsConverter" />
+        <converters:ProjectInformationsConverter x:Name="ProjectInformationsConverter" />
     </Page.Resources>
 
     <!-- App Bar -->
     <Page.BottomAppBar>
         <AppBar>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="3*" />
-                    <ColumnDefinition Width="1*" />
-                </Grid.ColumnDefinitions>
-
-                <!-- Pin, Share and Refresh buttons -->
-                <StackPanel Orientation="Horizontal"
-                            Grid.Column="0">
-
-                    <Button x:Uid="PinButton"
-                            Style="{StaticResource PinAppBarButtonStyle}"
-                            IsEnabled="{Binding Element, Mode=OneWay, Converter={StaticResource NullToBooleanConverter}}"
-                            Command="{Binding PinCommand}"
-                            CommandParameter="{Binding Element, Mode=OneWay, Converter={StaticResource ToPinnableConverter}}" />
-
-                    <Button x:Name="ShareButton"
-                            x:Uid="ShareButton"
-                            Style="{StaticResource ReshareAppBarButtonStyle}"
-                            IsEnabled="{Binding Element, Mode=OneWay, Converter={StaticResource NullToBooleanConverter}}"
-                            Command="{Binding ShareCommand}"
-                            CommandParameter="{Binding Element, Mode=OneWay, Converter={StaticResource ToShareableConverter}}" />
-
-                    <Button x:Uid="RefreshButton"
-                            Style="{StaticResource RefreshAppBarButtonStyle}"
-                            IsEnabled="{Binding Element, Mode=OneWay, Converter={StaticResource NullToBooleanConverter}}"
-                            Command="{Binding LoadElementCommand}"
-                            CommandParameter="{Binding Element.Code_Salon}" />
-                </StackPanel>
-
-                <!-- Website button -->
-                <Button x:Uid="WebsiteButton"
-                        Grid.Column="1"
-                        HorizontalAlignment="Right"
-                        Style="{StaticResource WorldAppBarButtonStyle}"
-                        Command="{Binding VisitWebsiteCommand}"
-                        CommandParameter="{Binding Element, Mode=OneWay, Converter={StaticResource ToVisitableConverter}}" />
-            </Grid>
+            <!-- Refresh button -->
+            <Button x:Uid="RefreshButton"
+                    Grid.Column="1"
+                    HorizontalAlignment="Left"
+                    IsEnabled="{Binding Element, Mode=OneWay, Converter={StaticResource NullToBooleanConverter}}"
+                    Style="{StaticResource RefreshAppBarButtonStyle}"
+                    Command="{Binding LoadElementCommand}"
+                    CommandParameter="{Binding Element.Id}" />
         </AppBar>
     </Page.BottomAppBar>
 
@@ -78,10 +43,10 @@
                      Grid.Row="0"
                      VerticalAlignment="Top" />
 
-        <!-- Main grid -->
+        <!-- Normal layout (Portrait, Landscape and Filled) -->
         <Grid x:Name="ElementInformations"
               DataContext="{Binding Element, Mode=OneWay}"
-              Grid.Row="1" Margin="20,0,10,0">
+              Grid.Row="1">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
@@ -91,44 +56,40 @@
             <StackPanel x:Name="InformationsStackPanel"
                         Grid.Column="0"
                         HorizontalAlignment="Center"
-                        Margin="10,0"
-                        Orientation="Vertical">
+                        Orientation="Vertical" Margin="20,0,10,0">
 
-                <!-- Image -->
-                <Image x:Name="ImageElement"
-                       Source="{Binding Image}"
+                <!-- ImageUrl -->
+                <Image x:Name="ImageUrlElement"
+                       Source="{Binding ImageUrl}"
                        Grid.Column="0"
-                       Width="300" Height="300"
+                       Width="250" Height="250"
                        VerticalAlignment="Top"
                        Margin="0,10,0,0" />
 
-                <!-- Start date -->
-                <TextBlock x:Name="StartDateText"
-                           Text="{Binding Converter={StaticResource SalonInformationsConverter}, ConverterParameter='StartDate'}"
-                           Margin="0,10,0,0"
+                <!-- Progress -->
+                <TextBlock Text="{Binding Converter={StaticResource ProjectInformationsConverter}, ConverterParameter='Progress'}"
+                           HorizontalAlignment="Center"
                            Style="{StaticResource BodyTextStyle}" />
-                
-                <!-- End date -->
-                <TextBlock x:Name="EndDateText"
-                           Text="{Binding Converter={StaticResource SalonInformationsConverter}, ConverterParameter='EndDate'}"
-                           Margin="0,5,0,0"
-                           Style="{StaticResource BodyTextStyle}" Opacity="0" />
+
+                <ProgressBar x:Name="ProgressBar"
+                             Value="{Binding Progression}"
+                             Foreground="#0664A9"
+                             Margin="10,10" />
 
                 <!-- Location -->
                 <TextBlock x:Name="LocationText"
-                           Text="{Binding Converter={StaticResource SalonInformationsConverter}, ConverterParameter='Location'}"
-                           Margin="0,20,0,0"
+                           Text="{Binding Converter={StaticResource ProjectInformationsConverter}, ConverterParameter='Location'}"
+                           Margin="10,0,5,0"
                            Style="{StaticResource BodyTextStyle}" />
-                
             </StackPanel>
 
             <!-- Description -->
             <WebView x:Name="DescriptionWebView"
                      helpers:WebViewHelper.Html="{Binding Description}"
-                     Grid.Column="1"    
-                     Margin="20,0,0,90"
+                     Grid.Column="1"
+                     Margin="10,0,0,90"
                      HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-                     ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                     ScrollViewer.VerticalScrollMode="Disabled"
                      ScrollViewer.IsScrollInertiaEnabled="True"
                      ScriptNotify="WebView_OnScriptNotify" />
         </Grid>
@@ -146,13 +107,14 @@
                     Style="{StaticResource BackButtonStyle}" />
 
             <TextBlock x:Name="PageTitle"
-                       Text="{Binding Element.Nom}"
+                       Text="{Binding Element.Name}"
                        Style="{StaticResource PageHeaderTextStyle}"
                        Grid.Column="1"
                        IsHitTestVisible="false" />
         </Grid>
 
         <VisualStateManager.VisualStateGroups>
+
             <VisualStateGroup x:Name="ApplicationViewStates">
                 <VisualState x:Name="FullScreenLandscape" />
                 <VisualState x:Name="Filled">
@@ -175,7 +137,7 @@
                         </ObjectAnimationUsingKeyFrames>
 
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)"
-                                                       Storyboard.TargetName="ImageElement">
+                                                       Storyboard.TargetName="ImageUrlElement">
                             <DiscreteObjectKeyFrame KeyTime="0">
                                 <DiscreteObjectKeyFrame.Value>
                                     <x:Double>200</x:Double>
@@ -195,12 +157,38 @@
                                                        Storyboard.TargetProperty="Style">
                             <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource SnappedPageHeaderTextStyle}" />
                         </ObjectAnimationUsingKeyFrames>
-
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
-                                                       Storyboard.TargetName="ShareButton">
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.ColumnSpan)" Storyboard.TargetName="InformationsStackPanel">
                             <DiscreteObjectKeyFrame KeyTime="0">
                                 <DiscreteObjectKeyFrame.Value>
-                                    <Visibility>Collapsed</Visibility>
+                                    <x:Int32>2</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.Column)" Storyboard.TargetName="DescriptionWebView">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>0</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.ColumnSpan)" Storyboard.TargetName="DescriptionWebView">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Int32>2</x:Int32>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ImageUrlElement">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>100</x:Double>
+                                </DiscreteObjectKeyFrame.Value>
+                            </DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ImageUrlElement">
+                            <DiscreteObjectKeyFrame KeyTime="0">
+                                <DiscreteObjectKeyFrame.Value>
+                                    <x:Double>100</x:Double>
                                 </DiscreteObjectKeyFrame.Value>
                             </DiscreteObjectKeyFrame>
                         </ObjectAnimationUsingKeyFrames>
@@ -211,55 +199,6 @@
                         		</DiscreteObjectKeyFrame.Value>
                         	</DiscreteObjectKeyFrame>
                         </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.ColumnSpan)" Storyboard.TargetName="InformationsStackPanel">
-                        	<DiscreteObjectKeyFrame KeyTime="0">
-                        		<DiscreteObjectKeyFrame.Value>
-                        			<x:Int32>2</x:Int32>
-                        		</DiscreteObjectKeyFrame.Value>
-                        	</DiscreteObjectKeyFrame>
-                        </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.ColumnSpan)" Storyboard.TargetName="DescriptionWebView">
-                        	<DiscreteObjectKeyFrame KeyTime="0">
-                        		<DiscreteObjectKeyFrame.Value>
-                        			<x:Int32>2</x:Int32>
-                        		</DiscreteObjectKeyFrame.Value>
-                        	</DiscreteObjectKeyFrame>
-                        </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Grid.Column)" Storyboard.TargetName="DescriptionWebView">
-                        	<DiscreteObjectKeyFrame KeyTime="0">
-                        		<DiscreteObjectKeyFrame.Value>
-                        			<x:Int32>0</x:Int32>
-                        		</DiscreteObjectKeyFrame.Value>
-                        	</DiscreteObjectKeyFrame>
-                        </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="DescriptionWebView">
-                        	<DiscreteObjectKeyFrame KeyTime="0">
-                        		<DiscreteObjectKeyFrame.Value>
-                        			<Thickness>0,190,0,90</Thickness>
-                        		</DiscreteObjectKeyFrame.Value>
-                        	</DiscreteObjectKeyFrame>
-                        </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ImageElement">
-                        	<DiscreteObjectKeyFrame KeyTime="0">
-                        		<DiscreteObjectKeyFrame.Value>
-                        			<x:Double>100</x:Double>
-                        		</DiscreteObjectKeyFrame.Value>
-                        	</DiscreteObjectKeyFrame>
-                        </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ImageElement">
-                        	<DiscreteObjectKeyFrame KeyTime="0">
-                        		<DiscreteObjectKeyFrame.Value>
-                        			<x:Double>100</x:Double>
-                        		</DiscreteObjectKeyFrame.Value>
-                        	</DiscreteObjectKeyFrame>
-                        </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="ImageElement">
-                        	<DiscreteObjectKeyFrame KeyTime="0">
-                        		<DiscreteObjectKeyFrame.Value>
-                        			<Thickness>0</Thickness>
-                        		</DiscreteObjectKeyFrame.Value>
-                        	</DiscreteObjectKeyFrame>
-                        </ObjectAnimationUsingKeyFrames>
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="InformationsStackPanel">
                         	<DiscreteObjectKeyFrame KeyTime="0">
                         		<DiscreteObjectKeyFrame.Value>
@@ -267,21 +206,34 @@
                         		</DiscreteObjectKeyFrame.Value>
                         	</DiscreteObjectKeyFrame>
                         </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="StartDateText">
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="DescriptionWebView">
                         	<DiscreteObjectKeyFrame KeyTime="0">
                         		<DiscreteObjectKeyFrame.Value>
-                        			<Thickness>0,5,0,0</Thickness>
+                        			<Thickness>10,165,0,90</Thickness>
                         		</DiscreteObjectKeyFrame.Value>
                         	</DiscreteObjectKeyFrame>
                         </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="LocationText">
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="ProgressBar">
                         	<DiscreteObjectKeyFrame KeyTime="0">
                         		<DiscreteObjectKeyFrame.Value>
-                        			<Thickness>0,8,0,0</Thickness>
+                        			<Thickness>10,5</Thickness>
                         		</DiscreteObjectKeyFrame.Value>
                         	</DiscreteObjectKeyFrame>
                         </ObjectAnimationUsingKeyFrames>
-                        <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="EndDateText" d:IsOptimized="True"/>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="ImageUrlElement">
+                        	<DiscreteObjectKeyFrame KeyTime="0">
+                        		<DiscreteObjectKeyFrame.Value>
+                        			<Thickness>0</Thickness>
+                        		</DiscreteObjectKeyFrame.Value>
+                        	</DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="LocationText">
+                        	<DiscreteObjectKeyFrame KeyTime="0">
+                        		<DiscreteObjectKeyFrame.Value>
+                        			<HorizontalAlignment>Center</HorizontalAlignment>
+                        		</DiscreteObjectKeyFrame.Value>
+                        	</DiscreteObjectKeyFrame>
+                        </ObjectAnimationUsingKeyFrames>
                     </Storyboard>
                 </VisualState>
             </VisualStateGroup>

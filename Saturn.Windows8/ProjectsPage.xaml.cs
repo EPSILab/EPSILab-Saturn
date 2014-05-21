@@ -1,22 +1,23 @@
-﻿using EPSILab.SolarSystem.Saturn.Model.ReadersService;
+﻿using GalaSoft.MvvmLight.Messaging;
+using EPSILab.SolarSystem.Saturn.Model.ReadersService;
 using EPSILab.SolarSystem.Saturn.ViewModel;
 using EPSILab.SolarSystem.Saturn.ViewModel.Interfaces;
-using GalaSoft.MvvmLight.Messaging;
 using Windows.UI.Xaml.Navigation;
 
 namespace EPSILab.SolarSystem.Saturn.Windows8
 {
     /// <summary>
-    /// Member master page
+    /// Project master page
     /// </summary>
-    public sealed partial class MembresPage
+    public sealed partial class ProjectsPage
     {
         #region Constructor
 
         /// <summary>
         /// Constructor
+        /// Enables Cache Mode
         /// </summary>
-        public MembresPage()
+        public ProjectsPage()
         {
             InitializeComponent();
         }
@@ -35,12 +36,12 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
             base.OnNavigatedTo(e);
 
             // Register to the MVVM Light Messenger
-            Messenger.Default.Register<Membre>(this, GoToDetailsPage);
+            Messenger.Default.Register<Project>(this, GoToDetailsPage);
 
             // If the user loads the page for the first time, load elements
             if (e.NavigationMode == NavigationMode.New)
             {
-                IMasterViewModel<Membre> viewModel = (IMasterViewModel<Membre>)DataContext;
+                IMasterViewModel<Project> viewModel = (IMasterViewModel<Project>)DataContext;
 
                 if (App.IsInternetAvailable && viewModel.LoadElementsCommand.CanExecute(this))
                 {
@@ -60,9 +61,9 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
             Messenger.Default.Unregister(this);
 
             if (e.NavigationMode == NavigationMode.Back)
-                ViewModelLocator.DisposeMasterVM<Projet>();
+                ViewModelLocator.DisposeMasterVM<Project>();
             else
-                ViewModelLocator.CleanMasterVM<Projet>();
+                ViewModelLocator.CleanMasterVM<Project>();
 
             base.OnNavigatedFrom(e);
         }
@@ -72,12 +73,12 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
         #region Messenger methods
 
         /// <summary>
-        /// Show the member in the details page
+        /// Show the project in the details page
         /// </summary>
-        /// <param name="member">Member to display</param>
-        private void GoToDetailsPage(Membre member)
+        /// <param name="projet">Project to display</param>
+        private void GoToDetailsPage(Project projet)
         {
-            Frame.Navigate(typeof(MembreDetailsPage), member);
+            Frame.Navigate(typeof(ProjectDetailsPage), projet);
         }
 
         #endregion

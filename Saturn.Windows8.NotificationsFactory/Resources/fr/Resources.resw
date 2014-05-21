@@ -33,7 +33,7 @@
     Each data row contains a name, and value. The row also contains a 
     type or mimetype. Type corresponds to a .NET class that support 
     text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+    Promotions that don't support this are serialized and stored with the 
     mimetype set.
     
     The mimetype is used for serialized objects, and tells the 
@@ -142,7 +142,7 @@
     <value>Prochain évènement</value>
   </data>
   <data name="Shows_Small" xml:space="preserve">
-    <value>Salons</value>
+    <value>Shows</value>
   </data>
   <data name="Conferences_DateFormat" xml:space="preserve">
     <value>Le {0:d} de {0:t} à {1:t}</value>

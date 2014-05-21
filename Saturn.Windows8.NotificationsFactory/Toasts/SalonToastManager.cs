@@ -13,12 +13,12 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory.Toasts
     /// <summary>
     /// A class which checks from the show if there is a new show and display a toast notification
     /// </summary>
-    public class SalonToastManager : ToastManager
+    public class ShowToastManager : ToastManager
     {
         /// <summary>
         /// Constructor
         /// </summary>
-        public SalonToastManager()
+        public ShowToastManager()
             : base("LastShowSavedId")
         {
         }
@@ -29,10 +29,10 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory.Toasts
         public override async Task CheckAndDisplayAsync()
         {
             // Resolve model
-            IReadableLimitable<Salon> model;
+            IReadableLimitable<Show> model;
 
             using (ILifetimeScope scope = ViewModelLocator.Container.BeginLifetimeScope())
-                model = scope.Resolve<IReadableLimitable<Salon>>();
+                model = scope.Resolve<IReadableLimitable<Show>>();
 
             // Get last show Id from model
             int idLastShow = await model.GetLastInsertedId();
@@ -48,16 +48,16 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory.Toasts
             // If Ids are differents, update the saved Id and show a toast notification
             if (idLastShow != idLastShowSaved)
             {
-                Salon show = await model.GetAsync(idLastShow);
+                Show show = await model.GetAsync(idLastShow);
 
                 IToastImageAndText04 toastContent = ToastContentFactory.CreateToastImageAndText04();
 
-                toastContent.Image.Src = show.Image;
-                toastContent.Image.Alt = show.Nom;
+                toastContent.Image.Src = show.ImageUrl;
+                toastContent.Image.Alt = show.Name;
 
                 toastContent.TextHeading.Text = ResourcesAccessor.GetString("Shows_New");
-                toastContent.TextBody1.Text = show.Nom;
-                toastContent.TextBody2.Text = string.Format(ResourcesAccessor.GetString("Shows_DateFormat"), show.Date_Heure_Debut, show.Date_Heure_Fin);
+                toastContent.TextBody1.Text = show.Name;
+                toastContent.TextBody2.Text = string.Format(ResourcesAccessor.GetString("Shows_DateFormat"), show.Start_DateTime, show.End_DateTime);
 
                 ToastNotification toast = toastContent.CreateNotification();
                 ToastNotificationManager.CreateToastNotifier().Show(toast);

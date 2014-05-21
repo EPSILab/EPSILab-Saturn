@@ -7,28 +7,27 @@ using Windows.UI.Xaml.Data;
 namespace EPSILab.SolarSystem.Saturn.Windows8.Converters
 {
     /// <summary>
-    /// A converter used by the Member details page.
-    /// Display informations below the passed parameter
+    /// Converter used for the Project details page.
+    /// Display show informations in terms of the parameter
     /// </summary>
-    public sealed class MembreInformationsConverter : IValueConverter
+    public sealed class ProjectInformationsConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
-            if (value is Membre && parameter is string)
+            if (value is Project && parameter is string)
             {
-                Membre membre = value as Membre;
+                Project projet = value as Project;
 
                 IDictionary<string, string> informations = new Dictionary<string, string>
                 {
-                    { "From", string.Format(FormatsRsxAccessor.GetString("Member_From"), membre.Ville_origine) },
-                    { "CampusInfo", string.Format(FormatsRsxAccessor.GetString("Member_CampusInfo"), membre.Classe.Annee_Promo_Sortante, membre.Ville.Libelle) },
-                    { "Name", string.Format(FormatsRsxAccessor.GetString("Member_Name"), membre.Prenom, membre.Nom) }
+                    { "Progress", string.Format(FormatsRsxAccessor.GetString("Project_Progress"), projet.Progression) },
+                    { "Location", string.Format(FormatsRsxAccessor.GetString("Project_Location"), projet.Campus.Place) }
                 };
 
                 return informations[parameter.ToString()];
             }
 
-            return value;
+            return null;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)

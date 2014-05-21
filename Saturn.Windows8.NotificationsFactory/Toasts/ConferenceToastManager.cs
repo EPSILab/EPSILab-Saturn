@@ -52,12 +52,12 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory.Toasts
 
                 IToastImageAndText04 toastContent = ToastContentFactory.CreateToastImageAndText04();
 
-                toastContent.Image.Src = conference.Image;
-                toastContent.Image.Alt = conference.Nom;
+                toastContent.Image.Src = conference.ImageUrl;
+                toastContent.Image.Alt = conference.Name;
 
                 toastContent.TextHeading.Text = ResourcesAccessor.GetString("Conferences_New");
-                toastContent.TextBody1.Text = conference.Nom;
-                toastContent.TextBody2.Text = string.Format(ResourcesAccessor.GetString("Conferences_DateFormat"), conference.Date_Heure_Debut, conference.Date_Heure_Fin);
+                toastContent.TextBody1.Text = conference.Name;
+                toastContent.TextBody2.Text = string.Format(ResourcesAccessor.GetString("Conferences_DateFormat"), conference.Start_DateTime, conference.End_DateTime);
 
                 ToastNotification toast = toastContent.CreateNotification();
                 ToastNotificationManager.CreateToastNotifier().Show(toast);

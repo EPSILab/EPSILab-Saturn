@@ -1,5 +1,5 @@
 ﻿<common:LayoutAwarePage x:Name="PageRoot"
-                        x:Class="EPSILab.SolarSystem.Saturn.Windows8.SalonsPage"
+                        x:Class="EPSILab.SolarSystem.Saturn.Windows8.ShowsPage"
                         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -8,7 +8,7 @@
                         xmlns:command="using:EPSILab.SolarSystem.Saturn.Windows8.Command"
                         xmlns:common="using:EPSILab.SolarSystem.Saturn.Windows8.Common"
                         mc:Ignorable="d"
-                        DataContext="{Binding SalonsVM, Source={StaticResource Locator}}">
+                        DataContext="{Binding ShowsVM, Source={StaticResource Locator}}">
 
     <Page.Resources>
 
@@ -68,7 +68,7 @@
                   Grid.RowSpan="2"
                   Margin="0,30,0,0" Padding="120,126,120,50"
                   ItemsSource="{Binding Source={StaticResource ItemsViewSource}}"
-                  ItemTemplate="{StaticResource Salons500X130ItemTemplate}"
+                  ItemTemplate="{StaticResource Shows500X130ItemTemplate}"
                   SelectionMode="Single"
                   SelectedItem="{Binding SelectedItem, ElementName=ItemListView, Mode=TwoWay}"
                   IsItemClickEnabled="True"
@@ -80,17 +80,17 @@
                 <StackPanel Width="480"
                             Margin="0,4,14,0">
 
-                    <TextBlock x:Uid="TxtSalonsSubHeader"
+                    <TextBlock x:Uid="TxtShowsSubHeader"
                                Margin="0,0,18,20"
                                Style="{StaticResource SubheaderTextStyle}"
                                MaxHeight="60" />
 
-                    <Image Source="Assets/Salons.jpg"
+                    <Image Source="Assets/Shows.jpg"
                            Height="400"
                            Margin="0,0,18,20"
                            Stretch="UniformToFill" />
 
-                    <TextBlock x:Uid="TxtSalonsDescription"
+                    <TextBlock x:Uid="TxtShowsDescription"
                                Margin="0,0,18,0"
                                Style="{StaticResource BodyTextStyle}" />
                 </StackPanel>
@@ -110,7 +110,7 @@
                   Visibility="Collapsed"
                   Padding="10,0,0,60"
                   ItemsSource="{Binding Source={StaticResource ItemsViewSource}}"
-                  ItemTemplate="{StaticResource SalonsListViewItemTemplate}"
+                  ItemTemplate="{StaticResource ShowsListViewItemTemplate}"
                   SelectionMode="Single"
                   IsItemClickEnabled="True"
                   SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
@@ -120,17 +120,17 @@
 
             <ListView.Header>
                 <StackPanel>
-                    <TextBlock x:Uid="TxtSalonsSubHeader"
+                    <TextBlock x:Uid="TxtShowsSubHeader"
                                Margin="10,0,18,20"
                                Style="{StaticResource TitleTextStyle}"
                                MaxHeight="60" />
 
-                    <Image Source="Assets/Salons.jpg"
+                    <Image Source="Assets/Shows.jpg"
                            Margin="10,0,30,0"
                            MaxHeight="160"
                            Stretch="UniformToFill" />
 
-                    <TextBlock x:Uid="TxtSalonsDescription"
+                    <TextBlock x:Uid="TxtShowsDescription"
                                Margin="10,20,18,0"
                                Style="{StaticResource BodyTextStyle}" />
                 </StackPanel>
@@ -150,7 +150,7 @@
                     Style="{StaticResource BackButtonStyle}" />
 
             <TextBlock x:Name="PageTitle"
-                       x:Uid="TxtSalonsHeader"
+                       x:Uid="TxtShowsHeader"
                        Style="{StaticResource PageHeaderTextStyle}"
                        Grid.Column="1"
                        IsHitTestVisible="false" />

@@ -6,7 +6,7 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.BackgroundTasks
     /// <summary>
     /// Background task which display a toast notification if a new event is available
     /// </summary>
-    public sealed class ToastLastSalonTask : IBackgroundTask
+    public sealed class ToastLastShowTask : IBackgroundTask
     {
         /// <summary>
         /// Run the background task
@@ -18,7 +18,7 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.BackgroundTasks
 
             try
             {
-                ToastManager manager = new SalonToastManager();
+                ToastManager manager = new ShowToastManager();
                 await manager.CheckAndDisplayAsync();
             }
             finally

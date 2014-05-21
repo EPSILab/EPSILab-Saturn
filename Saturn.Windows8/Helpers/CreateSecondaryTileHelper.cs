@@ -33,7 +33,7 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.Helpers
                 // Tile template definition
                 ITileSquarePeekImageAndText04 squareContent = TileContentFactory.CreateTileSquarePeekImageAndText04();
                 squareContent.TextBodyWrap.Text = element.Content;
-                squareContent.Image.Src = element.Image;
+                squareContent.Image.Src = element.ImageUrl;
                 squareContent.Image.Alt = element.Content;
 
                 // Tile creation

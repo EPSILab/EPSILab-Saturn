@@ -21,7 +21,7 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
     /// <summary>
     /// Show details page
     /// </summary>
-    public sealed partial class SalonDetailsPage
+    public sealed partial class ShowDetailsPage
     {
         #region Attributes
 
@@ -37,7 +37,7 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
         /// <summary>
         /// Constructor
         /// </summary>
-        public SalonDetailsPage()
+        public ShowDetailsPage()
         {
             InitializeComponent();
         }
@@ -53,9 +53,9 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
         /// <param name="pageState">Contains saved informations before the page was suspended</param>
         protected override void LoadState(object navigationParameter, Dictionary<string, object> pageState)
         {
-            if (navigationParameter is Salon)
+            if (navigationParameter is Show)
             {
-                Salon salon = navigationParameter as Salon;
+                Show salon = navigationParameter as Show;
                 Messenger.Default.Send(salon);
             }
             else if (navigationParameter is VisualGenericItem)
@@ -65,7 +65,7 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
             }
 
             // Register to the Share event
-            DataTransferManager.GetForCurrentView().DataRequested += SalonDetailsPage_DataRequested;
+            DataTransferManager.GetForCurrentView().DataRequested += ShowDetailsPage_DataRequested;
 
             // Register to the MVVM Light Messenger
             Messenger.Default.Register<PinnableObject>(this, Pin);
@@ -83,10 +83,10 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
         /// <param name="e">Event arguments</param>
         protected override void GoBack(object sender, RoutedEventArgs e)
         {
-            DataTransferManager.GetForCurrentView().DataRequested -= SalonDetailsPage_DataRequested;
+            DataTransferManager.GetForCurrentView().DataRequested -= ShowDetailsPage_DataRequested;
 
             Messenger.Default.Unregister(this);
-            ViewModelLocator.DisposeDetailsVM<Salon>();
+            ViewModelLocator.DisposeDetailsVM<Show>();
 
             base.GoBack(sender, e);
         }
@@ -96,11 +96,11 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
         /// </summary>
         /// <param name="sender">Programmatically initiates an exchange of content with other apps.</param>
         /// <param name="args">Share event arguments</param>
-        private void SalonDetailsPage_DataRequested(DataTransferManager sender, DataRequestedEventArgs args)
+        private void ShowDetailsPage_DataRequested(DataTransferManager sender, DataRequestedEventArgs args)
         {
             if (_shareContractFactory == null)
             {
-                IDetailsViewModel<Salon> viewModel = (IDetailsViewModel<Salon>)DataContext;
+                IDetailsViewModel<Show> viewModel = (IDetailsViewModel<Show>)DataContext;
 
                 if (viewModel.Element != null)
                 {
@@ -176,7 +176,7 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
         /// <summary>
         /// Open the show informations in the browser
         /// </summary>
-        /// <param name="uri">Show URL</param>
+        /// <param name="uri">Show Url</param>
         private async void OpenWebBrowser(Uri uri)
         {
             await Launcher.LaunchUriAsync(uri);

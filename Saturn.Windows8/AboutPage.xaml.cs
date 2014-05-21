@@ -30,13 +30,13 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
         /// </summary>
         /// <param name="sender">Textbox pointed</param>
         /// <param name="e">Event arguments</param>
-        private async void URL_OnPointerReleased(object sender, PointerRoutedEventArgs e)
+        private async void Url_OnPointerReleased(object sender, PointerRoutedEventArgs e)
         {
             var textBox = (FrameworkElement)sender;
 
             string url = textBox.Tag.ToString();
 
-            // Check if URL is valid
+            // Check if Url is valid
             if (Uri.IsWellFormedUriString(url, UriKind.Absolute))
             {
                 var uri = new Uri(url);
@@ -55,7 +55,7 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
 
             string url = string.Format("mailto:{0}?subject={1}", textBox.Tag, MessagesRsxAccessor.GetString("EmailSubject"));
 
-            // Check if URL is valid
+            // Check if Url is valid
             if (Uri.IsWellFormedUriString(url, UriKind.Absolute))
             {
                 var uri = new Uri(url);

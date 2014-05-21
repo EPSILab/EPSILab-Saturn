@@ -7,22 +7,22 @@ using Windows.UI.Xaml.Data;
 namespace EPSILab.SolarSystem.Saturn.Windows8.Converters
 {
     /// <summary>
-    /// Converter used for the Show details page.
-    /// Display show informations in terms of the parameter
+    /// A converter used by the Member details page.
+    /// Display informations below the passed parameter
     /// </summary>
-    public sealed class SalonInformationsConverter : IValueConverter
+    public sealed class MemberInformationsConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
-            if (value is Salon && parameter is string)
+            if (value is Member && parameter is string)
             {
-                Salon salon = value as Salon;
+                Member member = value as Member;
 
                 IDictionary<string, string> informations = new Dictionary<string, string>
                 {
-                    { "StartDate", string.Format(FormatsRsxAccessor.GetString("Show_StartDate"), salon.Date_Heure_Debut)},
-                    { "EndDate", string.Format(FormatsRsxAccessor.GetString("Show_EndDate"), salon.Date_Heure_Fin)},
-                    { "Location", string.Format(FormatsRsxAccessor.GetString("Show_Location"), salon.Lieu, salon.Lieu)},
+                    { "From", string.Format(FormatsRsxAccessor.GetString("Member_From"), member.CityFrom) },
+                    { "CampusInfo", string.Format(FormatsRsxAccessor.GetString("Member_CampusInfo"), member.Promotion.GraduationYear, member.Campus.Place) },
+                    { "Name", string.Format(FormatsRsxAccessor.GetString("Member_Name"), member.FirstName, member.LastName) }
                 };
 
                 return informations[parameter.ToString()];

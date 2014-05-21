@@ -7,7 +7,7 @@ using System.Resources;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("EPSILab for Windows 8's notifications factory")]
-[assembly: AssemblyDescription("Classes to update app tile, create secondary tiles and toasts notifications.")]
+[assembly: AssemblyDescription("Promotions to update app tile, create secondary tiles and toasts notifications.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("EPSILab")]
 [assembly: AssemblyProduct("Solar System")]

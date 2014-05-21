@@ -1,5 +1,5 @@
 ﻿<common:LayoutAwarePage x:Name="PageRoot"
-                        x:Class="EPSILab.SolarSystem.Saturn.Windows8.MembreDetailsPage"
+                        x:Class="EPSILab.SolarSystem.Saturn.Windows8.MemberDetailsPage"
                         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,14 +7,14 @@
                         xmlns:converters="using:EPSILab.SolarSystem.Saturn.Windows8.Converters"
                         xmlns:common="using:EPSILab.SolarSystem.Saturn.Windows8.Common"
                         xmlns:helpers="using:EPSILab.SolarSystem.Saturn.Windows8.Helpers"
-                        DataContext="{Binding MembreDetailsVM, Source={StaticResource Locator}}"
+                        DataContext="{Binding MemberDetailsVM, Source={StaticResource Locator}}"
                         mc:Ignorable="d">
 
     <Page.Resources>
         <!-- Converters -->
         <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
         <converters:StringToUriConverter x:Key="StringToUriConverter" />
-        <converters:MembreInformationsConverter x:Key="MembreInformationsConverter" />
+        <converters:MemberInformationsConverter x:Key="MemberInformationsConverter" />
     </Page.Resources>
 
     <!-- App bar -->
@@ -31,7 +31,7 @@
                         Style="{StaticResource RefreshAppBarButtonStyle}"
                         Grid.Column="0"
                         Command="{Binding LoadElementCommand}"
-                        CommandParameter="{Binding Element.Code_Membre}" />
+                        CommandParameter="{Binding Element.Id}" />
 
                 <!-- Social buttons -->
                 <StackPanel x:Name="SocialButtons"
@@ -44,25 +44,25 @@
                             Command="{Binding VisitWebsiteCommand}"
                             CommandParameter="{Binding Element.Site_web, Converter={StaticResource StringToUriConverter}}" />
 
-                    <Button Visibility="{Binding Element.URL_Facebook, Converter={StaticResource NullToVisibilityConverter}}"
+                    <Button Visibility="{Binding Element.Url_Facebook, Converter={StaticResource NullToVisibilityConverter}}"
                             Style="{StaticResource FacebookAppBarButtonStyle}"
                             Command="{Binding VisitWebsiteCommand}"
-                            CommandParameter="{Binding Element.URL_Facebook, Converter={StaticResource StringToUriConverter}}" />
+                            CommandParameter="{Binding Element.Url_Facebook, Converter={StaticResource StringToUriConverter}}" />
 
-                    <Button Visibility="{Binding Element.URL_Twitter, Converter={StaticResource NullToVisibilityConverter}}"
+                    <Button Visibility="{Binding Element.Url_Twitter, Converter={StaticResource NullToVisibilityConverter}}"
                             Style="{StaticResource TwitterAppBarButtonStyle}"
                             Command="{Binding VisitWebsiteCommand}"
-                            CommandParameter="{Binding Element.URL_Twitter, Converter={StaticResource StringToUriConverter}}" />
+                            CommandParameter="{Binding Element.Url_Twitter, Converter={StaticResource StringToUriConverter}}" />
 
-                    <Button Visibility="{Binding Element.URL_LinkedIn, Converter={StaticResource NullToVisibilityConverter}}"
+                    <Button Visibility="{Binding Element.Url_LinkedIn, Converter={StaticResource NullToVisibilityConverter}}"
                             Style="{StaticResource ManageAppBarButtonStyle}"
                             Command="{Binding VisitWebsiteCommand}"
-                            CommandParameter="{Binding Element.URL_LinkedIn, Converter={StaticResource StringToUriConverter}}" />
+                            CommandParameter="{Binding Element.Url_LinkedIn, Converter={StaticResource StringToUriConverter}}" />
 
-                    <Button Visibility="{Binding Element.URL_Viadeo, Converter={StaticResource NullToVisibilityConverter}}"
+                    <Button Visibility="{Binding Element.Url_Viadeo, Converter={StaticResource NullToVisibilityConverter}}"
                             Style="{StaticResource ContactInfoAppBarButtonStyle}"
                             Command="{Binding VisitWebsiteCommand}"
-                            CommandParameter="{Binding Element.URL_Viadeo, Converter={StaticResource StringToUriConverter}}" />
+                            CommandParameter="{Binding Element.Url_Viadeo, Converter={StaticResource StringToUriConverter}}" />
 
                 </StackPanel>
             </Grid>
@@ -92,7 +92,7 @@
 
             <!-- Photo -->
             <Image x:Name="Photo"
-                   Source="{Binding Image}"
+                   Source="{Binding ImageUrl}"
                    Grid.Column="0"
                    Width="200" Height="200"
                    VerticalAlignment="Top"
@@ -104,16 +104,16 @@
                         Margin="0,15,0,0"
                         Grid.Column="1">
 
-                <TextBlock x:Name="StatutText"
-                           Text="{Binding Statut}"
+                <TextBlock x:Name="StatusText"
+                           Text="{Binding Status}"
                            Style="{StaticResource TitleTextStyle}" />
 
                 <TextBlock x:Name="CampusInfo"
-                           Text="{Binding Converter={StaticResource MembreInformationsConverter}, ConverterParameter='CampusInfo'}"
+                           Text="{Binding Converter={StaticResource MemberInformationsConverter}, ConverterParameter='CampusInfo'}"
                            Style="{StaticResource TitleTextStyle}" />
 
                 <TextBlock x:Name="FromText"
-                           Text="{Binding Converter={StaticResource MembreInformationsConverter}, ConverterParameter='From'}"
+                           Text="{Binding Converter={StaticResource MemberInformationsConverter}, ConverterParameter='From'}"
                            Margin="0,20,0,0"
                            Grid.Column="1"
                            Style="{StaticResource TitleTextStyle}" />
@@ -142,7 +142,7 @@
 
             <TextBlock x:Name="PageTitle"
                        Grid.Column="1"
-                       Text="{Binding Element, Converter={StaticResource MembreInformationsConverter}, ConverterParameter='Name', Mode=OneWay}"
+                       Text="{Binding Element, Converter={StaticResource MemberInformationsConverter}, ConverterParameter='Name', Mode=OneWay}"
                        Style="{StaticResource PageHeaderTextStyle}"
                        IsHitTestVisible="false" />
         </Grid>
@@ -257,7 +257,7 @@
                         		</DiscreteObjectKeyFrame.Value>
                         	</DiscreteObjectKeyFrame>
                         </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="StatutText">
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.HorizontalAlignment)" Storyboard.TargetName="StatusText">
                         	<DiscreteObjectKeyFrame KeyTime="0">
                         		<DiscreteObjectKeyFrame.Value>
                         			<HorizontalAlignment>Center</HorizontalAlignment>

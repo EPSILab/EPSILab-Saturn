@@ -1,13 +1,13 @@
 ﻿<common:LayoutAwarePage x:Name="PageRoot"
-                        x:Class="EPSILab.SolarSystem.Saturn.Windows8.MembresPage"
+                        x:Class="EPSILab.SolarSystem.Saturn.Windows8.ProjectsPage"
                         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                         xmlns:command="using:EPSILab.SolarSystem.Saturn.Windows8.Command"
                         xmlns:common="using:EPSILab.SolarSystem.Saturn.Windows8.Common"
-                        DataContext="{Binding MembresVM, Source={StaticResource Locator}}"
-                        mc:Ignorable="d">
+                        mc:Ignorable="d"
+                        DataContext="{Binding ProjectsVM, Source={StaticResource Locator}}">
 
     <Page.Resources>
 
@@ -18,12 +18,13 @@
 
     <!-- App Bar -->
     <Page.BottomAppBar>
-        <AppBar x:Name="AppBar">
+        <AppBar>
             <Button x:Uid="RefreshButton"
                     Grid.Column="1"
                     HorizontalAlignment="Left"
                     Style="{StaticResource RefreshAppBarButtonStyle}"
                     Command="{Binding LoadElementsCommand}" />
+            
         </AppBar>
     </Page.BottomAppBar>
 
@@ -41,35 +42,34 @@
                      VerticalAlignment="Top" />
 
         <!-- Normal layout (portrait, landscape and filled) -->
-        <GridView
-            x:Name="ItemGridView"
-            TabIndex="1"
-            Grid.RowSpan="2"
-            Margin="0,30,0,0"
-            Padding="120,126,120,50"
-            ItemsSource="{Binding Source={StaticResource ItemsViewSource}}"
-            ItemTemplate="{StaticResource Membres500X130ItemTemplate}"
-            SelectionMode="None"
-            SelectedItem="{Binding SelectedItem, ElementName=ItemListView, Mode=TwoWay}"
-            IsItemClickEnabled="True"
-            command:ListViewBaseItemClickCommand.Command="{Binding GoToDetailsPageCommand}"
-            command:ListViewBaseItemClickCommand.CommandParameter="{Binding}">
+        <GridView x:Name="ItemGridView"
+                  TabIndex="1"
+                  Grid.RowSpan="2"
+                  Margin="0,30,0,0"
+                  Padding="120,126,120,50"
+                  ItemsSource="{Binding Source={StaticResource ItemsViewSource}}"
+                  ItemTemplate="{StaticResource Projects500X130ItemTemplate}"
+                  SelectionMode="None"
+                  SelectedItem="{Binding SelectedItem, ElementName=ItemListView, Mode=TwoWay}"
+                  IsItemClickEnabled="True"
+                  command:ListViewBaseItemClickCommand.Command="{Binding GoToDetailsPageCommand}"
+                  command:ListViewBaseItemClickCommand.CommandParameter="{Binding}">
 
             <GridView.Header>
                 <StackPanel Width="480"
                             Margin="0,4,14,0">
 
-                    <TextBlock x:Uid="TxtMembresSubHeader"
+                    <TextBlock x:Uid="TxtProjectsSubHeader"
                                Margin="0,0,18,20"
                                Style="{StaticResource SubheaderTextStyle}"
                                MaxHeight="60" />
 
-                    <Image Source="Assets/Membres.png"
+                    <Image Source="Assets/Projects.jpg"
                            Height="400"
                            Margin="0,0,18,20"
                            Stretch="UniformToFill" />
 
-                    <TextBlock x:Uid="TxtMembresDescription"
+                    <TextBlock x:Uid="TxtProjectsDescription"
                                Margin="0,0,18,0"
                                Style="{StaticResource BodyTextStyle}" />
                 </StackPanel>
@@ -88,7 +88,7 @@
                   Visibility="Collapsed"
                   Padding="10,0,0,60"
                   ItemsSource="{Binding Source={StaticResource ItemsViewSource}}"
-                  ItemTemplate="{StaticResource MembresListViewItemTemplate}"
+                  ItemTemplate="{StaticResource ProjectsListViewItemTemplate}"
                   SelectionMode="None"
                   IsItemClickEnabled="True"
                   SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
@@ -97,17 +97,17 @@
 
             <ListView.Header>
                 <StackPanel>
-                    <TextBlock x:Uid="TxtMembresSubHeader"
+                    <TextBlock x:Uid="TxtProjectsSubHeader"
                                Margin="10,0,18,20"
                                Style="{StaticResource TitleTextStyle}"
                                MaxHeight="60" />
 
-                    <Image Source="Assets/Membres.png"
+                    <Image Source="Assets/Projects.jpg"
                            Margin="10,0,30,0"
                            MaxHeight="160"
                            Stretch="UniformToFill" />
 
-                    <TextBlock x:Uid="TxtMembresDescription"
+                    <TextBlock x:Uid="TxtProjectsDescription"
                                Margin="10,20,18,0"
                                Style="{StaticResource BodyTextStyle}" />
                 </StackPanel>
@@ -127,7 +127,7 @@
                     Style="{StaticResource BackButtonStyle}" />
 
             <TextBlock x:Name="PageTitle"
-                       x:Uid="TxtMembresHeader"
+                       x:Uid="TxtProjectsHeader"
                        Style="{StaticResource PageHeaderTextStyle}"
                        Grid.Column="1"
                        IsHitTestVisible="false" />
@@ -135,6 +135,7 @@
 
         <VisualStateManager.VisualStateGroups>
 
+            <!-- Visual states reflect the application's view state -->
             <VisualStateGroup x:Name="ApplicationViewStates">
                 <VisualState x:Name="FullScreenLandscape" />
                 <VisualState x:Name="Filled" />

@@ -137,9 +137,9 @@
     <Compile Include="Converters\ConferenceInformationsConverter.cs" />
     <Compile Include="Converters\AboutAuthorConverter.cs" />
     <Compile Include="Converters\LineBreakToEnvironmentNewLineConverter.cs" />
-    <Compile Include="Converters\MembreInformationsConverter.cs" />
-    <Compile Include="Converters\ProjetInformationsConverter.cs" />
-    <Compile Include="Converters\SalonInformationsConverter.cs" />
+    <Compile Include="Converters\MemberInformationsConverter.cs" />
+    <Compile Include="Converters\ProjectInformationsConverter.cs" />
+    <Compile Include="Converters\ShowInformationsConverter.cs" />
     <Compile Include="Converters\NewsInformationsConverter.cs" />
     <Compile Include="Converters\SearchPageTitleConverter.cs" />
     <Compile Include="Helpers\CreateSecondaryTileHelper.cs" />
@@ -162,11 +162,11 @@
     <Compile Include="ConferencesPage.xaml.cs">
       <DependentUpon>ConferencesPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MembreDetailsPage.xaml.cs">
-      <DependentUpon>MembreDetailsPage.xaml</DependentUpon>
+    <Compile Include="MemberDetailsPage.xaml.cs">
+      <DependentUpon>MemberDetailsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MembresPage.xaml.cs">
-      <DependentUpon>MembresPage.xaml</DependentUpon>
+    <Compile Include="MembersPage.xaml.cs">
+      <DependentUpon>MembersPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="NewsPage.xaml.cs">
       <DependentUpon>NewsPage.xaml</DependentUpon>
@@ -174,12 +174,12 @@
     <Compile Include="NewsDetailsPage.xaml.cs">
       <DependentUpon>NewsDetailsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ProjetDetailsPage.xaml.cs">
-      <DependentUpon>ProjetDetailsPage.xaml</DependentUpon>
+    <Compile Include="ProjectDetailsPage.xaml.cs">
+      <DependentUpon>ProjectDetailsPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ProjetsPage.xaml.cs">
-      <DependentUpon>ProjetsPage.xaml</DependentUpon>
+    <Compile Include="ProjectsPage.xaml.cs">
+      <DependentUpon>ProjectsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Common\BindableBase.cs" />
@@ -194,11 +194,11 @@
     </Compile>
     <Compile Include="Resources\MessagesRsxAccessor.cs" />
     <Compile Include="Resources\FormatsRsxAccessor.cs" />
-    <Compile Include="SalonDetailsPage.xaml.cs">
-      <DependentUpon>SalonDetailsPage.xaml</DependentUpon>
+    <Compile Include="ShowDetailsPage.xaml.cs">
+      <DependentUpon>ShowDetailsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SalonsPage.xaml.cs">
-      <DependentUpon>SalonsPage.xaml</DependentUpon>
+    <Compile Include="ShowsPage.xaml.cs">
+      <DependentUpon>ShowsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Factories\ShareContractFactory.cs" />
   </ItemGroup>
@@ -224,10 +224,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Logo.png" />
-    <Content Include="Assets\Membres.png" />
+    <Content Include="Assets\Members.png" />
     <Content Include="Assets\News.jpg" />
-    <Content Include="Assets\Projets.jpg" />
-    <Content Include="Assets\Salons.jpg" />
+    <Content Include="Assets\Projects.jpg" />
+    <Content Include="Assets\Shows.jpg" />
     <None Include="Assets\Screenshots\1.png" />
     <None Include="Assets\Screenshots\2.png" />
     <None Include="Assets\Screenshots\3.png" />
@@ -295,11 +295,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MembreDetailsPage.xaml">
+    <Page Include="MemberDetailsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MembresPage.xaml">
+    <Page Include="MembersPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -311,11 +311,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ProjetDetailsPage.xaml">
+    <Page Include="ProjectDetailsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ProjetsPage.xaml">
+    <Page Include="ProjectsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -323,11 +323,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SalonDetailsPage.xaml">
+    <Page Include="ShowDetailsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SalonsPage.xaml">
+    <Page Include="ShowsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

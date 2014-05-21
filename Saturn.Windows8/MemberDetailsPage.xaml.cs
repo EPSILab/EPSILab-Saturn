@@ -13,13 +13,16 @@ using Windows.UI.Xaml.Controls;
 namespace EPSILab.SolarSystem.Saturn.Windows8
 {
     /// <summary>
-    /// Project details page
+    /// Member details page
     /// </summary>
-    public sealed partial class ProjetDetailsPage
+    public sealed partial class MemberDetailsPage
     {
         #region Constructor
 
-        public ProjetDetailsPage()
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public MemberDetailsPage()
         {
             InitializeComponent();
         }
@@ -30,21 +33,26 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
 
         /// <summary>
         /// Raised when the user loads or resumes the page
+        /// Get informations from the model
+        /// Register to the MVVM Light Messenger
         /// </summary>
         /// <param name="navigationParameter">Passed navigation parameters</param>
         /// <param name="pageState">Contains saved informations before the page was suspended</param>
-        protected override void LoadState(object navigationParameter, Dictionary<string, object> pageState)
+        protected override void LoadState(object navigationParameter, Dictionary<String, Object> pageState)
         {
-            if (navigationParameter is Projet)
+            if (navigationParameter is Member)
             {
-                Projet projet = navigationParameter as Projet;
-                Messenger.Default.Send(projet);
+                Member member = navigationParameter as Member;
+                Messenger.Default.Send(member);
             }
             else if (navigationParameter is VisualGenericItem)
             {
-                VisualGenericItem conference = navigationParameter as VisualGenericItem;
-                Messenger.Default.Send(conference.Id);
+                VisualGenericItem member = navigationParameter as VisualGenericItem;
+                Messenger.Default.Send(member.Id);
             }
+
+            // Register to the MVVM Light Messenger
+            Messenger.Default.Register<Uri>(this, OpenWebBrowser);
         }
 
         /// <summary>
@@ -58,7 +66,7 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
         protected override void GoBack(object sender, RoutedEventArgs e)
         {
             Messenger.Default.Unregister(this);
-            ViewModelLocator.DisposeDetailsVM<Projet>();
+            ViewModelLocator.DisposeDetailsVM<Member>(); 
 
             base.GoBack(sender, e);
         }
@@ -94,6 +102,19 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
             {
                 await messageDialog.ShowAsync();
             }
+        }
+
+        #endregion
+
+        #region Messenger Methods
+
+        /// <summary>
+        /// Open the conference in the browser
+        /// </summary>
+        /// <param name="uri">Conference Url</param>
+        private async void OpenWebBrowser(Uri uri)
+        {
+            await Launcher.LaunchUriAsync(uri);
         }
 
         #endregion

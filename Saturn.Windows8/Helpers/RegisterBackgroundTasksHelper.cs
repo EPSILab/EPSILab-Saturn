@@ -22,7 +22,7 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.Helpers
                 { "Update application tile", string.Format("{0}.ApplicationTileUpdateTask", projectName) },
                 { "Check last conference", string.Format("{0}.ToastLastConferenceTask", projectName) },
                 { "Check last news", string.Format("{0}.ToastLastNewsTask", projectName) },
-                { "Check last show", string.Format("{0}.ToastLastSalonTask", projectName) }
+                { "Check last show", string.Format("{0}.ToastLastShowTask", projectName) }
             };
         }
 

@@ -103,10 +103,10 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
             IDictionary<string, Func<Type>> pages = new Dictionary<string, Func<Type>>
                 {
                     { "News", () => typeof(NewsDetailsPage) },
-                    { "Membre", () => typeof(MembreDetailsPage) },
-                    { "Projet", () => typeof(ProjetDetailsPage) },
+                    { "Member", () => typeof(MemberDetailsPage) },
+                    { "Project", () => typeof(ProjectDetailsPage) },
                     { "Conference", () => typeof(ConferenceDetailsPage) },
-                    { "Salon", () => typeof(SalonDetailsPage) }
+                    { "Show", () => typeof(ShowDetailsPage) }
                 };
 
             Type type = pages[item.Type]();
@@ -138,7 +138,7 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
             {
                 VisualGenericItem selectedItem = (VisualGenericItem)e.AddedItems[0];
 
-                IList<string> types = new List<string> { "News", "Conference", "Salon" };
+                IList<string> types = new List<string> { "News", "Conference", "Show" };
 
                 if (types.Contains(selectedItem.Type))
                 {

@@ -16,14 +16,14 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
     /// <summary>
     /// Shows page
     /// </summary>
-    public sealed partial class SalonsPage
+    public sealed partial class ShowsPage
     {
         #region Constructor
 
         /// <summary>
         /// Constructor
         /// </summary>
-        public SalonsPage()
+        public ShowsPage()
         {
             InitializeComponent();
 
@@ -52,9 +52,9 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
         /// Open the show in the details page
         /// </summary>
         /// <param name="show">Show to display</param>
-        private void GoToDetailsPage(Salon show)
+        private void GoToDetailsPage(Show show)
         {
-            Frame.Navigate(typeof(SalonDetailsPage), show);
+            Frame.Navigate(typeof(ShowDetailsPage), show);
         }
 
         /// <summary>
@@ -69,19 +69,19 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
 
         /// <summary>
         /// Share the show in another app.
-        /// Raise the "SalonPage_DataRequested" event.
+        /// Raise the "ShowPage_DataRequested" event.
         /// </summary>
         /// <param name="element">Element to share</param>
         private void Share(ShareableObject element)
         {
             try
             {
-                DataTransferManager.GetForCurrentView().DataRequested -= SalonPage_DataRequested;
+                DataTransferManager.GetForCurrentView().DataRequested -= ShowPage_DataRequested;
             }
             finally
             {
                 _shareContractFactory = new ShareContractFactory((ShareableWin8Object)element);
-                DataTransferManager.GetForCurrentView().DataRequested += SalonPage_DataRequested;
+                DataTransferManager.GetForCurrentView().DataRequested += ShowPage_DataRequested;
             }
 
             DataTransferManager.ShowShareUI();
@@ -100,14 +100,14 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
             base.OnNavigatedTo(e);
 
             // Register to the MVVM Light Toolkit Messenger
-            Messenger.Default.Register<Salon>(this, GoToDetailsPage);
+            Messenger.Default.Register<Show>(this, GoToDetailsPage);
             Messenger.Default.Register<PinnableObject>(this, Pin);
             Messenger.Default.Register<ShareableObject>(this, Share);
 
             // If the user loads the page for the first time, load shows from the model
             if (e.NavigationMode == NavigationMode.New)
             {
-                IMasterViewModel<Salon> viewModel = (IMasterViewModel<Salon>)DataContext;
+                IMasterViewModel<Show> viewModel = (IMasterViewModel<Show>)DataContext;
 
                 if (App.IsInternetAvailable && viewModel.LoadElementsCommand.CanExecute(this))
                 {
@@ -125,9 +125,9 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
             Messenger.Default.Unregister(this);
 
             if (e.NavigationMode == NavigationMode.Back)
-                ViewModelLocator.DisposeMasterVM<Salon>();
+                ViewModelLocator.DisposeMasterVM<Show>();
             else
-                ViewModelLocator.CleanMasterVM<Salon>();
+                ViewModelLocator.CleanMasterVM<Show>();
 
             base.OnNavigatedFrom(e);
         }
@@ -137,7 +137,7 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
         /// </summary>
         /// <param name="sender">Element which raised the event</param>
         /// <param name="args">Event arguments</param>
-        private void SalonPage_DataRequested(DataTransferManager sender, DataRequestedEventArgs args)
+        private void ShowPage_DataRequested(DataTransferManager sender, DataRequestedEventArgs args)
         {
             _shareContractFactory.DisplayShareUI(args);
         }

@@ -101,7 +101,7 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
                 VisualGenericItem selectedItem = (VisualGenericItem)e.AddedItems[0];
 
                 // If the item is selectable, open the app bar
-                IList<string> types = new List<string> { "News", "Conference", "Salon" };
+                IList<string> types = new List<string> { "News", "Conference", "Show" };
 
                 if (types.Contains(selectedItem.Type))
                 {
@@ -131,10 +131,10 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
             IDictionary<string, Func<Type>> pages = new Dictionary<string, Func<Type>>
                 {
                     { AppResourcesHelper.GetString("LBL_NEWS"), () => typeof(NewsPage) },
-                    { AppResourcesHelper.GetString("LBL_BUREAU"), () => typeof(MembresPage) },
-                    { AppResourcesHelper.GetString("LBL_PROJECTS"), () => typeof(ProjetsPage) },
+                    { AppResourcesHelper.GetString("LBL_BUREAU"), () => typeof(MembersPage) },
+                    { AppResourcesHelper.GetString("LBL_PROJECTS"), () => typeof(ProjectsPage) },
                     { AppResourcesHelper.GetString("LBL_CONFERENCES"), () => typeof(ConferencesPage) },
-                    { AppResourcesHelper.GetString("LBL_SALONS"), () => typeof(SalonsPage) }
+                    { AppResourcesHelper.GetString("LBL_SALONS"), () => typeof(ShowsPage) }
                 };
 
             Type type = pages[group.Title]();
@@ -150,10 +150,10 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
             IDictionary<string, Func<Type>> pages = new Dictionary<string, Func<Type>>
                 {
                     { "News", () => typeof(NewsDetailsPage) },
-                    { "Membre", () => typeof(MembreDetailsPage) },
-                    { "Projet", () => typeof(ProjetDetailsPage) },
+                    { "Member", () => typeof(MemberDetailsPage) },
+                    { "Project", () => typeof(ProjectDetailsPage) },
                     { "Conference", () => typeof(ConferenceDetailsPage) },
-                    { "Salon", () => typeof(SalonDetailsPage) }
+                    { "Show", () => typeof(ShowDetailsPage) }
                 };
 
             Type type = pages[item.Type]();
@@ -173,7 +173,7 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
         /// <summary>
         /// Open a social link (Website, Facebook page or Twitter page) in the browser
         /// </summary>
-        /// <param name="uri">Social page URL</param>
+        /// <param name="uri">Social page Url</param>
         private async void GoToWebPage(Uri uri)
         {
             await Launcher.LaunchUriAsync(uri);

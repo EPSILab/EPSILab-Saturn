@@ -7,27 +7,28 @@ using Windows.UI.Xaml.Data;
 namespace EPSILab.SolarSystem.Saturn.Windows8.Converters
 {
     /// <summary>
-    /// Converter used for the Project details page.
+    /// Converter used for the Show details page.
     /// Display show informations in terms of the parameter
     /// </summary>
-    public sealed class ProjetInformationsConverter : IValueConverter
+    public sealed class ShowInformationsConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
-            if (value is Projet && parameter is string)
+            if (value is Show && parameter is string)
             {
-                Projet projet = value as Projet;
+                Show salon = value as Show;
 
                 IDictionary<string, string> informations = new Dictionary<string, string>
                 {
-                    { "Progress", string.Format(FormatsRsxAccessor.GetString("Project_Progress"), projet.Avancement) },
-                    { "Location", string.Format(FormatsRsxAccessor.GetString("Project_Location"), projet.Ville.Libelle) }
+                    { "Start_DateTime", string.Format(FormatsRsxAccessor.GetString("Show_Start_DateTime"), salon.Start_DateTime)},
+                    { "EndDate", string.Format(FormatsRsxAccessor.GetString("Show_EndDate"), salon.End_DateTime)},
+                    { "Location", string.Format(FormatsRsxAccessor.GetString("Show_Location"), salon.Place, salon.Place)},
                 };
 
                 return informations[parameter.ToString()];
             }
 
-            return null;
+            return value;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)
