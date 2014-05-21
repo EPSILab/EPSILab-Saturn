@@ -20,9 +20,9 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.Converters
 
                 IDictionary<string, string> informations = new Dictionary<string, string>
                 {
-                    { "StartDate", string.Format(FormatsRsxAccessor.GetString("Conference_StartDate"), conference.Date_Heure_Debut) },
-                    { "EndDate", string.Format(FormatsRsxAccessor.GetString("Conference_EndDate"), conference.Date_Heure_Fin) },
-                    { "Location", string.Format(FormatsRsxAccessor.GetString("Conference_Location"), conference.Lieu, conference.Ville.Libelle) }
+                    { "Start_DateTime", string.Format(FormatsRsxAccessor.GetString("Conference_Start_DateTime"), conference.Start_DateTime) },
+                    { "EndDate", string.Format(FormatsRsxAccessor.GetString("Conference_EndDate"), conference.End_DateTime) },
+                    { "Location", string.Format(FormatsRsxAccessor.GetString("Conference_Location"), conference.Place, conference.Campus.Place) }
                 };
 
                 return informations[parameter.ToString()];

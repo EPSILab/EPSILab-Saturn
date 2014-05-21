@@ -13,7 +13,7 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.TileFactory.Toasts
     /// <summary>
     /// Display a toast notification which warn the user a new event will occur
     /// </summary>
-    public class SalonToastManager : ToastManager
+    public class ShowToastManager : ToastManager
     {
         /// <summary>
         /// Display the toast notification
@@ -21,34 +21,34 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.TileFactory.Toasts
         public override async Task CheckAndToastAsync()
         {
             // Resolve model
-            IReadableLimitable<Salon> model;
+            IReadableLimitable<Show> model;
 
             using (ILifetimeScope scope = ViewModelLocator.Container.BeginLifetimeScope())
-                model = scope.Resolve<IReadableLimitable<Salon>>();
+                model = scope.Resolve<IReadableLimitable<Show>>();
 
             // Get last conference Id from model
-            int idLastSalon = await model.GetLastInsertedId();
+            int idLastShow = await model.GetLastInsertedId();
 
             IsolatedStorageSettings localSettings = IsolatedStorageSettings.ApplicationSettings;
 
             // Get last conference saved Id
-            int idLastSalonSaved = localSettings.Contains(LibResources.SalonStorageKey) ? (int)localSettings[LibResources.SalonStorageKey] : 0;
+            int idLastShowSaved = localSettings.Contains(LibResources.ShowStorageKey) ? (int)localSettings[LibResources.ShowStorageKey] : 0;
 
             // If Ids are differents, update the saved Id and show a toast notification
-            if (idLastSalon != idLastSalonSaved)
+            if (idLastShow != idLastShowSaved)
             {
-                Salon lastSalon = await model.GetAsync(idLastSalon);
+                Show lastShow = await model.GetAsync(idLastShow);
 
                 ShellToast toast = new ShellToast
                 {
-                    Title = LibResources.NewSalon,
-                    Content =  lastSalon.Nom,
-                    NavigationUri = new Uri(string.Format("/SalonPage.xaml?Id={0}", lastSalon.Code_Salon), UriKind.Relative)
+                    Title = LibResources.NewShow,
+                    Content =  lastShow.Name,
+                    NavigationUri = new Uri(string.Format("/ShowPage.xaml?Id={0}", lastShow.Id), UriKind.Relative)
                 };
 
                 toast.Show();
 
-                localSettings[LibResources.SalonStorageKey] = idLastSalon;
+                localSettings[LibResources.ShowStorageKey] = idLastShow;
                 localSettings.Save();
             }
         }

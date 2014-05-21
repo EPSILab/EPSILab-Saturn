@@ -33,7 +33,7 @@
     Each data row contains a name, and value. The row also contains a 
     type or mimetype. Type corresponds to a .NET class that support 
     text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+    Promotions that don't support this are serialized and stored with the 
     mimetype set.
     
     The mimetype is used for serialized objects, and tells the 
@@ -129,7 +129,7 @@
   <data name="Conference_Location" xml:space="preserve">
     <value>à {0}, EPSI {1}</value>
   </data>
-  <data name="Conference_StartDate" xml:space="preserve">
+  <data name="Conference_Start_DateTime" xml:space="preserve">
     <value>du {0:g}</value>
   </data>
   <data name="CopryightFormat" xml:space="preserve">
@@ -157,19 +157,19 @@
     <value>Conferences</value>
   </data>
   <data name="PAGE_MEMBRE" xml:space="preserve">
-    <value>Membres</value>
+    <value>Members</value>
   </data>
   <data name="Page_News" xml:space="preserve">
     <value>Actualites</value>
   </data>
   <data name="Page_Shows" xml:space="preserve">
-    <value>Salons</value>
+    <value>Shows</value>
   </data>
   <data name="Project_Location" xml:space="preserve">
     <value>EPSI {0}</value>
   </data>
   <data name="Project_Progress" xml:space="preserve">
-    <value>Avancement: {0}%</value>
+    <value>Progression: {0}%</value>
   </data>
   <data name="Show_EndDate" xml:space="preserve">
     <value>au {0:g}</value>
@@ -183,7 +183,7 @@
   <data name="Show_Location" xml:space="preserve">
     <value>à {0}</value>
   </data>
-  <data name="Show_StartDate" xml:space="preserve">
+  <data name="Show_Start_DateTime" xml:space="preserve">
     <value>du {0:g}</value>
   </data>
   <data name="Search_PageTitle" xml:space="preserve">

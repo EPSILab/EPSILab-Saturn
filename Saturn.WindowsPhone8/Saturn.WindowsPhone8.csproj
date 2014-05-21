@@ -101,10 +101,10 @@
     </Compile>
     <Compile Include="Converters\ConferenceInfoConverter.cs" />
     <Compile Include="Converters\AuthorInfoConverter.cs" />
-    <Compile Include="Converters\MembreInfoConverter.cs" />
-    <Compile Include="Converters\MembreNameConverter.cs" />
+    <Compile Include="Converters\MemberInfoConverter.cs" />
+    <Compile Include="Converters\MemberNameConverter.cs" />
     <Compile Include="Converters\NullToBoolConverter.cs" />
-    <Compile Include="Converters\SalonInfoConverter.cs" />
+    <Compile Include="Converters\ShowInfoConverter.cs" />
     <Compile Include="Converters\StringToUriConverter.cs" />
     <Compile Include="Converters\ToEmailableConverter.cs" />
     <Compile Include="Converters\ToPinnableConverter.cs" />
@@ -130,14 +130,14 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MembrePage.xaml.cs">
-      <DependentUpon>MembrePage.xaml</DependentUpon>
+    <Compile Include="MemberPage.xaml.cs">
+      <DependentUpon>MemberPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="NewsPage.xaml.cs">
       <DependentUpon>NewsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ProjetPage.xaml.cs">
-      <DependentUpon>ProjetPage.xaml</DependentUpon>
+    <Compile Include="ProjectPage.xaml.cs">
+      <DependentUpon>ProjectPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\AppResources.Designer.cs">
@@ -150,8 +150,8 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="SalonPage.xaml.cs">
-      <DependentUpon>SalonPage.xaml</DependentUpon>
+    <Compile Include="ShowPage.xaml.cs">
+      <DependentUpon>ShowPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -171,7 +171,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MembrePage.xaml">
+    <Page Include="MemberPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -179,11 +179,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ProjetPage.xaml">
+    <Page Include="ProjectPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="SalonPage.xaml">
+    <Page Include="ShowPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

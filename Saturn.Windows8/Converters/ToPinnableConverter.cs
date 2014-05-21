@@ -25,7 +25,7 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.Converters
                 {
                     Id = string.Format("{0}-{1}-{2}", applicationName, item.Type, item.Id),
                     Title = item.Title,
-                    Image = item.Image,
+                    ImageUrl = item.ImageUrl,
                     Content = item.Title
                 };
             }
@@ -35,10 +35,10 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.Converters
 
                 pinnableObject = new PinnableObject
                 {
-                    Id = string.Format("{0}-News-{1}", applicationName, news.Code_News),
-                    Title = news.Titre,
-                    Image = news.Image,
-                    Content = news.Titre
+                    Id = string.Format("{0}-News-{1}", applicationName, news.Id),
+                    Title = news.Title,
+                    ImageUrl = news.ImageUrl,
+                    Content = news.Title
                 };
             }
             else if (value is Conference)
@@ -47,22 +47,22 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.Converters
 
                 pinnableObject = new PinnableObject
                 {
-                    Id = string.Format("{0}-Conference-{1}", applicationName, conference.Code_Conference),
-                    Title = conference.Nom,
-                    Image = conference.Image,
-                    Content = conference.Nom
+                    Id = string.Format("{0}-Conference-{1}", applicationName, conference.Id),
+                    Title = conference.Name,
+                    ImageUrl = conference.ImageUrl,
+                    Content = conference.Name
                 };
             }
-            else if (value is Salon)
+            else if (value is Show)
             {
-                Salon salon = value as Salon;
+                Show salon = value as Show;
 
                 pinnableObject = new PinnableObject
                 {
-                    Id = string.Format("{0}-Salon-{1}", applicationName, salon.Code_Salon),
-                    Title = salon.Nom,
-                    Image = salon.Image,
-                    Content = salon.Nom
+                    Id = string.Format("{0}-Show-{1}", applicationName, salon.Id),
+                    Title = salon.Name,
+                    ImageUrl = salon.ImageUrl,
+                    Content = salon.Name
                 };
             }
 

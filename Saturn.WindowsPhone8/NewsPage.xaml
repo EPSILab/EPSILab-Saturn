@@ -44,7 +44,7 @@
                     Margin="12,17,0,15">
 
             <!-- Title of the news -->
-            <TextBlock Text="{Binding Titre}"
+            <TextBlock Text="{Binding Title}"
                        Margin="9,-7,0,5"
                        TextWrapping="Wrap"
                        Style="{StaticResource PhoneTextTitle1BlackStyle}"
@@ -54,13 +54,13 @@
             <StackPanel Style="{StaticResource StackPanelInformationsStyle}">
 
                 <TextBlock Margin="4,2"
-                           Text="{Binding Membre, Converter={StaticResource AuthorInfoConverter}}"
+                           Text="{Binding Member, Converter={StaticResource AuthorInfoConverter}}"
                            Style="{StaticResource PhoneTextNormalStyle}" />
 
                 <TextBlock Margin="4,2"
                            Style="{StaticResource PhoneTextNormalStyle}">
                     <TextBlock.Text>
-                        <Binding Path="Date_Heure" StringFormat="{}{0:G}" />
+                        <Binding Path="DateTime" StringFormat="{}{0:G}" />
                     </TextBlock.Text>
                 </TextBlock>
             </StackPanel>
@@ -69,7 +69,7 @@
         <!-- Content -->
         <phone:WebBrowser Grid.Row="1"
                           Margin="5,0"
-                          common:WebBrowserHelper.Html="{Binding Element.Texte_Long}"
+                          common:WebBrowserHelper.Html="{Binding Element.Text}"
                           Navigating="WebBrowser_OnNavigating" />
 
     </Grid>

@@ -22,14 +22,14 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.Converters
 
                 shareableObject = new ShareableWin8Object
                 {
-                    Title = news.Titre,
-                    Message = string.Format(FormatsRsxAccessor.GetString("News"), news.Titre, news.Date_Heure, news.Membre.Prenom, news.Membre.Nom),
-                    Uri = new Uri(string.Format(websiteFormat, FormatsRsxAccessor.GetString("Page_News"), news.Code_News, news.URL))
+                    Title = news.Title,
+                    Message = string.Format(FormatsRsxAccessor.GetString("News"), news.Title, news.DateTime, news.Member.FirstName, news.Member.LastName),
+                    Uri = new Uri(string.Format(websiteFormat, FormatsRsxAccessor.GetString("Page_News"), news.Id, news.Url))
                 };
 
                 shareableObject.HTMLText = string.Format(FormatsRsxAccessor.GetString("News_HTML"),
-                                                         news.Membre.Prenom, news.Membre.Nom, news.Date_Heure,
-                                                         news.Image, news.Texte_Long, shareableObject.Uri);
+                                                         news.Member.FirstName, news.Member.LastName, news.DateTime,
+                                                         news.ImageUrl, news.Text, shareableObject.Uri);
             }
             else if (value is Conference)
             {
@@ -37,32 +37,32 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.Converters
 
                 shareableObject = new ShareableWin8Object
                 {
-                    Title = conference.Nom,
-                    Message = string.Format(FormatsRsxAccessor.GetString("Conference"), conference.Nom, conference.Date_Heure_Debut, conference.Date_Heure_Fin, conference.Lieu),
-                    Uri = new Uri(string.Format(websiteFormat, FormatsRsxAccessor.GetString("Page_Conferences"), conference.Code_Conference, conference.URL))
+                    Title = conference.Name,
+                    Message = string.Format(FormatsRsxAccessor.GetString("Conference"), conference.Name, conference.Start_DateTime, conference.End_DateTime, conference.Place),
+                    Uri = new Uri(string.Format(websiteFormat, FormatsRsxAccessor.GetString("Page_Conferences"), conference.Id, conference.Url))
                 };
 
                 shareableObject.HTMLText = string.Format(FormatsRsxAccessor.GetString("Conference_HTML"),
-                                                         conference.Date_Heure_Debut, conference.Date_Heure_Fin,
-                                                         conference.Lieu,
-                                                         conference.Ville.Libelle, conference.Image,
+                                                         conference.Start_DateTime, conference.End_DateTime,
+                                                         conference.Place,
+                                                         conference.Campus.Place, conference.ImageUrl,
                                                          conference.Description, shareableObject.Uri);
             }
-            else if (value is Salon)
+            else if (value is Show)
             {
-                Salon salon = value as Salon;
+                Show salon = value as Show;
 
                 shareableObject = new ShareableWin8Object
                 {
-                    Title = salon.Nom,
-                    Message = string.Format(FormatsRsxAccessor.GetString("Show"), salon.Nom, salon.Date_Heure_Debut, salon.Date_Heure_Fin, salon.Lieu),
-                    Uri = new Uri(string.Format(websiteFormat, FormatsRsxAccessor.GetString("Page_Shows"), salon.Code_Salon, salon.URL))
+                    Title = salon.Name,
+                    Message = string.Format(FormatsRsxAccessor.GetString("Show"), salon.Name, salon.Start_DateTime, salon.End_DateTime, salon.Place),
+                    Uri = new Uri(string.Format(websiteFormat, FormatsRsxAccessor.GetString("Page_Shows"), salon.Id, salon.Url))
                 };
 
                 shareableObject.HTMLText = string.Format(FormatsRsxAccessor.GetString("Show_HTML"),
-                                                         salon.Date_Heure_Debut, salon.Date_Heure_Fin, salon.Lieu,
-                                                         salon.Lieu,
-                                                         salon.Image, salon.Description, shareableObject.Uri);
+                                                         salon.Start_DateTime, salon.End_DateTime, salon.Place,
+                                                         salon.Place,
+                                                         salon.ImageUrl, salon.Description, shareableObject.Uri);
             }
 
             return shareableObject;

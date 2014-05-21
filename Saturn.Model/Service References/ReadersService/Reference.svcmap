@@ -18,13 +18,13 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://www.epsilab.net/webservices/ReadersService.svc/mex/mex/mex" Protocol="mex" SourceId="1" />
+    <MetadataSource Address="http://www.epsilab.net/webservices/ReadersService.svc/mex/mex/mex/mex/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="03ed3c14-800b-464b-9142-ecd05ee72c7e" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc/mex/mex/mex" />
-    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="58945f78-b360-4654-a2c9-7b619220dab6" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc/mex/mex/mex" />
-    <MetadataFile FileName="service21.xsd" MetadataType="Schema" ID="dbd77b03-9aad-449e-8993-b2d48aff1fb9" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc/mex/mex/mex" />
-    <MetadataFile FileName="EPSILab.SolarSystem.Earth.Common.xsd" MetadataType="Schema" ID="cb5e8a12-bd6b-4137-bae7-1f39b593c7cc" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc/mex/mex/mex" />
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="671d795d-3221-4525-9fbb-8dce5d0b637c" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc/mex/mex/mex/mex/mex" />
+    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="444e9f1b-1035-4390-a708-867481d97ea2" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc/mex/mex/mex/mex/mex" />
+    <MetadataFile FileName="service21.xsd" MetadataType="Schema" ID="b96bffba-06f3-4a8e-aee7-a8ce1acc09eb" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc/mex/mex/mex/mex/mex" />
+    <MetadataFile FileName="EPSILab.SolarSystem.Earth.Common.xsd" MetadataType="Schema" ID="00a0bc90-f348-4db1-a24c-27f9acd3e758" SourceId="1" SourceUrl="http://www.epsilab.net/webservices/ReadersService.svc/mex/mex/mex/mex/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

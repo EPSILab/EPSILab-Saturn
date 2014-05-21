@@ -117,7 +117,7 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
                         {
                             { "News", () => typeof(NewsDetailsPage) },
                             { "Conference", () => typeof(ConferenceDetailsPage) },
-                            { "Salon", () => typeof(SalonDetailsPage) },
+                            { "Show", () => typeof(ShowDetailsPage) },
                         };
 
                     // Get the page to load
@@ -150,7 +150,7 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
 
         private async void OnSettingsCommand_Click(IUICommand command)
         {
-            await Launcher.LaunchUriAsync(new Uri(ResourcesRsxAccessor.GetString("PrivacyStatement_URL")));
+            await Launcher.LaunchUriAsync(new Uri(ResourcesRsxAccessor.GetString("PrivacyStatement_Url")));
         }
 
         /// <summary>

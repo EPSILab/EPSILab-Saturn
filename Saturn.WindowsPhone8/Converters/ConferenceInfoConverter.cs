@@ -13,7 +13,7 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.Converters
             if (value is Conference)
             {
                 Conference conference = value as Conference;
-                return string.Format(CultureInfo.CurrentUICulture, AppResources.FORMAT_CONFERENCE, conference.Date_Heure_Debut, conference.Date_Heure_Fin, conference.Lieu);
+                return string.Format(CultureInfo.CurrentUICulture, AppResources.FORMAT_CONFERENCE, conference.Start_DateTime, conference.End_DateTime, conference.Place);
             }
 
             return value;

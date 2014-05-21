@@ -51,7 +51,7 @@
                             Style="{StaticResource RefreshAppBarButtonStyle}"
                             IsEnabled="{Binding Element, Mode=OneWay, Converter={StaticResource NullToBooleanConverter}}"
                             Command="{Binding LoadElementCommand}"
-                            CommandParameter="{Binding Element.Code_News}" />
+                            CommandParameter="{Binding Element.Id}" />
 
                 </StackPanel>
 
@@ -95,15 +95,15 @@
                         Orientation="Vertical" Margin="20,0,10,0">
 
                 <!-- Publishing informations -->
-                <Image x:Name="ImageElement"
-                       Source="{Binding Image}"
+                <Image x:Name="ImageUrlElement"
+                       Source="{Binding ImageUrl}"
                        Grid.Column="0"
                        Width="250" Height="250"
                        VerticalAlignment="Top"
                        Margin="0,10,0,0" />
 
                 <TextBlock x:Name="DateTimeText"
-                           Text="{Binding Date_Heure}"
+                           Text="{Binding DateTime}"
                            Margin="0,10,0,0"
                            HorizontalAlignment="Left"
                            Style="{StaticResource BodyTextStyle}" />
@@ -117,7 +117,7 @@
 
             <!-- News text -->
             <WebView x:Name="TextWebView"
-                     helpers:WebViewHelper.Html="{Binding Texte_Long}"
+                     helpers:WebViewHelper.Html="{Binding Text}"
                      Grid.Column="1"
                      Margin="10,0,0,90"
                      HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
@@ -139,7 +139,7 @@
                     Style="{StaticResource BackButtonStyle}" />
 
             <TextBlock x:Name="PageTitle"
-                       Text="{Binding Element.Titre}"
+                       Text="{Binding Element.Title}"
                        Style="{StaticResource PageHeaderTextStyle}"
                        Grid.Column="1"
                        IsHitTestVisible="false" />
@@ -168,7 +168,7 @@
                         </ObjectAnimationUsingKeyFrames>
 
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)"
-                                                       Storyboard.TargetName="ImageElement">
+                                                       Storyboard.TargetName="ImageUrlElement">
                             <DiscreteObjectKeyFrame KeyTime="0">
                                 <DiscreteObjectKeyFrame.Value>
                                     <x:Double>200</x:Double>
@@ -225,21 +225,21 @@
                                 </DiscreteObjectKeyFrame.Value>
                             </DiscreteObjectKeyFrame>
                         </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ImageElement">
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="ImageUrlElement">
                             <DiscreteObjectKeyFrame KeyTime="0">
                                 <DiscreteObjectKeyFrame.Value>
                                     <x:Double>100</x:Double>
                                 </DiscreteObjectKeyFrame.Value>
                             </DiscreteObjectKeyFrame>
                         </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ImageElement">
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Height)" Storyboard.TargetName="ImageUrlElement">
                             <DiscreteObjectKeyFrame KeyTime="0">
                                 <DiscreteObjectKeyFrame.Value>
                                     <x:Double>100</x:Double>
                                 </DiscreteObjectKeyFrame.Value>
                             </DiscreteObjectKeyFrame>
                         </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="ImageElement">
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="ImageUrlElement">
                             <DiscreteObjectKeyFrame KeyTime="0">
                                 <DiscreteObjectKeyFrame.Value>
                                     <Thickness>0</Thickness>

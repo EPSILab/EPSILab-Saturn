@@ -27,11 +27,11 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8
         #region Controls's events
 
         /// <summary>
-        /// Raised when the user clicks on a URL
+        /// Raised when the user clicks on a Url
         /// </summary>
-        /// <param name="sender">Textbox containing the URL</param>
+        /// <param name="sender">Textbox containing the Url</param>
         /// <param name="e">Event arguments</param>
-        private void URL_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        private void Url_OnMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             FrameworkElement textBox = (FrameworkElement)sender;
             string url = textBox.Tag.ToString();

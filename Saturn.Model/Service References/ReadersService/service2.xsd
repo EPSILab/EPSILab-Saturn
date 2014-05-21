@@ -42,33 +42,33 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetConferencesByVille">
+  <xs:element name="GetConferencesByCampus">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="ville" nillable="true" type="q4:Ville" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="campus" nillable="true" type="q4:Campus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetConferencesByVilleResponse">
+  <xs:element name="GetConferencesByCampusResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetConferencesByVilleResult" nillable="true" type="q5:ArrayOfConference" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetConferencesByCampusResult" nillable="true" type="q5:ArrayOfConference" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetConferencesByVilleLimited">
+  <xs:element name="GetConferencesByCampusLimited">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="ville" nillable="true" type="q6:Ville" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="campus" nillable="true" type="q6:Campus" />
         <xs:element minOccurs="0" name="indexFirstResult" type="xs:int" />
         <xs:element minOccurs="0" name="numberOfResults" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetConferencesByVilleLimitedResponse">
+  <xs:element name="GetConferencesByCampusLimitedResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetConferencesByVilleLimitedResult" nillable="true" type="q7:ArrayOfConference" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetConferencesByCampusLimitedResult" nillable="true" type="q7:ArrayOfConference" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -98,135 +98,135 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetLien">
+  <xs:element name="GetLink">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="code" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetLienResponse">
+  <xs:element name="GetLinkResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetLienResult" nillable="true" type="q9:Lien" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetLinkResult" nillable="true" type="q9:Link" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetLiens">
+  <xs:element name="GetLinks">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetLiensResponse">
+  <xs:element name="GetLinksResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetLiensResult" nillable="true" type="q10:ArrayOfLien" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetLinksResult" nillable="true" type="q10:ArrayOfLink" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMembre">
+  <xs:element name="GetMember">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="code" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMembreResponse">
+  <xs:element name="GetMemberResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetMembreResult" nillable="true" type="q11:Membre" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetMemberResult" nillable="true" type="q11:Member" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMembres">
+  <xs:element name="GetMembers">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMembresResponse">
+  <xs:element name="GetMembersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetMembresResult" nillable="true" type="q12:ArrayOfMembre" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetMembersResult" nillable="true" type="q12:ArrayOfMember" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMembresByVille">
+  <xs:element name="GetMembersByCampus">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="ville" nillable="true" type="q13:Ville" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="campus" nillable="true" type="q13:Campus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMembresByVilleResponse">
+  <xs:element name="GetMembersByCampusResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetMembresByVilleResult" nillable="true" type="q14:ArrayOfMembre" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetMembersByCampusResult" nillable="true" type="q14:ArrayOfMember" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMembresBureau">
+  <xs:element name="GetMembersBureau">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMembresBureauResponse">
+  <xs:element name="GetMembersBureauResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetMembresBureauResult" nillable="true" type="q15:ArrayOfMembre" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetMembersBureauResult" nillable="true" type="q15:ArrayOfMember" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMembresBureauByVille">
+  <xs:element name="GetMembersBureauByCampus">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="ville" nillable="true" type="q16:Ville" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="campus" nillable="true" type="q16:Campus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMembresBureauByVilleResponse">
+  <xs:element name="GetMembersBureauByCampusResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetMembresBureauByVilleResult" nillable="true" type="q17:ArrayOfMembre" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetMembersBureauByCampusResult" nillable="true" type="q17:ArrayOfMember" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMembresAlumnis">
+  <xs:element name="GetMembersAlumnis">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="ville" nillable="true" type="q18:Ville" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="campus" nillable="true" type="q18:Campus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMembresAlumnisResponse">
+  <xs:element name="GetMembersAlumnisResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetMembresAlumnisResult" nillable="true" type="q19:ArrayOfMembre" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetMembersAlumnisResult" nillable="true" type="q19:ArrayOfMember" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMembreLastInsertedId">
+  <xs:element name="GetMemberLastInsertedId">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetMembreLastInsertedIdResponse">
+  <xs:element name="GetMemberLastInsertedIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="GetMembreLastInsertedIdResult" type="xs:int" />
+        <xs:element minOccurs="0" name="GetMemberLastInsertedIdResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SearchMembres">
+  <xs:element name="SearchMembers">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="keywords" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SearchMembresResponse">
+  <xs:element name="SearchMembersResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="SearchMembresResult" nillable="true" type="q20:ArrayOfMembre" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="SearchMembersResult" nillable="true" type="q20:ArrayOfMember" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -297,33 +297,33 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetProjet">
+  <xs:element name="GetProject">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="code" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetProjetResponse">
+  <xs:element name="GetProjectResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetProjetResult" nillable="true" type="q25:Projet" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetProjectResult" nillable="true" type="q25:Project" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetProjets">
+  <xs:element name="GetProjects">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetProjetsResponse">
+  <xs:element name="GetProjectsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetProjetsResult" nillable="true" type="q26:ArrayOfProjet" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetProjectsResult" nillable="true" type="q26:ArrayOfProject" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetProjetsLimited">
+  <xs:element name="GetProjectsLimited">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="indexFirstElement" type="xs:int" />
@@ -331,108 +331,108 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetProjetsLimitedResponse">
+  <xs:element name="GetProjectsLimitedResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetProjetsLimitedResult" nillable="true" type="q27:ArrayOfProjet" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetProjectsLimitedResult" nillable="true" type="q27:ArrayOfProject" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetProjetsByVille">
+  <xs:element name="GetProjectsByCampus">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="ville" nillable="true" type="q28:Ville" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="campus" nillable="true" type="q28:Campus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetProjetsByVilleResponse">
+  <xs:element name="GetProjectsByCampusResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetProjetsByVilleResult" nillable="true" type="q29:ArrayOfProjet" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetProjectsByCampusResult" nillable="true" type="q29:ArrayOfProject" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetProjetsByVilleLimited">
+  <xs:element name="GetProjectsByCampusLimited">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="ville" nillable="true" type="q30:Ville" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="campus" nillable="true" type="q30:Campus" />
         <xs:element minOccurs="0" name="indexFirstElement" type="xs:int" />
         <xs:element minOccurs="0" name="numberOfResults" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetProjetsByVilleLimitedResponse">
+  <xs:element name="GetProjectsByCampusLimitedResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetProjetsByVilleLimitedResult" nillable="true" type="q31:ArrayOfProjet" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetProjectsByCampusLimitedResult" nillable="true" type="q31:ArrayOfProject" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetProjetLastInsertedId">
+  <xs:element name="GetProjectLastInsertedId">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetProjetLastInsertedIdResponse">
+  <xs:element name="GetProjectLastInsertedIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="GetProjetLastInsertedIdResult" type="xs:int" />
+        <xs:element minOccurs="0" name="GetProjectLastInsertedIdResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetPublicite">
+  <xs:element name="GetSlide">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="code" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetPubliciteResponse">
+  <xs:element name="GetSlideResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetPubliciteResult" nillable="true" type="q32:Publicite" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetSlideResult" nillable="true" type="q32:Slide" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetPublicites">
+  <xs:element name="GetSlides">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetPublicitesResponse">
+  <xs:element name="GetSlidesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetPublicitesResult" nillable="true" type="q33:ArrayOfPublicite" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetSlidesResult" nillable="true" type="q33:ArrayOfSlide" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetSalon">
+  <xs:element name="GetShow">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="code" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetSalonResponse">
+  <xs:element name="GetShowResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetSalonResult" nillable="true" type="q34:Salon" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetShowResult" nillable="true" type="q34:Show" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetSalons">
+  <xs:element name="GetShows">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetSalonsResponse">
+  <xs:element name="GetShowsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetSalonsResult" nillable="true" type="q35:ArrayOfSalon" />
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetShowsResult" nillable="true" type="q35:ArrayOfShow" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetSalonsLimited">
+  <xs:element name="GetShowsLimited">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="indexFirstElement" type="xs:int" />
@@ -440,62 +440,62 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetSalonsLimitedResponse">
+  <xs:element name="GetShowsLimitedResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetSalonsLimitedResult" nillable="true" type="q36:ArrayOfSalon" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetShowsLimitedResult" nillable="true" type="q36:ArrayOfShow" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetSalonLastInsertedId">
+  <xs:element name="GetShowLastInsertedId">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetSalonLastInsertedIdResponse">
+  <xs:element name="GetShowLastInsertedIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="GetSalonLastInsertedIdResult" type="xs:int" />
+        <xs:element minOccurs="0" name="GetShowLastInsertedIdResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SearchSalons">
+  <xs:element name="SearchShows">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="keywords" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SearchSalonsResponse">
+  <xs:element name="SearchShowsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="SearchSalonsResult" nillable="true" type="q37:ArrayOfSalon" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="SearchShowsResult" nillable="true" type="q37:ArrayOfShow" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetVille">
+  <xs:element name="GetCampus">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="code" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetVilleResponse">
+  <xs:element name="GetCampusResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetVilleResult" nillable="true" type="q38:Ville" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetCampusResult" nillable="true" type="q38:Campus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetVilles">
+  <xs:element name="GetCampuses">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetVillesResponse">
+  <xs:element name="GetCampusesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetVillesResult" nillable="true" type="q39:ArrayOfVille" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/EPSILab.SolarSystem.Earth.Common" minOccurs="0" name="GetCampusesResult" nillable="true" type="q39:ArrayOfCampus" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

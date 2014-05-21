@@ -34,11 +34,11 @@ namespace EPSILab.SolarSystem.Saturn.ViewModel
             using (ILifetimeScope scope = ViewModelLocator.Container.BeginLifetimeScope())
             {
                 _modelConference = scope.Resolve<IReadableLimitable<Conference>>();
-                _modelMembre = scope.Resolve<IReadableMembre>();
+                _modelMember = scope.Resolve<IReadableMember>();
                 _modelNews = scope.Resolve<IReadableLimitable<News>>();
                 _modelConference = scope.Resolve<IReadableLimitable<Conference>>();
-                _modelProjet = scope.Resolve<IReadableLimitable<Projet>>();
-                _modelSalon = scope.Resolve<IReadableLimitable<Salon>>();
+                _modelProject = scope.Resolve<IReadableLimitable<Project>>();
+                _modelShow = scope.Resolve<IReadableLimitable<Show>>();
             }
 
             // Create the menu
@@ -83,7 +83,7 @@ namespace EPSILab.SolarSystem.Saturn.ViewModel
         /// <summary>
         /// Access to members model
         /// </summary>
-        private readonly IReadableMembre _modelMembre;
+        private readonly IReadableMember _modelMember;
 
         /// <summary>
         /// Access to news model
@@ -93,12 +93,12 @@ namespace EPSILab.SolarSystem.Saturn.ViewModel
         /// <summary>
         /// Access to projects model
         /// </summary>
-        private readonly IReadableLimitable<Projet> _modelProjet;
+        private readonly IReadableLimitable<Project> _modelProject;
 
         /// <summary>
         /// Access to shows model
         /// </summary>
-        private readonly IReadableLimitable<Salon> _modelSalon;
+        private readonly IReadableLimitable<Show> _modelShow;
 
         #endregion
 
@@ -172,9 +172,9 @@ namespace EPSILab.SolarSystem.Saturn.ViewModel
         {
             await LoadNewsAsync();
             await LoadBureauAsync();
-            await LoadProjetsAsync();
+            await LoadProjectsAsync();
             await LoadConferencesAsync();
-            await LoadSalonsAsync();
+            await LoadShowsAsync();
         }
 
         /// <summary>
@@ -184,19 +184,19 @@ namespace EPSILab.SolarSystem.Saturn.ViewModel
         {
             IsLoading = true;
 
-            IEnumerable<Membre> membres = await _modelMembre.GetBureauAsync();
+            IEnumerable<Member> members = await _modelMember.GetBureauAsync();
 
-            if (membres != null)
+            if (members != null)
             {
-                IMapper<Membre> mapper = new GenericMembreMapper();
-                IList<VisualGenericItem> genericMembres = mapper.Map(membres);
+                IMapper<Member> mapper = new GenericMemberMapper();
+                IList<VisualGenericItem> genericMembers = mapper.Map(members);
 
                 Menu.Groups.RemoveAt(1);
 
                 Menu.Groups.Insert(1, new VisualGenericGroup
                 {
                     Title = AppResourcesHelper.GetString("LBL_BUREAU"),
-                    Items = new ObservableCollection<VisualGenericItem>(genericMembres),
+                    Items = new ObservableCollection<VisualGenericItem>(genericMembers),
                     IsFullyLoaded = true
                 });
             }
@@ -261,24 +261,24 @@ namespace EPSILab.SolarSystem.Saturn.ViewModel
         /// <summary>
         /// Load the projects list from the model
         /// </summary>
-        private async Task LoadProjetsAsync()
+        private async Task LoadProjectsAsync()
         {
             IsLoading = true;
 
-            IEnumerable<Projet> projets = await _modelProjet.GetAsync(0, 8);
+            IEnumerable<Project> projets = await _modelProject.GetAsync(0, 8);
 
             if (projets != null)
             {
-                IMapper<Projet> mapper = new GenericProjetMapper();
-                IList<VisualGenericItem> genericProjets = mapper.Map(projets);
+                IMapper<Project> mapper = new GenericProjectMapper();
+                IList<VisualGenericItem> genericProjects = mapper.Map(projets);
 
                 Menu.Groups.RemoveAt(3);
 
                 Menu.Groups.Insert(3, new VisualGenericGroup
                 {
                     Title = AppResourcesHelper.GetString("LBL_PROJECTS"),
-                    Items = new ObservableCollection<VisualGenericItem>(genericProjets),
-                    IsFullyLoaded = genericProjets.Count < 8
+                    Items = new ObservableCollection<VisualGenericItem>(genericProjects),
+                    IsFullyLoaded = genericProjects.Count < 8
                 });
             }
 
@@ -288,24 +288,24 @@ namespace EPSILab.SolarSystem.Saturn.ViewModel
         /// <summary>
         /// Load the shows list from the model
         /// </summary>
-        private async Task LoadSalonsAsync()
+        private async Task LoadShowsAsync()
         {
             IsLoading = true;
 
-            IEnumerable<Salon> salons = await _modelSalon.GetAsync(0, 8);
+            IEnumerable<Show> salons = await _modelShow.GetAsync(0, 8);
 
             if (salons != null)
             {
-                IMapper<Salon> mapper = new GenericSalonMapper();
-                IList<VisualGenericItem> genericSalons = mapper.Map(salons);
+                IMapper<Show> mapper = new GenericShowMapper();
+                IList<VisualGenericItem> genericShows = mapper.Map(salons);
 
                 Menu.Groups.RemoveAt(4);
 
                 Menu.Groups.Insert(4, new VisualGenericGroup
                 {
                     Title = AppResourcesHelper.GetString("LBL_SALONS"),
-                    Items = new ObservableCollection<VisualGenericItem>(genericSalons),
-                    IsFullyLoaded = genericSalons.Count < 8
+                    Items = new ObservableCollection<VisualGenericItem>(genericShows),
+                    IsFullyLoaded = genericShows.Count < 8
                 });
             }
 
@@ -333,9 +333,9 @@ namespace EPSILab.SolarSystem.Saturn.ViewModel
                     newElements = mapperNews.Map(news);
                     break;
                 case 2:
-                    IEnumerable<Projet> projets = await _modelProjet.GetAsync(alreadyLoaded.Count, 8);
-                    IMapper<Projet> mapperProjets = new GenericProjetMapper();
-                    newElements = mapperProjets.Map(projets);
+                    IEnumerable<Project> projets = await _modelProject.GetAsync(alreadyLoaded.Count, 8);
+                    IMapper<Project> mapperProjects = new GenericProjectMapper();
+                    newElements = mapperProjects.Map(projets);
                     break;
                 case 3:
                     IEnumerable<Conference> conferences = await _modelConference.GetAsync(alreadyLoaded.Count, 8);
@@ -343,9 +343,9 @@ namespace EPSILab.SolarSystem.Saturn.ViewModel
                     newElements = mapperConferences.Map(conferences);
                     break;
                 case 4:
-                    IEnumerable<Salon> salons = await _modelSalon.GetAsync(alreadyLoaded.Count, 8);
-                    IMapper<Salon> mapperSalons = new GenericSalonMapper();
-                    newElements = mapperSalons.Map(salons);
+                    IEnumerable<Show> salons = await _modelShow.GetAsync(alreadyLoaded.Count, 8);
+                    IMapper<Show> mapperShows = new GenericShowMapper();
+                    newElements = mapperShows.Map(salons);
                     break;
             }
 
@@ -397,9 +397,9 @@ namespace EPSILab.SolarSystem.Saturn.ViewModel
         }
 
         /// <summary>
-        /// Informs the UI to show an URL on the browser
+        /// Informs the UI to show an Url on the browser
         /// </summary>
-        /// <param name="uri">URL to open in the browser</param>
+        /// <param name="uri">Url to open in the browser</param>
         private void GoToSocialNetworkPage(Uri uri)
         {
             Messenger.Default.Send(uri);

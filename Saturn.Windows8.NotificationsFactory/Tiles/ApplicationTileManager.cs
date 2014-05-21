@@ -71,12 +71,12 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory.Tiles
                     ITileSquarePeekImageAndText02 squareContent = TileContentFactory.CreateTileSquarePeekImageAndText02();
 
                     // Square tile text
-                    squareContent.TextHeading.Text = DateFormatter.Format(news.Date_Heure);
-                    squareContent.TextBodyWrap.Text = news.Titre;
+                    squareContent.TextHeading.Text = DateFormatter.Format(news.DateTime);
+                    squareContent.TextBodyWrap.Text = news.Title;
 
                     // Square tile image
-                    squareContent.Image.Src = news.Image;
-                    squareContent.Image.Alt = news.Titre;
+                    squareContent.Image.Src = news.ImageUrl;
+                    squareContent.Image.Alt = news.Title;
 
                     // Create the wide tile
                     ITileWideSmallImageAndText04 wideContent = TileContentFactory.CreateTileWideSmallImageAndText04();
@@ -85,12 +85,12 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory.Tiles
                     wideContent.SquareContent = squareContent;
 
                     // Wide tile text
-                    wideContent.TextHeading.Text = DateFormatter.Format(news.Date_Heure);
-                    wideContent.TextBodyWrap.Text = news.Titre;
+                    wideContent.TextHeading.Text = DateFormatter.Format(news.DateTime);
+                    wideContent.TextBodyWrap.Text = news.Title;
 
                     // Wide tile image
-                    wideContent.Image.Src = news.Image;
-                    wideContent.Image.Alt = news.Titre;
+                    wideContent.Image.Src = news.ImageUrl;
+                    wideContent.Image.Alt = news.Title;
 
                     return wideContent.CreateNotification();
                 }
@@ -117,9 +117,9 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory.Tiles
                 {
                     ITileSquarePeekImageAndText02 squareContent = TileContentFactory.CreateTileSquarePeekImageAndText02();
                     squareContent.TextHeading.Text = ResourcesAccessor.GetString("Conferences_Small");
-                    squareContent.TextBodyWrap.Text = conferences[0].Nom;
-                    squareContent.Image.Src = conferences[0].Image;
-                    squareContent.Image.Alt = conferences[0].Nom;
+                    squareContent.TextBodyWrap.Text = conferences[0].Name;
+                    squareContent.Image.Src = conferences[0].ImageUrl;
+                    squareContent.Image.Alt = conferences[0].Name;
 
                     // Create the wide tile if there are enough elements
                     if (conferences.Count == ItemsNumber)
@@ -131,26 +131,26 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory.Tiles
 
                         // Texts
                         wideContent.TextHeading.Text = ResourcesAccessor.GetString("Conferences_Large");
-                        wideContent.TextBody1.Text = conferences[0].Nom;
-                        wideContent.TextBody2.Text = conferences[1].Nom;
-                        wideContent.TextBody3.Text = conferences[2].Nom;
-                        wideContent.TextBody4.Text = conferences[3].Nom;
+                        wideContent.TextBody1.Text = conferences[0].Name;
+                        wideContent.TextBody2.Text = conferences[1].Name;
+                        wideContent.TextBody3.Text = conferences[2].Name;
+                        wideContent.TextBody4.Text = conferences[3].Name;
 
-                        // Images
-                        wideContent.ImageMain.Src = conferences[0].Image;
-                        wideContent.ImageMain.Alt = conferences[0].Nom;
+                        // ImageUrls
+                        wideContent.ImageMain.Src = conferences[0].ImageUrl;
+                        wideContent.ImageMain.Alt = conferences[0].Name;
 
-                        wideContent.ImageSmallColumn1Row1.Alt = conferences[1].Nom;
-                        wideContent.ImageSmallColumn1Row1.Src = conferences[1].Image;
+                        wideContent.ImageSmallColumn1Row1.Alt = conferences[1].Name;
+                        wideContent.ImageSmallColumn1Row1.Src = conferences[1].ImageUrl;
 
-                        wideContent.ImageSmallColumn1Row2.Alt = conferences[2].Nom;
-                        wideContent.ImageSmallColumn1Row2.Src = conferences[2].Image;
+                        wideContent.ImageSmallColumn1Row2.Alt = conferences[2].Name;
+                        wideContent.ImageSmallColumn1Row2.Src = conferences[2].ImageUrl;
 
-                        wideContent.ImageSmallColumn2Row1.Alt = conferences[3].Nom;
-                        wideContent.ImageSmallColumn2Row1.Src = conferences[3].Image;
+                        wideContent.ImageSmallColumn2Row1.Alt = conferences[3].Name;
+                        wideContent.ImageSmallColumn2Row1.Src = conferences[3].ImageUrl;
 
-                        wideContent.ImageSmallColumn2Row2.Alt = conferences[4].Nom;
-                        wideContent.ImageSmallColumn2Row2.Src = conferences[4].Image;
+                        wideContent.ImageSmallColumn2Row2.Alt = conferences[4].Name;
+                        wideContent.ImageSmallColumn2Row2.Src = conferences[4].ImageUrl;
 
                         return wideContent.CreateNotification();
                     }
@@ -170,17 +170,17 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory.Tiles
             using (ILifetimeScope scope = ViewModelLocator.Container.BeginLifetimeScope())
             {
                 // Get the shows from the model
-                IReadableLimitable<Salon> model = scope.Resolve<IReadableLimitable<Salon>>();
-                IList<Salon> shows = await model.GetAsync(0, ItemsNumber);
+                IReadableLimitable<Show> model = scope.Resolve<IReadableLimitable<Show>>();
+                IList<Show> shows = await model.GetAsync(0, ItemsNumber);
 
                 // Create the square tile if there is one show available
                 if (shows.Any())
                 {
                     ITileSquarePeekImageAndText02 squareContent = TileContentFactory.CreateTileSquarePeekImageAndText02();
                     squareContent.TextHeading.Text = ResourcesAccessor.GetString("Shows_Small");
-                    squareContent.TextBodyWrap.Text = shows[0].Nom;
-                    squareContent.Image.Src = shows[0].Image;
-                    squareContent.Image.Alt = shows[0].Nom;
+                    squareContent.TextBodyWrap.Text = shows[0].Name;
+                    squareContent.Image.Src = shows[0].ImageUrl;
+                    squareContent.Image.Alt = shows[0].Name;
 
                     // Create the wide tile if there are enough elements
                     if (shows.Count == ItemsNumber)
@@ -192,26 +192,26 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.NotificationsFactory.Tiles
 
                         // Text
                         wideContent.TextHeading.Text = ResourcesAccessor.GetString("Shows_Long");
-                        wideContent.TextBodyWrap.Text = string.Format("{0} ({1})", shows[0].Nom, DateFormatter.Format(shows[0].Date_Heure_Debut));
+                        wideContent.TextBodyWrap.Text = string.Format("{0} ({1})", shows[0].Name, DateFormatter.Format(shows[0].Start_DateTime));
 
-                        // Images
-                        wideContent.ImageMain.Src = shows[0].Image;
-                        wideContent.ImageMain.Alt = shows[0].Nom;
+                        // ImageUrls
+                        wideContent.ImageMain.Src = shows[0].ImageUrl;
+                        wideContent.ImageMain.Alt = shows[0].Name;
 
-                        wideContent.ImageSecondary.Src = shows[0].Image;
-                        wideContent.ImageSecondary.Alt = shows[0].Nom;
+                        wideContent.ImageSecondary.Src = shows[0].ImageUrl;
+                        wideContent.ImageSecondary.Alt = shows[0].Name;
 
-                        wideContent.ImageSmallColumn1Row1.Alt = shows[1].Nom;
-                        wideContent.ImageSmallColumn1Row1.Src = shows[1].Image;
+                        wideContent.ImageSmallColumn1Row1.Alt = shows[1].Name;
+                        wideContent.ImageSmallColumn1Row1.Src = shows[1].ImageUrl;
 
-                        wideContent.ImageSmallColumn1Row2.Alt = shows[2].Nom;
-                        wideContent.ImageSmallColumn1Row2.Src = shows[2].Image;
+                        wideContent.ImageSmallColumn1Row2.Alt = shows[2].Name;
+                        wideContent.ImageSmallColumn1Row2.Src = shows[2].ImageUrl;
 
-                        wideContent.ImageSmallColumn2Row1.Alt = shows[3].Nom;
-                        wideContent.ImageSmallColumn2Row1.Src = shows[3].Image;
+                        wideContent.ImageSmallColumn2Row1.Alt = shows[3].Name;
+                        wideContent.ImageSmallColumn2Row1.Src = shows[3].ImageUrl;
 
-                        wideContent.ImageSmallColumn2Row2.Alt = shows[4].Nom;
-                        wideContent.ImageSmallColumn2Row2.Src = shows[4].Image;
+                        wideContent.ImageSmallColumn2Row2.Alt = shows[4].Name;
+                        wideContent.ImageSmallColumn2Row2.Src = shows[4].ImageUrl;
 
                         return wideContent.CreateNotification();
                     }

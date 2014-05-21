@@ -10,21 +10,21 @@ namespace EPSILab.SolarSystem.Saturn.ViewModel.Mappers
     /// <summary>
     /// Map a (list of) show(s) to a (list of) generic item(s)
     /// </summary>
-    class GenericSalonMapper : IMapper<Salon>
+    class GenericShowMapper : IMapper<Show>
     {
         /// <summary>
         /// Map a show to an generic item
         /// </summary>
         /// <param name="element">Show to map</param>
         /// <returns>Corresponding generic item</returns>
-        public VisualGenericItem Map(Salon element)
+        public VisualGenericItem Map(Show element)
         {
             return new VisualGenericItem
             {
-                Id = element.Code_Salon,
-                Title = element.Nom,
-                Subtitle = DateFormatter.Format(element.Date_Heure_Debut),
-                Image = element.Image,
+                Id = element.Id,
+                Title = element.Name,
+                Subtitle = DateFormatter.Format(element.Start_DateTime),
+                ImageUrl = element.ImageUrl,
                 Type = element.GetType().Name
             };
         }
@@ -34,7 +34,7 @@ namespace EPSILab.SolarSystem.Saturn.ViewModel.Mappers
         /// </summary>
         /// <param name="elements">List of shows to map</param>
         /// <returns>Corresponding generic items list</returns>
-        public IList<VisualGenericItem> Map(IEnumerable<Salon> elements)
+        public IList<VisualGenericItem> Map(IEnumerable<Show> elements)
         {
             return elements.Select(Map).ToList();
         }

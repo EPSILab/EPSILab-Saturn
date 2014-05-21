@@ -9,21 +9,21 @@ namespace EPSILab.SolarSystem.Saturn.ViewModel.Mappers
     /// <summary>
     /// Map a (list of) project(s) to a (list of) generic item(s)
     /// </summary>
-    class GenericProjetMapper : IMapper<Projet> 
+    class GenericProjectMapper : IMapper<Project> 
     {
         /// <summary>
         /// Map a project to an generic item
         /// </summary>
         /// <param name="element">Project to map</param>
         /// <returns>Corresponding generic item</returns>
-        public VisualGenericItem Map(Projet element)
+        public VisualGenericItem Map(Project element)
         {
             return new VisualGenericItem
                 {
-                    Id = element.Code_Projet,
-                    Title = element.Nom,
-                    Subtitle = string.Format("{0} %", element.Avancement),
-                    Image = element.Image,
+                    Id = element.Id,
+                    Title = element.Name,
+                    Subtitle = string.Format("{0} %", element.Progression),
+                    ImageUrl = element.ImageUrl,
                     Type = element.GetType().Name
                 };
         }
@@ -33,7 +33,7 @@ namespace EPSILab.SolarSystem.Saturn.ViewModel.Mappers
         /// </summary>
         /// <param name="elements">List of projects to map</param>
         /// <returns>Corresponding generic items list</returns>
-        public IList<VisualGenericItem> Map(IEnumerable<Projet> elements)
+        public IList<VisualGenericItem> Map(IEnumerable<Project> elements)
         {
             return elements.Select(Map).ToList();
         }

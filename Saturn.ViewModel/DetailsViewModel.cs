@@ -154,7 +154,7 @@ namespace EPSILab.SolarSystem.Saturn.ViewModel
         }
 
         /// <summary>
-        /// Informs the UI to open element'URL on the browser
+        /// Informs the UI to open element'Url on the browser
         /// </summary>
         /// <param name="uri"></param>
         private void VisitWebsite(Uri uri)

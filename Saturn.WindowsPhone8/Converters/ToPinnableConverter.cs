@@ -19,12 +19,12 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.Converters
 
                 pinnableObject = new PinnableObjectWP
                 {
-                    Id = string.Format("{0}-News-{1}", AppResources.APPLICATION_NAME, news.Code_News),
-                    NavigationPage = new Uri(string.Format("/NewsPage.xaml?Id={0}", news.Code_News), UriKind.Relative),
-                    Title = news.Titre,
-                    BackTitle = news.Date_Heure.ToString("g", CultureInfo.CurrentUICulture),
-                    Image = news.Image,
-                    Content = news.Texte_Court
+                    Id = string.Format("{0}-News-{1}", AppResources.APPLICATION_NAME, news.Id),
+                    NavigationPage = new Uri(string.Format("/NewsPage.xaml?Id={0}", news.Id), UriKind.Relative),
+                    Title = news.Title,
+                    BackTitle = news.DateTime.ToString("g", CultureInfo.CurrentUICulture),
+                    ImageUrl = news.ImageUrl,
+                    Content = news.ShortText
                 };
             }
             else if (value is Conference)
@@ -33,26 +33,26 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.Converters
 
                 pinnableObject = new PinnableObjectWP
                 {
-                    Id = string.Format("{0}-Conference-{1}", AppResources.APPLICATION_NAME, conference.Code_Conference),
-                    NavigationPage = new Uri(string.Format("/ConferencePage.xaml?Id={0}", conference.Code_Conference), UriKind.Relative),
-                    Title = conference.Nom,
-                    BackTitle = string.Format(CultureInfo.CurrentUICulture, AppResources.FORMAT_CONFERENCE, conference.Date_Heure_Debut, conference.Date_Heure_Fin, conference.Lieu),
-                    Image = conference.Image,
-                    Content = conference.Nom
+                    Id = string.Format("{0}-Conference-{1}", AppResources.APPLICATION_NAME, conference.Id),
+                    NavigationPage = new Uri(string.Format("/ConferencePage.xaml?Id={0}", conference.Id), UriKind.Relative),
+                    Title = conference.Name,
+                    BackTitle = string.Format(CultureInfo.CurrentUICulture, AppResources.FORMAT_CONFERENCE, conference.Start_DateTime, conference.End_DateTime, conference.Place),
+                    ImageUrl = conference.ImageUrl,
+                    Content = conference.Name
                 };
             }
-            else if (value is Salon)
+            else if (value is Show)
             {
-                Salon salon = value as Salon;
+                Show salon = value as Show;
 
                 pinnableObject = new PinnableObjectWP
                 {
-                    Id = string.Format("{0}-Salon-{1}", AppResources.APPLICATION_NAME, salon.Code_Salon),
-                    NavigationPage = new Uri(string.Format("/SalonPage.xaml?Id={0}", salon.Code_Salon), UriKind.Relative),
-                    Title = salon.Nom,
-                    BackTitle = string.Format(CultureInfo.CurrentUICulture, AppResources.FORMAT_SALON, salon.Date_Heure_Debut, salon.Date_Heure_Fin, salon.Lieu),
-                    Image = salon.Image,
-                    Content = salon.Nom
+                    Id = string.Format("{0}-Show-{1}", AppResources.APPLICATION_NAME, salon.Id),
+                    NavigationPage = new Uri(string.Format("/ShowPage.xaml?Id={0}", salon.Id), UriKind.Relative),
+                    Title = salon.Name,
+                    BackTitle = string.Format(CultureInfo.CurrentUICulture, AppResources.FORMAT_SALON, salon.Start_DateTime, salon.End_DateTime, salon.Place),
+                    ImageUrl = salon.ImageUrl,
+                    Content = salon.Name
                 };
             }
 

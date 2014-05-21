@@ -57,7 +57,7 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.BackgroundTasks
                 manager = new ConferenceToastManager();
                 await manager.CheckAndToastAsync();
 
-                manager = new SalonToastManager();
+                manager = new ShowToastManager();
                 await manager.CheckAndToastAsync();
             }
             finally

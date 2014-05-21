@@ -17,12 +17,12 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.Converters
             {
                 News news = value as News;
 
-                string url = string.Format(AppResources.WEBSITE_FORMAT, AppResources.PAGE_NEWS, news.Code_News, news.URL);
+                string url = string.Format(AppResources.WEBSITE_FORMAT, AppResources.PAGE_NEWS, news.Id, news.Url);
 
                 emailableObject = new EmailableObject
                 {
-                    Subject = news.Titre,
-                    Body = string.Format(AppResources.FORMAT_EMAIL_NEWS, news.Texte_Court, news.Membre.Prenom, news.Membre.Nom, url, Environment.NewLine)
+                    Subject = news.Title,
+                    Body = string.Format(AppResources.FORMAT_EMAIL_NEWS, news.ShortText, news.Member.FirstName, news.Member.LastName, url, Environment.NewLine)
                 };
             }
 

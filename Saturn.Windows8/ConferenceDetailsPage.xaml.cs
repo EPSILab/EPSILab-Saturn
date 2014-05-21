@@ -177,7 +177,7 @@ namespace EPSILab.SolarSystem.Saturn.Windows8
         /// <summary>
         /// Open the conference in the browser
         /// </summary>
-        /// <param name="uri">Conference URL</param>
+        /// <param name="uri">Conference Url</param>
         private async void OpenWebBrowser(Uri uri)
         {
             await Launcher.LaunchUriAsync(uri);

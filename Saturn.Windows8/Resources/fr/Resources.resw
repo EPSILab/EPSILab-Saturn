@@ -33,7 +33,7 @@
     Each data row contains a name, and value. The row also contains a 
     type or mimetype. Type corresponds to a .NET class that support 
     text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+    Promotions that don't support this are serialized and stored with the 
     mimetype set.
     
     The mimetype is used for serialized objects, and tells the 
@@ -117,10 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="TxtMembresHeader.Text" xml:space="preserve">
+  <data name="TxtMembersHeader.Text" xml:space="preserve">
     <value>Le bureau de l'association</value>
   </data>
-  <data name="TxtMembresSubHeader.Text" xml:space="preserve">
+  <data name="TxtMembersSubHeader.Text" xml:space="preserve">
     <value>Voici le bureau officiel de l'association.</value>
   </data>
   <data name="TxtNewsHeader.Text" xml:space="preserve">
@@ -129,10 +129,10 @@
   <data name="TxtNewsSubHeader.Text" xml:space="preserve">
     <value>Retrouvez les dernières actualités Microsoft ainsi que de notre association.</value>
   </data>
-  <data name="TxtProjetsHeader.Text" xml:space="preserve">
+  <data name="TxtProjectsHeader.Text" xml:space="preserve">
     <value>Nos projets</value>
   </data>
-  <data name="TxtProjetsSubHeader.Text" xml:space="preserve">
+  <data name="TxtProjectsSubHeader.Text" xml:space="preserve">
     <value>Retrouvez ici la liste de nos projets.</value>
   </data>
   <data name="TxtConferencesHeader.Text" xml:space="preserve">
@@ -141,10 +141,10 @@
   <data name="TxtConferencesSubHeader.Text" xml:space="preserve">
     <value>Vous pouvez retrouver sur cette page l'ensemble des conférences organisées au sein des campus.</value>
   </data>
-  <data name="TxtSalonsHeader.Text" xml:space="preserve">
+  <data name="TxtShowsHeader.Text" xml:space="preserve">
     <value>Les salons</value>
   </data>
-  <data name="TxtSalonsSubHeader.Text" xml:space="preserve">
+  <data name="TxtShowsSubHeader.Text" xml:space="preserve">
     <value>Retrouvez les prochains rendez-vous de Microsoft ou de ses partenaires.</value>
   </data>
   <data name="TxtNoConnection.Text" xml:space="preserve">
@@ -171,7 +171,7 @@
   <data name="WebsiteButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name" xml:space="preserve">
     <value>Site web</value>
   </data>
-  <data name="PrivacyStatement_URL" xml:space="preserve">
+  <data name="PrivacyStatement_Url" xml:space="preserve">
     <value>http://ma.ms.giz.fr/?name=EPSILab</value>
   </data>
   <data name="FacebookButton.Tag" xml:space="preserve">

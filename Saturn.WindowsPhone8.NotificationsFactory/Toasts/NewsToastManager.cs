@@ -42,8 +42,8 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.TileFactory.Toasts
                 ShellToast toast = new ShellToast
                 {
                     Title = LibResources.NewNews,
-                    Content = lastNews.Titre,
-                    NavigationUri = new Uri(string.Format("/NewsPage.xaml?Id={0}", lastNews.Code_News), UriKind.Relative)
+                    Content = lastNews.Title,
+                    NavigationUri = new Uri(string.Format("/NewsPage.xaml?Id={0}", lastNews.Id), UriKind.Relative)
                 };
 
                 toast.Show();

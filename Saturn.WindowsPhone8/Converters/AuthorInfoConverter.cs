@@ -10,10 +10,10 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.Converters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value is Membre)
+            if (value is Member)
             {
-                Membre membre = value as Membre;
-                return string.Format(CultureInfo.CurrentUICulture, AppResources.FORMAT_AUTHOR, membre.Prenom, membre.Nom);
+                Member member = value as Member;
+                return string.Format(CultureInfo.CurrentUICulture, AppResources.FORMAT_AUTHOR, member.FirstName, member.LastName);
             }
 
             return value;

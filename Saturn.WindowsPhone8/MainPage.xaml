@@ -74,7 +74,7 @@
                                                     Margin="12,2,0,4"
                                                     Width="432">
 
-                                            <Image Source="{Binding Image}"
+                                            <Image Source="{Binding ImageUrl}"
                                                    Margin="0,3"
                                                    Width="90" Height="90" />
 

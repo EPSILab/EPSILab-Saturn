@@ -259,7 +259,7 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Membres.
+        ///   Looks up a localized string similar to Members.
         /// </summary>
         public static string PAGE_MEMBRES {
             get {
@@ -277,7 +277,7 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Salons.
+        ///   Looks up a localized string similar to Shows.
         /// </summary>
         public static string PAGE_SALONS {
             get {
@@ -306,27 +306,27 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.Resources {
         /// <summary>
         ///   Looks up a localized string similar to http://www.epsi.fr.
         /// </summary>
-        public static string URL_EPSI {
+        public static string Url_EPSI {
             get {
-                return ResourceManager.GetString("URL_EPSI", resourceCulture);
+                return ResourceManager.GetString("Url_EPSI", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to http://www.facebook.com/epsilab.
         /// </summary>
-        public static string URL_FACEBOOK {
+        public static string Url_FACEBOOK {
             get {
-                return ResourceManager.GetString("URL_FACEBOOK", resourceCulture);
+                return ResourceManager.GetString("Url_FACEBOOK", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to http://www.twitter.com/epsilab.
         /// </summary>
-        public static string URL_TWITTER {
+        public static string Url_TWITTER {
             get {
-                return ResourceManager.GetString("URL_TWITTER", resourceCulture);
+                return ResourceManager.GetString("Url_TWITTER", resourceCulture);
             }
         }
         

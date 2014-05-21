@@ -19,7 +19,7 @@ namespace EPSILab.SolarSystem.Saturn.Windows8.Converters
 
                 if (parameter.ToString() == "Author")
                 {
-                    return string.Format(FormatsRsxAccessor.GetString("News_Author"), news.Membre.Prenom, news.Membre.Nom);
+                    return string.Format(FormatsRsxAccessor.GetString("News_Author"), news.Member.FirstName, news.Member.LastName);
                 }
             }
 

@@ -44,9 +44,9 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.TileFactory.Tiles
 
                 ShellTileData newTile = new FlipTileData
                 {
-                    BackgroundImage = new Uri(lastNews.Image, UriKind.Absolute),
-                    BackContent = lastNews.Titre,
-                    BackTitle = lastNews.Date_Heure.ToString("g")
+                    BackgroundImage = new Uri(lastNews.ImageUrl, UriKind.Absolute),
+                    BackContent = lastNews.Title,
+                    BackTitle = lastNews.DateTime.ToString("g")
                 };
 
                 // Update the tile

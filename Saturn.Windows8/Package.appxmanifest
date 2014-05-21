@@ -46,7 +46,7 @@
             <Task Type="timer" />
           </BackgroundTasks>
         </Extension>
-        <Extension Category="windows.backgroundTasks" EntryPoint="EPSILab.SolarSystem.Saturn.Windows8.BackgroundTasks.ToastLastSalonTask">
+        <Extension Category="windows.backgroundTasks" EntryPoint="EPSILab.SolarSystem.Saturn.Windows8.BackgroundTasks.ToastLastShowTask">
           <BackgroundTasks>
             <Task Type="systemEvent" />
             <Task Type="timer" />

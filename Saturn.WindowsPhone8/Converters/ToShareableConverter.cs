@@ -19,9 +19,9 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.Converters
 
                 shareableObject = new ShareableObject
                 {
-                    Title = news.Titre,
-                    Message = news.Texte_Court,
-                    Uri = new Uri(string.Format(AppResources.WEBSITE_FORMAT, AppResources.PAGE_NEWS, news.Code_News, news.URL))
+                    Title = news.Title,
+                    Message = news.ShortText,
+                    Uri = new Uri(string.Format(AppResources.WEBSITE_FORMAT, AppResources.PAGE_NEWS, news.Id, news.Url))
                 };
             }
             else if (value is Conference)
@@ -30,20 +30,20 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.Converters
 
                 shareableObject = new ShareableObject
                 {
-                    Title = conference.Nom,
-                    Message = string.Format(AppResources.FORMAT_CONFERENCE, conference.Date_Heure_Debut, conference.Date_Heure_Fin, conference.Lieu),
-                    Uri = new Uri(string.Format(AppResources.WEBSITE_FORMAT, AppResources.PAGE_CONFERENCES, conference.Code_Conference, conference.URL))
+                    Title = conference.Name,
+                    Message = string.Format(AppResources.FORMAT_CONFERENCE, conference.Start_DateTime, conference.End_DateTime, conference.Place),
+                    Uri = new Uri(string.Format(AppResources.WEBSITE_FORMAT, AppResources.PAGE_CONFERENCES, conference.Id, conference.Url))
                 };
             }
-            else if (value is Salon)
+            else if (value is Show)
             {
-                Salon salon = value as Salon;
+                Show salon = value as Show;
 
                 shareableObject = new ShareableObject
                 {
-                    Title = salon.Nom,
-                    Message = string.Format(AppResources.FORMAT_SALON, salon.Date_Heure_Debut, salon.Date_Heure_Fin, salon.Lieu),
-                    Uri = new Uri(string.Format(AppResources.WEBSITE_FORMAT, AppResources.PAGE_SALONS, salon.Code_Salon, salon.URL))
+                    Title = salon.Name,
+                    Message = string.Format(AppResources.FORMAT_SALON, salon.Start_DateTime, salon.End_DateTime, salon.Place),
+                    Uri = new Uri(string.Format(AppResources.WEBSITE_FORMAT, AppResources.PAGE_SALONS, salon.Id, salon.Url))
                 };
             }
 

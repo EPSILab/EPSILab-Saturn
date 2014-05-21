@@ -15,22 +15,22 @@ namespace EPSILab.SolarSystem.Saturn.Model.Infrastructure
 
             // Models used by the Main view-model
             builder.RegisterType<ConferenceDAL>().As<IReadableLimitable<Conference>>();
-            builder.RegisterType<MembreDAL>().As<IReadableMembre>();
+            builder.RegisterType<MemberDAL>().As<IReadableMember>();
             builder.RegisterType<NewsDAL>().As<IReadableLimitable<News>>();
-            builder.RegisterType<ProjetDAL>().As<IReadableLimitable<Projet>>();
-            builder.RegisterType<SalonDAL>().As<IReadableLimitable<Salon>>();
+            builder.RegisterType<ProjectDAL>().As<IReadableLimitable<Project>>();
+            builder.RegisterType<ShowDAL>().As<IReadableLimitable<Show>>();
 
             // Models used by Masters and Details view-models
             builder.RegisterType<ConferenceDAL>().As<IReadable<Conference>>();
-            builder.RegisterType<MembreDAL>().As<IReadable<Membre>>();
+            builder.RegisterType<MemberDAL>().As<IReadable<Member>>();
             builder.RegisterType<NewsDAL>().As<IReadable<News>>();
-            builder.RegisterType<ProjetDAL>().As<IReadable<Projet>>();
-            builder.RegisterType<SalonDAL>().As<IReadable<Salon>>();
+            builder.RegisterType<ProjectDAL>().As<IReadable<Project>>();
+            builder.RegisterType<ShowDAL>().As<IReadable<Show>>();
 
             // Models used by the Search view-model
             builder.RegisterType<NewsDAL>().As<ISearchable<News>>();
             builder.RegisterType<ConferenceDAL>().As<ISearchable<Conference>>();
-            builder.RegisterType<SalonDAL>().As<ISearchable<Salon>>();
+            builder.RegisterType<ShowDAL>().As<ISearchable<Show>>();
 
             return builder.Build();
         }
