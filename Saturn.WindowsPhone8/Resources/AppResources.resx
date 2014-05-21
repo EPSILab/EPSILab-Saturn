@@ -33,7 +33,7 @@
     Each data row contains a name, and value. The row also contains a 
     type or mimetype. Type corresponds to a .NET class that support 
     text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+    Promotions that don't support this are serialized and stored with the 
     mimetype set.
     
     The mimetype is used for serialized objects, and tells the 
@@ -184,13 +184,13 @@
     <value>Conferences</value>
   </data>
   <data name="PAGE_MEMBRES" xml:space="preserve">
-    <value>Membres</value>
+    <value>Members</value>
   </data>
   <data name="PAGE_NEWS" xml:space="preserve">
     <value>Actualites</value>
   </data>
   <data name="PAGE_SALONS" xml:space="preserve">
-    <value>Salons</value>
+    <value>Shows</value>
   </data>
   <data name="TASK_DESCRIPTION" xml:space="preserve">
     <value>Cette tâche met à jour la tuile de l'application EPSILab, en récupérant la dernière actualité du site web. Elle affiche une notification lorsqu'une news, conférence ou salon vient d'être publié sur le site.</value>
@@ -198,13 +198,13 @@
   <data name="TXT_SUPPORT" xml:space="preserve">
     <value>Demande de support pour l'application EPSILab pour Windows Phone</value>
   </data>
-  <data name="URL_EPSI" xml:space="preserve">
+  <data name="Url_EPSI" xml:space="preserve">
     <value>http://www.epsi.fr</value>
   </data>
-  <data name="URL_FACEBOOK" xml:space="preserve">
+  <data name="Url_FACEBOOK" xml:space="preserve">
     <value>http://www.facebook.com/epsilab</value>
   </data>
-  <data name="URL_TWITTER" xml:space="preserve">
+  <data name="Url_TWITTER" xml:space="preserve">
     <value>http://www.twitter.com/epsilab</value>
   </data>
   <data name="WEBSITE_FORMAT" xml:space="preserve">

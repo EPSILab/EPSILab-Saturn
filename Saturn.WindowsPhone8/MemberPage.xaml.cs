@@ -1,6 +1,5 @@
 ﻿using EPSILab.SolarSystem.Saturn.Model.ReadersService;
 using EPSILab.SolarSystem.Saturn.ViewModel;
-using EPSILab.SolarSystem.Saturn.ViewModel.Objects;
 using EPSILab.SolarSystem.Saturn.WindowsPhone8.Helpers.Tasks;
 using GalaSoft.MvvmLight.Messaging;
 using Microsoft.Phone.Controls;
@@ -11,21 +10,19 @@ using System.Windows.Navigation;
 namespace EPSILab.SolarSystem.Saturn.WindowsPhone8
 {
     /// <summary>
-    /// Show page
+    /// Member page
     /// </summary>
-    public partial class SalonPage
+    public partial class MemberPage
     {
         #region Constructor
 
         /// <summary>
-        /// Constructor. Register to MVVM Light Toolkit Messenger
+        /// Constructor. Register to the MVVM Light Toolkit Messenger
         /// </summary>
-        public SalonPage()
+        public MemberPage()
         {
             InitializeComponent();
 
-            Messenger.Default.Register<PinnableObject>(this, Pin);
-            Messenger.Default.Register<ShareableObject>(this, Share);
             Messenger.Default.Register<Uri>(this, VisitWebsite);
         }
 
@@ -66,7 +63,7 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8
         /// <param name="e">Event args</param>
         private void PhoneApplicationPage_OnUnloaded(object sender, RoutedEventArgs e)
         {
-            ViewModelLocator.DisposeDetailsVM<Salon>();
+            ViewModelLocator.DisposeDetailsVM<Member>();
         }
 
         #endregion
@@ -74,27 +71,9 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8
         #region Messenger methods
 
         /// <summary>
-        /// Pin the show
+        /// Load the member's page in Internet Explorer mobile
         /// </summary>
-        /// <param name="salon">Show transformed in adapted pinnable object</param>
-        private void Pin(PinnableObject salon)
-        {
-            PinTaskHelper.CreateTile(salon as PinnableObjectWP);
-        }
-
-        /// <summary>
-        /// Show the UI to share the meeting on social networks
-        /// </summary>
-        /// <param name="salon">Show transformed in adapted shareable object</param>
-        private void Share(ShareableObject salon)
-        {
-            ShareTaskHelper.Share(salon);
-        }
-
-        /// <summary>
-        /// Load the show's informations in Internet Explorer mobile
-        /// </summary>
-        /// <param name="uri">Link of the meeting</param>
+        /// <param name="uri">Link of the conference</param>
         private void VisitWebsite(Uri uri)
         {
             if (uri != null)

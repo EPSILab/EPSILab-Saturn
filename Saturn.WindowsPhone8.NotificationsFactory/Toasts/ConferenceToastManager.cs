@@ -42,8 +42,8 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.TileFactory.Toasts
                 ShellToast toast = new ShellToast
                 {
                     Title = LibResources.NewConference,
-                    Content = lastConference.Nom,
-                    NavigationUri = new Uri(string.Format("/ConferencePage.xaml?Id={0}", lastConference.Code_Conference), UriKind.Relative)
+                    Content = lastConference.Name,
+                    NavigationUri = new Uri(string.Format("/ConferencePage.xaml?Id={0}", lastConference.Id), UriKind.Relative)
                 };
 
                 toast.Show();

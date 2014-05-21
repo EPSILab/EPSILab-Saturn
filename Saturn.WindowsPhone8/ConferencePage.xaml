@@ -43,11 +43,11 @@
                     Margin="12,17,0,15">
 
             <!-- Campus name -->
-            <TextBlock Text="{Binding Ville.Libelle}"
+            <TextBlock Text="{Binding Campus.Place}"
                        Style="{StaticResource PhoneTextNormalBlackStyle}" />
 
             <!-- Title of the conference -->
-            <TextBlock Text="{Binding Nom}"
+            <TextBlock Text="{Binding Name}"
                        Margin="9,-7,0,5"
                        TextWrapping="Wrap"
                        Style="{StaticResource PhoneTextTitle1BlackStyle}"

@@ -1,5 +1,5 @@
 ﻿<phone:PhoneApplicationPage
-    x:Class="EPSILab.SolarSystem.Saturn.WindowsPhone8.MembrePage"
+    x:Class="EPSILab.SolarSystem.Saturn.WindowsPhone8.MemberPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -14,13 +14,13 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
     mc:Ignorable="d"
-    DataContext="{Binding MembreDetailsVM, Source={StaticResource Locator}}"
+    DataContext="{Binding MemberDetailsVM, Source={StaticResource Locator}}"
     shell:SystemTray.IsVisible="False"
     Unloaded="PhoneApplicationPage_OnUnloaded">
 
     <phone:PhoneApplicationPage.Resources>
-        <converters:MembreNameConverter x:Key="MembreNameConverter" />
-        <converters:MembreInfoConverter x:Key="MembreInfoConverter" />
+        <converters:MemberNameConverter x:Key="MemberNameConverter" />
+        <converters:MemberInfoConverter x:Key="MemberInfoConverter" />
 
         <converters:StringToUriConverter x:Key="StringToUriConverter" />
         <converters:NullToBoolConverter x:Key="NullToBoolConverter" />
@@ -43,11 +43,11 @@
                     Margin="12,17,0,15">
             
             <!-- Photo -->
-            <Image Source="{Binding Image}"
+            <Image Source="{Binding ImageUrl}"
                    Width="150" Height="150" />
 
             <!-- Surname and first name -->
-            <TextBlock Text="{Binding Converter={StaticResource MembreNameConverter}}"
+            <TextBlock Text="{Binding Converter={StaticResource MemberNameConverter}}"
                        Margin="9,5,0,5"
                        TextWrapping="Wrap"
                        Style="{StaticResource PhoneTextTitle1BlackStyle}"
@@ -57,7 +57,7 @@
             <StackPanel Style="{StaticResource StackPanelInformationsStyle}">
 
                 <TextBlock Margin="4,2"
-                           Text="{Binding Converter={StaticResource MembreInfoConverter}}"
+                           Text="{Binding Converter={StaticResource MemberInfoConverter}}"
                            Style="{StaticResource PhoneTextNormalStyle}" />
             </StackPanel>
         </StackPanel>
@@ -75,15 +75,15 @@
 
             <appbar:BindableApplicationBarButton IconUri="/Assets/ApplicationBar/twitter.png"
                                                  Text="twitter"
-                                                 IsEnabled="{Binding Element.URL_Twitter, Converter={StaticResource NullToBoolConverter}}"
+                                                 IsEnabled="{Binding Element.Url_Twitter, Converter={StaticResource NullToBoolConverter}}"
                                                  Command="{Binding VisitWebsiteCommand}"
-                                                 CommandParameter="{Binding Element.URL_Twitter, Converter={StaticResource StringToUriConverter}}" />
+                                                 CommandParameter="{Binding Element.Url_Twitter, Converter={StaticResource StringToUriConverter}}" />
 
             <appbar:BindableApplicationBarButton IconUri="/Assets/ApplicationBar/linkedin.png"
                                                  Text="linkedin"
-                                                 IsEnabled="{Binding Element.URL_LinkedIn, Converter={StaticResource NullToBoolConverter}}"
+                                                 IsEnabled="{Binding Element.Url_LinkedIn, Converter={StaticResource NullToBoolConverter}}"
                                                  Command="{Binding VisitWebsiteCommand}"
-                                                 CommandParameter="{Binding Element.URL_LinkedIn, Converter={StaticResource StringToUriConverter}}" />
+                                                 CommandParameter="{Binding Element.Url_LinkedIn, Converter={StaticResource StringToUriConverter}}" />
 
             <appbar:BindableApplicationBarButton IconUri="/Assets/ApplicationBar/website.png"
                                                  IsEnabled="{Binding Element.Site_web, Converter={StaticResource NullToBoolConverter}}"

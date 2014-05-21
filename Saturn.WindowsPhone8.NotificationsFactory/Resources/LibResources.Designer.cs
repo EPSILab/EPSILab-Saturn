@@ -90,9 +90,9 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.TileFactory.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Prochain salon.
         /// </summary>
-        internal static string NewSalon {
+        internal static string NewShow {
             get {
-                return ResourceManager.GetString("NewSalon", resourceCulture);
+                return ResourceManager.GetString("NewShow", resourceCulture);
             }
         }
         
@@ -106,11 +106,11 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.TileFactory.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to IdLastSalonSaved.
+        ///   Looks up a localized string similar to IdLastShowSaved.
         /// </summary>
-        internal static string SalonStorageKey {
+        internal static string ShowStorageKey {
             get {
-                return ResourceManager.GetString("SalonStorageKey", resourceCulture);
+                return ResourceManager.GetString("ShowStorageKey", resourceCulture);
             }
         }
     }

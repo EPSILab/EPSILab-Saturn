@@ -6,14 +6,14 @@ using System.Windows.Data;
 
 namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.Converters
 {
-    public class SalonInfoConverter : IValueConverter
+    public class MemberInfoConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value is Salon)
+            if (value is Member)
             {
-                Salon salon = value as Salon;
-                return string.Format(CultureInfo.CurrentUICulture, AppResources.FORMAT_SALON, salon.Date_Heure_Debut, salon.Date_Heure_Fin, salon.Lieu);
+                Member member = value as Member;
+                return string.Format(CultureInfo.CurrentUICulture, AppResources.FORMAT_MEMBRE, member.Status, member.Campus.Place);
             }
 
             return value;

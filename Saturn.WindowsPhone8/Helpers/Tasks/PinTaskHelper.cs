@@ -31,7 +31,7 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.Helpers.Tasks
                 {
                     Title = element.Title,
                     BackContent = element.Content,
-                    BackgroundImage = new Uri(element.Image, UriKind.Absolute),
+                    BackgroundImage = new Uri(element.ImageUrl, UriKind.Absolute),
                     BackTitle = element.BackTitle
                 };
 

@@ -11,14 +11,14 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8
     /// <summary>
     /// Projects page
     /// </summary>
-    public partial class ProjetPage
+    public partial class ProjectPage
     {
         #region Constructor
 
         /// <summary>
         /// Constructor
         /// </summary>
-        public ProjetPage()
+        public ProjectPage()
         {
             InitializeComponent();
         }
@@ -60,7 +60,7 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8
         /// <param name="e">Event args</param>
         private void PhoneApplicationPage_OnUnloaded(object sender, RoutedEventArgs e)
         {
-            ViewModelLocator.DisposeDetailsVM<Projet>();
+            ViewModelLocator.DisposeDetailsVM<Project>();
         }
 
         #endregion

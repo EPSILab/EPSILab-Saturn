@@ -15,22 +15,22 @@ namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.Converters
             if (value is News)
             {
                 News news = value as News;
-                url = string.Format(AppResources.WEBSITE_FORMAT, AppResources.PAGE_NEWS, news.Code_News, news.URL);
+                url = string.Format(AppResources.WEBSITE_FORMAT, AppResources.PAGE_NEWS, news.Id, news.Url);
             }
             else if (value is Conference)
             {
                 Conference conference = value as Conference;
-                url = string.Format(AppResources.WEBSITE_FORMAT, AppResources.PAGE_CONFERENCES, conference.Code_Conference, conference.URL);
+                url = string.Format(AppResources.WEBSITE_FORMAT, AppResources.PAGE_CONFERENCES, conference.Id, conference.Url);
             }
-            else if (value is Salon)
+            else if (value is Show)
             {
-                Salon salon = value as Salon;
-                url = string.Format(AppResources.WEBSITE_FORMAT, AppResources.PAGE_SALONS, salon.Code_Salon, salon.URL);
+                Show salon = value as Show;
+                url = string.Format(AppResources.WEBSITE_FORMAT, AppResources.PAGE_SALONS, salon.Id, salon.Url);
             }
-            else if (value is Membre)
+            else if (value is Member)
             {
-                Membre membre = value as Membre;
-                url = string.Format(AppResources.WEBSITE_FORMAT, AppResources.PAGE_MEMBRES, membre.Code_Membre, membre.URL);
+                Member member = value as Member;
+                url = string.Format(AppResources.WEBSITE_FORMAT, AppResources.PAGE_MEMBRES, member.Id, member.Url);
             }
 
             Uri uri = null;

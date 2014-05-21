@@ -5,14 +5,14 @@ using System.Windows.Data;
 
 namespace EPSILab.SolarSystem.Saturn.WindowsPhone8.Converters
 {
-    public class MembreNameConverter : IValueConverter
+    public class MemberNameConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value is Membre)
+            if (value is Member)
             {
-                Membre membre = value as Membre;
-                return string.Format(CultureInfo.CurrentUICulture, "{0} {1}", membre.Prenom, membre.Nom);
+                Member member = value as Member;
+                return string.Format(CultureInfo.CurrentUICulture, "{0} {1}", member.FirstName, member.LastName);
             }
 
             return value;
