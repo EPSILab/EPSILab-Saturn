@@ -19,7 +19,7 @@
     <SccProvider>SAK</SccProvider>
     <PackageCertificateThumbprint>112899B125789883F8E5B61D67F7AEAA701EEFAD</PackageCertificateThumbprint>
     <ExpressionBlendVersion>5.2.30810.0</ExpressionBlendVersion>
-    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
   </PropertyGroup>
